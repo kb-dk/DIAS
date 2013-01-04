@@ -14,5 +14,7 @@
 /log/*.log
 /tmp
 
+# don't put jetty, or the migrated stuff 
+#under version control
 /jetty
 /db/migrate
