@@ -14,6 +14,7 @@ For starte DIAS
 * rake db:migrate
 * git clone https://github.com/projecthydra/hydra-jetty.git
 * rake hydra:jetty:config 
-* rake jetty:start
+* cd jetty
+* java -XX:+CMSPermGenSweepingEnabled -XX:+CMSClassUnloadingEnabled -XX:PermSize=64M -XX:MaxPermSize=128M -jar start.jar 
 * rails server
 * gå til localhost:3000
