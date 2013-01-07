@@ -235,7 +235,7 @@ DEPENDENCIES
   hydra-head (~> 5.0.0)
   jettywrapper
   jquery-rails
-  rails (~> 3.2.9)
+  rails (~> 3.2.10)
   rspec-rails
   sass-rails (~> 3.2.3)
   sqlite3
