@@ -2,10 +2,9 @@
      http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
    <titleInfo>
        <title>Opgavetitel</title>                                   <!-- title -->
+        <title type='alternative'>Undertitel</title>                      <!-- undertitel -->
    </titleInfo>
-   <titleInfo>
-    <title type='alternative'>Undertitel</title>                      <!-- undertitel -->
- </titleInfo>
+
    <name type="personal">
        <namePart>Fornavn Efternavn</namePart>                 <!-- Forfatter author for og efternavn -->
        <role> 
@@ -13,16 +12,19 @@
        </role>
    </name>
    <abstract>ABSTRACT mutus nomen dedit cocis</abstract>            <!-- Beskrivelse /Abstract -->
-   <originInfo><dataIssued>2011</dateIssued></originInfo>         <!-- Afleveringsår -->
-   <location>
-      <physicalLocation>samf</physicalLocation>                   <!--  Studium -->
-    </location>
+   <originInfo>
+          <dataIssued>2011</dateIssued>                             <!-- Afleveringsår -->
+          <location>
+               <physicalLocation>samf</physicalLocation>              <!--  Studium -->
+          </location>
+     </originInfo>         
+
     <typeOfResource>text<typeOfResource>                          <!-- Opgavetype -->
 
-<genre>Synopsis</genre>
-<language>
-  <languageTerm code='code' authority='iso369-2b'>dan<languageTerm>   <!-- Opgavesprog -->
-</language> 
+     <genre>Synopsis</genre>
+     <language>
+           <languageTerm code='code' authority='iso369-2b'>dan<languageTerm>   <!-- Opgavesprog -->
+     </language> 
 
 
 
