@@ -3,3 +3,10 @@
 
 en:
   hello: "Hello world"
+
+  dias:
+    test: "This is a test 1 2 3 ..."
+    changelang: "Skift til Dansk"
+
+  blacklight:
+    welcome: "Welcome to DIAS!"

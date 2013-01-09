@@ -18,3 +18,5 @@ if HydraHead::Application.config.stub_authentication
     }
   })
 end
+
+OmniAuth.config.logger = Rails.logger

@@ -65,4 +65,16 @@ class ApplicationController < ActionController::Base
   def render_not_found(exception)
     render :file => 'public/404', :format => :html, :status => :not_found, :layout => nil
   end
+
+  # set the locale
+  before_filter :set_locale
+ 
+  def set_locale
+    I18n.locale = params[:change_locale] || params[:locale] || I18n.default_locale
+  end
+
+  def default_url_options(options={})
+    logger.debug "default_url_options is passed options: #{options.inspect}\n"
+    { :locale => I18n.locale }
+  end
 end
