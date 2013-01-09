@@ -1,5 +1,13 @@
 <h4><%= t('blacklight.welcome') %></h4>
 <p>&nbsp;</p>
+<p><%= t('dias.test') %></p>
+<p>&nbsp;</p>
+<p><% if I18n.locale == 'en' %>
+<%= link_to t('dias.changelang'), {:change_locale=>'da'} %>
+   <% else %>
+<%= link_to t('dias.changelang'), {:change_locale=>'en'} %>
+<% end %></p>
+<p>&nbsp;</p>
 <p>Denne tekst er hermed modificeres og skal nu multilingualiseres og dens visuelle kontekst skal styles</p>
 <p>&nbsp;</p>
 <p>To modify this text to your specifications, copy this file located in the blacklight plugin directory:<br/>
