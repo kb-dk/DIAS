@@ -2,13 +2,15 @@
 <p>&nbsp;</p>
 <p><%= t('dias.test') %></p>
 <p>&nbsp;</p>
-<p><% if I18n.locale == 'en' %>
-<%= link_to t('dias.changelang'), {:change_locale=>'da'} %>
-   <% else %>
-<%= link_to t('dias.changelang'), {:change_locale=>'en'} %>
-<% end %></p>
+<p>Locale: <%= I18n.locale %></p>
 <p>&nbsp;</p>
-<p>Denne tekst er hermed modificeres og skal nu multilingualiseres og dens visuelle kontekst skal styles</p>
+<p><%if I18n.locale.to_s=="en" %>
+	<%= link_to t('dias.changelang'), {:locale=>"da"} %>
+   <%else%>
+	<%= link_to t('dias.changelang'), {:locale=>"en"} %>
+<%end%></p>
+<p>&nbsp;</p>
+<p>Denne tekst er hermed modificeres og skal nu multilingualiseres og dens visuelle kontekst skal styles.</p>
 <p>&nbsp;</p>
 <p>To modify this text to your specifications, copy this file located in the blacklight plugin directory:<br/>
 &nbsp;&nbsp;&nbsp;<%= Blacklight.root %>/app/views/catalog/_home_text.html.erb</p>
