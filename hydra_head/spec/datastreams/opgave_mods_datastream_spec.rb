@@ -12,10 +12,10 @@ describe OpgaveModsDatastream do
     
     @ds.title.should == ["Opgavetitel"]
     @ds.undertitel.should == ["Undertitel"]
-    #@ds.forfatter.should == ["Fornavn Efternavn"]
-    #@ds.abstract.should == ["ABSTRACT mutus nomen dedit cocis"]
-    #@ds.afleveringsaar.should == ["2011"]
-    #@ds.studium.should == ["Biologi"]
+    @ds.forfatter.should == ["Fornavn Efternavn"]
+    @ds.abstract.should == ["ABSTRACT mutus nomen dedit cocis"]
+    @ds.afleveringsaar.should == ["2011"]
+    @ds.studium.should == ["Biologi"]
   end
 
 end

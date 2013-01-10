@@ -10,8 +10,13 @@ class Opgave < ActiveFedora::Base
 
   # The delegate method allows you to set up attributes on the model that are stored in datastreams
   # When you set :unique=>"true", searches will return a single value instead of an array.
-  delegate :title, :to=>"descMetadata", :unique=>"true"
-  delegate :abstract, :to=>"descMetadata", :unique=>"true"
+  delegate :title, :to=>"descMetadata",
+  delegate :undertitel, :to=>"descMetadata",
+  delegate :forfatter, :to=>"descMetadata",
+  delegate :abstract, :to=>"descMetadata", :unique=>"true",
+  delegate :afleveringsaar, :to=>"descMetadata",
+  delegate :studium, :to=>"descMetadata",
+
  
 end
 
