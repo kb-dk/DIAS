@@ -2,7 +2,7 @@
      http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
    <titleInfo>
        <title>Opgavetitel</title>                                   <!-- title -->
-        <title type='alternative'>Undertitel</title>                      <!-- undertitel -->
+       <subTitle>Undertitel</subTitle>                      <!-- undertitel -->
    </titleInfo>
 
    <name type="personal">
@@ -15,7 +15,7 @@
    <originInfo>
           <dataIssued>2011</dateIssued>                             <!-- Afleveringsår -->
           <location>
-               <physicalLocation>samf</physicalLocation>              <!--  Studium -->
+               <physicalLocation>Biologi</physicalLocation>              <!--  Studium -->
           </location>
      </originInfo>         
 
@@ -24,9 +24,5 @@
      <genre>Synopsis</genre>
      <language>
            <languageTerm code='code' authority='iso369-2b'>dan<languageTerm>   <!-- Opgavesprog -->
-     </language> 
-
-
-
-   
+     </language>   
 </mods>
