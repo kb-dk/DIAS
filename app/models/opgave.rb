@@ -13,7 +13,7 @@ class Opgave < ActiveFedora::Base
   delegate :title, :to=>"descMetadata", :unique=>"true"
   delegate :undertitel, :to=>"descMetadata", :unique=>"true"
   delegate :forfatter, :to=>"descMetadata", :unique=>"true"
-  delegate :abstract, :to=>"descMetadata", :unique=>"true"
+  delegate :abstrakt, :to=>"descMetadata", :unique=>"true"
   delegate :afleveringsaar, :to=>"descMetadata", :unique=>"true"
   delegate :studium, :to=>"descMetadata", :unique=>"true"
 

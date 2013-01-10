@@ -17,17 +17,17 @@ describe Opgave do
     @opgave.rightsMetadata.should be_kind_of Hydra::Datastream::RightsMetadata
   end
   
-  it "should have the attributes of a journal opgave and support update_attributes" do
+  it "should have the attributes of 'en opgave' and support update_attributes" do
     attributes_hash = {
       "title" => "Opgavetitel",
-      "abstract" => "ABSTRACT mutus nomen dedit cocis",
+      "abstrakt" => "ABSTRACT mutus nomen dedit cocis",
     }
     
     @opgave.update_attributes( attributes_hash )
     
     # These attributes have been marked "unique" in the call to delegate, which causes the results to be singular
     @opgave.title.should == attributes_hash["title"]
-    @opgave.abstract.should == attributes_hash["abstract"]
+    @opgave.abstrakt.should == attributes_hash["abstrakt"]
     
     # These attributes have not been marked "unique" in the call to the delegate, which causes the results to be arrays
    

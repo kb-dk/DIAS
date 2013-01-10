@@ -37,7 +37,7 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
       t.namePart(:index_as => [:searchable])
     end
 
-    t.abstract
+    t.abstract(:index_as=>[:searchable])
 
     #<originInfo>
     #<dataIssued>2011</dateIssued>                             <!-- Afleveringsår -->
@@ -54,7 +54,9 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     end
 
     t.typeOfResource(:index_as=>[:searchable])
+
     t.genre(:index_as=>[:searchable])
+
     t.language do
       t.languageISO(:path=>"languageTerm[@authority='iso639-2b']", :index_as => [:searchable])
       t.languageText(:path=>"languageTerm[@type='text']", :index_as => [:searchable])
@@ -64,7 +66,7 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     t.title(:proxy => [:titleInfo, :title])
     t.undertitel(:proxy => [:titleInfo, :subTitle])
     t.forfatter(:proxy => [:name, :namePart])
-    t.abstract(:proxy => [:abstract])
+    t.abstrakt(:proxy => [:abstract])
     t.afleveringsaar(:proxy => [:originInfo, :dataIssued])
     t.studium(:proxy => [:originInfo, :location, :physicalLocation])
     t.Opgavesprog(:proxy => [:language, :languageText])
