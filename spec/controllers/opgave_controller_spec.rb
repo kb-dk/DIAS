@@ -10,5 +10,15 @@ describe OpgaveController do
       assigns[:opgave].should be_kind_of Opgave
       renders.should == "new"
     end
+
+
+
+
+    it "should support create requests" do
+        post :create, :opgave=>{"title"=>"Ny titel"}
+        op = assigns[:opgave]
+        op.title.should == "Ny titel"
+    end
+
   end
 end

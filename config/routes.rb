@@ -1,4 +1,7 @@
 HydraHead::Application.routes.draw do
+  resources :opgaves
+
+
   root :to => "catalog#index"
 
   Blacklight.add_routes(self)

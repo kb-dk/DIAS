@@ -3,4 +3,11 @@ class OpgaveController < ApplicationController
   def new
     @opgave = Opgave.new
   end
+
+  def index
+     @opgave = Opgave.all
+  end
+
+
+
 end
