@@ -9,6 +9,8 @@ class Users::SessionsController < ApplicationController
   end
 
   def create
+
+
     # extract authentication data
     auth = request.env["omniauth.auth"]
     logger.debug auth.extra.hashie_inspect
@@ -23,7 +25,7 @@ class Users::SessionsController < ApplicationController
     #user.email =  auth.extra.attributes[0]['email']
     #user.save
 
-    session[:user_id] = user.id
+    session[:user_id] = username
     session[:user_name] = auth.extra.attributes[0]['gn'] + ' ' + auth.extra.attributes[0]['sn']
     
     

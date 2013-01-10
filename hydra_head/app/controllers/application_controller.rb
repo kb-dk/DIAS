@@ -33,10 +33,10 @@ class ApplicationController < ActionController::Base
 
   def current_user
     if session[:user_id]
-      user = User.find(session[:user_id])
+      #user = User.find(session[:user_id])
       #user.impersonating = session.has_key? :original_user_id if user
-      #user = User.new
-      
+      user = User.new
+      user.email = 'jac@kb.dk';
       return user
     end
   end

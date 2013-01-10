@@ -240,6 +240,7 @@ DEPENDENCIES
   bootstrap-sass
   devise
   devise-guests (~> 0.3)
+  hydra-access-controls
   hydra-head (~> 5.0.0)
   jettywrapper
   jquery-rails
