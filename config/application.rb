@@ -68,7 +68,10 @@ module HydraHead
     config.stub_authentication = false;
 
     config.cas = {
-      :host => 'www.kb.dk/cas/login'
+      :host => 'www.kb.dk',
+      :login_url => '/cas/login',
+      :service_validate_url => '/cas/serviceValidate',
+      :ssl => true
     }
 
 
