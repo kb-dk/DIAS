@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :pid
   # attr_accessible :title, :body
 
 
@@ -23,16 +23,16 @@ class User < ActiveRecord::Base
   # user class to get a user-displayable login/identifier for
   # the account. 
   def to_s
-    email + ' ' + admin?.to_s
+    name + ', ' + pid
   end
 
 
   def admin?
-   email === 'jac@kb.dk'
+   pid == '0505772709' #TODO udskil i konfiguration
   end
 
   def depositor?
-    return :email.to_s.index('@ku.dk')
+    pid != nil
   end
 
 

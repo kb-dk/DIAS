@@ -10,26 +10,13 @@ class Users::SessionsController < ApplicationController
 
   def create
 
-
     # extract authentication data
     auth = request.env["omniauth.auth"]
     logger.debug auth.extra.hashie_inspect
     provider = params['provider']
     username = auth.extra.user
 
-    #user = User.create
-
-    #user.update_attribute("id", auth.extra.attributes[0]['gn'] + ' ' + auth.extra.attributes[0]['sn'])
-    #name: auth.extra.attributes[0]['gn'] + ' ' + auth.extra.attributes[0]['sn'] )
-    #user.id = auth.extra.user
-    #user.email =  auth.extra.attributes[0]['email']
-    #user.save
-
-    session[:user_id] = username
-    session[:user_name] = auth.extra.attributes[0]['gn'] + ' ' + auth.extra.attributes[0]['sn']
-    
-    
-    
+    session[:user] = auth
     redirect_to session.delete('return_url'), :notice => 'Signed in by %s' % [auth], :only_path => true
   end
 
