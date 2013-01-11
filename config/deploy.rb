@@ -1,3 +1,5 @@
+require "bundler/capistrano"
+
 set :application, "DIAS"
 set :repository,  "https://github.com/Det-Kongelige-Bibliotek/DIAS"
 set :deploy_to, "/home/dias/deploy"
