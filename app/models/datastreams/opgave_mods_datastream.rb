@@ -47,9 +47,9 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     # </originInfo>
 
     t.originInfo do
-      t.dataIssued(:index_as => [:facet])
+      t.dataIssued(:index_as => [:searchable])    # :facetable
       t.location do
-        t.physicalLocation(:index_as => [:facet])
+        t.physicalLocation(:index_as => [:searchable])
       end
     end
 
@@ -69,7 +69,7 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     t.abstrakt(:proxy => [:abstract])
     t.afleveringsaar(:proxy => [:originInfo, :dataIssued])
     t.studium(:proxy => [:originInfo, :location, :physicalLocation])
-    t.Opgavesprog(:proxy => [:language, :languageText])
+    t.opgavesprog(:proxy => [:language, :languageText])
 
   end # set_terminology
 
@@ -79,29 +79,29 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     Nokogiri::XML.parse '<mods xmlns="http://www.loc.gov/mods/v3" version="3.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3
      http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
    <titleInfo>
-       <title>Opgavetitel</title>                                   <!-- title -->
-       <subTitle>Undertitel</subTitle>                      <!-- undertitel -->
+       <title/>                                   <!-- title -->
+       <subTitle/>                      <!-- undertitel -->
    </titleInfo>
 
    <name type="personal">
-       <namePart>Fornavn Efternavn</namePart>                 <!-- Forfatter author for og efternavn -->
+       <namePart/>                 <!-- Forfatter author for og efternavn -->
        <role> 
-           <roleTerm authority="marcrelator" type="text">Creator</roleTerm> <!-- author role -->
+           <roleTerm authority="marcrelator" type="text" />        <!-- author role -->
        </role>
    </name>
-   <abstract>ABSTRACT mutus nomen dedit cocis</abstract>            <!-- Beskrivelse /Abstract -->
+   <abstract/>            <!-- Beskrivelse /Abstract -->
    <originInfo>
-          <dataIssued>2011</dateIssued>                             <!-- Afleveringsaar -->
+          <dataIssued/>                             <!-- Afleveringsaar -->
           <location>
-               <physicalLocation>Biologi</physicalLocation>              <!--  Studium -->
+               <physicalLocation/>                <!--  Studium -->
           </location>
      </originInfo>         
 
-    <typeOfResource>text<typeOfResource>                          <!-- Opgavetype -->
+    <typeOfResource/>                          <!-- Opgavetype -->
 
-     <genre>Synopsis</genre>
+     <genre/>
      <language>
-           <languageTerm code="code" authority="iso369-2b">dan<languageTerm>   <!-- Opgavesprog -->
+           <languageTerm code="code" authority="iso369-2b" />   <!-- Opgavesprog -->
      </language>   
 </mods>'
   end

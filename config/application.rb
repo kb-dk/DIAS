@@ -64,6 +64,17 @@ module HydraHead
     config.assets.compress = !Rails.env.development?
 
 
+  # Config to be overriden by local settings
+    config.stub_authentication = false;
+
+    config.cas = {
+      :host => 'www.kb.dk',
+      :login_url => '/cas/login',
+      :service_validate_url => '/cas/serviceValidate',
+      :ssl => true
+    }
+
+
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'

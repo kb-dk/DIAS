@@ -2,3 +2,34 @@
 @import 'bootstrap-responsive';
 
 @import 'blacklight/blacklight';
+
+
+.navbar .brand {
+  background: url("/assets/dias/logo.gif") no-repeat scroll left bottom transparent;
+  margin-right: 10px;
+  overflow: hidden;
+  padding: 0px;
+  height:42px;
+  text-indent: inherit;
+  white-space: nowrap;
+  width: inherit;
+  font-size: inherit;
+  color: #777777;
+  display: block;
+  float: left;
+}
+.navbar .brand h1, .navbar .brand h2  {
+  padding:0 0 0 45px;
+  margin:0;
+  text-transform:uppercase;
+}
+.navbar .brand h1 {
+  font: normal 32px/32px times, Arial, Helvetica, sans-serif;
+}
+.navbar .brand h2 {
+  font: normal 8px/8px times, Arial, Helvetica, sans-serif;
+}
+
+.util-links-login, util-links-other{
+  float:left;
+}
