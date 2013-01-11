@@ -1,0 +1,27 @@
+<div id="header-navbar-fixed-top" class="navbar navbar-fixed-top">
+     <div class="navbar-inner">
+            <div class="container">
+              <div class="row">
+                      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </a>
+                  <div class="span3">
+                    <a href="<%=root_path%>" title="<%=application_name%>" class="brand">
+                       <h1>DIAS</h1>
+                       <h2>Det Kongelige Bibliotek</h2>
+                    </a>
+                  </div>
+                  <div class="span6 clearfix" id="searchbar">         
+                     <%= render_search_bar  %>
+                  </div>
+                  <div class="span3 nav-collapse">
+                    <%= render :partial=>'/user_util_links' %>
+                  
+                  </div>
+
+        </div>
+        </div>
+   </div>
+</div>

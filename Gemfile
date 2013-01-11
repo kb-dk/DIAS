@@ -7,8 +7,8 @@
 
 
 
-  gem 'omniauth' , '~> 1.1.1'
-  gem 'omniauth-cas', '~> 1.0.1'
+  gem 'omniauth'
+  gem 'omniauth-cas'
 
   # We will assume that you're using sqlite3 for testing/demo,
   # but in a production setup you probably want to use a real sql database like mysql or postgres

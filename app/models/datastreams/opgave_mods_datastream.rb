@@ -34,10 +34,10 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     #</name>
 
     t.name do
-      t.namePart (:index_as => [:searchable])
+      t.namePart(:index_as => [:searchable])
     end
 
-    t.abstract
+    t.abstract(:index_as=>[:searchable])
 
     #<originInfo>
     #<dataIssued>2011</dateIssued>                             <!-- Afleveringsår -->
@@ -50,11 +50,13 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
       t.dataIssued(:index_as => [:facet])
       t.location do
         t.physicalLocation(:index_as => [:facet])
-        end
+      end
     end
 
     t.typeOfResource(:index_as=>[:searchable])
+
     t.genre(:index_as=>[:searchable])
+
     t.language do
       t.languageISO(:path=>"languageTerm[@authority='iso639-2b']", :index_as => [:searchable])
       t.languageText(:path=>"languageTerm[@type='text']", :index_as => [:searchable])
@@ -63,11 +65,11 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     # these proxy declarations allow you to use more familiar term/field names that hide the details of the XML structure
     t.title(:proxy => [:titleInfo, :title])
     t.undertitel(:proxy => [:titleInfo, :subTitle])
-    t.forfatter(:proxy => [])
-    t.abstract(:proxy => [])
-    t.afleveringsaar(:proxy => [])
-    t.studium(:proxy => [])
-    t.Opgavesprog(:proxy => [])
+    t.forfatter(:proxy => [:name, :namePart])
+    t.abstrakt(:proxy => [:abstract])
+    t.afleveringsaar(:proxy => [:originInfo, :dataIssued])
+    t.studium(:proxy => [:originInfo, :location, :physicalLocation])
+    t.Opgavesprog(:proxy => [:language, :languageText])
 
   end # set_terminology
 
