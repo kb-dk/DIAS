@@ -6,9 +6,7 @@
           <% else %>
               <%= link_to t('blacklight.header_links.login'), new_user_session_path %>
           <% end %>
-            administrator: <%= can? :manage, @all %><br/>
-            depositor: <%= can? :edit, @all %><br/>
-            guest: <%= can? :read, @all %><br/>
+            administrator: <%= can? :manage, @all %>, depositor: <%= can? :edit, @all %>, guest: <%= can? :read, @all %><br/>
     </li>
     <% end %>
 

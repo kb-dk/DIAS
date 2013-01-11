@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
   def current_user
     if session[:user]
       user = User.new
-      user.pid = session[:user].extra.user
+      user.pid = session[:user].extra.attributes[0]['alephPID']
       user.name = session[:user].extra.attributes[0]['gn'] + ' ' + session[:user].extra.attributes[0]['sn']
       return user
     end

@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
 
 
   def admin?
-   pid == '0505772709' #TODO udskil i konfiguration
+   pid == 'PID000242802' #TODO udskil i konfiguration
   end
 
   def depositor?
