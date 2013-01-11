@@ -79,29 +79,29 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     Nokogiri::XML.parse '<mods xmlns="http://www.loc.gov/mods/v3" version="3.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3
      http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
    <titleInfo>
-       <title/>                                   <!-- title -->
-       <subTitle/>                      <!-- undertitel -->
+       <title>Opgavetitel</title>                                   <!-- title -->
+       <subTitle>Undertitel</subTitle>                      <!-- undertitel -->
    </titleInfo>
 
    <name type="personal">
-       <namePart/>                 <!-- Forfatter author for og efternavn -->
-       <role> 
-           <roleTerm authority="marcrelator" type="text" />        <!-- author role -->
+       <namePart>Fornavn Efternavn</namePart>                 <!-- Forfatter author for og efternavn -->
+       <role>
+           <roleTerm authority="marcrelator" type="text">Creator</roleTerm> <!-- author role -->
        </role>
    </name>
-   <abstract/>            <!-- Beskrivelse /Abstract -->
+   <abstract>ABSTRACT mutus nomen dedit cocis</abstract>            <!-- Beskrivelse /Abstract -->
    <originInfo>
-          <dataIssued/>                             <!-- Afleveringsaar -->
+          <dataIssued>2011</dateIssued>                             <!-- Afleveringsaar -->
           <location>
-               <physicalLocation/>                <!--  Studium -->
+               <physicalLocation>Biologi</physicalLocation>              <!--  Studium -->
           </location>
-     </originInfo>         
+     </originInfo>
 
-    <typeOfResource/>                          <!-- Opgavetype -->
+    <typeOfResource>text<typeOfResource>                          <!-- Opgavetype -->
 
-     <genre/>
+     <genre>Synopsis</genre>
      <language>
-           <languageTerm code="code" authority="iso369-2b" />   <!-- Opgavesprog -->
+           <languageTerm code="code" authority="iso369-2b">dan<languageTerm>   <!-- Opgavesprog -->
      </language>   
 </mods>'
   end

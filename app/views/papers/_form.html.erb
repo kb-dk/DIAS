@@ -1,0 +1,43 @@
+<%= form_for(@paper) do |f| %>
+
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :undertitel %>
+    <%= f.text_field :undertitel %>
+
+
+
+    <%= f.label :abstrakt %>
+    <%= f.text_field :abstrakt %>
+
+
+
+    <%= f.label :forfatter  %>
+    <%= f.text_field :forfatter %>
+
+    <%= f.label :afleveringsaar %>
+    <%= f.text_field :afleveringsaar %>
+
+    <%= f.label :studium %>
+    <%= f.text_field :studium %>
+
+
+
+    <% if @paper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@paper.errors.count, "error") %> prohibited this paper from being saved:</h2>
+
+      <ul>
+      <% @paper.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

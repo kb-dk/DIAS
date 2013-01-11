@@ -1,7 +1,7 @@
 
 # app/models/opgave.rb
 # a Fedora object for en Opgve hydra content type
-class Opgave < ActiveFedora::Base
+class Paper < ActiveFedora::Base
   include Hydra::ModelMethods
 
   has_metadata :name=>'rightsMetadata', :type=> Hydra::Datastream::RightsMetadata
