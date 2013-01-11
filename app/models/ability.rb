@@ -9,10 +9,13 @@ class Ability
     if user.admin?
       can :manage, :all
     else
-      can :read, :all
+      if user.depositor?
+        can :edit, :all
+        can :read, :all
+      else
+        can :read, :all
+      end
     end
   end
-
-
-
 end
+

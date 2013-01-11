@@ -32,11 +32,10 @@ class ApplicationController < ActionController::Base
   helper_method :guest_user, :current_or_guest_user
 
   def current_user
-    if session[:user_id]
-      #user = User.find(session[:user_id])
-      #user.impersonating = session.has_key? :original_user_id if user
+    if session[:user]
       user = User.new
-      #user.email = 'jac@kb.dk';
+      user.pid = session[:user].extra.attributes[0]['alephPID']
+      user.name = session[:user].extra.attributes[0]['gn'] + ' ' + session[:user].extra.attributes[0]['sn']
       return user
     end
   end
