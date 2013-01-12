@@ -27,10 +27,12 @@ class User < ActiveRecord::Base
   end
 
 
+  #environment includes a list of pids that should have admin privileges
   def admin?
-   pid == 'PID000242802' #TODO udskil i konfiguration
+   HydraHead::Application.config.admin_pids.include?(pid)
   end
 
+  #anybody that can login, is a depositor. No restrictions
   def depositor?
     pid != nil
   end
