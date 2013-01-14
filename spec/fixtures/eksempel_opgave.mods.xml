@@ -20,9 +20,9 @@
           </location>
      </originInfo>         
 
-    <typeOfResource>Bachelorprojekt<typeOfResource>                          <!-- Opgavetype -->
+    <typeOfResource>text<typeOfResource>                          <!-- Opgavetype -->
 
-     <genre>Synopsis</genre>
+     <genre>Bacheloropgave</genre>
      <language>
            <languageTerm code='code' authority='iso369-2b'>dan<languageTerm>   <!-- Opgavesprog -->
      </language>   
