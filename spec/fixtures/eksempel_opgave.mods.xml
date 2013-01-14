@@ -1,25 +1,26 @@
 <mods xmlns="http://www.loc.gov/mods/v3" version="3.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3
      http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
    <titleInfo>
-       <title>Opgavetitel</title>                                   <!-- title -->
+       <title>The Cambridge history of nineteenth-century political thought</title>                                   <!-- title -->
        <subTitle>Undertitel</subTitle>                      <!-- undertitel -->
    </titleInfo>
 
    <name type="personal">
-       <namePart>Fornavn Efternavn</namePart>                 <!-- Forfatter author for og efternavn -->
+       <namePart>Gareth Stedman Jones</namePart>                 <!-- Forfatter author for og efternavn -->
        <role> 
            <roleTerm authority="marcrelator" type="text">Creator</roleTerm> <!-- author role -->
        </role>
    </name>
-   <abstract>ABSTRACT mutus nomen dedit cocis</abstract>            <!-- Beskrivelse /Abstract -->
+   <abstract>This major work of academic reference provides the first comprehensive survey of political thought in Europe, North America and Asia in the century following the French Revolution. Written by a distinguished team of international scholars, this Cambridge History is the latest in a sequence of volumes firmly established as the principal reference source for the history of political thought. In a series of scholarly but accessible essays, every major theme in nineteenth-century political thought is covered, including political economy, religion, democratic radicalism, nationalism, socialism and feminism. The volume also includes studies of major figures, including Hegel, Mill, Bentham and Marx, and biographical notes on every significant thinker in the period. Of interest to students and scholars of politics and history at all levels, this volume explores seismic changes in the languages and expectations of politics accompanying political revolution, industrialisation and imperial expansion and less-noted continuities in political and social thinking"--
+"This major work of academic reference provides the first comprehensive survey of political thought in Europe, North America and Asia in the century following the French Revolution. Written by a distinguished team of international scholars, this Cambridge History is the latest in a sequence of volumes firmly established as the principal reference source for the history of political thought. In a series of scholarly but accessible essays, every major theme in nineteenth-century political thought is covered, including political economy, religion, democratic radicalism, nationalism, socialism and feminism. The volume also includes studies of major figures, including Hegel, Mill, Bentham and Marx and biographical notes on every significant thinker in the period. Of interest to students and scholars of politics and history at all levels, this volume explores seismic changes in the languages and expectations of politics accompanying political revolution, industrialisation and imperial expansion and less-noted continuities in political and social thinking</abstract>            <!-- Beskrivelse /Abstract -->
    <originInfo>
           <dataIssued>2011</dateIssued>                             <!-- Afleveringsår -->
           <location>
-               <physicalLocation>Biologi</physicalLocation>              <!--  Studium -->
+               <physicalLocation>Politologi</physicalLocation>              <!--  Studium -->
           </location>
      </originInfo>         
 
-    <typeOfResource>text<typeOfResource>                          <!-- Opgavetype -->
+    <typeOfResource>Bachelorprojekt<typeOfResource>                          <!-- Opgavetype -->
 
      <genre>Synopsis</genre>
      <language>
