@@ -48,13 +48,14 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the 
     # facet bar
-    config.add_facet_field 'object_type_facet', :label => 'Format' 
-    config.add_facet_field 'pub_date', :label => 'Publication Year' 
-    config.add_facet_field 'subject_topic_facet', :label => 'Topic', :limit => 20 
-    config.add_facet_field 'language_facet', :label => 'Language', :limit => true 
-    config.add_facet_field 'lc_1letter_facet', :label => 'Call Number' 
-    config.add_facet_field 'subject_geo_facet', :label => 'Region' 
-    config.add_facet_field 'subject_era_facet', :label => 'Era'  
+    #config.add_facet_field 'object_type_facet', :label => 'Format'
+    #config.add_facet_field 'pub_date', :label => 'Publication Year'
+    #config.add_facet_field 'subject_topic_facet', :label => 'Topic', :limit => 20
+    #config.add_facet_field 'language_facet', :label => 'Language', :limit => true
+    #config.add_facet_field 'lc_1letter_facet', :label => 'Call Number'
+    #config.add_facet_field 'subject_geo_facet', :label => 'Region'
+    #config.add_facet_field 'subject_era_facet', :label => 'Era'
+    config.add_facet_field  'originInfoPhysicalLocation_facet', :label => 'Studium'
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -78,7 +79,7 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display 
-    config.add_show_field 'title_display', :label => 'Title:' 
+    config.add_show_field 'titleInfo_title_t', :label => 'Title:'
     config.add_show_field 'title_vern_display', :label => 'Title:' 
     config.add_show_field 'subtitle_display', :label => 'Subtitle:' 
     config.add_show_field 'subtitle_vern_display', :label => 'Subtitle:' 

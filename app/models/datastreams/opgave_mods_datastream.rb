@@ -21,8 +21,8 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
 
 
     t.titleInfo do
-      t.title(:index_as => [:searchable])
-      t.subTitle(:index_as => [:searchable])
+      t.title(:index_as => [:searchable, :displayable])
+      t.subTitle(:index_as => [:searchable, :displayable])
     end
 
 
@@ -47,9 +47,9 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     # </originInfo>
 
     t.originInfo do
-      t.dataIssued(:index_as => [:searchable])    # :facetable
+      t.dataIssued(:index_as => [:searchable, :displayable, :facetable])    # :facetable
       t.location do
-        t.physicalLocation(:index_as => [:searchable])
+        t.physicalLocation(:index_as => [:searchable, :displayable, :facetable])
       end
     end
 
