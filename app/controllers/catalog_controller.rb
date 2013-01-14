@@ -8,11 +8,11 @@ class CatalogController < ApplicationController
   include Hydra::Controller::ControllerBehavior
 
   # These before_filters apply the hydra access controls
-  before_filter :enforce_show_permissions, :only=>:show
+  #before_filter :enforce_show_permissions, :only=>:show
   # This applies appropriate access controls to all solr queries
-  CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
+  #CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
   # This filters out objects that you want to exclude from search results, like FileAssets
-  CatalogController.solr_search_params_logic += [:exclude_unwanted_models]
+  #CatalogController.solr_search_params_logic += [:exclude_unwanted_models]
 
   configure_blacklight do |config|
     config.default_solr_params = { 
@@ -66,7 +66,7 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display 
-    config.add_index_field 'title_display', :label => 'Title:' 
+    config.add_index_field 'titleInfo_title_t', :label => 'Title:'
     config.add_index_field 'title_vern_display', :label => 'Title:' 
     config.add_index_field 'author_display', :label => 'Author:' 
     config.add_index_field 'author_vern_display', :label => 'Author:' 
