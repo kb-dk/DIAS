@@ -14,10 +14,20 @@
 <p>&nbsp;</p>
 <p>Hvis autodeploy med Capistrano virker kan man nu se denne tekst på disdev-01/dias</p>
 <p>&nbsp;</p>
-<p>To modify this text to your specifications, copy this file located in the blacklight plugin directory:<br/>
-&nbsp;&nbsp;&nbsp;<%= Blacklight.root %>/app/views/catalog/_home_text.html.erb</p>
-<p>to your top level rails app:<br/>
-&nbsp;&nbsp;&nbsp;<%= Rails.root %>/app/views/catalog/_home_text.html.erb</p>
-<p>Note that you will need to create the 'catalog' directory under views.</p>
+<p>Det er muligt at oprette en opgave ved at gå til</p>
+<p><%=  link_to 'Tilføj Opgave',new_paper_path %></p>
+<p><%= link_to t('.new', :default => 'Tilføj Opgave'),
+            new_paper_path,
+            :class => 'btn btn-large btn-block btn-success' %>   </p>
+
+
+
+<p>Det er muligt at se alle opgaver ved at gå til (kun relevant for administratorer)</p>
+<p><%=  link_to 'Se alle opgaver',papers_path %></p>
+
+<p>Det er muligt at oprette og redigere listen af studier</p>
+<p><%=  link_to 'Liste over studier',institutes_path %></p>
+
+
 <% #Creates a bit space in the page -%>
 

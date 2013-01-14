@@ -1,0 +1,28 @@
+<mods xmlns="http://www.loc.gov/mods/v3" version="3.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3
+     http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
+   <titleInfo>
+       <title>Created equal : a social and political history of the United States</title>                                   <!-- title -->
+       <subTitle>Undertitel</subTitle>                      <!-- undertitel -->
+   </titleInfo>
+
+   <name type="personal">
+       <namePart>Jacqueline Jones</namePart>                 <!-- Forfatter author for og efternavn -->
+       <role> 
+           <roleTerm authority="marcrelator" type="text">Creator</roleTerm> <!-- author role -->
+       </role>
+   </name>
+   <abstract>This edited volume looks at human security and conflict in northern Kenya and nearby areas within Sudan, Somalia, Ethiopia, and Uganda. It spells out the precise meaning and nuances of human security in today's global economy and examines the causes and effects of conflict in the region within the context of human security. It also discusses how to reduce vulnerability and enhance the human security of communities affected by regional conflict by building conflict prevention and management capacity and encouraging alternative livelihoods</abstract>            <!-- Beskrivelse /Abstract -->
+   <originInfo>
+          <dataIssued>2006</dateIssued>                             <!-- Afleveringsår -->
+          <location>
+               <physicalLocation>Historie</physicalLocation>              <!--  Studium -->
+          </location>
+     </originInfo>         
+
+    <typeOfResource>text<typeOfResource>                          <!-- Opgavetype -->
+
+     <genre>Synopsis</genre>
+     <language>
+           <languageTerm code='code' authority='iso369-2b'>eng<languageTerm>   <!-- Opgavesprog -->
+     </language>   
+</mods>

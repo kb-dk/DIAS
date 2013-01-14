@@ -1,0 +1,28 @@
+<mods xmlns="http://www.loc.gov/mods/v3" version="3.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3
+     http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
+   <titleInfo>
+       <title>African American heritage in the Upper Housatonic Valley</title>                                   <!-- title -->
+       <subTitle>a project of the Upper Housatonic Valley Heritage Area</subTitle>                      <!-- undertitel -->
+   </titleInfo>
+
+   <name type="personal">
+       <namePart>David Levinson</namePart>                 <!-- Forfatter author for og efternavn -->
+       <role> 
+           <roleTerm authority="marcrelator" type="text">Creator</roleTerm> <!-- author role -->
+       </role>
+   </name>
+   <abstract>The importance of Asian philosophy in the curriculum / John M. Koller -- The Confucian worldview : uncommon assumptions, common misconceptions / Roger T. Ames -- Texts section -- India : in the Battlefield of Dharma : the moral philosophy of the Bhagavad Gita / Vrinda Dalmiya -- Vimalakartis triumphant silence : bridging Indian and East Asian Buddhism / Jeffrey Dippmann -- The things of this world are masks the infinite assumes : introducing Samkhya and yoga philosophy / Tom Pynn -- China : too twisted to fit a carpenter's square : using and teaching the Daodejing / Ronnie Littlejohn -- Performing the meanings of Dao : a possible pedagogical strategy for teaching Cinese philosophy / Robin R. Wang -- Mengzi : human nature is good / Jiang Xinyan -- Japan : the dilemma of Do^gen / Brian Schroeder -- Self-identity of the absolute what : on how to read the philosophy of Nishida Kitaro / Gereon Kopf -- The bottom of my soul has such depth that neither joy nor the waves of sorrow can reach it : an introduction to the Kyoto School / Jason Wirth -- Contexts section -- Frameworks : history as a vehicle for the universal / John A. Tucker -- Asking the right questions / Francis Brassard -- A sketch of the Diamondsutra's logic of not / Shigenori Nagatomo -- Art : Nama-rupa: the paradox of embodiment in Indian art / Harriette D. Grissom -- Philosophical reflection and visual art in traditional China / Stephen J. Goldberg -- Philosophy : teaching Chinese philosophy from the outside in / Mary Bockover -- A strategy for integrating Confucius' analects into a typical introduction to philosophy course / James Peterman.</abstract>            <!-- Beskrivelse /Abstract -->
+   <originInfo>
+          <dataIssued>2003</dateIssued>                             <!-- Afleveringsår -->
+          <location>
+               <physicalLocation>Historie</physicalLocation>              <!--  Studium -->
+          </location>
+     </originInfo>         
+
+    <typeOfResource>text<typeOfResource>                          <!-- Opgavetype -->
+
+     <genre>Synopsis</genre>
+     <language>
+           <languageTerm code='code' authority='iso369-2b'>dan<languageTerm>   <!-- Opgavesprog -->
+     </language>   
+</mods>

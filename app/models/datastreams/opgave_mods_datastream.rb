@@ -47,9 +47,9 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     # </originInfo>
 
     t.originInfo do
-      t.dataIssued(:index_as => [:facet])
+      t.dataIssued(:index_as => [:searchable])    # :facetable
       t.location do
-        t.physicalLocation(:index_as => [:facet])
+        t.physicalLocation(:index_as => [:searchable])
       end
     end
 
@@ -69,7 +69,7 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     t.abstrakt(:proxy => [:abstract])
     t.afleveringsaar(:proxy => [:originInfo, :dataIssued])
     t.studium(:proxy => [:originInfo, :location, :physicalLocation])
-    t.Opgavesprog(:proxy => [:language, :languageText])
+    t.opgavesprog(:proxy => [:language, :languageText])
 
   end # set_terminology
 
@@ -85,7 +85,7 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
 
    <name type="personal">
        <namePart>Fornavn Efternavn</namePart>                 <!-- Forfatter author for og efternavn -->
-       <role> 
+       <role>
            <roleTerm authority="marcrelator" type="text">Creator</roleTerm> <!-- author role -->
        </role>
    </name>
@@ -95,7 +95,7 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
           <location>
                <physicalLocation>Biologi</physicalLocation>              <!--  Studium -->
           </location>
-     </originInfo>         
+     </originInfo>
 
     <typeOfResource>text<typeOfResource>                          <!-- Opgavetype -->
 

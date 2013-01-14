@@ -1,4 +1,12 @@
 HydraHead::Application.routes.draw do
+
+
+  resources :institutes
+
+
+  resources :papers
+
+
   root :to => "catalog#index"
 
   Blacklight.add_routes(self)

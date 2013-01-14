@@ -23,6 +23,10 @@
   group :assets do
     gem 'sass-rails', '~> 3.2.3'
     gem 'jquery-rails'
+    gem 'less'
+    gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports
+
+    gem 'twitter-bootstrap-rails'
   end
 
   # You will probably want to use these to run the tests you write for your hydra head
@@ -38,3 +42,5 @@ gem "unicode", :platforms => [:mri_18, :mri_19]
 gem "devise"
 gem "devise-guests", "~> 0.3"
 gem "bootstrap-sass"
+gem "therubyracer"
+

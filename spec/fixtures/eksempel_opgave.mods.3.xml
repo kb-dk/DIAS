@@ -1,0 +1,28 @@
+<mods xmlns="http://www.loc.gov/mods/v3" version="3.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3
+     http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
+   <titleInfo>
+       <title>The procession of the prophets</title>                                   <!-- title -->
+       <subTitle>Undertitel</subTitle>                      <!-- undertitel -->
+   </titleInfo>
+
+   <name type="personal">
+       <namePart>Nat Eek</namePart>                 <!-- Forfatter author for og efternavn -->
+       <role> 
+           <roleTerm authority="marcrelator" type="text">Creator</roleTerm> <!-- author role -->
+       </role>
+   </name>
+   <abstract>School of Drama, University Theatre presents "The Sons Of Adam," from the Wakefield Cycle, edited by Martial Rose, staged by Nat Eek, choreography by Helen Gregory, settings by Dale Hall, lighting by Bennet Averyt, pageant wagon costumes by Judith Slattum, Wakefield costumes by Nancy E. Gade, sound by Charles C. Suggs, musical score conceived and directed by Russell Maths. "The Procession of the Prophets," presented by the Stone Cutters Guild</abstract>            <!-- Beskrivelse /Abstract -->
+   <originInfo>
+          <dataIssued>1998</dateIssued>                             <!-- Afleveringsår -->
+          <location>
+               <physicalLocation>Medicin</physicalLocation>              <!--  Studium -->
+          </location>
+     </originInfo>         
+
+    <typeOfResource>text<typeOfResource>                          <!-- Opgavetype -->
+
+     <genre>Bachelorprojekt</genre>
+     <language>
+           <languageTerm code='code' authority='iso369-2b'>dan<languageTerm>   <!-- Opgavesprog -->
+     </language>   
+</mods>
