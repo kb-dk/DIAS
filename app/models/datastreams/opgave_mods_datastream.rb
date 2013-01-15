@@ -65,7 +65,7 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     t.title(:proxy => [:titleInfo, :title])
     t.undertitel(:proxy => [:titleInfo, :subTitle])
     t.forfatter(:proxy => [:name, :namePart])
-    t.abstrakt(:proxy => [:abstract])
+    t.abstract(:proxy => [:abstract])
     t.afleveringsaar(:proxy => [:originInfo, :dataIssued])
     t.studium(:proxy => [:originInfo, :location, :physicalLocation])
     t.opgavesprog(:proxy => [:language, :languageTerm])

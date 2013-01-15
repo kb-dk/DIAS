@@ -16,12 +16,12 @@ class Paper < ActiveFedora::Base
   delegate :title, :to=>"descMetadata", :unique=>"true"
   delegate :undertitel, :to=>"descMetadata", :unique=>"true"
   delegate :forfatter, :to=>"descMetadata", :unique=>"true"
-  delegate :abstrakt, :to=>"descMetadata", :unique=>"true"
+  delegate :abstract, :to=>"descMetadata", :unique=>"true"
   delegate :afleveringsaar, :to=>"descMetadata", :unique=>"true"
   delegate :studium, :to=>"descMetadata", :unique=>"true"
 =end
 
-  delegate_to 'descMetadata', [:title, :undertitel, :forfatter, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog ], :unique => true
+  delegate_to 'descMetadata', [:title, :undertitel, :forfatter, :abstract, :afleveringsaar, :studium, :opgavetype, :opgavesprog ], :unique => true
 
 end
 

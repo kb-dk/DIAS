@@ -1,14 +1,15 @@
 <%- model_class = Institute -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+  <h1>Studium</h1>
+  <p>
+    Liste over studier
+  </p>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:order) %></th>
-      <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -18,8 +19,6 @@
       <tr>
         <td><%= link_to institute.id, institute_path(institute) %></td>
         <td><%= institute.title %></td>
-        <td><%= institute.order %></td>
-        <td><%= institute.description %></td>
         <td><%= institute.created_at %></td>
         <td>
           <% if can? :manage, @institutes    %>
@@ -30,7 +29,10 @@
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-mini btn-danger' %>
+          <% else %>
+          <p>Kun for administratorer</p>
            <% end %>
+
         </td>
       </tr>
     <% end %>

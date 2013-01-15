@@ -71,7 +71,14 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display 
     config.add_index_field 'title_t', :label => 'Title:'
     config.add_index_field 'title_vern_display', :label => 'Title:'
-    config.add_index_field 'forfatter_t', :label => 'Author:'
+
+    config.add_index_field 'undertitel_t', :label => 'Undertitel:'
+    config.add_index_field 'undertitel_vern_t', :label => 'Undertitel:'
+
+    config.add_index_field 'forfatter_t', :label => 'Forfatter:'
+    config.add_index_field 'forfatter_vern_t', :label => 'Forfatter:'
+
+
 
     #config.add_index_field 'author_vern_display', :label => 'Author:'
     #config.add_index_field 'format', :label => 'Format:'
@@ -86,7 +93,8 @@ class CatalogController < ApplicationController
     #config.add_show_field 'title_vern_display', :label => 'Title:'
     #config.add_show_field 'subtitle_display', :label => 'Subtitle:'
     #config.add_show_field 'subtitle_vern_display', :label => 'Subtitle:'
-    config.add_show_field 'forfatter_display', :label => 'Author:'
+    config.add_show_field 'forfatter_display', :label => 'Forfatter:'
+
     #config.add_show_field 'author_vern_display', :label => 'Author:'
     #config.add_show_field 'format', :label => 'Format:'
     #config.add_show_field 'url_fulltext_display', :label => 'URL:'
@@ -137,6 +145,7 @@ class CatalogController < ApplicationController
       }
     end
     
+=begin
     config.add_search_field('author') do |field|
       field.solr_parameters = { :'spellcheck.dictionary' => 'author' }
       field.solr_local_parameters = { 
@@ -144,6 +153,7 @@ class CatalogController < ApplicationController
         :pf => '$author_pf'
       }
     end
+=end
     
 
     config.add_search_field('forfatter') do |field|
@@ -158,6 +168,7 @@ class CatalogController < ApplicationController
     # Specifying a :qt only to show it's possible, and so our internal automated
     # tests can test it. In this case it's the same as 
     # config[:default_solr_parameters][:qt], so isn't actually neccesary. 
+=begin
     config.add_search_field('subject') do |field|
       field.solr_parameters = { :'spellcheck.dictionary' => 'subject' }
       field.qt = 'search'
@@ -166,6 +177,7 @@ class CatalogController < ApplicationController
         :pf => '$subject_pf'
       }
     end
+=end
 
     # "sort results by" select (pulldown)
     # label in pulldown is followed by the name of the SOLR field to sort by and
