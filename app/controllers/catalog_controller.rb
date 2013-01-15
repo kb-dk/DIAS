@@ -8,11 +8,11 @@ class CatalogController < ApplicationController
   include Hydra::Controller::ControllerBehavior
 
   # These before_filters apply the hydra access controls
-  # before_filter :enforce_show_permissions, :only=>:show
+  #before_filter :enforce_show_permissions, :only=>:show
   # This applies appropriate access controls to all solr queries
-  # CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
+  #CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
   # This filters out objects that you want to exclude from search results, like FileAssets
-  # CatalogController.solr_search_params_logic += [:exclude_unwanted_models]
+  #CatalogController.solr_search_params_logic += [:exclude_unwanted_models]
 
   configure_blacklight do |config|
     config.default_solr_params = { 
@@ -48,13 +48,19 @@ class CatalogController < ApplicationController
     #
     # :show may be set to false if you don't want the facet to be drawn in the 
     # facet bar
-    config.add_facet_field 'object_type_facet', :label => 'Format' 
-    config.add_facet_field 'pub_date', :label => 'Publication Year' 
-    config.add_facet_field 'subject_topic_facet', :label => 'Topic', :limit => 20 
-    config.add_facet_field 'language_facet', :label => 'Language', :limit => true 
-    config.add_facet_field 'lc_1letter_facet', :label => 'Call Number' 
-    config.add_facet_field 'subject_geo_facet', :label => 'Region' 
-    config.add_facet_field 'subject_era_facet', :label => 'Era'  
+    #config.add_facet_field 'object_type_facet', :label => 'Format'
+    #config.add_facet_field 'pub_date', :label => 'Publication Year'
+    #config.add_facet_field 'subject_topic_facet', :label => 'Topic', :limit => 20
+    #config.add_facet_field 'language_facet', :label => 'Language', :limit => true
+    #config.add_facet_field 'lc_1letter_facet', :label => 'Call Number'
+    #config.add_facet_field 'subject_geo_facet', :label => 'Region'
+    #config.add_facet_field 'subject_era_facet', :label => 'Era'
+    config.add_facet_field  'studium_facet', :label => 'Studium'
+    config.add_facet_field  'afleveringsaar_facet', :label => 'AfleveringsÅr'
+
+
+
+
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -66,32 +72,33 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display 
-    config.add_index_field 'title_display', :label => 'Title:' 
-    config.add_index_field 'title_vern_display', :label => 'Title:' 
-    config.add_index_field 'author_display', :label => 'Author:' 
-    config.add_index_field 'author_vern_display', :label => 'Author:' 
-    config.add_index_field 'format', :label => 'Format:' 
-    config.add_index_field 'language_facet', :label => 'Language:'
-    config.add_index_field 'published_display', :label => 'Published:'
-    config.add_index_field 'published_vern_display', :label => 'Published:'
-    config.add_index_field 'lc_callnum_display', :label => 'Call number:'
+    config.add_index_field 'title_t', :label => 'Title:'
+    #config.add_index_field 'title_vern_display', :label => 'Title:'
+    config.add_index_field 'forfatter_t', :label => 'Author:'
+    #config.add_index_field 'author_vern_display', :label => 'Author:'
+    #config.add_index_field 'format', :label => 'Format:'
+    #config.add_index_field 'language_facet', :label => 'Language:'
+    #config.add_index_field 'published_display', :label => 'Published:'
+    #config.add_index_field 'published_vern_display', :label => 'Published:'
+    #config.add_index_field 'lc_callnum_display', :label => 'Call number:'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display 
-    config.add_show_field 'title_display', :label => 'Title:' 
-    config.add_show_field 'title_vern_display', :label => 'Title:' 
-    config.add_show_field 'subtitle_display', :label => 'Subtitle:' 
-    config.add_show_field 'subtitle_vern_display', :label => 'Subtitle:' 
-    config.add_show_field 'author_display', :label => 'Author:' 
-    config.add_show_field 'author_vern_display', :label => 'Author:' 
-    config.add_show_field 'format', :label => 'Format:' 
-    config.add_show_field 'url_fulltext_display', :label => 'URL:'
-    config.add_show_field 'url_suppl_display', :label => 'More Information:'
-    config.add_show_field 'language_facet', :label => 'Language:'
-    config.add_show_field 'published_display', :label => 'Published:'
-    config.add_show_field 'published_vern_display', :label => 'Published:'
-    config.add_show_field 'lc_callnum_display', :label => 'Call number:'
-    config.add_show_field 'isbn_t', :label => 'ISBN:'
+    config.add_show_field 'title_display', :label => 'Title:'
+    #config.add_show_field 'title_vern_display', :label => 'Title:'
+    #config.add_show_field 'subtitle_display', :label => 'Subtitle:'
+    #config.add_show_field 'subtitle_vern_display', :label => 'Subtitle:'
+    config.add_show_field 'forfatter_display', :label => 'Author:'
+    #config.add_show_field 'author_vern_display', :label => 'Author:'
+    #config.add_show_field 'format', :label => 'Format:'
+    #config.add_show_field 'url_fulltext_display', :label => 'URL:'
+    #config.add_show_field 'url_suppl_display', :label => 'More Information:'
+    #config.add_show_field 'language_facet', :label => 'Language:'
+    #config.add_show_field 'published_display', :label => 'Published:'
+    #config.add_show_field 'published_vern_display', :label => 'Published:'
+    #config.add_show_field 'lc_callnum_display', :label => 'Call number:'
+    #config.add_show_field 'isbn_t', :label => 'ISBN:'
+    config.add_show_field 'studium_display', :label => 'Studium'
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
@@ -139,7 +146,6 @@ class CatalogController < ApplicationController
         :pf => '$author_pf'
       }
     end
-
 
     config.add_search_field('forfatter') do |field|
       #field.solr_parameters = { :'spellcheck.dictionary' => 'forfatter' }

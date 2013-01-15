@@ -21,8 +21,8 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
 
 
     t.titleInfo do
-      t.title(:index_as => [:searchable])
-      t.subTitle(:index_as => [:searchable])
+      t.title(:index_as => [:searchable, :displayable])
+      t.subTitle(:index_as => [:searchable, :displayable])
     end
 
 
@@ -34,7 +34,7 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     #</name>
 
     t.name do
-      t.namePart(:index_as => [:searchable])
+      t.namePart(:index_as => [:searchable, :displayable])
     end
 
     t.abstract(:index_as=>[:searchable])
@@ -47,15 +47,15 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     # </originInfo>
 
     t.originInfo do
-      t.dataIssued(:index_as => [:searchable])    # :facetable
+      t.dataIssued(:index_as => [:searchable, :displayable, :facetable])    # :facetable
       t.location do
-        t.physicalLocation(:index_as => [:searchable])
+        t.physicalLocation(:index_as => [:searchable, :facetable, :displayable])
       end
     end
 
-    t.typeOfResource(:index_as=>[:searchable])
+    t.typeOfResource(:index_as=>[:searchable, :facetable])
 
-    t.genre(:index_as=>[:searchable])
+    t.genre(:index_as=>[:searchable, :facetable])
 
     t.language do
       t.languageISO(:path=>"languageTerm[@authority='iso639-2b']", :index_as => [:searchable])
