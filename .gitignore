@@ -19,3 +19,5 @@
 /jetty
 
 /.idea/*
+
+/config/dias.yml

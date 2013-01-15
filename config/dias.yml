@@ -1,0 +1,7 @@
+development:
+  admin_pids:
+test:
+  admin_pids: ["spec-admin-pid"]
+
+production:
+  admin_pids:
