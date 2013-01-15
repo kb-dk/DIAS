@@ -35,7 +35,5 @@ HydraHead::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  #array of PIDS that should be giving admin privileges
-  config.admin_pids = ["PID000242802", "abwe-pid" , "dgj-pid", "krv-pid"]
 
 end
