@@ -12,14 +12,19 @@
   <dd><%= @institute.description %></dd>
 </dl>
 
+
 <div class="form-actions">
+
   <%= link_to t('.back', :default => t("helpers.links.back")),
               institutes_path, :class => 'btn'  %>
+  <% if can? :manage, @institutes    %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_institute_path(@institute), :class => 'btn' %>
+
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               institute_path(@institute),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+  <% end %>
 </div>

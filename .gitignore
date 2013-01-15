@@ -18,4 +18,6 @@
 #under version control
 /jetty
 
-/.idea
+/.idea/*
+
+/config/dias.yml

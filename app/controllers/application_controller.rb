@@ -48,6 +48,14 @@ class ApplicationController < ActionController::Base
     current_user || guest_user
   end
 
+
+  #redirect to some sane access denied page
+  # Todo: create that page
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+
+
   # Call this to bail out quickly and easily when something is not found.
   # It will be rescued and rendered as a 404
   def not_found
