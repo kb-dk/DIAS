@@ -6,6 +6,8 @@ class Paper < ActiveFedora::Base
 
   has_metadata :name=>'rightsMetadata', :type=> Hydra::Datastream::RightsMetadata
   has_metadata :name=>'descMetadata', :type=> OpgaveModsDatastream
+  #has_file_datastream :name=>'content', :type=> Hydra::Models::FileAsset
+
 
 
   # The delegate method allows you to set up attributes on the model that are stored in datastreams
@@ -19,7 +21,7 @@ class Paper < ActiveFedora::Base
   delegate :studium, :to=>"descMetadata", :unique=>"true"
 =end
 
-  delegate_to 'descMetadata', [:title, :undertitel, :forfatter, :abstrakt, :afleveringsaar, :studium], :unique => true
+  delegate_to 'descMetadata', [:title, :undertitel, :forfatter, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog ], :unique => true
 
 end
 

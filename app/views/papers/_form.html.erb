@@ -41,10 +41,25 @@
     <div class="control-group">
     <%= f.label :studium %>
       <div class="controls">
-    <%= f.text_field :studium %>
+        <%= collection_select(:paper, :studium, Institute.all, :title, :title) %>
     </div>
     </div>
 
+
+    <div class="control-group">
+      <%= f.label :opgavesprog %>
+      <div class="controls">
+        <%= collection_select(:paper, :opgavesprog, PaperLanguage.all, :title, :title) %>
+      </div>
+    </div>
+
+
+    <div class="control-group">
+      <%= f.label :opgavetype %>
+      <div class="controls">
+        <%= collection_select(:paper, :opgavetype, PaperType.all, :title, :title) %>
+      </div>
+    </div>
 
 
     <% if @paper.errors.any? %>

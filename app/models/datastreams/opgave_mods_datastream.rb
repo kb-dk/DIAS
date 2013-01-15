@@ -37,7 +37,7 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
       t.namePart(:index_as => [:searchable, :displayable])
     end
 
-    t.abstract(:index_as=>[:searchable])
+    t.abstract(:index_as=>[:searchable, :displayable])
 
     #<originInfo>
     #<dataIssued>2011</dateIssued>                             <!-- Afleveringsår -->
@@ -47,19 +47,18 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     # </originInfo>
 
     t.originInfo do
-      t.dataIssued(:index_as => [:searchable, :displayable, :facetable])    # :facetable
+      t.dataIssued(:index_as => [:searchable, :facetable, :displayable])    # :facetable
       t.location do
-        t.physicalLocation(:index_as => [:searchable, :facetable, :displayable])
+        t.physicalLocation(:index_as => [:searchable, :displayable, :facetable])
       end
     end
 
-    t.typeOfResource(:index_as=>[:searchable, :facetable])
+    t.typeOfResource(:index_as=>[:searchable])
 
-    t.genre(:index_as=>[:searchable, :facetable])
+    t.genre(:index_as=>[:searchable, :displayable, :facetable])
 
     t.language do
-      t.languageISO(:path=>"languageTerm[@authority='iso639-2b']", :index_as => [:searchable])
-      t.languageText(:path=>"languageTerm[@type='text']", :index_as => [:searchable])
+      t.languageTerm(:index_as =>  [:searchable, :displayable, :facetable])
     end
 
     # these proxy declarations allow you to use more familiar term/field names that hide the details of the XML structure
@@ -69,7 +68,8 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     t.abstrakt(:proxy => [:abstract])
     t.afleveringsaar(:proxy => [:originInfo, :dataIssued])
     t.studium(:proxy => [:originInfo, :location, :physicalLocation])
-    t.opgavesprog(:proxy => [:language, :languageText])
+    t.opgavesprog(:proxy => [:language, :languageTerm])
+    t.opgavetype(:proxy => [:genre])
 
   end # set_terminology
 
@@ -91,7 +91,7 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
    </name>
    <abstract>ABSTRACT mutus nomen dedit cocis</abstract>            <!-- Beskrivelse /Abstract -->
    <originInfo>
-          <dataIssued>2011</dateIssued>                             <!-- Afleveringsaar -->
+          <dataIssued>2013</dateIssued>                             <!-- Afleveringsaar -->
           <location>
                <physicalLocation>Biologi</physicalLocation>              <!--  Studium -->
           </location>
