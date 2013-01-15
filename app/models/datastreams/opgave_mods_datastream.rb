@@ -34,7 +34,7 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     #</name>
 
     t.name do
-      t.namePart(:index_as => [:searchable])
+      t.namePart(:index_as => [:searchable, :displayable])
     end
 
     t.abstract(:index_as=>[:searchable])
@@ -49,7 +49,7 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     t.originInfo do
       t.dataIssued(:index_as => [:searchable, :displayable, :facetable])    # :facetable
       t.location do
-        t.physicalLocation(:index_as => [:searchable, :displayable, :facetable])
+        t.physicalLocation(:index_as => [:searchable, :facetable])
       end
     end
 
@@ -68,7 +68,7 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     t.forfatter(:proxy => [:name, :namePart])
     t.abstrakt(:proxy => [:abstract])
     t.afleveringsaar(:proxy => [:originInfo, :dataIssued])
-    t.studium(:proxy => [:originInfo, :location, :physicalLocation])
+    t.studium(:proxy => [:originInfo, :location, :physicalLocation], :index_as => [:searchable, :facetable])
     t.opgavesprog(:proxy => [:language, :languageText])
 
   end # set_terminology

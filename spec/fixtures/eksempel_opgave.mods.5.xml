@@ -1,27 +1,27 @@
 <mods xmlns="http://www.loc.gov/mods/v3" version="3.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3
      http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
    <titleInfo>
-       <title>Opgavetitel</title>                                   <!-- title -->
-       <subTitle>Undertitel</subTitle>                      <!-- undertitel -->
+       <title>Danmarks ufredsår</title>                                   <!-- title -->
+       <subTitle>En spændende opgave om 2. Verdenskrig</subTitle>                      <!-- undertitel -->
    </titleInfo>
 
    <name type="personal">
-       <namePart>Fornavn Efternavn</namePart>                 <!-- Forfatter author for og efternavn -->
+       <namePart>Kristoffer Scavenius</namePart>                 <!-- Forfatter author for og efternavn -->
        <role> 
            <roleTerm authority="marcrelator" type="text">Creator</roleTerm> <!-- author role -->
        </role>
    </name>
-   <abstract>ABSTRACT mutus nomen dedit cocis</abstract>            <!-- Beskrivelse /Abstract -->
+   <abstract>When Daniel Fox woke up on Monday morning in his house in New York City, he hoped that he would have an ordinary day. Little did he know that was the day he would die. After a day in which he witnessed the murder of an old man and was kidnapped from the Museum of Ancient History, Daniel Fox ended up in a waiting room, the waiting room that leads to the capital of the underworld, the great and most noble city of Arison. Gradually the world of Arison is revealed to Daniel, the classification by number and rule by the elite lower lords. He seems to have a special role to play, but why? And can he do what is needed of him?</abstract>            <!-- Beskrivelse /Abstract -->
    <originInfo>
-          <dataIssued>2011</dateIssued>                             <!-- Afleveringsår -->
+          <dataIssued>2006</dateIssued>                             <!-- Afleveringsår -->
           <location>
-               <physicalLocation>Biologi</physicalLocation>              <!--  Studium -->
+               <physicalLocation>Politologi</physicalLocation>              <!--  Studium -->
           </location>
      </originInfo>         
 
     <typeOfResource>text<typeOfResource>                          <!-- Opgavetype -->
 
-     <genre>Synopsis</genre>
+     <genre>Bachelorprojekt</genre>
      <language>
            <languageTerm code='code' authority='iso369-2b'>dan<languageTerm>   <!-- Opgavesprog -->
      </language>   
