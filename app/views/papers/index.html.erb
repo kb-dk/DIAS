@@ -27,7 +27,7 @@
       <%= link_to t('.edit', :default => t("helpers.links.edit")),
                   edit_paper_path(paper), :class => 'btn btn-mini' %>
       <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                  papers_path(paper),
+                  paper_path(paper),
                   :method => :delete,
                   :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                   :class => 'btn btn-mini btn-danger' %>
