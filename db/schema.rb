@@ -11,11 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20130107093646) do
-=======
 ActiveRecord::Schema.define(:version => 20130114150513) do
->>>>>>> 928ccf2841089ce5973664b4748c7e6d68dcd05a
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id",     :null => false
@@ -26,8 +22,6 @@ ActiveRecord::Schema.define(:version => 20130114150513) do
     t.string   "user_type"
   end
 
-<<<<<<< HEAD
-=======
   create_table "institutes", :force => true do |t|
     t.string   "title"
     t.integer  "order"
@@ -46,7 +40,6 @@ ActiveRecord::Schema.define(:version => 20130114150513) do
     t.datetime "updated_at", :null => false
   end
 
->>>>>>> 928ccf2841089ce5973664b4748c7e6d68dcd05a
   create_table "searches", :force => true do |t|
     t.text     "query_params"
     t.integer  "user_id"

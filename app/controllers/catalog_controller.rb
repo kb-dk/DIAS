@@ -56,6 +56,7 @@ class CatalogController < ApplicationController
     #config.add_facet_field 'subject_geo_facet', :label => 'Region'
     #config.add_facet_field 'subject_era_facet', :label => 'Era'
     config.add_facet_field  'studium_facet', :label => 'Studium'
+    config.add_facet_field  'afleveringsaar_facet', :label => 'AfleveringsÅr'
 
 
 
