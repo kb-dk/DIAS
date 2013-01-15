@@ -21,7 +21,7 @@ class Paper < ActiveFedora::Base
   delegate :studium, :to=>"descMetadata", :unique=>"true"
 =end
 
-  delegate_to 'descMetadata', [:title, :undertitel, :forfatter, :abstract, :afleveringsaar, :studium, :opgavetype, :opgavesprog ], :unique => true
+  delegate_to 'descMetadata', [:title, :undertitel, :forfatter, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog ], :unique => true
 
 end
 

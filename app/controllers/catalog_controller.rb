@@ -90,10 +90,25 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display 
     config.add_show_field 'title_display', :label => 'Title:'
+    config.add_show_field 'undertitel_display', :label => 'Undertitel:'
+
     #config.add_show_field 'title_vern_display', :label => 'Title:'
     #config.add_show_field 'subtitle_display', :label => 'Subtitle:'
     #config.add_show_field 'subtitle_vern_display', :label => 'Subtitle:'
     config.add_show_field 'forfatter_display', :label => 'Forfatter:'
+
+    config.add_show_field ' abstrakt_display', :label => 'Abstrakt:'
+
+    config.add_show_field 'afleveringsaar_display', :label => 'Afleverings år:'
+
+
+    config.add_show_field 'studium_display', :label => 'Studium'
+    config.add_show_field 'genre_display', :label => 'Opgavetype'
+
+
+
+
+
 
     #config.add_show_field 'author_vern_display', :label => 'Author:'
     #config.add_show_field 'format', :label => 'Format:'
@@ -104,7 +119,7 @@ class CatalogController < ApplicationController
     #config.add_show_field 'published_vern_display', :label => 'Published:'
     #config.add_show_field 'lc_callnum_display', :label => 'Call number:'
     #config.add_show_field 'isbn_t', :label => 'ISBN:'
-    config.add_show_field 'studium_display', :label => 'Studium'
+
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
