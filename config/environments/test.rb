@@ -34,4 +34,7 @@ HydraHead::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  #array of PIDS that should be giving admin privileges
+  config.admin_pids = ["PID000242802", "abwe-pid" , "dgj-pid", "krv-pid", "spec-admin-pid"]
 end
