@@ -1,27 +1,49 @@
 <%= form_for(@paper) do |f| %>
 
-
+    <div class="control-group">
     <%= f.label :title %>
+      <div class="controls">
     <%= f.text_field :title %>
+    </div>
+    </div>
 
+      <div class="control-group">
     <%= f.label :undertitel %>
+        <div class="controls">
     <%= f.text_field :undertitel %>
+      </div>
+    </div>
+
+
+    <div class="control-group">
+      <%= f.label :abstrakt, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :abstrakt, :class => 'text_area' %>
+      </div>
+    </div>
 
 
 
-    <%= f.label :abstrakt %>
-    <%= f.text_field :abstrakt %>
-
-
-
+    <div class="control-group">
     <%= f.label :forfatter  %>
+      <div class="controls">
     <%= f.text_field :forfatter %>
+    </div>
+      </div>
 
+    <div class="control-group">
     <%= f.label :afleveringsaar %>
+      <div class="controls">
     <%= f.text_field :afleveringsaar %>
+    </div>
+    </div>
 
+    <div class="control-group">
     <%= f.label :studium %>
+      <div class="controls">
     <%= f.text_field :studium %>
+    </div>
+    </div>
 
 
 
@@ -37,7 +59,9 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  papers_path, :class => 'btn' %>
+    </div>
 <% end %>

@@ -1,6 +1,9 @@
 HydraHead::Application.routes.draw do
 
 
+  resources :institutes
+
+
   resources :papers
 
 
