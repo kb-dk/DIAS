@@ -5,3 +5,66 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+PaperLanguage.create([{title: 'Dansk', order: 1},
+                      {title: 'Engelsk', order: 2},
+                      {title: 'Kinesisk', order: 3} ])
+
+
+PaperType.create([{title: 'Bacheloropgave', order: 1},
+                      {title: 'Synopsis', order: 2},
+                      {title: 'Afleveringsopgave', order: 3} ])
+
+Institute.create([{title: 'Antropologi'},
+{title: 'Asienstudier (indologi)'},
+{title: 'Biokemi'       },
+{title: 'Biologi'        },
+{title: 'Biologi-bioteknologi'   },
+{title: 'Dansk'          },
+{title: 'Datalogi'    },
+{title: 'Engelsk'       },
+{title: 'Eskimologi'      },
+
+{title: 'Farmaci'        },
+{title: 'Film- og medievidenskab'  },
+{title: 'Filosofi'         },
+{title: 'Finsk'  },
+{title: 'Folkesundhedsvidenskab'  },
+
+{title: 'Forsikringsmatematik'     },
+{title: 'Fransk sprog, litteratur og kultur'},
+{title: 'Fysiske fag'      },
+
+{title: 'Geografi og geoinformatik'  },
+{title: 'Geologi-geoscience' },
+
+{title: 'Historie' },
+{title: 'Husdyrvidenskab'},
+
+{title: 'Indianske sprog og kulturer' },
+
+{title: 'It og sundhed'  },
+{title: 'Italiensk'    },
+
+{title: 'Jura' },
+{title: 'Kemi'  },
+
+{title: 'Kommunikation og it' },
+{title: 'Kunsthistorie'},
+{title: 'Landskabsarkitektur' },
+{title: 'Latin'   },
+{title: 'Lingvistik'    },
+{title: 'Litteraturvidenskab'   },
+{title: 'Matematik'  },
+
+{title: 'Medicin' }]
+
+
+
+
+
+
+
+
+
+)
