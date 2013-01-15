@@ -24,6 +24,8 @@ class InstitutesController < ApplicationController
   # GET /institutes/new
   # GET /institutes/new.json
   def new
+    # only admins are allowed to create new institutes
+    authorize! :admin, @all
     @institute = Institute.new
 
     respond_to do |format|
@@ -34,12 +36,14 @@ class InstitutesController < ApplicationController
 
   # GET /institutes/1/edit
   def edit
+    authorize! :admin, @all
     @institute = Institute.find(params[:id])
   end
 
   # POST /institutes
   # POST /institutes.json
   def create
+    authorize! :admin, @all
     @institute = Institute.new(params[:institute])
 
     respond_to do |format|
@@ -56,6 +60,7 @@ class InstitutesController < ApplicationController
   # PUT /institutes/1
   # PUT /institutes/1.json
   def update
+    authorize! :admin, @all
     @institute = Institute.find(params[:id])
 
     respond_to do |format|
@@ -72,6 +77,7 @@ class InstitutesController < ApplicationController
   # DELETE /institutes/1
   # DELETE /institutes/1.json
   def destroy
+    authorize! :admin, @all
     @institute = Institute.find(params[:id])
     @institute.destroy
 

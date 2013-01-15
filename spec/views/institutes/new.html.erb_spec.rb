@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'cancan/matchers'
+
 
 describe "institutes/new" do
   before(:each) do
@@ -19,4 +21,5 @@ describe "institutes/new" do
       assert_select "textarea#institute_description", :name => "institute[description]"
     end
   end
+
 end
