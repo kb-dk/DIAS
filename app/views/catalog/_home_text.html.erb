@@ -21,13 +21,20 @@
             :class => 'btn btn-large btn-block btn-success' %>   </p>
 
 
-
+<h3>Administrator</h3>
 <p>Det er muligt at se alle opgaver ved at gå til (kun relevant for administratorer)</p>
 <p><%=  link_to 'Se alle opgaver',papers_path %></p>
 
 <p>Det er muligt at oprette og redigere listen af studier</p>
 <p><%=  link_to 'Liste over studier',institutes_path %></p>
 
+
+<p>Det er muligt at oprette og redigere listen af opgavesprog</p>
+<p><%=  link_to 'Liste over sprog',paper_languages_path %></p>
+
+
+<p>Det er muligt at oprette og redigere listen af opgavetyper</p>
+<p><%=  link_to 'Liste over opgave typer',paper_types_path %></p>
 
 <% #Creates a bit space in the page -%>
 

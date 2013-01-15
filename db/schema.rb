@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130114150513) do
+ActiveRecord::Schema.define(:version => 20130115122937) do
 
   create_table "bookmarks", :force => true do |t|
     t.integer  "user_id",     :null => false
@@ -33,6 +33,22 @@ ActiveRecord::Schema.define(:version => 20130114150513) do
   create_table "opgaves", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "paper_languages", :force => true do |t|
+    t.string   "title"
+    t.integer  "order"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "paper_types", :force => true do |t|
+    t.string   "title"
+    t.integer  "order"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "papers", :force => true do |t|

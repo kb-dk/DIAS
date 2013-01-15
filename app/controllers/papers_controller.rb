@@ -24,6 +24,8 @@ class PapersController < ApplicationController
   # GET /papers/new
   # GET /papers/new.json
   def new
+    @paper_languages = PaperLanguage.all
+    @paper_types = PaperType.all
     @paper = Paper.new
 
     respond_to do |format|
