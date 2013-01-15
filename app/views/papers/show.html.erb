@@ -1,6 +1,26 @@
+
+<%- model_class = Paper -%>
+<div class="page-header">
+  <h1><%= @paper.title %></h1>
+</div>
+
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+  <dd><%= @paper.title %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:undertitel) %>:</strong></dt>
+  <dd><%= @paper.undertitel %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:abstrakt) %>:</strong></dt>
+  <dd><%= @paper.abstrakt %></dd>
+
+  <dt><strong><%= model_class.human_attribute_name(:forfatter) %>:</strong></dt>
+  <dd><%= @paper.forfatter %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:afleveringsaar) %>:</strong></dt>
+  <dd><%= @paper.afleveringsaar %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:studium) %>:</strong></dt>
+  <dd><%= @paper.studium %></dd>
+</dl>
 <p id="notice"><%= notice %></p>
-<p>DEPRECATED</p>
-<p>SKAL IKKE BRUGES</p>
 
 <%= link_to 'Edit', edit_paper_path(@paper) %> |
 <%= link_to 'Back', papers_path %>
