@@ -1,5 +1,6 @@
 development:
-  admin_pids:
+  admin_pids: ["PID000242802", "abwe-pid" , "dgj-pid", "krv-pid"]
+
 test:
   admin_pids: ["spec-admin-pid"]
 
