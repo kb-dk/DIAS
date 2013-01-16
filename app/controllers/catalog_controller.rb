@@ -97,15 +97,17 @@ class CatalogController < ApplicationController
     #config.add_show_field 'subtitle_vern_display', :label => 'Subtitle:'
     config.add_show_field 'forfatter_display', :label => 'Forfatter:'
 
-    config.add_show_field ' abstrakt_display', :label => 'Abstrakt:'
 
-    config.add_show_field 'afleveringsaar_display', :label => 'Afleverings år:'
+    config.add_show_field 'afleveringsaar_display', :label => 'Afleveringsår:'
 
 
     config.add_show_field 'studium_display', :label => 'Studium'
+
+    config.add_show_field 'opgavesprog_display', :label => 'Opgavesprog'
     config.add_show_field 'genre_display', :label => 'Opgavetype'
 
 
+    config.add_show_field 'abstrakt_display', :label => 'Abstrakt:'
 
 
 
@@ -198,10 +200,10 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, pub_date_sort desc, title_sort asc', :label => 'relevance'
-    config.add_sort_field 'pub_date_sort desc, title_sort asc', :label => 'year'
-    config.add_sort_field 'author_sort asc, title_sort asc', :label => 'author'
-    config.add_sort_field 'title_sort asc, pub_date_sort desc', :label => 'title'
+    config.add_sort_field 'score desc, afleveringsaar_sort desc, title_sort asc', :label => 'Relevans'
+    config.add_sort_field 'afleveringsaar_sort desc, title_sort asc', :label => 'År'
+    config.add_sort_field 'forfatter_sort asc, title_sort asc', :label => 'Forfatter'
+    config.add_sort_field 'title_sort asc, pub_date_sort desc', :label => 'Titel'
 
     # If there are more than this many search results, no spelling ("did you 
     # mean") suggestion is offered.
