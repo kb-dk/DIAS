@@ -12,6 +12,7 @@ For starte DIAS
 * cd hydra_head
 * bundle install
 * rake db:migrate
+* rake db:seed
 * git clone https://github.com/projecthydra/hydra-jetty.git
 * rake hydra:jetty:config 
 * cd jetty
