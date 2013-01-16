@@ -58,6 +58,7 @@ class CatalogController < ApplicationController
     config.add_facet_field  'studium_facet', :label => 'Studium'
     config.add_facet_field  'afleveringsaar_facet', :label => 'Afleverings År'
     config.add_facet_field  'opgavesprog_facet', :label => 'Sprog'
+    config.add_facet_field  'genre_facet', :label => 'Genre'
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
