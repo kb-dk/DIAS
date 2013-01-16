@@ -21,8 +21,8 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
 
 
     t.titleInfo do
-      t.title(:index_as => [:searchable, :displayable])
-      t.subTitle(:index_as => [:searchable, :displayable])
+      t.title(:index_as => [:searchable, :displayable, :sortable])
+      t.subTitle(:index_as => [:searchable, :displayable, :sortable])
     end
 
 
@@ -34,10 +34,10 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     #</name>
 
     t.name do
-      t.namePart(:index_as => [:searchable, :displayable])
+      t.namePart(:index_as => [:searchable, :displayable, :sortable])
     end
 
-    t.abstract(:index_as=>[:searchable, :displayable])
+    t.abstract(:index_as => [:searchable, :displayable])
 
     #<originInfo>
     #<dataIssued>2011</dateIssued>                             <!-- Afleveringsår -->
@@ -47,7 +47,7 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     # </originInfo>
 
     t.originInfo do
-      t.dataIssued(:index_as => [:searchable, :facetable, :displayable])    # :facetable
+      t.dataIssued(:index_as => [:searchable, :facetable, :displayable, :sortable])    # :facetable
       t.location do
         t.physicalLocation(:index_as => [:searchable, :displayable, :facetable])
       end
