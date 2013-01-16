@@ -24,7 +24,7 @@ describe PapersController do
   # Paper. As you add validations to Paper, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { title:"Opgavetitel", undertitel:"Undertitel", forfatter:"Fornavn Efternavn", abstract:"ABSTRACT mutus nomen dedit cocis", afleveringsaar:"2011", studium:"Biologi" }
+    { title:"Opgavetitel", undertitel:"Undertitel", forfatter:"Fornavn Efternavn", abstrakt:"ABSTRACT mutus nomen dedit cocis", afleveringsaar:"2011", studium:"Biologi" }
   end
 
   # This should return the minimal set of values that should be in the session
