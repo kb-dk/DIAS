@@ -2,20 +2,13 @@
 <p>&nbsp;</p>
 <p><%= t('dias.test') %></p>
 <p>&nbsp;</p>
-<p>Locale: <%= I18n.locale %></p>
-<p>&nbsp;</p>
-<p><%if I18n.locale.to_s=="en" %>
-	<%= link_to t('dias.changelang'), {:locale=>"da"} %>
-   <%else%>
-	<%= link_to t('dias.changelang'), {:locale=>"en"} %>
-<%end%></p>
+
 <p>&nbsp;</p>
 <p>Denne tekst er hermed modificeres og skal nu multilingualiseres og dens visuelle kontekst skal styles.</p>
 <p>&nbsp;</p>
 <p>Hvis autodeploy med Capistrano virker kan man nu se denne tekst på disdev-01/dias</p>
 <p>&nbsp;</p>
 <p>Det er muligt at oprette en opgave ved at gå til</p>
-<p><%=  link_to 'Tilføj Opgave',new_paper_path %></p>
 <p><%= link_to t('.new', :default => 'Tilføj Opgave'),
             new_paper_path,
             :class => 'btn btn-large btn-block btn-success' %>   </p>
@@ -23,18 +16,25 @@
 
 <h3>Administrator</h3>
 <p>Det er muligt at se alle opgaver ved at gå til (kun relevant for administratorer)</p>
-<p><%=  link_to 'Se alle opgaver',papers_path %></p>
+<ul>
+<li><%=  link_to 'Se alle opgaver',papers_path %></li>
+</ul>
+<p>Det er muligt at oprette og redigere listen af studier, opgavesprog og opgavetyper</p>
+<ul>
+<li><%=  link_to 'Liste over studier',institutes_path %></li>
+<li><%=  link_to 'Liste over sprog',paper_languages_path %></li>
+<li><%=  link_to 'Liste over opgave typer',paper_types_path %></li>
+</ul>
 
-<p>Det er muligt at oprette og redigere listen af studier</p>
-<p><%=  link_to 'Liste over studier',institutes_path %></p>
 
-
-<p>Det er muligt at oprette og redigere listen af opgavesprog</p>
-<p><%=  link_to 'Liste over sprog',paper_languages_path %></p>
-
-
-<p>Det er muligt at oprette og redigere listen af opgavetyper</p>
-<p><%=  link_to 'Liste over opgave typer',paper_types_path %></p>
+<h3>Teknik:</h3>
+<p>Locale: <%= I18n.locale %></p>
+<p>&nbsp;</p>
+<p><%if I18n.locale.to_s=="en" %>
+      <%= link_to t('dias.changelang'), {:locale=>"da"} %>
+  <%else%>
+      <%= link_to t('dias.changelang'), {:locale=>"en"} %>
+  <%end%></p>
 
 <% #Creates a bit space in the page -%>
 

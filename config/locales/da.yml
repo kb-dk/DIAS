@@ -3,7 +3,7 @@ da:
 
   dias:
     test: "Dette er en test 1 2 3 ... æøå"
-    changelang: "Change to English"
+    changelang: "English"
 
   blacklight:
     welcome: "Velkommen til DIAS!"

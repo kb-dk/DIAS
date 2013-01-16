@@ -6,7 +6,7 @@ en:
 
   dias:
     test: "This is a test 1 2 3 ..."
-    changelang: "Skift til Dansk"
+    changelang: "Dansk"
 
   blacklight:
     welcome: "Welcome to DIAS!"
