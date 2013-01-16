@@ -57,7 +57,14 @@ end
 
 sprog = [{title: 'Dansk'},
          {title: 'Engelsk'},
-         {title: 'Kinesisk'} ]
+         {title: 'Svensk'},
+         {title: 'Norsk'},
+         {title: 'Tysk'},
+         {title: 'Fransk'},
+         {title: 'Spansk'},
+         {title: 'Andet'}]
+
+# dansk, engelsk, svensk, norsk, tysk, fransk, spansk, andet
 
 
 
