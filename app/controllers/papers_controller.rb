@@ -1,4 +1,5 @@
 class PapersController < ApplicationController
+  
   # GET /papers
   # GET /papers.json
   def index
@@ -43,6 +44,11 @@ class PapersController < ApplicationController
   # POST /papers.json
   def create
     @paper = Paper.new(params[:paper])
+ 
+    file = params[:file_data]
+    @paper.add_file_datastream(file, :label=>file.original_filename, :mimeType=>file.content_type, :dsid=>'content')
+   	
+
 
     respond_to do |format|
       if @paper.save
