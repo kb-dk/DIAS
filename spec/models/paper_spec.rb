@@ -11,7 +11,7 @@ describe Paper do
   end 
 
   it "Should have file data stream named 'content'" do
-    subject.content.content.should == Hydra::Model::FileAsset
+    subject.content.class.should == ActiveFedora::Datastream
   end 
 
 

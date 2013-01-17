@@ -20,5 +20,5 @@
 
 /.idea/*
 
-#/config/dias.yml
+/config/dias.yml
 
