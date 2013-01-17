@@ -2,12 +2,11 @@
 # app/models/opgave.rb
 # a Fedora object for en Opgve hydra content type
 class Paper < ActiveFedora::Base
-  include Hydra::ModelMethods
+ 
 
   has_metadata :name=>'rightsMetadata', :type=> Hydra::Datastream::RightsMetadata
   has_metadata :name=>'descMetadata', :type=> OpgaveModsDatastream
-  #has_file_datastream :name=>'content', :type=> Hydra::Models::FileAsset
-
+  has_metadata :name=>'content', :control_group=>'M', :type=>ActiveFedora::Datastream
 
 
   # The delegate method allows you to set up attributes on the model that are stored in datastreams
