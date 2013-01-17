@@ -17,7 +17,7 @@ role :db,  "disdev-01.kb.dk", :primary => true # This is where Rails migrations 
 #role :db,  "your slave db-server here"
 
 # if you want to clean up old releases on each deploy uncomment this:
-# after "deploy:restart", "deploy:cleanup"
+#after "deploy:restart", "deploy:cleanup"
 
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
@@ -29,6 +29,19 @@ namespace :deploy do
    task :restart, :roles => :app, :except => { :no_release => true } do
      run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
    end
+  # custom task to copy dias.yml to current deploy
+   task :config_dias, :roles => :app, :exept => { :no_releas => true}  do
+     run "cp /home/dias/dias.yml #{File.join(current_path,'config')}"
+   end;
+ 
+   # task to seed db
+   task :seed do
+    run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
+  end
  end
 
 after "deploy", "deploy:migrate"
+after "deploy", "deploy:seed"
+after "deploy", "deploy:config_dias"
+after "deploy:restart", "deploy:cleanup"
+
