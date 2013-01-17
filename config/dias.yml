@@ -1,8 +1,0 @@
-development:
-  admin_pids: ["PID000282354"]
-test:
-  admin_pids: ["spec-admin-pid"]
-
-production:
-  admin_pids:
-
