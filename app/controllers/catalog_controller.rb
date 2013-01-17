@@ -78,6 +78,8 @@ class CatalogController < ApplicationController
     config.add_index_field 'forfatter_t', :label => 'Forfatter:'
     config.add_index_field 'forfatter_vern_t', :label => 'Forfatter:'
 
+    config.add_index_field 'afleveringsaar_t', :label => 'År:'
+    config.add_index_field 'afleveringsaar_vern_t', :label => 'År:'
 
 
     #config.add_index_field 'author_vern_display', :label => 'Author:'
