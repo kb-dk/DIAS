@@ -4,6 +4,7 @@ da:
   dias:
     test: "Dette er en test 1 2 3 ... æøå"
     changelang: "English"
+    cookiepolicy: "Cookie & privatlivspolitik"
 
   blacklight:
     welcome: "Velkommen til DIAS!"

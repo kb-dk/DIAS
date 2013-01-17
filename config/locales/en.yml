@@ -7,6 +7,7 @@ en:
   dias:
     test: "This is a test 1 2 3 ..."
     changelang: "Dansk"
+    cookiepolicy: "Cookie policy"
 
   blacklight:
     welcome: "Welcome to DIAS!"
