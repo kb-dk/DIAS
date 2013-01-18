@@ -22,6 +22,8 @@ da:
           opgavetype: 'Opgavetype'
           opgavesprog: 'Opgavesprog'
           abstrakt: 'Resume'
+          vilkaarogbetingelser: 'Vilkår og betingelser'
+          pdffil: 'Opgaven i PDF format'
 
     cookiepolicy: "Cookie & privatlivspolitik"
 

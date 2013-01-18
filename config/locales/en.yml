@@ -28,6 +28,8 @@ en:
           opgavetype: 'Type of paper'
           opgavesprog: 'Language'
           abstrakt: 'Abstract'
+          vilkaarogbetingelser: 'Terms and Conditions'
+          pdffil: 'The paper in PDF format'
 
   blacklight:
     welcome: "Welcome to DIAS!"
