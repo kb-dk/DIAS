@@ -14,9 +14,15 @@ da:
         validate:
           error: 'fejl forhindrede opgaven i at blive gemt:'
         labels:
-          title: 'Title'
+          title: 'Titel'
           undertitel: 'Undertitel'
+          forfatter: 'forfatter'
           afleveringsaar: 'Afleveringsår'
+          studium: 'Studie'
+          opgavetype: 'Opgavetype'
+          opgavesprog: 'Opgavesprog'
+          abstrakt: 'Resume'
+
     cookiepolicy: "Cookie & privatlivspolitik"
 
 
