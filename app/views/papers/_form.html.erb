@@ -1,7 +1,7 @@
 <%= form_for(@paper, :html => {:class => 'form-horizontal', :multipart => true}) do |f| %>
 
     <div class="control-group">
-      <%= f.label :title, :class => 'control-label' %>
+    <%= f.label t('dias.views.paper.labels.title'), :class => 'control-label' %>
       <div class="controls">
         <%= f.text_field :title, :class => 'text_field span6',  :placeholder => 'Opgavetitel' %>
         <i class="icon-pencil"></i>
@@ -11,7 +11,7 @@
     </div>
 
     <div class="control-group">
-      <%= f.label :undertitel, :class => 'control-label' %>
+      <%= f.label t('dias.views.paper.labels.undertitel'), :class => 'control-label' %>
       <div class="controls">
         <%= f.text_field :undertitel, :class => 'text_field span6' %>
         <i class="icon-pencil"></i>
@@ -41,10 +41,9 @@
     </div>
 
     <div class="control-group">
-      <%= f.label :afleveringsaar, :class => 'control-label' %>
+      <%= f.label  t('dias.views.paper.labels.afleveringsaar'), :class => 'control-label' %>
       <div class="controls">
         <%= f.text_field :afleveringsaar, :class => 'text_field span6',  :placeholder => '2013' %>
-        <i class="icon-time"></i>
         <span class="help-block">I det år opgaven blev afleveret til bedømmelse</span>
       </div>
 
@@ -102,14 +101,10 @@
 
 
 
-
     <% if @paper.errors.any? %>
-        <div id="error_explanation">
+    <div class="alert alert-error" > <!-- id="error_explanation"   <span class="badge badge-important badge-large"> <!%= @paper.errors.count %> </span>-->
+      <h2><%= @paper.errors.count %> <%= t('dias.views.paper.validate.error')  %></h2>
 
-          <h2><%= pluralize(@paper.errors.count, "error") %> prohibited this paper from being saved:</h2>
-          <span class="badge badge-important">
-            <%= @paper.errors.count %>
-          </span>
           <ul>
             <% @paper.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>

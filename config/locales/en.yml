@@ -8,6 +8,23 @@ en:
     test: "This is a test 1 2 3 ..."
     changelang: "Dansk"
     cookiepolicy: "Cookie policy"
+    models:
+      paper:
+        validate:
+          title: 'Please add title'
+          afleveringsaar: 'Please add a year'
+
+
+    views:
+      paper:
+        validate:
+          error: 'error prohibited this paper from being saved:'
+        labels:
+          title: 'Title'
+          undertitel: 'Subtitle'
+
+          afleveringsaar: 'Year of publication'
+
 
   blacklight:
     welcome: "Welcome to DIAS!"

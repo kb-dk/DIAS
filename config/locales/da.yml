@@ -4,7 +4,23 @@ da:
   dias:
     test: "Dette er en test 1 2 3 ... æøå"
     changelang: "English"
+    models:
+      paper:
+        validate:
+          title: 'Der skal være en titel'
+          afleveringsaar: 'Der skal være angivet et årstal i afleveringsår'
+    views:
+      paper:
+        validate:
+          error: 'fejl forhindrede opgaven i at blive gemt:'
+        labels:
+          title: 'Title'
+          undertitel: 'Undertitel'
+          afleveringsaar: 'Afleveringsår'
     cookiepolicy: "Cookie & privatlivspolitik"
+
 
   blacklight:
     welcome: "Velkommen til DIAS!"
+
+
