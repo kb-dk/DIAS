@@ -81,14 +81,14 @@ describe PapersController do
       	file = fixture_file_upload("/test.pdf","application/pdf")
         file.stub!(:original_filename).and_return("test.pdf")
         expect {
-          post :create, {:paper => valid_attributes, :file_data => file}, valid_session
+          post :create, {:paper => valid_attributes, :content => file}, valid_session
         }.to change(Paper, :count).by(1)
       end
 
       it "assigns a newly created paper as @paper" do
         file = fixture_file_upload("/test.pdf","application/pdf")
         file.stub!(:original_filename).and_return("test.pdf")
-        post :create, {:paper => valid_attributes, :file_data => file}, valid_session
+        post :create, {:paper => valid_attributes, :content => file}, valid_session
         assigns(:paper).should be_a(Paper)
         assigns(:paper).should be_persisted
       end
@@ -107,7 +107,7 @@ describe PapersController do
         Paper.any_instance.stub(:save).and_return(false)
         file = fixture_file_upload("/test.pdf","application/pdf")
         file.stub!(:original_filename).and_return("test.pdf")
-        post :create, {:paper => {  }, :file_data => file}, valid_session
+        post :create, {:paper => {  }, :content => file}, valid_session
         assigns(:paper).should be_a_new(Paper)
       end
 
@@ -116,7 +116,7 @@ describe PapersController do
         Paper.any_instance.stub(:save).and_return(false)
         file = fixture_file_upload("/test.pdf","application/pdf")
         file.stub!(:original_filename).and_return("test.pdf")
-        post :create, {:paper => {  }, :file_data => file}, valid_session
+        post :create, {:paper => {  }, :content => file}, valid_session
         response.should render_template("new")
       end
     end
