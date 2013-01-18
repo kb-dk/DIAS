@@ -1,7 +1,7 @@
-<%= form_for(@paper, :html => {:class => 'form-horizontal', :multipart => true}) do |f| %>
+<%= form_for(@paper) do |f| %>
 
     <div class="control-group">
-      <%= f.label :title, :class => 'control-label' %>
+    <%= f.label t('dias.views.paper.labels.title'), :class => 'control-label' %>
       <div class="controls">
         <%= f.text_field :title, :class => 'text_field span6',  :placeholder => 'Din opgavestitel' %>
       </div>
@@ -35,10 +35,7 @@
     <div class="control-group">
       <%= f.label :afleveringsaar, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :afleveringsaar, :class => 'text_field span6',  :placeholder => '2013' %>
-        <span class="help-block">I det år opgaven blev afleveret til bedømmelse</span>
-      </div>
-
+    <%= f.text_field :afleveringsaar %>
     </div>
 
     <div class="control-group">
@@ -76,9 +73,9 @@
 	</div>
     </div>
 
-
     <% if @paper.errors.any? %>
-        <div id="error_explanation">
+    <div id="error_explanation">
+      <h2><%= @paper.errors.count %> <%= t('dias.views.paper.validate.error')  %></h2>
 
           <h2><%= pluralize(@paper.errors.count, "error") %> prohibited this paper from being saved:</h2>
           <span class="badge badge-important">

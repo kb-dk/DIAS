@@ -4,7 +4,20 @@ da:
   dias:
     test: "Dette er en test 1 2 3 ... æøå"
     changelang: "English"
+    models:
+      paper:
+        validate:
+          title: 'Der skal være en titel'
+    views:
+      paper:
+        validate:
+          error: 'fejl forhindrede opgaven i at blive gemt:'
+        labels:
+          title: 'TitelDA'
     cookiepolicy: "Cookie & privatlivspolitik"
+
 
   blacklight:
     welcome: "Velkommen til DIAS!"
+
+

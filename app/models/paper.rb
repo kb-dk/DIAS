@@ -7,7 +7,11 @@ class Paper < ActiveFedora::Base
   has_metadata :name=>'rightsMetadata', :type=> Hydra::Datastream::RightsMetadata
   has_metadata :name=>'descMetadata', :type=> OpgaveModsDatastream
   has_metadata :name=>'content', :control_group=>'M', :type=>ActiveFedora::Datastream
+  
+  attr_accessor = :title, :undertitel, :forfatter, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog
 
+  validates_presence_of :title,
+                        :message =>  I18n.t('dias.models.paper.validate.title')
 
   # The delegate method allows you to set up attributes on the model that are stored in datastreams
   # When you set :unique=>"true", searches will return a single value instead of an array.
