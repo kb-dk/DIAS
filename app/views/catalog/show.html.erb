@@ -16,14 +16,14 @@
 
       <% # bookmark/folder functions -%>
       <%= render_document_heading(:h1).html_safe %>
-      <h4><%= @document["undertitel_t"].first.html_safe %></h4>
+      <h4><%= @document["undertitel_t"].first.html_safe if @document["undertitel_t"] %></h4>
       <div class="document">
       <dl>
         <dt>Forfatter</dt>
         <dd>
           <%= @document["forfatter_t"].first.html_safe %>
         </dd>
-        <dt>Afleveringsår</dt>
+        <dt><%=  t('dias.views.paper.labels.afleveringsaar')  %></dt>
         <dd>
           <%= @document["afleveringsaar_t"].first.html_safe %>
         </dd>
@@ -36,7 +36,7 @@
 
         <dt>Abstract</dt>
         <dd> <blockquote>
-          <%= @document["abstrakt_t"].first.html_safe %>
+          <%= @document["abstrakt_t"].first.html_safe if @document["abstrakt_t"] %>
         </blockquote>
         </dd>
         <dt>Opgavetype</dt>
