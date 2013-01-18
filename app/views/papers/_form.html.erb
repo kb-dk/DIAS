@@ -1,16 +1,16 @@
 <%= form_for(@paper) do |f| %>
 
     <div class="control-group">
-    <%= f.label t('dias.views.paper.labels.title') %>
+    <%= f.label t('dias.views.paper.labels.title'), :class => 'control-label' %>
       <div class="controls">
-    <%= f.text_field :title %>
-    </div>
+        <%= f.text_field :title, :class => 'text_field span6',  :placeholder => 'Din opgavestitel' %>
+      </div>
     </div>
 
-      <div class="control-group">
-    <%= f.label :undertitel %>
-        <div class="controls">
-    <%= f.text_field :undertitel %>
+    <div class="control-group">
+      <%= f.label :undertitel, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :undertitel, :class => 'text_field span6' %>
       </div>
     </div>
 
@@ -18,61 +18,76 @@
     <div class="control-group">
       <%= f.label :abstrakt, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_area :abstrakt, :class => 'text_area' %>
+        <%= f.text_area :abstrakt, :class => 'text_area span6',  :placeholder => 'En god beskrivelse af opgaven eller opgavens abstract (også kaldet resume).' %>
       </div>
     </div>
 
 
 
     <div class="control-group">
-    <%= f.label :forfatter  %>
+      <%= f.label :forfatter, :class => 'control-label' %>
       <div class="controls">
-    <%= f.text_field :forfatter %>
-    </div>
+        <%= f.text_field :forfatter, :class => 'text_field span6',  :placeholder => 'Line Jensen' %>
+        <span class="help-block">Dit for- og efternavn</span>
       </div>
+    </div>
 
     <div class="control-group">
-    <%= f.label :afleveringsaar %>
+      <%= f.label :afleveringsaar, :class => 'control-label' %>
       <div class="controls">
     <%= f.text_field :afleveringsaar %>
     </div>
-    </div>
 
     <div class="control-group">
-    <%= f.label :studium %>
+      <%= f.label :studium, :class => 'control-label' %>
       <div class="controls">
         <%= collection_select(:paper, :studium, Institute.all, :title, :title) %>
-    </div>
+        <span class="help-block">På hvilket studie er opgaven skrevet</span>
+      </div>
+
     </div>
 
 
     <div class="control-group">
-      <%= f.label :opgavesprog %>
+      <%= f.label :opgavesprog, :class => 'control-label' %>
       <div class="controls">
         <%= collection_select(:paper, :opgavesprog, PaperLanguage.all, :title, :title) %>
+        <span class="help-block">På hvilket sprog er opgaven skrevet (primær sprog)</span>
       </div>
+
     </div>
 
 
     <div class="control-group">
-      <%= f.label :opgavetype %>
+      <%= f.label :opgavetype, :class => 'control-label' %>
       <div class="controls">
         <%= collection_select(:paper, :opgavetype, PaperType.all, :title, :title) %>
+        <span class="help-block">Hvilken type opgave er der tale om (Bemærk at der ikke kan afleveres specialer)</span>
       </div>
     </div>
 
+    <div class="control-group">
+	<%= f.label :content %>
+	<div class="controls">
+  		<%= file_field_tag 'file_data' %>
+	</div>
+    </div>
 
     <% if @paper.errors.any? %>
     <div id="error_explanation">
       <h2><%= @paper.errors.count %> <%= t('dias.views.paper.validate.error')  %></h2>
 
-      <ul>
-      <% @paper.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <h2><%= pluralize(@paper.errors.count, "error") %> prohibited this paper from being saved:</h2>
+          <span class="badge badge-important">
+            <%= @paper.errors.count %>
+          </span>
+          <ul>
+            <% @paper.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
 
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>

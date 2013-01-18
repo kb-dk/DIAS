@@ -7,7 +7,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </a>
-                  <div class="span3">
+                  <div class="span2">
                     <a href="<%=root_path%>" title="<%=application_name%>" class="brand">
                        <h1>DIAS</h1>
                        <h2>Det Kongelige Bibliotek</h2>
@@ -27,6 +27,17 @@
                         <%= link_to t('dias.changelang'), {:locale=>"en"} %>
                     <%end%>
                 </div>
+                <div class="span1 ">
+                  <%if I18n.locale.to_s=="en" %>
+                      <%= link_to image_tag('http://minecookies.org/sites/default/files/mediearkiv/iconsmall.png') +
+                                          t('dias.cookiepolicy'), 'http://www.kb.dk/en/kb/webstedet/cookiepolitik.html' %>
+                  <%else%>
+                      <%= link_to image_tag('http://minecookies.org/sites/default/files/mediearkiv/iconsmall.png') +
+                                          t('dias.cookiepolicy') , 'http://www.kb.dk/da/kb/webstedet/cookiepolitik.html' %>
+                  <%end%>
+                </div>
+
+
 
         </div>
         </div>

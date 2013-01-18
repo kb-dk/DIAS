@@ -2,12 +2,12 @@
 # app/models/opgave.rb
 # a Fedora object for en Opgve hydra content type
 class Paper < ActiveFedora::Base
-  include Hydra::ModelMethods
+ 
 
   has_metadata :name=>'rightsMetadata', :type=> Hydra::Datastream::RightsMetadata
   has_metadata :name=>'descMetadata', :type=> OpgaveModsDatastream
-  #has_file_datastream :name=>'content', :type=> Hydra::Models::FileAsset
-
+  has_metadata :name=>'content', :control_group=>'M', :type=>ActiveFedora::Datastream
+  
   attr_accessor = :title, :undertitel, :forfatter, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog
 
   validates_presence_of :title,
@@ -25,7 +25,6 @@ class Paper < ActiveFedora::Base
 =end
 
   delegate_to 'descMetadata', [:title, :undertitel, :forfatter, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog ], :unique => true
-
 
 end
 

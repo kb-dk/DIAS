@@ -14,6 +14,7 @@ da:
           error: 'fejl forhindrede opgaven i at blive gemt:'
         labels:
           title: 'TitelDA'
+    cookiepolicy: "Cookie & privatlivspolitik"
 
 
   blacklight:

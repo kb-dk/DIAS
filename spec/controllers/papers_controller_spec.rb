@@ -24,7 +24,15 @@ describe PapersController do
   # Paper. As you add validations to Paper, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { title:"Opgavetitel", undertitel:"Undertitel", forfatter:"Fornavn Efternavn", abstrakt:"ABSTRACT mutus nomen dedit cocis", afleveringsaar:"2011", studium:"Biologi" }
+    { title:"Opgavetitel", undertitel:"Undertitel", forfatter:"Fornavn Efternavn", abstrakt:"ABSTRACT mutus nomen dedit cocis", afleveringsaar:"2011", studium:"Biologi"}
+  end
+
+  # This returns a pdf-file to simulate an uploaded file
+  # should mock 'original_filename'
+  def upload_file(filename,mime)
+    file = fixture_file_upload(filename,mime)
+    file.stub(:original_filename).and_return(filename)
+    file
   end
 
   # This should return the minimal set of values that should be in the session
@@ -70,13 +78,17 @@ describe PapersController do
   describe "POST create" do
     describe "with valid params" do
       it "creates a new Paper" do
+      	file = fixture_file_upload("/test.pdf","application/pdf")
+        file.stub!(:original_filename).and_return("test.pdf")
         expect {
-          post :create, {:paper => valid_attributes}, valid_session
+          post :create, {:paper => valid_attributes, :file_data => file}, valid_session
         }.to change(Paper, :count).by(1)
       end
 
       it "assigns a newly created paper as @paper" do
-        post :create, {:paper => valid_attributes}, valid_session
+        file = fixture_file_upload("/test.pdf","application/pdf")
+        file.stub!(:original_filename).and_return("test.pdf")
+        post :create, {:paper => valid_attributes, :file_data => file}, valid_session
         assigns(:paper).should be_a(Paper)
         assigns(:paper).should be_persisted
       end
@@ -93,14 +105,18 @@ describe PapersController do
       it "assigns a newly created but unsaved paper as @paper" do
         # Trigger the behavior that occurs when invalid params are submitted
         Paper.any_instance.stub(:save).and_return(false)
-        post :create, {:paper => {  }}, valid_session
+        file = fixture_file_upload("/test.pdf","application/pdf")
+        file.stub!(:original_filename).and_return("test.pdf")
+        post :create, {:paper => {  }, :file_data => file}, valid_session
         assigns(:paper).should be_a_new(Paper)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Paper.any_instance.stub(:save).and_return(false)
-        post :create, {:paper => {  }}, valid_session
+        file = fixture_file_upload("/test.pdf","application/pdf")
+        file.stub!(:original_filename).and_return("test.pdf")
+        post :create, {:paper => {  }, :file_data => file}, valid_session
         response.should render_template("new")
       end
     end

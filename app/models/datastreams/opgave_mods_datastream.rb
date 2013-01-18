@@ -79,27 +79,27 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     Nokogiri::XML.parse '<mods xmlns="http://www.loc.gov/mods/v3" version="3.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3
      http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
    <titleInfo>
-       <title>Opgavetitel</title>                                   <!-- title -->
-       <subTitle>Undertitel</subTitle>                      <!-- undertitel -->
+       <title></title>                                   <!-- title -->
+       <subTitle></subTitle>                      <!-- undertitel -->
    </titleInfo>
 
    <name type="personal">
-       <namePart>Fornavn Efternavn</namePart>                 <!-- Forfatter author for og efternavn -->
+       <namePart></namePart>                 <!-- Forfatter author for og efternavn -->
        <role>
            <roleTerm authority="marcrelator" type="text">Creator</roleTerm> <!-- author role -->
        </role>
    </name>
-   <abstract>ABSTRACT mutus nomen dedit cocis</abstract>            <!-- Beskrivelse /Abstract -->
+   <abstract></abstract>            <!-- Beskrivelse /Abstract -->
    <originInfo>
-          <dataIssued>2013</dateIssued>                             <!-- Afleveringsaar -->
+          <dataIssued></dateIssued>                             <!-- Afleveringsaar -->
           <location>
-               <physicalLocation>Biologi</physicalLocation>              <!--  Studium -->
+               <physicalLocation></physicalLocation>              <!--  Studium -->
           </location>
      </originInfo>
 
-    <typeOfResource>text<typeOfResource>                          <!-- Opgavetype -->
+    <typeOfResource></typeOfResource>                          <!-- Opgavetype -->
 
-     <genre>Synopsis</genre>
+     <genre></genre>
      <language>
            <languageTerm code="code" authority="iso369-2b">dan<languageTerm>   <!-- Opgavesprog -->
      </language>   

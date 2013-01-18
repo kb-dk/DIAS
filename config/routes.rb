@@ -12,6 +12,7 @@ HydraHead::Application.routes.draw do
 
   resources :papers
 
+  resources :downloads, :only => "show"
 
   root :to => "catalog#index"
 
