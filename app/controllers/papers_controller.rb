@@ -45,7 +45,7 @@ class PapersController < ApplicationController
   def create
     @paper = Paper.new(params[:paper])
  
-    file = params[:file_data]
+    file = params[:content]
     @paper.add_file_datastream(file, :label=>file.original_filename, :mimeType=>file.content_type, :dsid=>'content')
    	
 
