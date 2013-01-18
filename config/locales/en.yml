@@ -22,9 +22,12 @@ en:
         labels:
           title: 'Title'
           undertitel: 'Subtitle'
-
+          forfatter: 'Author'
           afleveringsaar: 'Year of publication'
-
+          studium: 'Study'
+          opgavetype: 'Type of paper'
+          opgavesprog: 'Language'
+          abstrakt: 'Abstract'
 
   blacklight:
     welcome: "Welcome to DIAS!"
