@@ -7,6 +7,18 @@ en:
   dias:
     test: "This is a test 1 2 3 ..."
     changelang: "Dansk"
+    models:
+      paper:
+        validate:
+          title: 'Please add title'
+
+    views:
+      paper:
+        validate:
+          error: 'error prohibited this paper from being savedEN:'
+        labels:
+          title: 'TitleEN'
+
 
   blacklight:
     welcome: "Welcome to DIAS!"

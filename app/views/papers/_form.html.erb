@@ -1,7 +1,7 @@
 <%= form_for(@paper) do |f| %>
 
     <div class="control-group">
-    <%= f.label :title %>
+    <%= f.label t('dias.views.paper.labels.title') %>
       <div class="controls">
     <%= f.text_field :title %>
     </div>
@@ -64,7 +64,7 @@
 
     <% if @paper.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@paper.errors.count, "error") %> prohibited this paper from being saved:</h2>
+      <h2><%= @paper.errors.count %> <%= t('dias.views.paper.validate.error')  %></h2>
 
       <ul>
       <% @paper.errors.full_messages.each do |msg| %>

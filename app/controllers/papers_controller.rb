@@ -44,6 +44,7 @@ class PapersController < ApplicationController
   def create
     @paper = Paper.new(params[:paper])
 
+
     respond_to do |format|
       if @paper.save
         format.html { redirect_to @paper, notice: 'Paper was successfully created.' }
