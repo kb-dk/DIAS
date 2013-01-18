@@ -8,12 +8,15 @@ da:
       paper:
         validate:
           title: 'Der skal være en titel'
+          afleveringsaar: 'Der skal være angivet et årstal i afleveringsår'
     views:
       paper:
         validate:
           error: 'fejl forhindrede opgaven i at blive gemt:'
         labels:
-          title: 'TitelDA'
+          title: 'Title'
+          undertitel: 'Undertitel'
+          afleveringsaar: 'Afleveringsår'
     cookiepolicy: "Cookie & privatlivspolitik"
 
 

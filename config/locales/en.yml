@@ -12,13 +12,18 @@ en:
       paper:
         validate:
           title: 'Please add title'
+          afleveringsaar: 'Please add a year'
+
 
     views:
       paper:
         validate:
-          error: 'error prohibited this paper from being savedEN:'
+          error: 'error prohibited this paper from being saved:'
         labels:
-          title: 'TitleEN'
+          title: 'Title'
+          undertitel: 'Subtitle'
+
+          afleveringsaar: 'Year of publication'
 
 
   blacklight:
