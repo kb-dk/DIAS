@@ -73,8 +73,13 @@ sprog.each do |etsprog|
 end
 
 opgavetyper = [{title: 'Bacheloropgave'},
-               {title: 'Synopsis'},
-               {title: 'Afleveringsopgave'} ]
+               {title: 'Case'},
+               {title: 'Eksamensopgave'},
+               {title: 'Rapport'},
+               {title: 'Skriveøvelse'},
+               {title: 'Større skriftlig opgave'},
+               {title: 'Øvelsesopgave'},
+               {title: 'Øvelsesrapport'}]
 
 
 opgavetyper.each do |enopgavetype|
