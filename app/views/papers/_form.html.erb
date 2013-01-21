@@ -34,7 +34,7 @@
     <div class="control-group">
       <%= f.label t('dias.views.paper.labels.forfatter'), :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :forfatter, :class => 'text_field span6',  :placeholder => 'Line Jensen' %>
+        <%= f.text_field :forfatter, :class => 'text_field span6',  :value => current_user.name %>
         <i class="icon-user"></i>
         <span class="help-block">Dit for- og efternavn</span>
       </div>
