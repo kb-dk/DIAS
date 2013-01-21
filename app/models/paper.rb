@@ -16,6 +16,17 @@ class Paper < ActiveFedora::Base
   validates_presence_of :title,
                         :message =>  I18n.t('dias.models.paper.validate.title')
 
+  validate :must_have_uploaded_pdf_content
+
+  def must_have_uploaded_pdf_content
+    logger.info("content: #{content}")
+
+    if content.content.nil? || content.content.original_filename.to_s.nil? || content.content.original_filename.to_s.blank?
+      errors.add(:content, I18n.t('dias.models.paper.validate.pdffile'))
+    end
+
+  end
+
   # The delegate method allows you to set up attributes on the model that are stored in datastreams
   # When you set :unique=>"true", searches will return a single value instead of an array.
 =begin

@@ -44,10 +44,17 @@ class PapersController < ApplicationController
   # POST /papers.json
   def create
     @paper = Paper.new(params[:paper])
- 
-    file = params[:content]
-    @paper.add_file_datastream(file, :label=>file.original_filename, :mimeType=>file.content_type, :dsid=>'content')
-   	
+
+    if(params[:content])
+      file = params[:content]
+      @paper.add_file_datastream(file, :label=>file.original_filename, :mimeType=>file.content_type, :dsid=>'content')
+      logger.info("opretter fil datastream ")
+    else
+      logger.info("ingen fil datastream ")
+      @paper.add_file_datastream(nil)
+
+    end
+
 
 
 
