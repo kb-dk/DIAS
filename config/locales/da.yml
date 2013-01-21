@@ -22,6 +22,22 @@ da:
           opgavetype: 'Opgavetype'
           opgavesprog: 'Opgavesprog'
           abstrakt: 'Resume'
+          vilkaarogbetingelser: 'Vilkår og betingelser'
+          vilkaarogbetingelsertext: 'Jeg accepterer KBs vilkår og betingelser.'
+          pdffil: 'Opgaven i PDF format'
+          opretopgave: 'Opret Opgave'
+        help:
+          opgavetype: 'Hvilken type af opgave er der tale om (Bemærk at der ikke kan uploades specialer)'
+          opgavesprog: 'På hvilket sprog er opgaven skrevet.'
+          studium: 'På hvilket fag er opgaven skrevet.'
+          afleveringsaar: 'Det år, hvor opgaven blev afleveret til bedømmelse.'
+          navn: 'Dit for- og efternavn'
+          undertitel: 'Undertitlen på din opgave (ikke obligatorisk)'
+          titel: 'Titlen på din opgave'
+          abstrakt: 'Abstract eller en god beskrivelse af opgavens indhold.'
+        placeholder:
+          titel: 'En Teoretisk Analyse af...'
+          abstrakt: 'Opgaven består af en teoretisk gennemgang af feltet...'
 
     cookiepolicy: "Cookie & privatlivspolitik"
 

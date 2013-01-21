@@ -23,11 +23,26 @@ en:
           title: 'Title'
           undertitel: 'Subtitle'
           forfatter: 'Author'
-          afleveringsaar: 'Year of publication'
-          studium: 'Study'
+          afleveringsaar: 'Submission year'
+          studium: 'Subject'
           opgavetype: 'Type of paper'
           opgavesprog: 'Language'
           abstrakt: 'Abstract'
+          vilkaarogbetingelser: 'Terms and Conditions'
+          vilkaarogbetingelsertext: 'I accept the Royal Library\'s Terms and Conditions.'
+          pdffil: 'The paper in PDF format'
+          opretopgave: 'Create paper'
+        help:
+          opgavetype: 'Which type of paper are you uploading. (Please note that theses cannot be uploaded to DIAS.)'
+          opgavesprog: 'Paper language.'
+          studium: 'På hvilket studie er opgaven skrevet.'
+          afleveringsaar: 'The year that the paper was submitted for approval.'
+          navn: 'Dit for- og efternavn'
+          undertitel: 'Subtitle (not required).'
+          titel: 'The title of your paper.'
+        placeholder:
+          abstrakt: 'The paper presents an theoretical analysis of...'
+          titel: 'A Theoretical Analysis of...'
 
   blacklight:
     welcome: "Welcome to DIAS!"
