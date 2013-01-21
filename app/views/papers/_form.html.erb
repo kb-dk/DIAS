@@ -3,9 +3,9 @@
     <div class="control-group">
     <%= f.label t('dias.views.paper.labels.title'), :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :title, :class => 'text_field span6',  :placeholder => 'Opgavetitel' %>
-        <i class="icon-pencil"></i>
-        <span class="help-block">Titlen på din opgave</span>
+        <%= f.text_field :title, :class => 'text_field span6',  :placeholder => t('dias.views.paper.placeholder.titel')  %>
+
+        <span class="help-block"><%= t('dias.views.paper.help.titel')%></span>
 
       </div>
     </div>
@@ -14,9 +14,9 @@
       <%= f.label t('dias.views.paper.labels.undertitel'), :class => 'control-label' %>
       <div class="controls">
         <%= f.text_field :undertitel, :class => 'text_field span6' %>
-        <i class="icon-pencil"></i>
 
-        <span class="help-block">En eventuel undertitel.</span>
+
+        <span class="help-block"><%= t('dias.views.paper.help.undertitel')%></span>
 
       </div>
     </div>
@@ -25,7 +25,7 @@
     <div class="control-group">
       <%= f.label t('dias.views.paper.labels.abstrakt'), :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_area :abstrakt, :class => 'text_area span6',  :placeholder => 'En god beskrivelse af opgaven eller opgavens abstract (også kaldet resume).' %>
+        <%= f.text_area :abstrakt, :class => 'text_area span6', :placeholder => t('dias.views.paper.placeholder.abstrakt') %>
       </div>
     </div>
 
@@ -34,17 +34,25 @@
     <div class="control-group">
       <%= f.label t('dias.views.paper.labels.forfatter'), :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :forfatter, :class => 'text_field span6',  :value => current_user.name %>
-        <i class="icon-user"></i>
-        <span class="help-block">Dit for- og efternavn</span>
+        <div class="input-prepend">
+          <span class="add-on"><i class="icon-user"></i></span>
+          <%= f.text_field :forfatter, :class => 'text_field span6',  :value => current_user.name %>
+        </div>
+
+
+        <span class="help-block"><%= t('dias.views.paper.help.navn')%></span>
       </div>
     </div>
 
     <div class="control-group">
       <%= f.label  t('dias.views.paper.labels.afleveringsaar'), :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :afleveringsaar, :class => 'text_field span6',  :placeholder => '2013' %>
-        <span class="help-block">I det år opgaven blev afleveret til bedømmelse</span>
+        <div class="input-prepend">
+          <span class="add-on"><i class="icon-calendar"></i></span>
+
+        <%= f.number_field :afleveringsaar, :class => 'number_field span6 ',  :value => Time.new().year %>
+        </div>
+        <span class="help-block"><%= t('dias.views.paper.help.afleveringsaar')%></span>
       </div>
 
     </div>
@@ -52,10 +60,11 @@
     <div class="control-group">
       <%= f.label t('dias.views.paper.labels.studium'), :class => 'control-label' %>
       <div class="controls">
-        <%= collection_select(:paper, :studium, Institute.all, :title, :title) %>
-        <i class="icon-book"></i>
 
-        <span class="help-block">På hvilket studie er opgaven skrevet</span>
+          <%= collection_select(:paper, :studium, Institute.all, :title, :title) %>
+
+
+        <span class="help-block"><%= t('dias.views.paper.help.studium')%></span>
       </div>
 
     </div>
@@ -65,7 +74,7 @@
       <%= f.label t('dias.views.paper.labels.opgavesprog'), :class => 'control-label' %>
       <div class="controls">
         <%= collection_select(:paper, :opgavesprog, PaperLanguage.all, :title, :title) %>
-        <span class="help-block">På hvilket sprog er opgaven skrevet (primær sprog)</span>
+        <span class="help-block"><%= t('dias.views.paper.help.opgavesprog')%></span>
       </div>
 
     </div>
@@ -75,16 +84,17 @@
       <%= f.label t('dias.views.paper.labels.opgavetype'), :class => 'control-label' %>
       <div class="controls">
         <%= collection_select(:paper, :opgavetype, PaperType.all, :title, :title) %>
-        <span class="help-block">Hvilken type opgave er der tale om (Bemærk at der ikke kan afleveres specialer)</span>
+        <span class="help-block"><%= t('dias.views.paper.help.opgavetype') %></span>
       </div>
     </div>
 
     <div class="control-group">
 	<%= f.label t('dias.views.paper.labels.pdffil'), :class => 'control-label' %>
 	<div class="controls">
-
-  		<%= file_field_tag 'content',  :class => 'btn btn-large' %>
-      <i class="icon icon-large icon-upload"></i>
+      <div class="input-prepend">
+        <span class="add-on"><i class="icon icon-upload icon-large"></i></span>
+  		<%= file_field_tag 'content', :value => 'Upload fil', :accept => 'application/pdf',  :class => 'btn' %>
+      </div>
 	</div>
     </div>
 
@@ -94,7 +104,7 @@
 
       <div class="controls">
         <label class="checkbox">
-          <input type="checkbox"> Jeg accepterer KB's vilkår og betingelser.     <i class="icon-info-sign"></i>
+          <input type="checkbox"><%= t('dias.views.paper.labels.vilkaarogbetingelsertext') %> <i class="icon-info-sign"></i>
         </label>
       </div>
     </div>
@@ -114,7 +124,7 @@
     <% end %>
 
     <div class="form-actions">
-      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= f.submit t('dias.views.paper.labels.opretopgave'), :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                   papers_path, :class => 'btn' %>
     </div>

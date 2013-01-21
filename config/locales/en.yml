@@ -29,7 +29,20 @@ en:
           opgavesprog: 'Language'
           abstrakt: 'Abstract'
           vilkaarogbetingelser: 'Terms and Conditions'
+          vilkaarogbetingelsertext: 'Jeg accepterer KBs vilkår og betingelser'
           pdffil: 'The paper in PDF format'
+          opretopgave: 'Create paper'
+        help:
+          opgavetype: 'Hvilken type af opgave er der tale om (Bemærk at der ikke kan afleveres specialer)'
+          opgavesprog: 'På hvilket sprog er opgaven skrevet (primær sprog)'
+          studium: 'På hvilket studie er opgaven skrevet'
+          afleveringsaar: 'I det år opgaven blev afleveret til bedømmelse'
+          navn: 'Dit for- og efternavn'
+          undertitel: 'En eventuel undertitel.'
+          titel: 'Titlen på din opgave'
+        placeholder:
+          abstrakt: 'The paper presents an theoretical analysis of...'
+          titel: 'A Theoretical Analysis of...'
 
   blacklight:
     welcome: "Welcome to DIAS!"
