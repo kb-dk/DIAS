@@ -19,9 +19,9 @@ class Paper < ActiveFedora::Base
   validate :must_have_uploaded_pdf_content
 
   def must_have_uploaded_pdf_content
-    logger.info("content: #{content}")
+    #logger.info("content: #{content}")
 
-    if content.content.nil? || content.content.original_filename.to_s.nil? || content.content.original_filename.to_s.blank?
+    if content.content.nil? #|| content.content.original_filename.nil? || content.content.original_filename.to_s.blank?
       errors.add(:content, I18n.t('dias.models.paper.validate.pdffile'))
     end
 

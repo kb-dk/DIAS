@@ -3,12 +3,15 @@ da:
 
   dias:
     test: "Dette er en test 1 2 3 ... æøå"
+    edit: "Rediger"
     changelang: "English"
     models:
       paper:
         validate:
           title: 'Der skal være en titel'
-          afleveringsaar: 'Der skal være angivet et årstal i afleveringsår'
+          afleveringsaar: 'Der skal være angivet et årstal i afleveringsaar'
+          pdffile: 'husk at tilføje en pdf fil'
+
     views:
       paper:
         validate:
