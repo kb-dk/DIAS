@@ -7,9 +7,9 @@
 
 <dl class="dl-horizontal">
   <dt><strong><%= t('dias.views.paper.labels.undertitel') %>:</strong></dt>
-  <dd><%=h @paper.undertitel ? @paper.undertitel : "<i>BLANK</i>".html_safe %> </dd>
+  <dd><%= @paper.undertitel ? @paper.undertitel : "<i>BLANK</i>".html_safe %> </dd>
   <dt><strong><%= t('dias.views.paper.labels.abstrakt') %>:</strong></dt>
-  <dd><%=h @paper.abstrakt ? @paper.abstrakt :  "<i>BLANK</i>".html_safe%> </dd>
+  <dd> <blockquote><%= @paper.abstrakt ? @paper.abstrakt :  "<i>BLANK</i>".html_safe%>  </blockquote></dd>
 
   <dt><strong><%= t('dias.views.paper.labels.forfatter')%>:</strong></dt>
   <dd><%=h @paper.forfatter %> </dd>
@@ -18,9 +18,13 @@
   <dt><strong><%= t('dias.views.paper.labels.studium') %>:</strong></dt>
   <dd><%=h @paper.studium %> </dd>
   <dt><strong><%= t('dias.views.paper.labels.pdffil') %>:</strong></dt>
-  <dd><%=h @paper.content.content.original_filename rescue nil %> </dd>
+
+  <dd>
+    <%= link_to 'PDF: '+ @paper.title, download_path(@paper) %>
+  </dd>
 
 
 </dl>
-
-<%= link_to t('dias.edit'), edit_paper_path(@paper), :class => 'btn' %>
+<% if can? :manage, @alle   %>
+    <%= link_to t('dias.edit'), edit_paper_path(@paper), :class => 'btn' %>
+<% end %>

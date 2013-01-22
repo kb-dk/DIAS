@@ -15,7 +15,7 @@ en:
           title: 'Please add title'
           afleveringsaar: 'Please add a year'
           pdffile: 'Remember to upload a pdf file'
-
+          succes: "Paper was successfully created."
 
 
     views:

@@ -48,9 +48,9 @@ class PapersController < ApplicationController
     if(params[:content])
       file = params[:content]
       @paper.add_file_datastream(file, :label=>file.original_filename, :mimeType=>file.content_type, :dsid=>'content')
-      logger.info("opretter fil datastream ")
+      logger.debug("opretter fil datastream ")
     else
-      logger.info("ingen fil datastream ")
+      logger.debug("ingen fil datastream ")
       @paper.add_file_datastream(nil)
 
     end
@@ -60,7 +60,7 @@ class PapersController < ApplicationController
 
     respond_to do |format|
       if @paper.save
-        format.html { redirect_to @paper, notice: 'Paper was successfully created.' }
+        format.html { redirect_to catalog_path(@paper), notice: t('dias.models.paper.validate.succes') }
         format.json { render json: @paper, status: :created, location: @paper }
       else
         format.html { render action: "new" }
@@ -76,7 +76,7 @@ class PapersController < ApplicationController
 
     respond_to do |format|
       if @paper.update_attributes(params[:paper])
-        format.html { redirect_to @paper, notice: 'Paper was successfully updated.' }
+        format.html { redirect_to @paper, notice: t('dias.models.paper.validate.succes') }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
