@@ -4,6 +4,7 @@ da:
   dias:
     test: "Dette er en test 1 2 3 ... æøå"
     edit: "Rediger"
+    search: "Søg"
     changelang: "English"
 
 
@@ -16,6 +17,17 @@ da:
           succes: "Opgaven blev oprettet"
 
     views:
+      forside:
+        labels:
+          title: 'Titel'
+          undertitel: 'Undertitel'
+          forfatter: 'Forfatter'
+          afleveringsaar: 'År'
+          studium: 'Studie'
+          opgavetype: 'Type'
+          opgavesprog: 'Sprog'
+          abstrakt: 'Resume'
+
       paper:
         validate:
           error: 'fejl forhindrede opgaven i at blive gemt:'
@@ -50,5 +62,4 @@ da:
 
   blacklight:
     welcome: "Velkommen til DIAS!"
-
-
+    application_name: 'DIAS'

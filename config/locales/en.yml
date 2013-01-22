@@ -7,6 +7,7 @@ en:
   dias:
     test: "This is a test 1 2 3 ..."
     edit: "Edit"
+    search: "Search"
     changelang: "Dansk"
     cookiepolicy: "Cookie policy"
     models:
@@ -19,6 +20,17 @@ en:
 
 
     views:
+      forside:
+        labels:
+          title: 'Title'
+          undertitel: 'Subtitle'
+          forfatter: 'Author'
+          afleveringsaar: 'year'
+          studium: 'Subject'
+          opgavetype: 'Type'
+          opgavesprog: 'Language'
+          abstrakt: 'Abstract'
+
       paper:
         validate:
           error: 'error prohibited this paper from being saved:'
@@ -49,3 +61,4 @@ en:
 
   blacklight:
     welcome: "Welcome to DIAS!"
+    application_name: 'DIAS'
