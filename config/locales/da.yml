@@ -58,8 +58,3 @@ da:
           abstrakt: 'Opgaven består af en teoretisk gennemgang af feltet...'
 
     cookiepolicy: "Cookie & privatlivspolitik"
-
-
-  blacklight:
-    welcome: "Velkommen til DIAS!"
-    application_name: 'DIAS'

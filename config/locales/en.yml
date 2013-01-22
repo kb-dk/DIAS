@@ -58,7 +58,3 @@ en:
         placeholder:
           abstrakt: 'The paper presents an theoretical analysis of...'
           titel: 'A Theoretical Analysis of...'
-
-  blacklight:
-    welcome: "Welcome to DIAS!"
-    application_name: 'DIAS'
