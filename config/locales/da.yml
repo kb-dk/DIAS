@@ -42,6 +42,17 @@ da:
           abstrakt: 'Resume'
           vilkaarogbetingelser: 'Vilkår og betingelser'
           vilkaarogbetingelsertext: 'Jeg accepterer KBs vilkår og betingelser.'
+          vilkaarogbetingelserfulltext: |
+                                      Ved at uploade en opgave til DIAS accepterer jeg følgende:<br>
+                                      <ul style='list-style-type: decimal'>
+                                      <li>Opgaven er afleveret ved Københavns Universitet.</li>
+                                      <li>Opgaven er bestået.</li>
+                                      <li>Jeg er forfatter eller medforfatter til opgaven.</li>
+                                      <li>Hvis opgaven er skrevet af flere forfattere, er alle forfattere indtastet og indforstået med, at opgaven uploades til DIAS.</li>
+                                      <li>Opgaven indeholder ikke indhold, som krænker loven om ophavsret.</li>
+                                      <li>Brugere af DIAS kan benytte min opgave under hensyntagen til Create Commons Licence BY-NC-ND – læs mere.</li>
+                                      </ul>
+
           pdffil: 'Opgaven i PDF format'
           opretopgave: 'Opret Opgave'
         help:

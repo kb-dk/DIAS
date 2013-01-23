@@ -45,6 +45,17 @@ en:
           abstrakt: 'Abstract'
           vilkaarogbetingelser: 'Terms and Conditions'
           vilkaarogbetingelsertext: "I accept the Royal Library's Terms and Conditions."
+          vilkaarogbetingelserfulltext: |
+                                      By uploading an assignment to DIAS, I accept the following:<br>
+                                      <ul style='list-style-type: decimal'>
+                                      <li>The assignment has been handed in at the University of Copenhagen</li>
+                                      <li>The assignment has passed.</li>
+                                      <li>I am the author or co-author of the assignment.</li>
+                                      <li>If the assignment is co-authored, all authors have been entered and have agreed to upload the assignment to DIAS.</li>
+                                      <li>The assinment contains no content violating copyrights.</li>
+                                      <li>Users of DIAS can use my assignment under the Create Commons Licence BY-NC-ND – read more.</li>
+
+                                      </ul>
           pdffil: 'The paper in PDF format'
           opretopgave: 'Create paper'
         help:
