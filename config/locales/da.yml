@@ -14,6 +14,7 @@ da:
           title: 'Der skal være en titel'
           afleveringsaar: 'Der skal være angivet et årstal i afleveringsaar'
           pdffile: 'husk at tilføje en pdf fil'
+          vilkaarbetingelser: "Du skal acceptere vilkår og betingelser før opgaven kan oprettes"
           succes: "Opgaven blev oprettet"
 
     views:

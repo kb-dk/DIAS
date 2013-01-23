@@ -7,39 +7,44 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </a>
-                  <div class="span2">
+                  <!--div class="span2"-->
                     <a href="<%=root_path%>" title="<%=application_name%>" class="brand">
                        <h1>DIAS</h1>
                        <h2>Det Kongelige Bibliotek</h2>
                     </a>
-                  </div>
-                  <div class="span5 clearfix" id="searchbar">
+                  <!--/div-->
+                  <!-- div class="span5 clearfix" id="searchbar" -->
                      <%= render_search_bar  %>
-                  </div>
-                  <div class="span3 nav-collapse">
-                    <%= render :partial=>'/user_util_links' %>
-                  
-                  </div>
-                <div class="span1 ">
-                 <%if I18n.locale.to_s=="en" %>
-                        <%= link_to t('dias.changelang'), {:locale=>"da"} %>
+                  <!--/div-->
+
+                    <ul class="nav nav-collapse pull-right">
+
+
+                    <%if I18n.locale.to_s=="en" %>
+                          <li><%= link_to t('dias.changelang'), {:locale=>"da"} %></li>
                     <%else%>
-                        <%= link_to t('dias.changelang'), {:locale=>"en"} %>
+                          <li><%= link_to t('dias.changelang'), {:locale=>"en"} %></li>
                     <%end%>
-                </div>
-                <div class="span1 ">
-                  <%if I18n.locale.to_s=="en" %>
-                      <%= link_to image_tag('http://minecookies.org/sites/default/files/mediearkiv/iconsmall.png') +
-                                          t('dias.cookiepolicy'), 'http://www.kb.dk/en/kb/webstedet/cookiepolitik.html' %>
-                  <%else%>
-                      <%= link_to image_tag('http://minecookies.org/sites/default/files/mediearkiv/iconsmall.png') +
-                                          t('dias.cookiepolicy') , 'http://www.kb.dk/da/kb/webstedet/cookiepolitik.html' %>
-                  <%end%>
-                </div>
+
+                    <li class="divider-vertical"></li>
+
+                    <%if I18n.locale.to_s=="en" %>
+                          <li><%= link_to image_tag('http://minecookies.org/sites/default/files/mediearkiv/iconsmall.png') + ' ' +
+                                            t('dias.cookiepolicy'), 'http://www.kb.dk/en/kb/webstedet/cookiepolitik.html' %></li>
+                    <%else%>
+                          <li><%= link_to image_tag('http://minecookies.org/sites/default/files/mediearkiv/iconsmall.png')  + ' ' +
+                                            t('dias.cookiepolicy') , 'http://www.kb.dk/da/kb/webstedet/cookiepolitik.html' %></li>
+                    <%end%>
+                      <li class="divider-vertical"></li>
+                    <%= render :partial=>'/user_util_links' %>
+                    </ul>
+                <!--div class="nav-collapse clearfix">
+                  </div-->
 
 
 
-        </div>
-        </div>
+
+        </div> <!-- row -->
+        </div> <!-- container -->
    </div>
 </div>

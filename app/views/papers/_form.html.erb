@@ -104,12 +104,24 @@
 
       <div class="controls">
         <label class="checkbox">
-          <input type="checkbox"><%= t('dias.views.paper.labels.vilkaarogbetingelsertext') %> <i class="icon-info-sign"></i>
+          <input type="checkbox" id="termsConditionsCheckBox"><%= t('dias.views.paper.labels.vilkaarogbetingelsertext') %>
         </label>
-        <p>
-          <%= raw t('dias.views.paper.labels.vilkaarogbetingelserfulltext') %>
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                <h4><%= t('dias.views.paper.labels.vilkaarogbetingelser') %> <i class="icon-info-sign"></i></h4>
+              </a>
+            </div>
+            <div id="collapseOne" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <%= raw t('dias.views.paper.labels.vilkaarogbetingelserfulltext') %>
+              </div>
+            </div>
+          </div>
         </p>
       </div>
+        </div>
     </div>
 
 
@@ -126,9 +138,18 @@
         </div>
     <% end %>
 
-    <div class="form-actions">
-      <%= f.submit t('dias.views.paper.labels.opretopgave'), :class => 'btn btn-primary' %>
+    <div class="form-actions"
+         id="formCreateDiv"
+         rel="tooltip"
+         title="<%= t('dias.models.paper.validate.vilkaarbetingelser') %>"
+         data-placement="top" >
+      <%= f.submit t('dias.views.paper.labels.opretopgave'),
+                   :id => 'createAssignmentBtn',
+                   :class => 'btn btn-primary',
+                   :title => 'Opret opgave',
+                   :disabled => "disabled"
+           %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                  papers_path, :class => 'btn' %>
+                  root_path, :class => 'btn' %>
     </div>
 <% end %>
