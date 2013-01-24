@@ -115,8 +115,10 @@ describe Paper do
       @paper.techMetadata.should be_kind_of ActiveFedora::SimpleDatastream
     end
 
+
     it "Should not have a file data stream named 'content'" do
-      @paper.content.should be_nil
+      pending
+      @paper.respond_to?('content').should == false
     end
 
     it "should have valid attributes" do
@@ -135,7 +137,7 @@ describe Paper do
 
     end
 
-    it "should have mime_type 'application/pdf" do
+    it "should not have mimetype" do
       @paper.mime_type.should be_nil
     end
   end

@@ -47,7 +47,7 @@ class PapersController < ApplicationController
     @paper.add_file(params[:content])
     respond_to do |format|
       if @paper.save
-        format.html { redirect_to catalog_path(@paper), notice: t('dias.models.paper.validate.success') }
+        format.html { redirect_to catalog_path(@paper), notice: t('dias.models.paper.validate.succes') }
         format.json { render json: @paper, status: :created, location: @paper }
       else
         format.html { render action: "new" }
