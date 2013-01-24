@@ -13,8 +13,10 @@ da:
         validate:
           title: 'Der skal være en titel'
           afleveringsaar: 'Der skal være angivet et årstal i afleveringsaar'
-          pdffile: 'husk at tilføje en pdf fil'
           succes: "Opgaven blev oprettet"
+          filepresent: "Du skal angive en pdf-file med opgaven der skal uploades"
+          pdffile: "Filen skal være en PDF-fil"
+          fileproblem: "Der var problemer med at uploade filen, prøv igen"
 
     views:
       forside:

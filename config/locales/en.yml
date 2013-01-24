@@ -15,8 +15,10 @@ en:
         validate:
           title: 'Please add title'
           afleveringsaar: 'Please add a year'
-          pdffile: 'Remember to upload a pdf file'
           succes: "Paper was successfully created."
+          filepresent: "You must upload a file"
+          pdffile: "File must be a PDF file"
+          fileproblem: "A problem occured when uploading the file, try again ..."
 
 
     views:
