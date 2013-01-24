@@ -1,8 +1,13 @@
-  <ul class="nav">
+
     <% if has_user_authentication_provider? %>
-    <li class="util-links-login">
+    <li class="util-links-login" id="userlogin">
           <% if current_user %>
-              <%= link_to t('blacklight.header_links.logout'), destroy_user_session_path %> <%= "#{ link_to current_user, edit_user_registration_path }".html_safe unless current_user.to_s.blank? %>
+              <%= link_to ' ' + t('blacklight.header_links.logout'), destroy_user_session_path, :class => 'icon-off',
+                          :rel => 'tooltip', "data-placement" => "bottom",
+                          "data-placement" => "bottom",
+                          :title =>  t('blacklight.header_links.logout') + ' ' + current_user.name   %>
+
+
           <% else %>
               <%= link_to t('blacklight.header_links.login'), new_user_session_path %>
           <% end %>
@@ -10,4 +15,3 @@
     </li>
     <% end %>
 
-  </ul>

@@ -1,3 +1,4 @@
+# encoding: utf-8
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -76,7 +77,7 @@ instituter = [{title: 'Antropologi'},
               {title: 'Pædagogik'},
               {title: 'Religionsvidenskab'},
               {title: 'Retorik'},
-              {title: 'Russisk',
+              {title: 'Russisk'},
               {title: 'Skov- og landskabsingeniør'},
               {title: 'Sociologi'},
               {title: 'Spansk sprog og kultur'},

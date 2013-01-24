@@ -2,7 +2,6 @@ da:
   hello: "Hej Verden"
 
   dias:
-    test: "Dette er en test 1 2 3 ... æøå"
     edit: "Rediger"
     search: "Søg"
     changelang: "English"
@@ -13,6 +12,8 @@ da:
         validate:
           title: 'Der skal være en titel'
           afleveringsaar: 'Der skal være angivet et årstal i afleveringsaar'
+          pdffile: 'husk at tilføje en pdf fil'
+          vilkaarbetingelser: "Du skal acceptere vilkår og betingelser før opgaven kan oprettes"
           succes: "Opgaven blev oprettet"
           filepresent: "Du skal angive en pdf-file med opgaven der skal uploades"
           pdffile: "Filen skal være en PDF-fil"
@@ -20,6 +21,17 @@ da:
 
     views:
       forside:
+        velkommen: 'Digital Indsamling Af Studenteropgaver. DIAS.'
+        text: |
+            DIAS er et online repositorie for studenteropgaver skrevet i forbindelse med studie på Københavns Universitet.<br>
+            <ul>
+            <li>Søge efter tidligere studerendes opgaver</li>
+            <li>Downloade og læse opgaver</li>
+            <li>Tilføje dine egne opgaver så de bliver tilgængelige for andre og 'bevaret'</li>
+
+            </ul>
+        tilfoejknap: 'Tilføj Opgave'
+        tilfoejogloginknap: 'Log ind for at tilføje opgave'
         labels:
           title: 'Titel'
           undertitel: 'Undertitel'
