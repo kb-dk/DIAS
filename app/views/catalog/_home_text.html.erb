@@ -1,30 +1,26 @@
-<h4><%= t('blacklight.welcome') %></h4>
-<p>&nbsp;</p>
-<p><%= t('dias.test') %></p>
-<p>&nbsp;</p>
+<div class="hero-unit">
+<h2><%= t('dias.views.forside.velkommen') %></h2>
 
-<p>&nbsp;</p>
-<p>Denne tekst er hermed modificeres og skal nu multilingualiseres og dens visuelle kontekst skal styles.</p>
-<p>&nbsp;</p>
-<p>Hvis autodeploy med Capistrano virker kan man nu se denne tekst på disdev-01/dias</p>
-<p>&nbsp;</p>
-<p>Det er muligt at oprette en opgave ved at gå til</p>
-
+<p class="lead"><%=raw t('dias.views.forside.text') %></p>
+<hr>
 
 <% if can? :edit, @papers   %>
-<p><%= link_to t('.new', :default => 'Tilføj Opgave'),
+<p><%= link_to t('.new', :default => t('dias.views.forside.tilfoejknap')),
             new_paper_path,
             :class => 'btn btn-large btn-block btn-success' %>   </p>
 <% end %>
 
 <% if !can? :edit, @papers   %>
-    <p><%= link_to t('.new', :default => 'Log ind for at tilføje opgave'),
+    <p><%= link_to t('.new', :default => t('dias.views.forside.tilfoejogloginknap')),
                     new_user_session_path,
                    :class => 'btn btn-large btn-block btn-success' %>   </p>
 <% end %>
-
+</div>
 
 <% if can? :manage, @alle   %>
+
+<hr>
+<div class="hero-unit">
 <h3>Administrator</h3>
 <p>Det er muligt at se alle opgaver ved at gå til (kun relevant for administratorer)</p>
 <ul>
@@ -46,5 +42,5 @@
   <%else%>
       <%= link_to t('dias.changelang'), {:locale=>"en"} %>
   <%end%></p>
-
+ </div>
 <% end  %>

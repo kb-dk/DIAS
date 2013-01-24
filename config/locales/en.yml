@@ -23,6 +23,17 @@ en:
 
     views:
       forside:
+        velkommen: 'Digital Collection Of Student papers. In Danish. DIAS.'
+        text: |
+            DIAS is a online repository for studentpapers from the University of Copenhagen<br>
+            <ul>
+            <li>search for other students assignments</li>
+            <li>Downloade og  read papers</li>
+            <li>Add your own papers making them available and preserved</li>
+
+            </ul>
+        tilfoejknap: 'Add you paper'
+        tilfoejogloginknap: 'Log in and add you paper'
         labels:
           title: 'Title'
           undertitel: 'Subtitle'
