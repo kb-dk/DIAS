@@ -19,7 +19,7 @@
       <h4><%= @document["undertitel_t"].first.html_safe if @document["undertitel_t"] %></h4>
       <div class="document">
       <dl>
-        <dt>Forfatter</dt>
+        <dt><%=  t('dias.views.paper.labels.forfatter')  %></dt>
         <dd>
           <%= @document["forfatter_t"].first.html_safe %>
         </dd>
@@ -28,23 +28,23 @@
           <%= @document["afleveringsaar_t"].first.html_safe %>
         </dd>
 
-        <dt>Studium</dt>
+        <dt><%=  t('dias.views.paper.labels.studium')  %></dt>
         <dd>
           <%= @document["studium_t"].first.html_safe %>
         </dd>
 
 
-        <dt>Abstract</dt>
+        <dt><%=  t('dias.views.paper.labels.abstrakt')  %></dt>
         <dd> <blockquote>
           <%= @document["abstrakt_t"].first.html_safe if @document["abstrakt_t"] %>
         </blockquote>
         </dd>
-        <dt>Opgavetype</dt>
+        <dt><%=  t('dias.views.paper.labels.opgavetype')  %></dt>
         <dd>
           <%= @document["genre_t"].first.html_safe %>
         </dd>
 
-        <dt>Opgavesprog</dt>
+        <dt><%=  t('dias.views.paper.labels.opgavesprog')  %></dt>
         <dd>
           <%= @document["opgavesprog_t"].first.html_safe %>
         </dd>

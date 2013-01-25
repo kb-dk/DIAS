@@ -1,11 +1,5 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
-
   dias:
-    test: "This is a test 1 2 3 ..."
     edit: "Edit"
     search: "Search"
     changelang: "Dansk"
@@ -34,6 +28,7 @@ en:
             </ul>
         tilfoejknap: 'Add you paper'
         tilfoejogloginknap: 'Log in and add you paper'
+        allefelter: 'All'
         labels:
           title: 'Title'
           undertitel: 'Subtitle'

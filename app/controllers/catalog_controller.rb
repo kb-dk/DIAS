@@ -8,13 +8,16 @@ class CatalogController < ApplicationController
   include Hydra::Controller::ControllerBehavior
 
   # These before_filters apply the hydra access controls
-  # before_filter :enforce_show_permissions, :only=>:show
+  #before_filter :enforce_show_permissions, :only=>:show
   # This applies appropriate access controls to all solr queries
   # CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
   # This filters out objects that you want to exclude from search results, like FileAssets
   # CatalogController.solr_search_params_logic += [:exclude_unwanted_models]
 
+
+
   configure_blacklight do |config|
+    logger.info("### configure_blacklight i sproget I18n.locale=" + I18n.locale.to_s + " locale=" + :locale.to_s)
     config.default_solr_params = { 
       :qt => 'search',
       :rows => 10 
@@ -144,7 +147,7 @@ class CatalogController < ApplicationController
     # solr request handler? The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise. 
     
-    config.add_search_field 'all_fields', :label => 'Alle Felter' #I18n.translate('dias.views.forside')
+    config.add_search_field 'all_fields', :label => I18n.translate('dias.views.forside.allefelter') #'Alle Felter' #
     
 
     # Now we see how to over-ride Solr request handler defaults, in this

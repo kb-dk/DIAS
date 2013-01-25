@@ -1,5 +1,6 @@
-<div class="hero-unit">
 <h2><%= t('dias.views.forside.velkommen') %></h2>
+<div class="hero-unit">
+
 
 <p class="lead"><%=raw t('dias.views.forside.text') %></p>
 <hr>
@@ -38,7 +39,7 @@
 <p>Locale: <%= I18n.locale %></p>
 <p>&nbsp;</p>
 <p><%if I18n.locale.to_s=="en" %>
-      <%= link_to t('dias.changelang'), {:locale=>"da"} %>
+      <%= link_to t('dias.changelang'), {:locale => "da"} %>
   <%else%>
       <%= link_to t('dias.changelang'), {:locale=>"en"} %>
   <%end%></p>

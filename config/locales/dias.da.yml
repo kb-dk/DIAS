@@ -1,0 +1,80 @@
+da:
+  dias:
+    edit: "Rediger"
+    search: "Søg"
+    changelang: "English version"
+    cookiepolicy: "Cookie & privatlivspolitik"
+
+
+    models:
+      paper:
+        validate:
+          title: 'Der skal være en titel'
+          afleveringsaar: 'Der skal være angivet et årstal i afleveringsaar'
+          pdffile: 'husk at tilføje en pdf fil'
+          vilkaarbetingelser: "Du skal acceptere vilkår og betingelser før opgaven kan oprettes"
+          succes: "Opgaven blev oprettet"
+
+    views:
+      forside:
+        velkommen: 'Digital Indsamling Af Studenteropgaver. DIAS.'
+        text: |
+            DIAS er et online repositorie for studenteropgaver skrevet i forbindelse med studie på Københavns Universitet.<br>
+            <ul>
+            <li>Søge efter tidligere studerendes opgaver</li>
+            <li>Downloade og læse opgaver</li>
+            <li>Tilføje dine egne opgaver så de bliver tilgængelige for andre og 'bevaret'</li>
+
+            </ul>
+        tilfoejknap: 'Tilføj Opgave'
+        tilfoejogloginknap: 'Log ind for at tilføje opgave'
+        allefelter: 'Alle'
+        labels:
+          title: 'Titel'
+          undertitel: 'Undertitel'
+          forfatter: 'Forfatter'
+          afleveringsaar: 'År'
+          studium: 'Studie'
+          opgavetype: 'Type'
+          opgavesprog: 'Sprog'
+          abstrakt: 'Resume'
+
+      paper:
+        validate:
+          error: 'fejl forhindrede opgaven i at blive gemt:'
+        labels:
+          title: 'Titel'
+          undertitel: 'Undertitel'
+          forfatter: 'forfatter'
+          afleveringsaar: 'Afleveringsår'
+          studium: 'Studie'
+          opgavetype: 'Opgavetype'
+          opgavesprog: 'Opgavesprog'
+          abstrakt: 'Resume'
+          vilkaarogbetingelser: 'Vilkår og betingelser'
+          vilkaarogbetingelsertext: 'Jeg accepterer KBs vilkår og betingelser.'
+          vilkaarogbetingelserfulltext: |
+                                      Ved at uploade en opgave til DIAS accepterer jeg følgende:<br>
+                                      <ul style='list-style-type: decimal'>
+                                      <li>Opgaven er afleveret ved Københavns Universitet.</li>
+                                      <li>Opgaven er bestået.</li>
+                                      <li>Jeg er forfatter eller medforfatter til opgaven.</li>
+                                      <li>Hvis opgaven er skrevet af flere forfattere, er alle forfattere indtastet og indforstået med, at opgaven uploades til DIAS.</li>
+                                      <li>Opgaven indeholder ikke indhold, som krænker loven om ophavsret.</li>
+                                      <li>Brugere af DIAS kan benytte min opgave under hensyntagen til Create Commons Licence BY-NC-ND – læs mere.</li>
+                                      </ul>
+
+          pdffil: 'Opgaven i PDF format'
+          opretopgave: 'Opret Opgave'
+        help:
+          opgavetype: 'Hvilken type af opgave er der tale om (Bemærk at der ikke kan uploades specialer)'
+          opgavesprog: 'På hvilket sprog er opgaven skrevet.'
+          studium: 'På hvilket fag er opgaven skrevet.'
+          afleveringsaar: 'Det år, hvor opgaven blev afleveret til bedømmelse.'
+          navn: 'Dit for- og efternavn'
+          undertitel: 'Undertitlen på din opgave (ikke obligatorisk)'
+          titel: 'Titlen på din opgave'
+          abstrakt: 'Abstract eller en god beskrivelse af opgavens indhold.'
+        placeholder:
+          titel: 'En Teoretisk Analyse af...'
+          abstrakt: 'Opgaven består af en teoretisk gennemgang af feltet...'

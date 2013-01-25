@@ -2,16 +2,9 @@ HydraHead::Application.routes.draw do
 
 
   resources :paper_languages
-
-
   resources :paper_types
-
-
   resources :institutes
-
-
   resources :papers
-
   resources :downloads, :only => "show"
 
   root :to => "catalog#index"
