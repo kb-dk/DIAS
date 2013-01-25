@@ -11,8 +11,10 @@ en:
           afleveringsaar: 'Please add a year'
           pdffile: 'Remember to upload a pdf file'
           vilkaarbetingelser: "you must accept terms and conditions before the assignment can be created"
-
           succes: "Paper was successfully created."
+          filepresent: "You must upload a file"
+          pdffile: "File must be a PDF file"
+          fileproblem: "A problem occured when uploading the file, try again ..."
 
 
     views:

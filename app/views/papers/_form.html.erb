@@ -89,13 +89,17 @@
     </div>
 
     <div class="control-group">
-	<%= f.label t('dias.views.paper.labels.pdffil'), :class => 'control-label' %>
-	<div class="controls">
-      <div class="input-prepend">
-        <span class="add-on"><i class="icon icon-upload icon-large"></i></span>
-  		<%= file_field_tag 'content', :value => 'Upload fil', :accept => 'application/pdf',  :class => 'btn' %>
-      </div>
-	</div>
+        <% if @paper.original_filename.nil? %>
+            <%= f.label t('dias.views.paper.labels.pdffil'), :class => 'control-label' %>
+            <div class="controls">
+              <div class="input-prepend">
+                <span class="add-on"><i class="icon icon-upload icon-large"></i></span>
+                <%= file_field_tag 'content', :value => 'Upload fil', :accept => 'application/pdf',  :class => 'btn' %>
+              </div>
+            </div>
+        <% else %>
+            <%=  @paper.original_filename %>
+        <% end %>
     </div>
 
     <div class="control-group">

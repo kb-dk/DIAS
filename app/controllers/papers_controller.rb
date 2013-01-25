@@ -44,20 +44,7 @@ class PapersController < ApplicationController
   # POST /papers.json
   def create
     @paper = Paper.new(params[:paper])
-
-    if(params[:content])
-      file = params[:content]
-      @paper.add_file_datastream(file, :label=>file.original_filename, :mimeType=>file.content_type, :dsid=>'content')
-      logger.debug("opretter fil datastream ")
-    else
-      logger.debug("ingen fil datastream ")
-      @paper.add_file_datastream(nil)
-
-    end
-
-
-
-
+    @paper.add_file(params[:content])
     respond_to do |format|
       if @paper.save
         format.html { redirect_to catalog_path(@paper), notice: t('dias.models.paper.validate.succes') }

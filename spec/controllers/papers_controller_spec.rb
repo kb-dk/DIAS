@@ -24,14 +24,15 @@ describe PapersController do
   # Paper. As you add validations to Paper, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { title:"Opgavetitel", undertitel:"Undertitel", forfatter:"Fornavn Efternavn", abstrakt:"ABSTRACT mutus nomen dedit cocis", afleveringsaar:"2011", studium:"Biologi"}
+    { title:"Opgavetitel", undertitel:"Undertitel", forfatter:"Fornavn Efternavn", abstrakt:"ABSTRACT mutus nomen dedit cocis", afleveringsaar:"2011", studium:"Biologi", opgavetype:"bacheloropgave", opgavesprog:"Dansk"}
   end
+
+
 
   # This returns a pdf-file to simulate an uploaded file
   # should mock 'original_filename'
   def upload_file(filename,mime)
-    file = fixture_file_upload(filename,mime)
-    file.stub(:original_filename).and_return(filename)
+    file = ActionDispatch::Http::UploadedFile.new(filename: 'test.pdf', type: 'application/pdf', tempfile: File.new("#{Rails.root}/spec/fixtures/test.pdf"))
     file
   end
 
@@ -52,12 +53,10 @@ describe PapersController do
   end
 =end
 
-  describe "GET show" do
-    it "assigns the requested paper as @paper" do
-      paper = Paper.create! valid_attributes
-      get :show, {:id => paper.to_param}, valid_session
-      assigns(:paper).should eq(paper)
-    end
+  before do
+    @paper = Paper.new(valid_attributes)
+    @paper.add_file(upload_file("test.pdf","application/pdf"))
+    @paper.save
   end
 
   describe "GET new" do
@@ -67,24 +66,89 @@ describe PapersController do
     end
   end
 
-  describe "GET edit" do
+
+  describe "GET show" do
     it "assigns the requested paper as @paper" do
-      paper = Paper.create! valid_attributes
-      get :edit, {:id => paper.to_param}, valid_session
-      assigns(:paper).should eq(paper)
+      get :show, {:id => @paper.id}, valid_session
+      assigns(:paper).should eq(@paper)
+    end
+    after do
+      @paper.destroy
     end
   end
 
+
+
+  describe "GET edit" do
+    before do
+      @paper = Paper.new(valid_attributes)
+      @paper.add_file(upload_file("test.pdf","application/pdf"))
+      @paper.save
+    end
+    it "assigns the requested paper as @paper" do
+      get :edit, {:id => @paper.to_param}, valid_session
+      assigns(:paper).should eq(@paper)
+    end
+    after do
+      @paper.destroy
+    end
+  end
+
+  describe "PUT update" do
+    describe "with valid params" do
+
+=begin
+      it "updates the requested paper" do
+        Paper.any_instance.should_receive(:update_attributes).with({ "these" => "params" })
+        put :update, {:id => paper.id, :paper => { "these" => "params" }}, valid_session
+      end
+=end
+
+      it "assigns the requested paper as @paper and redirects to paper" do
+        @paper.update_attributes({title:"Ny titel"})
+        valid_attributes[:title] = "Ny titel"
+        put :update, {:id => @paper.pid, :paper => valid_attributes}, valid_session
+        assigns(:paper).should eq(@paper)
+      end
+
+
+      it "redirects to the paper" do
+        valid_attributes[:title] = "en anden ny titel"
+        put :update, {:id => @paper.pid, :paper => valid_attributes}, valid_session
+        response.should redirect_to(@paper)
+      end
+    end
+
+    describe "with invalid params" do
+      it "assigns the paper as @paper and re-renders the edit template" do
+        # paper = Paper.create! valid_attributes
+        # Trigger the behavior that occurs when invalid params are submitted
+        Paper.any_instance.stub(:save).and_return(false)
+        put :update, {:id => @paper.pid, :paper => {  }}, valid_session
+        assigns(:paper).should eq(@paper)
+      end
+
+      it "re-renders the 'edit' template" do
+        # paper = Paper.create! valid_attributes
+        # Trigger the behavior that occurs when invalid params are submitted
+        Paper.any_instance.stub(:save).and_return(false)
+        put :update, {:id => @paper.pid, :paper => {  }}, valid_session
+        response.should render_template("edit")
+      end
+    end
+  end
+
+
+
+
   describe "POST create" do
     describe "with valid params" do
-      it "creates a new Paper" do
-      	file = fixture_file_upload("/test.pdf","application/pdf")
-        file.stub!(:original_filename).and_return("test.pdf")
+      it "creates a new Paper and assigns as @paper" do
+      	file = upload_file("test.pdf","application/pdf")
         expect {
           post :create, {:paper => valid_attributes, :content => file}, valid_session
         }.to change(Paper, :count).by(1)
       end
-
       it "assigns a newly created paper as @paper" do
         file = fixture_file_upload("/test.pdf","application/pdf")
         file.stub!(:original_filename).and_return("test.pdf")
@@ -92,22 +156,14 @@ describe PapersController do
         assigns(:paper).should be_a(Paper)
         assigns(:paper).should be_persisted
       end
-=begin
-      it "redirects to the created paper" do
-        post :create, {:paper => valid_attributes}, valid_session
-        response.should redirect_to(Paper.last)
-      end
-=end
-
     end
 
     describe "with invalid params" do
       it "assigns a newly created but unsaved paper as @paper" do
         # Trigger the behavior that occurs when invalid params are submitted
         Paper.any_instance.stub(:save).and_return(false)
-        file = fixture_file_upload("/test.pdf","application/pdf")
-        file.stub!(:original_filename).and_return("test.pdf")
-        post :create, {:paper => {  }, :content => file}, valid_session
+   #     file = upload_file("test.pdf","application/pdf")
+        post :create, {:paper => {  }}, valid_session
         assigns(:paper).should be_a_new(Paper)
       end
 
@@ -122,63 +178,27 @@ describe PapersController do
     end
   end
 
-  describe "PUT update" do
-    describe "with valid params" do
-      it "updates the requested paper" do
-        paper = Paper.create! valid_attributes
-        # Assuming there are no other papers in the database, this
-        # specifies that the Paper created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        Paper.any_instance.should_receive(:update_attributes).with({ "these" => "params" })
-        put :update, {:id => paper.to_param, :paper => { "these" => "params" }}, valid_session
-      end
-
-      it "assigns the requested paper as @paper" do
-        paper = Paper.create! valid_attributes
-        put :update, {:id => paper.to_param, :paper => valid_attributes}, valid_session
-        assigns(:paper).should eq(paper)
-      end
-
-      it "redirects to the paper" do
-        paper = Paper.create! valid_attributes
-        put :update, {:id => paper.to_param, :paper => valid_attributes}, valid_session
-        response.should redirect_to(paper)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns the paper as @paper" do
-        paper = Paper.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Paper.any_instance.stub(:save).and_return(false)
-        put :update, {:id => paper.to_param, :paper => {  }}, valid_session
-        assigns(:paper).should eq(paper)
-      end
-
-      it "re-renders the 'edit' template" do
-        paper = Paper.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Paper.any_instance.stub(:save).and_return(false)
-        put :update, {:id => paper.to_param, :paper => {  }}, valid_session
-        response.should render_template("edit")
-      end
-    end
-  end
-
   describe "DELETE destroy" do
-    it "destroys the requested paper" do
-      paper = Paper.create! valid_attributes
+    it "destroys the requested paper and redirects to papers list" do
+      paper = Paper.new(valid_attributes)
+      paper.add_file(upload_file("test.pdf","application/pdf"))
+      paper.save
       expect {
-        delete :destroy, {:id => paper.to_param}, valid_session
+        delete :destroy, {:id => paper.pid}, valid_session
       }.to change(Paper, :count).by(-1)
     end
 
+
     it "redirects to the papers list" do
-      paper = Paper.create! valid_attributes
-      delete :destroy, {:id => paper.to_param}, valid_session
+      paper = Paper.new(valid_attributes)
+      paper.add_file(upload_file("test.pdf","application/pdf"))
+      paper.save
+      delete :destroy, {:id => paper.pid}, valid_session
       response.should redirect_to(papers_url)
     end
   end
 
+  after do
+    Paper.all.each { |p| p.delete}
+  end
 end
