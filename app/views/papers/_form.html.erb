@@ -96,7 +96,7 @@
             <%= file_field_tag 'content', :value => 'Upload fil', :accept => 'application/pdf',  :class => 'btn' %>
           </div>
         </div>
-        <% unless @paper.original_filename.nil %>
+        <% unless @paper.original_filename.nil? %>
             <%=  @paper.original_filename %>
         <% end %>
     </div>

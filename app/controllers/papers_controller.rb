@@ -60,7 +60,7 @@ class PapersController < ApplicationController
   # PUT /papers/1.json
   def update
     @paper = Paper.find(params[:id])
-
+    @paper.add_file(params[:content])
     respond_to do |format|
       if @paper.update_attributes(params[:paper])
         format.html { redirect_to @paper, notice: t('dias.models.paper.validate.succes') }
