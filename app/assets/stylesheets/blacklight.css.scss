@@ -4,30 +4,51 @@
 @import 'blacklight/blacklight';
 
 
+
+body{
+  padding:0;
+}
+.navbar {
+  box-shadow: none;
+  padding:10px 0;
+}
+
+.navbar .navbar-inner {
+  background: #FFF;
+  background-image: none;
+  background-repeat: none;
+  box-shadow: none;
+  border:none;
+  border-radius:none;
+  padding:0;
+
+}
 .navbar .brand {
-  background: url("/assets/dias/logo.gif") no-repeat scroll left bottom transparent;
-  margin-right: 10px;
+  background:transparent url(dias/logo.gif) no-repeat 0 0;
+  margin: 0px!important;
   overflow: hidden;
-  padding: 0px;
-  height:42px;
+  padding: 0px !important;
+  height:inherit;
   text-indent: inherit;
+  text-shadow: none;
   white-space: nowrap;
   width: inherit;
   font-size: inherit;
-  color: #777777;
+  color: #000!important;
   display: block;
   float: left;
+  box-shadow: none;
 }
 .navbar .brand h1, .navbar .brand h2  {
-  padding:0 0 0 45px;
+  padding:0 0 0 32px;
   margin:0;
   text-transform:uppercase;
 }
 .navbar .brand h1 {
-  font: normal 32px/32px times, Arial, Helvetica, sans-serif;
+  font: normal 18px/14px times, Arial, Helvetica, sans-serif;
 }
 .navbar .brand h2 {
-  font: normal 8px/8px times, Arial, Helvetica, sans-serif;
+  font: normal 11px/11px times, Arial, Helvetica, sans-serif;
 }
 
 .util-links-login, util-links-other{
