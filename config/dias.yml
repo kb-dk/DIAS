@@ -1,8 +1,7 @@
 development:
-  admin_pids: ["PID000242314"]
+  admin_pids: [""]
 test:
   admin_pids: ["spec-admin-pid"]
 
 production:
-  admin_pids:
-
+  admin_pids: [""]

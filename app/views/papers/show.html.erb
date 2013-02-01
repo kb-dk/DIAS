@@ -6,21 +6,25 @@
 
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @paper.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:undertitel) %>:</strong></dt>
-  <dd><%= @paper.undertitel %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:abstrakt) %>:</strong></dt>
-  <dd><%= @paper.abstrakt %></dd>
+  <dt><strong><%= t('dias.views.paper.labels.undertitel') %>:</strong></dt>
+  <dd><%= @paper.undertitel ? @paper.undertitel : "<i>BLANK</i>".html_safe %> </dd>
+  <dt><strong><%= t('dias.views.paper.labels.abstrakt') %>:</strong></dt>
+  <dd> <blockquote><%= @paper.abstrakt ? @paper.abstrakt :  "<i>BLANK</i>".html_safe%>  </blockquote></dd>
 
-  <dt><strong><%= model_class.human_attribute_name(:forfatter) %>:</strong></dt>
-  <dd><%= @paper.forfatter %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:afleveringsaar) %>:</strong></dt>
-  <dd><%= @paper.afleveringsaar %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:studium) %>:</strong></dt>
-  <dd><%= @paper.studium %></dd>
+  <dt><strong><%= t('dias.views.paper.labels.forfatter')%>:</strong></dt>
+  <dd><%=h @paper.forfatter %> </dd>
+  <dt><strong><%= t('dias.views.paper.labels.afleveringsaar') %>:</strong></dt>
+  <dd><%=h @paper.afleveringsaar %> </dd>
+  <dt><strong><%= t('dias.views.paper.labels.studium') %>:</strong></dt>
+  <dd><%=h @paper.studium %> </dd>
+  <dt><strong><%= t('dias.views.paper.labels.pdffil') %>:</strong></dt>
+
+  <dd>
+    <%= link_to 'PDF: '+ @paper.title, download_path(@paper) %>
+  </dd>
+
+
 </dl>
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_paper_path(@paper) %> |
-<%= link_to 'Back', papers_path %>
+<% if can? :manage, @alle   %>
+    <%= link_to t('dias.edit'), edit_paper_path(@paper), :class => 'btn' %>
+<% end %>

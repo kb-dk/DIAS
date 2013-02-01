@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+
+        <div class="span8 offset2">
+
+          <%= form_tag search_action_url, :method => :get, :class => "form-search" do %>
+              <%= search_as_hidden_fields(:omit_keys => [:q, :search_field, :qt, :page]).html_safe %>
+
+               <div class="input-prepend input-append">
+                 <button type="button" class="btn btn-success btn-large" data-toggle="collapse" data-target="#facets-collapse" >
+                  <span><%= t('blacklight.search.facets.title') %></span><i class="icon-filter"></i>
+                 </button>
+
+                  <label for="q" class="hide-text"><%= t('blacklight.search.form.q') %></label>
+                  <%= text_field_tag :q, params[:q], :placeholder => t('blacklight.search.form.q'), :class => "btn-large", :id => "q"%>
+
+                  <button type="submit" class="btn btn-success btn-large" id="search">
+                    <i class="icon-search"></i><span>Søg</span>
+                  </button>
+
+               </div>
+
+            <% end %>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+

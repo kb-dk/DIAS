@@ -16,12 +16,52 @@
 
       <% # bookmark/folder functions -%>
       <%= render_document_heading(:h1).html_safe %>
-
+      <h4><%= @document["undertitel_t"].first.html_safe if @document["undertitel_t"] %></h4>
       <div class="document">
-        <%= render_document_partial @document, :show %>
+      <dl>
+        <dt><%=  t('dias.views.paper.labels.forfatter')  %></dt>
+        <dd>
+          <%= @document["forfatter_t"].first.html_safe %>
+        </dd>
+        <dt><%=  t('dias.views.paper.labels.afleveringsaar')  %></dt>
+        <dd>
+          <%= @document["afleveringsaar_t"].first.html_safe %>
+        </dd>
+
+        <dt><%=  t('dias.views.paper.labels.studium')  %></dt>
+        <dd>
+          <%= @document["studium_t"].first.html_safe %>
+        </dd>
+
+
+        <dt><%=  t('dias.views.paper.labels.abstrakt')  %></dt>
+        <dd> <blockquote>
+          <%= @document["abstrakt_t"].first.html_safe if @document["abstrakt_t"] %>
+        </blockquote>
+        </dd>
+        <dt><%=  t('dias.views.paper.labels.opgavetype')  %></dt>
+        <dd>
+          <%= @document["genre_t"].first.html_safe %>
+        </dd>
+
+        <dt><%=  t('dias.views.paper.labels.opgavesprog')  %></dt>
+        <dd>
+          <%= @document["opgavesprog_t"].first.html_safe %>
+        </dd>
+
+        <dt>Download</dt>
+        <dd>
+          <%=  link_to 'PDF: '+ @document["title_t"].first.html_safe, download_path(@document["id"]) %>
+
+        </dd>
+      </dl>
       </div>
 
-     
+
+
+
+
+
     </div>
   </div>
 

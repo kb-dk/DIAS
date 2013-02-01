@@ -74,10 +74,16 @@ class ApplicationController < ActionController::Base
   end
 
   # set the locale
-  before_filter :set_locale
+  before_filter :set_locale, :loggingbeforefilt
+
  
   def set_locale
+    logger.debug "app_controller set_locale params[:locale]=" + params[:locale] + " I18n.default_locale=" +  I18n.default_locale.to_s rescue nil
     I18n.locale =  params[:locale] || I18n.default_locale
+  end
+
+  def loggingbeforefilt
+    logger.info "saa er der before filter *****"
   end
 
   def default_url_options(options={})

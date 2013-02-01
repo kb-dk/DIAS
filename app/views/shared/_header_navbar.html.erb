@@ -1,62 +1,58 @@
 
-    <div class="navbar">
-      <div class="navbar-inner">
 
-           <div class="row">
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
 
-              <button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+        <button class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" type="button">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
 
-              <a href="<%=root_path%>" title="<%=application_name%>" class="brand">
-                <h2>Det Kongelige Bibliotek</h2>
-                <h1>DIAS</h1>
-              </a>
+        <%if I18n.locale.to_s=="en" %>
+            <a href="<%=root_path%>" title="<%=application_name%>" class="brand langUk"></a>
+        <%else%>
+            <a href="<%=root_path%>" title="<%=application_name%>" class="brand langDa"></a>
+        <%end%>
 
-              <div class="nav-collapse collapse clearfix">
-
-                <ul class="nav pull-right">
-                  <li>
+        <div class="nav-collapse collapse">
+            <ul class="nav ">
+                <li>
                     <%= render :partial=>'/user_util_links' %>
-                  </li>
-                  <li>
+                </li>
+                <li>
+                    <a href=""#">FAQ</a>
+                </li>
+                <li>
                     <%if I18n.locale.to_s=="en" %>
                         <%= link_to t('dias.changelang'), {:locale=>"da"} %>
                     <%else%>
                         <%= link_to t('dias.changelang'), {:locale=>"en"} %>
                     <%end%>
-                  </li>
-                  <li>
+                </li>
+                <li>
                     <%if I18n.locale.to_s=="en" %>
-                        <%= link_to image_tag('http://minecookies.org/sites/default/files/mediearkiv/iconsmall.png') +
-                                            t('dias.cookiepolicy'), 'http://www.kb.dk/en/kb/webstedet/cookiepolitik.html' %>
+                        <%= link_to t('dias.cookiepolicy'), 'http://www.kb.dk/en/kb/webstedet/cookiepolitik.html',:class => 'cookie' %>
                     <%else%>
-                        <%= link_to image_tag('http://minecookies.org/sites/default/files/mediearkiv/iconsmall.png') +
-                                            t('dias.cookiepolicy') , 'http://www.kb.dk/da/kb/webstedet/cookiepolitik.html' %>
+                        <%= link_to t('dias.cookiepolicy') , 'http://www.kb.dk/da/kb/webstedet/cookiepolitik.html',:class => 'cookie' %>
                     <%end%>
-                  </li>
-                </ul>
+                </li>
+            </ul>
+        </div>
 
-              </div>
-
-           </div>
-
-            <div class="row" style="background:green;">
-              <div class="span3">...</div>
-              <div class="span6">
-                <div id="searchbar" style="text-align:center;">
-                  <%= render_search_bar  %>
-                </div>
-              </div>
-              <div class="span3">...</div>
-            </div>
-
-
-
-      </div>
     </div>
+  </div>
+</div>
+
+<div id="searchWrapper">
+    <%= render_search_bar  %>
+</div>
+
+
+
+
+
 
 
 

@@ -1,40 +1,60 @@
-<h4><%= t('blacklight.welcome') %></h4>
-<p>&nbsp;</p>
-<p><%= t('dias.test') %></p>
-<p>&nbsp;</p>
+<div class="row">
+    <div class="span6">
 
-<p>&nbsp;</p>
-<p>Denne tekst er hermed modificeres og skal nu multilingualiseres og dens visuelle kontekst skal styles.</p>
-<p>&nbsp;</p>
-<p>Hvis autodeploy med Capistrano virker kan man nu se denne tekst på disdev-01/dias</p>
-<p>&nbsp;</p>
-<p>Det er muligt at oprette en opgave ved at gå til</p>
-<p><%= link_to t('.new', :default => 'Tilføj Opgave'),
-            new_paper_path,
-            :class => 'btn btn-large btn-block btn-success' %>   </p>
+        <div class="hero-unit">
+          <h2><%= t('dias.views.forside.velkommen') %></h2>
+
+        <p class="lead"><%=raw t('dias.views.forside.text') %></p>
+        <hr>
+
+        <% if can? :edit, @papers   %>
+        <p><%= link_to t('.new', :default => t('dias.views.forside.tilfoejknap')),
+                    new_paper_path,
+                    :class => 'btn btn-large btn-block btn-success' %>   </p>
+        <% end %>
+
+        <% if !can? :edit, @papers   %>
+            <p><%= link_to t('.new', :default => t('dias.views.forside.tilfoejogloginknap')),
+                            new_user_session_path,
+                           :class => 'btn btn-large btn-block btn-success' %>   </p>
+        <% end %>
+        </div>
+
+        <% if can? :manage, @alle   %>
+
+        <hr>
+        <div class="hero-unit">
+        <h3>Administrator</h3>
+        <p>Det er muligt at se alle opgaver ved at gå til (kun relevant for administratorer)</p>
+        <ul>
+        <li><%=  link_to 'Se alle opgaver',papers_path %></li>
+        </ul>
+        <p>Det er muligt at oprette og redigere listen af studier, opgavesprog og opgavetyper</p>
+        <ul>
+        <li><%=  link_to 'Liste over studier',institutes_path %></li>
+        <li><%=  link_to 'Liste over sprog',paper_languages_path %></li>
+        <li><%=  link_to 'Liste over opgave typer',paper_types_path %></li>
+        </ul>
 
 
-<h3>Administrator</h3>
-<p>Det er muligt at se alle opgaver ved at gå til (kun relevant for administratorer)</p>
-<ul>
-<li><%=  link_to 'Se alle opgaver',papers_path %></li>
-</ul>
-<p>Det er muligt at oprette og redigere listen af studier, opgavesprog og opgavetyper</p>
-<ul>
-<li><%=  link_to 'Liste over studier',institutes_path %></li>
-<li><%=  link_to 'Liste over sprog',paper_languages_path %></li>
-<li><%=  link_to 'Liste over opgave typer',paper_types_path %></li>
-</ul>
+        <h3>Teknik:</h3>
+        <p>Locale: <%= I18n.locale %></p>
+        <p>&nbsp;</p>
+        <p><%if I18n.locale.to_s=="en" %>
+              <%= link_to t('dias.changelang'), {:locale => "da"} %>
+          <%else%>
+              <%= link_to t('dias.changelang'), {:locale=>"en"} %>
+          <%end%></p>
+         </div>
+        <% end  %>
 
+    </div>
 
-<h3>Teknik:</h3>
-<p>Locale: <%= I18n.locale %></p>
-<p>&nbsp;</p>
-<p><%if I18n.locale.to_s=="en" %>
-      <%= link_to t('dias.changelang'), {:locale=>"da"} %>
-  <%else%>
-      <%= link_to t('dias.changelang'), {:locale=>"en"} %>
-  <%end%></p>
+  <div class="span6">
+    <div class="hero-unit">
+      <h3>hero-unit</h3>
+      <p>Her skal stå noget tekst</p>
+    </div>
 
-<% #Creates a bit space in the page -%>
-
+  </div>
+</div>

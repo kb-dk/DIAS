@@ -3,17 +3,31 @@
 
 @import 'blacklight/blacklight';
 
+/* NOTE
+****************************************************************************************
+    Use html/body to overwrite propertie instead of !important
+*/
 
 
-body{
-  padding:0;
+html body{
+  padding:10px;
 }
-.navbar {
+html body input, html body .btn, html body textarea{
+ /* border-radius: 0px!important;    */
+}
+
+.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12, {
+  /*background:silver;   */
+}
+/* Header
+*****************************************************************************************/
+body .navbar {
   box-shadow: none;
-  padding:10px 0;
+  padding:0px;
+  margin:0px;
+  min-width:940px\9; /* Target IE8 and Below */
 }
-
-.navbar .navbar-inner {
+body .navbar .navbar-inner {
   background: #FFF;
   background-image: none;
   background-repeat: none;
@@ -23,38 +37,188 @@ body{
   padding:0;
 
 }
-.navbar .brand {
-  background:transparent url(dias/logo.gif) no-repeat 0 0;
-  margin: 0px!important;
-  overflow: hidden;
-  padding: 0px !important;
-  height:inherit;
-  text-indent: inherit;
+    /*LOGO*/
+  body .navbar .brand {
+      margin: 0 0 5px 0;
+      overflow: hidden;
+      padding: 0px;
+      height:49px;
+      text-indent: inherit;
+      text-shadow: none;
+      white-space: nowrap;
+      width: 225px;
+      font-size: inherit;
+      color: #000;
+      box-shadow: none;
+      z-index:50;
+    }
+   .navbar .langUk {
+      background:transparent url(dias/logoUk.png) no-repeat 0 0 !important;
+    }
+   .navbar .langDa {
+      background:transparent url(dias/logoDa.png) no-repeat 0 0 !important;
+    }
+
+  .navbar .nav-collapse{
+    float:right;
+  }
+
+
+
+body .navbar .nav > li > a {
+  font: 13px/13px times,Arial,Helvetica,sans-serif;
+  margin: 6px 0 0 0;
+  padding: 0px 8px 0 10px;
+  text-transform: uppercase;
   text-shadow: none;
-  white-space: nowrap;
-  width: inherit;
-  font-size: inherit;
-  color: #000!important;
-  display: block;
-  float: left;
+  color: #42403B;
+}
+body .navbar .nav > li > a.cookie {
+  background: transparent url(http://www.kb.dk/image_client_static/img/icons/cookie.png) no-repeat scroll 100% 50% ;
+  padding-right:21px;
+}
+
+
+
+body .navbar .nav > li > a:hover {
+  text-decoration: underline;
+}
+
+/* Kunne også tegnes via css ;)*/
+body .navbar .btn-navbar .icon-bar {
+  display:none;
+}
+/*SEARCH*/
+#searchWrapper{
+  background-color:#005837;
+  padding:10px 0;
+}
+#searchWrapper{
+  text-align:center;
+}
+#searchWrapper form{
+  margin:0px!important;
+}
+#searchWrapper button{
+  background:transparent;
+  border:2px solid transparent;
   box-shadow: none;
+  border-radius: 0;
 }
-.navbar .brand h1, .navbar .brand h2  {
-  padding:0 0 0 32px;
-  margin:0;
-  text-transform:uppercase;
+#searchWrapper button span{
+ font-family: times,Arial,Helvetica,sans-serif;
 }
-.navbar .brand h1 {
-  font: normal 18px/14px times, Arial, Helvetica, sans-serif;
+#searchWrapper .btn-large{
+  font-size: 24px!important;
+  padding-top: 5px!important;
+  padding-bottom: 5px!important;
 }
-.navbar .brand h2 {
-  font: normal 11px/11px times, Arial, Helvetica, sans-serif;
-}
-
-.util-links-login, util-links-other{
-  float:left;
+#searchWrapper input.btn-large{
+  font-size: 20px!important;
 }
 
-.navbar .nav  > li > a {
-  display:inline;
+/* FACET */
+ #facets{
+    background: #2e8b57;
 }
+
+
+
+/* PARER VIEW*/
+.blacklight-papers #searchbar .span3 button{
+    display:none;
+}
+
+/*****************************************************************************************
+  RESPONSIVE
+*****************************************************************************************/
+
+/* HEADER
+*****************************************************************************************/
+
+@media (max-width: 979px) {
+
+  html body {
+    padding:0px;
+  }
+  body .navbar .brand {
+    margin:5px;
+  }
+  body .navbar .nav > li > a  {
+    background: none repeat scroll 0 0 transparent;
+    border-top: 1px dotted #D7DDE3;
+    display: block;
+    float: none;
+    font: 11px/48px times,Arial,Helvetica,sans-serif;
+    margin: 0;
+    padding: 0 0 0 64px;
+    border-radius: 0px;
+  }
+
+
+
+
+  body .navbar .nav {
+    padding:0px;
+    margin:0px;
+    border-bottom: 1px dotted #D7DDE3;
+  }
+
+  body .navbar .btn-navbar {
+    box-shadow:none;
+    float: none;
+    margin: 0;
+    padding: 0px;
+    text-shadow: none;
+    border:none;
+    background: url("dias/toggleMenuIcon.png") no-repeat scroll 50% 50% transparent;
+    height: 49px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 49px;
+    border-radius:0px;
+  }
+  body .navbar .nav li a.cookie {
+    background:none;
+  }
+  body .navbar .nav li a.cookie:hover {
+    background-color:#F2F2F2;
+  }
+  body .navbar .nav li a.cookie:after {
+    content:" ";
+    width:49px;
+    height:49px;
+    right:5px;
+    position:absolute;
+    background: transparent url(http://www.kb.dk/image_client_static/img/icons/cookie.png) no-repeat scroll 50% 50% ;
+    margin:0;
+    padding:0;
+  }
+
+  .navbar .nav-collapse{
+    float:none;
+  }
+
+
+
+   #searchbar .span3 button{
+    display:block;
+     width:100%;
+  }
+}
+@media (max-width: 768px) {
+/*SEARCH*/
+
+  #searchWrapper button span{
+    display:none;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+
+}
+
