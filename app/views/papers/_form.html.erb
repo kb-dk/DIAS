@@ -36,7 +36,11 @@
       <div class="controls">
         <div class="input-prepend">
           <span class="add-on"><i class="icon-user"></i></span>
+          <% if @paper.forfatter.nil? || @paper.forfatter.blank? %>    <!-- hvis der oprettes en ny opgave er forfatter navnet udfyldt med den indloggede bruger -->
           <%= f.text_field :forfatter, :class => 'text_field span6',  :value => current_user.name %>
+          <% else %>
+                <%= f.text_field :forfatter, :class => 'text_field span6' %>
+          <% end %>
         </div>
 
 
