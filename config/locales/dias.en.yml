@@ -44,19 +44,20 @@ en:
        overskrift: 'FAQ'
        text: |
             <div>
-            <p>Spørgsmål?</p>
-            <p><blockquote>Kvalificeret svar</blockquote><p>
+            <p>Question?</p>
+            <p><blockquote>Answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh. Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. Fusce bibendum, velit in venenatis viverra, tellus ligula dignissim felis, quis euismod mauris tellus ut urna.</blockquote><p>
             </div>
             <div>
-            <p>Spørgsmål?</p>
-            <p><blockquote>Kvalificeret svar</blockquote><p>
+            <p>Question?</p>
+            <p><blockquote>Answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh. Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. Fusce bibendum, velit in venenatis viverra, tellus ligula dignissim felis, quis euismod mauris tellus ut urna.</blockquote><p>
             </div>
       kontakt:
        overskrift: 'Contact'
        text: |
             <div>
-            <p>kontakt os</p>
-            <p><blockquote>skriv en email til kontaktbiblioteket@kb.dk</blockquote><p>
+            <p>Please contact us</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh. Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. Fusce bibendum, velit in venenatis viverra, tellus ligula dignissim felis, quis euismod mauris tellus ut urna.</p>
+            <p><a href="mailto:kontaktbiblioteket@kb.dk">Send us an e-mail with your question</a><p>
             </div>
 
       paper:
