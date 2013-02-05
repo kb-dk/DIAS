@@ -4,7 +4,8 @@ da:
     search: "Søg"
     changelang: "English"
     cookiepolicy: "Cookie & privatlivspolitik"
-
+    footer: |
+          <p class="credit muted row">Det Kongelige Bibliotek, Postbox 2149, DK-1016 København K, (+45) 33 47 47 47, <a href="mailto:kb@kb.dk">kb@kb.dk</a>, EAN: 5798 000795297</p>
 
     models:
       paper:
