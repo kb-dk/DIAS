@@ -2,7 +2,7 @@
     <% if has_user_authentication_provider? %>
     <li class="util-links-login" id="userlogin">
           <% if current_user %>
-              <%= link_to ' ' + t('blacklight.header_links.logout'), destroy_user_session_path, :class => 'icon-off',
+              <%= link_to ' ' + t('blacklight.header_links.logout'), destroy_user_session_path,
                           :rel => 'tooltip', "data-placement" => "bottom",
                           "data-placement" => "bottom",
                           :title =>  t('blacklight.header_links.logout') + ' ' + current_user.name   %>

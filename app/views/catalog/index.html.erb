@@ -1,8 +1,10 @@
-<div id="sidebar" class="span3">
+
+<div id="sidebar" class="span12">
  <%= render :partial=>'facets' %>
 </div><!--/well -->
 
-<div id="content" class="span9">
+
+<div id="content" class="span12">
 
     <% unless has_search_parameters? %>
 	    <%# if there are no input/search related params, display the "home" partial -%>
@@ -30,5 +32,6 @@
 
 
     <% end %>
+
 
 </div>

@@ -38,7 +38,18 @@ da:
           opgavetype: 'Type'
           opgavesprog: 'Sprog'
           abstrakt: 'Resume'
-
+      faq:
+       overskrift: 'dette er overskriften'
+       text: |
+            <div>
+            <p>Spørgsmål?</p>
+            <p><blockquote>Kvalificeret svar</blockquote><p>
+            </div>
+            <div>
+            <p>Spørgsmål?</p>
+            <p><blockquote>Kvalificeret svar</blockquote><p>
+            </div>
+            
       paper:
         validate:
           error: 'fejl forhindrede opgaven i at blive gemt:'

@@ -1,47 +1,60 @@
-<h2><%= t('dias.views.forside.velkommen') %></h2>
-<div class="hero-unit">
+<div class="row">
+    <div class="span6">
+
+        <div class="hero-unit">
+          <h2><%= t('dias.views.forside.velkommen') %></h2>
+
+        <p class="lead"><%=raw t('dias.views.forside.text') %></p>
+        <hr>
+
+        <% if can? :edit, @papers   %>
+        <p><%= link_to t('.new', :default => t('dias.views.forside.tilfoejknap')),
+                    new_paper_path,
+                    :class => 'btn btn-large btn-block btn-success' %>   </p>
+        <% end %>
+
+        <% if !can? :edit, @papers   %>
+            <p><%= link_to t('.new', :default => t('dias.views.forside.tilfoejogloginknap')),
+                            new_user_session_path,
+                           :class => 'btn btn-large btn-block btn-success' %>   </p>
+        <% end %>
+        </div>
+
+        <% if can? :manage, @alle   %>
+
+        <hr>
+        <div class="hero-unit">
+        <h3>Administrator</h3>
+        <p>Det er muligt at se alle opgaver ved at gå til (kun relevant for administratorer)</p>
+        <ul>
+        <li><%=  link_to 'Se alle opgaver',papers_path %></li>
+        </ul>
+        <p>Det er muligt at oprette og redigere listen af studier, opgavesprog og opgavetyper</p>
+        <ul>
+        <li><%=  link_to 'Liste over studier',institutes_path %></li>
+        <li><%=  link_to 'Liste over sprog',paper_languages_path %></li>
+        <li><%=  link_to 'Liste over opgave typer',paper_types_path %></li>
+        </ul>
 
 
-<p class="lead"><%=raw t('dias.views.forside.text') %></p>
-<hr>
+        <h3>Teknik:</h3>
+        <p>Locale: <%= I18n.locale %></p>
+        <p>&nbsp;</p>
+        <p><%if I18n.locale.to_s=="en" %>
+              <%= link_to t('dias.changelang'), {:locale => "da"} %>
+          <%else%>
+              <%= link_to t('dias.changelang'), {:locale=>"en"} %>
+          <%end%></p>
+         </div>
+        <% end  %>
 
-<% if can? :edit, @papers   %>
-<p><%= link_to t('.new', :default => t('dias.views.forside.tilfoejknap')),
-            new_paper_path,
-            :class => 'btn btn-large btn-block btn-success' %>   </p>
-<% end %>
+    </div>
 
-<% if !can? :edit, @papers   %>
-    <p><%= link_to t('.new', :default => t('dias.views.forside.tilfoejogloginknap')),
-                    new_user_session_path,
-                   :class => 'btn btn-large btn-block btn-success' %>   </p>
-<% end %>
+  <div class="span6">
+    <div class="hero-unit">
+      <h3>hero-unit</h3>
+      <p>Her skal stå noget tekst</p>
+    </div>
+
+  </div>
 </div>
-
-<% if can? :manage, @alle   %>
-
-<hr>
-<div class="hero-unit">
-<h3>Administrator</h3>
-<p>Det er muligt at se alle opgaver ved at gå til (kun relevant for administratorer)</p>
-<ul>
-<li><%=  link_to 'Se alle opgaver',papers_path %></li>
-</ul>
-<p>Det er muligt at oprette og redigere listen af studier, opgavesprog og opgavetyper</p>
-<ul>
-<li><%=  link_to 'Liste over studier',institutes_path %></li>
-<li><%=  link_to 'Liste over sprog',paper_languages_path %></li>
-<li><%=  link_to 'Liste over opgave typer',paper_types_path %></li>
-</ul>
-
-
-<h3>Teknik:</h3>
-<p>Locale: <%= I18n.locale %></p>
-<p>&nbsp;</p>
-<p><%if I18n.locale.to_s=="en" %>
-      <%= link_to t('dias.changelang'), {:locale => "da"} %>
-  <%else%>
-      <%= link_to t('dias.changelang'), {:locale=>"en"} %>
-  <%end%></p>
- </div>
-<% end  %>
