@@ -39,7 +39,7 @@ da:
           opgavesprog: 'Sprog'
           abstrakt: 'Resume'
       faq:
-       overskrift: 'dette er overskriften'
+       overskrift: 'Spørgsmål og svar'
        text: |
             <div>
             <p>Spørgsmål?</p>
@@ -49,7 +49,14 @@ da:
             <p>Spørgsmål?</p>
             <p><blockquote>Kvalificeret svar</blockquote><p>
             </div>
-            
+      kontakt:
+       overskrift: 'Kontakt'
+       text: |
+            <div>
+            <p>kontakt os</p>
+            <p><blockquote>skriv en email til kontaktbiblioteket@kb.dk</blockquote><p>
+            </div>
+
       paper:
         validate:
           error: 'fejl forhindrede opgaven i at blive gemt:'

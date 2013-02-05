@@ -40,6 +40,24 @@ en:
           opgavetype: 'Type'
           opgavesprog: 'Language'
           abstrakt: 'Abstract'
+      faq:
+       overskrift: 'FAQ'
+       text: |
+            <div>
+            <p>Spørgsmål?</p>
+            <p><blockquote>Kvalificeret svar</blockquote><p>
+            </div>
+            <div>
+            <p>Spørgsmål?</p>
+            <p><blockquote>Kvalificeret svar</blockquote><p>
+            </div>
+      kontakt:
+       overskrift: 'Contact'
+       text: |
+            <div>
+            <p>kontakt os</p>
+            <p><blockquote>skriv en email til kontaktbiblioteket@kb.dk</blockquote><p>
+            </div>
 
       paper:
         validate:

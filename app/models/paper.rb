@@ -10,7 +10,7 @@ class Paper < ActiveFedora::Base
     m.field "mime_type", :string
   end
   
-  attr_accessor = :title, :undertitel, :forfatter, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog
+  #attr_accessor = :title, :undertitel, :forfatter, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog
 
   validates_presence_of :afleveringsaar,
                         :message => I18n.t('dias.models.paper.validate.afleveringsaar')
