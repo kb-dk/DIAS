@@ -4,6 +4,7 @@
 
   gem 'blacklight', '~> 4.0.1'
   gem 'hydra-head', '~> 5.0.0'
+  gem 'hydra-access-controls' #TODO ABWE er den her nødvendig?
 
 
 
