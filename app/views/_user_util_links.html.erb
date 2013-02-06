@@ -9,7 +9,11 @@
 
 
           <% else %>
-              <%= link_to t('blacklight.header_links.login'), new_user_session_path %>
+              <%= link_to t('blacklight.header_links.login'), new_user_session_path,
+                          :rel => 'tooltip', "data-placement" => "bottom",
+                          "data-placement" => "bottom",
+                          :title =>  t('dias.views.forside.tilfoejogloginknap')
+              %>
           <% end %>
 
     </li>
