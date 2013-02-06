@@ -86,6 +86,11 @@ class CatalogController < ApplicationController
     config.add_index_field 'afleveringsaar_vern_t', :label => I18n.t('dias.views.forside.labels.afleveringsaar')
 
 
+
+    config.add_index_field 'opgavetype_t', :label => I18n.t('dias.views.forside.labels.opgavetype')
+    config.add_index_field 'opgavetype_vern_t', :label => I18n.t('dias.views.forside.labels.opgavetype')
+
+
     #config.add_index_field 'author_vern_display', :label => 'Author:'
     #config.add_index_field 'format', :label => 'Format:'
     #config.add_index_field 'language_facet', :label => 'Language:'
