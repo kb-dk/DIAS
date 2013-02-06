@@ -57,6 +57,10 @@ class Paper < ActiveFedora::Base
 
   delegate_to 'descMetadata', [:title, :undertitel, :forfatter, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog ], :unique => true
   delegate_to 'techMetadata', [:original_filename, :mime_type ], :unique => true
+  # delegate_to 'rightsMetadata', [:license, :author]
+  delegate :license_title, :to=>'rightsMetadata', :at=>[:license, :title], :unique=>true
+  delegate :license_description, :to=>'rightsMetadata', :at=>[:license, :description], :unique=>true
+  delegate :license_url, :to=>'rightsMetadata', :at=>[:license, :url], :unique=>true
 
 
 
