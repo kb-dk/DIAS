@@ -91,6 +91,7 @@ da:
           studium: 'Studie'
           opgavetype: 'Opgavetype'
           opgavesprog: 'Opgavesprog'
+          licens: 'Licens'
           abstrakt: 'Resume'
           vilkaarogbetingelser: 'Vilkår og betingelser'
           vilkaarogbetingelsertext: 'Jeg accepterer KBs vilkår og betingelser.'

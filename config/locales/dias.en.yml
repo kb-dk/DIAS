@@ -73,6 +73,7 @@ en:
           studium: 'Subject'
           opgavetype: 'Type of paper'
           opgavesprog: 'Language'
+          licens: 'License'
           abstrakt: 'Abstract'
           vilkaarogbetingelser: 'Terms and Conditions'
           vilkaarogbetingelsertext: "I accept the Royal Library's Terms and Conditions."
