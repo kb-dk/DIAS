@@ -34,6 +34,11 @@
   group :development, :test do
     gem 'rspec-rails'
     gem 'jettywrapper'
+    gem 'better_errors'
+    gem 'spork'
+    gem 'debugger'
+    gem 'equivalent-xml'
+    gem 'rb-inotify', '~> 0.8.8', :require => false
   end
 
 
