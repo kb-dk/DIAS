@@ -12,7 +12,8 @@
   <dd> <blockquote><%= @paper.abstrakt ? @paper.abstrakt :  "<i>BLANK</i>".html_safe%>  </blockquote></dd>
 
   <dt><strong><%= t('dias.views.paper.labels.forfatter')%>:</strong></dt>
-  <dd><%=h @paper.forfatter %> </dd>
+  <dd><%=h @paper.forfatter[0] %> </dd>
+  <dd><%=h @paper.forfatter[1] %> </dd>
   <dt><strong><%= t('dias.views.paper.labels.afleveringsaar') %>:</strong></dt>
   <dd><%=h @paper.afleveringsaar %> </dd>
   <dt><strong><%= t('dias.views.paper.labels.studium') %>:</strong></dt>

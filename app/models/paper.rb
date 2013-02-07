@@ -9,8 +9,9 @@ class Paper < ActiveFedora::Base
     m.field "original_filename", :string
     m.field "mime_type", :string
   end
-  
-  #attr_accessor = :title, :undertitel, :forfatter, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog
+
+  attr_accessor = :title, :undertitel, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog
+
 
   validates_presence_of :afleveringsaar,
                         :message => I18n.t('dias.models.paper.validate.afleveringsaar')
@@ -55,7 +56,8 @@ class Paper < ActiveFedora::Base
   delegate :studium, :to=>"descMetadata", :unique=>"true"
 =end
 
-  delegate_to 'descMetadata', [:title, :undertitel, :forfatter, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog ], :unique => true
+  delegate_to 'descMetadata', [:title, :undertitel, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog ], :unique => true
+  #delegate :forfatter, :to=>'descMetadata'
   delegate_to 'techMetadata', [:original_filename, :mime_type ], :unique => true
   # delegate_to 'rightsMetadata', [:license, :author]
   delegate :license_title, :to=>'rightsMetadata', :at=>[:license, :title], :unique=>true
@@ -63,6 +65,28 @@ class Paper < ActiveFedora::Base
   delegate :license_url, :to=>'rightsMetadata', :at=>[:license, :url], :unique=>true
 
 
+  # modify default attribute methods for forfatter
+  def forfatter(*args)
+      descMetadata.name.namePart(*args)
+  end
+
+
+  def forfatter=(val)
+    # TODO: Check if authorslist has changed
+    logger.error("setting forfatter")
+    logger.error(val)
+    descMetadata.remove_authors
+    val.each do |v|
+      logger.error("forfatter "+v)
+      descMetadata.insert_author(v)
+    end
+  end
+
+  def to_solr(solr_doc={})
+    super
+    solr_doc["forfatter_t"] = self.forfatter.join(", ")
+    return solr_doc
+  end
 
 
   def add_default_license
