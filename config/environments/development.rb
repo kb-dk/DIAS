@@ -35,5 +35,8 @@ HydraHead::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  # ABWE added log level
+  config.log_level = :debug
+
 
 end

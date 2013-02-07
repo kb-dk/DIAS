@@ -10,9 +10,8 @@ class Paper < ActiveFedora::Base
     m.field "mime_type", :string
   end
 
-
-
   attr_accessor = :title, :undertitel, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog
+
 
   validates_presence_of :afleveringsaar,
                         :message => I18n.t('dias.models.paper.validate.afleveringsaar')
@@ -60,6 +59,10 @@ class Paper < ActiveFedora::Base
   delegate_to 'descMetadata', [:title, :undertitel, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog ], :unique => true
   #delegate :forfatter, :to=>'descMetadata'
   delegate_to 'techMetadata', [:original_filename, :mime_type ], :unique => true
+  # delegate_to 'rightsMetadata', [:license, :author]
+  delegate :license_title, :to=>'rightsMetadata', :at=>[:license, :title], :unique=>true
+  delegate :license_description, :to=>'rightsMetadata', :at=>[:license, :description], :unique=>true
+  delegate :license_url, :to=>'rightsMetadata', :at=>[:license, :url], :unique=>true
 
 
   # modify default attribute methods for forfatter
@@ -83,6 +86,13 @@ class Paper < ActiveFedora::Base
     super
     solr_doc["forfatter_t"] = self.forfatter.join(", ")
     return solr_doc
+  end
+
+
+  def add_default_license
+    self.license_title = 'Navngivelse-IkkeKommerciel-IngenBearbejdelse 3.0 Unported (CC BY-NC-ND 3.0)'
+    self.license_url = 'http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da'
+    return true
   end
 
   #add_file and check_file  are modified versions of add_file and check_file from the ADL project

@@ -68,6 +68,12 @@ describe Paper do
       @paper.rightsMetadata.should be_kind_of Hydra::Datastream::RightsMetadata
     end
 
+    it "Should have rightsmetadata stream with cc license info" do
+      @paper.license_title == valid_attributes[:license_title]
+      @paper.license_description == valid_attributes[:license_description]
+      @paper.license_url == valid_attributes[:license_url]
+    end
+
     it "Should have tech metadatastream  stream named 'techMetadata'" do
       @paper.techMetadata.should be_kind_of ActiveFedora::SimpleDatastream
     end
