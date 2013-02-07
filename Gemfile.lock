@@ -275,7 +275,6 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.3)
   equivalent-xml
-  hydra-access-controls
   hydra-head (~> 5.0.0)
   jettywrapper
   jquery-rails
