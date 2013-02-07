@@ -201,7 +201,7 @@ describe PapersController do
     end
   end
 
-#  after do
-#    Paper.all.each { |p| p.delete}
-#  end
+  after do
+    Paper.all.each { |p| p.delete}
+  end
 end
