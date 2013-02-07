@@ -24,7 +24,7 @@ describe PapersController do
   # Paper. As you add validations to Paper, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { title:"Opgavetitel", undertitel:"Undertitel", forfatter:"Fornavn Efternavn", abstrakt:"ABSTRACT mutus nomen dedit cocis", afleveringsaar:"2011", studium:"Biologi", opgavetype:"bacheloropgave", opgavesprog:"Dansk"}
+    { title:"Opgavetitel", undertitel:"Undertitel", forfatter:["Fornavn1 Efternavn1","Fornavn2 Efternavn2"], abstrakt:"ABSTRACT mutus nomen dedit cocis", afleveringsaar:"2011", studium:"Biologi", opgavetype:"bacheloropgave", opgavesprog:"Dansk"}
   end
 
 
@@ -73,7 +73,7 @@ describe PapersController do
       assigns(:paper).should eq(@paper)
     end
     after do
-      @paper.destroy
+      @paper.delete
     end
   end
 
@@ -90,7 +90,7 @@ describe PapersController do
       assigns(:paper).should eq(@paper)
     end
     after do
-      @paper.destroy
+      @paper.delete
     end
   end
 
@@ -106,7 +106,9 @@ describe PapersController do
 
       it "assigns the requested paper as @paper and redirects to paper" do
         @paper.update_attributes({title:"Ny titel"})
+        @paper.update_attributes({forfatter:["Ny Forfatter1","Ny Forfatter2"]})
         valid_attributes[:title] = "Ny titel"
+        valid_attributes[:forfatter] =  ["Ny Forfatter1","Ny Forfatter2"]
         put :update, {:id => @paper.pid, :paper => valid_attributes}, valid_session
         assigns(:paper).should eq(@paper)
       end
@@ -114,6 +116,7 @@ describe PapersController do
 
       it "redirects to the paper" do
         valid_attributes[:title] = "en anden ny titel"
+        valid_attributes[:forfatter] =  ["Ny Forfatter1","Ny Forfatter2"]
         put :update, {:id => @paper.pid, :paper => valid_attributes}, valid_session
         response.should redirect_to(@paper)
       end
@@ -198,7 +201,7 @@ describe PapersController do
     end
   end
 
-  after do
-    Paper.all.each { |p| p.delete}
-  end
+#  after do
+#    Paper.all.each { |p| p.delete}
+#  end
 end
