@@ -44,6 +44,7 @@ class PapersController < ApplicationController
   # POST /papers.json
   def create
     @paper = Paper.new(params[:paper])
+    logger.error(@paper)
     @paper.add_file(params[:content])
     respond_to do |format|
       if @paper.save
