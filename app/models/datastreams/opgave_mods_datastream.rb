@@ -15,9 +15,19 @@
 
 class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
 
+  MODS_NS = 'http://www.loc.gov/mods/v3'
+  MODS_SCHEMA = 'http://www.loc.gov/standards/mods/v3/mods-3-3.xsd'
+  MODS_PARAMS = {
+      "version"            => "3.3",
+      "xmlns:xlink"        => "http://www.w3.org/1999/xlink",
+      "xmlns:xsi"          => "http://www.w3.org/2001/XMLSchema-instance",
+      "xmlns"              => MODS_NS,
+      "xsi:schemaLocation" => "#{MODS_NS} #{MODS_SCHEMA}",
+  }
+
   # OM (Opinionated Metadata) terminology mapping for the mods xml
   set_terminology do |t|
-    t.root(:path => "mods", :xmlns => "http://www.loc.gov/mods/v3", :schema => "http://www.loc.gov/standards/mods/v3/mods-3-2.xsd")
+    t.root(:path => "mods", :xmlns => MODS_NS, :schema => MODS_SCHEMA)
 
 
     t.titleInfo do
@@ -34,7 +44,10 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     #</name>
 
     t.name do
-      t.namePart(:index_as => [:searchable, :displayable, :sortable])
+      t.namePart(:index_as => [:searchable, :displayable,])
+      t.role do
+        t.roleTerm
+      end
     end
 
     t.abstract(:index_as => [:searchable, :displayable])
@@ -64,16 +77,56 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
     # these proxy declarations allow you to use more familiar term/field names that hide the details of the XML structure
     t.title(:proxy => [:titleInfo, :title])
     t.undertitel(:proxy => [:titleInfo, :subTitle])
-    t.forfatter(:proxy => [:name, :namePart])
+   # t.forfatter(:proxy => [:name, :namePart])
     t.abstrakt(:proxy => [:abstract])
     t.afleveringsaar(:proxy => [:originInfo, :dataIssued])
     t.studium(:proxy => [:originInfo, :location, :physicalLocation])
     t.opgavesprog(:proxy => [:language, :languageTerm])
     t.opgavetype(:proxy => [:genre])
 
+
   end # set_terminology
 
 
+  define_template :name do |xml, name|
+    xml.name {
+      xml.namePart(name)
+      xml.role {
+        xml.roleTerm("author", :authority => "marcrelator", :type => "text")
+      }
+    }
+  end
+
+  def self.xml_template
+    Nokogiri::XML::Builder.new do |xml|
+      xml.mods(MODS_PARAMS) {
+        xml.titleInfo {
+          xml.title
+          xml.subtitle
+        }
+        xml.name {
+          xml.namePart
+          xml.role {
+            xml.roleTerm("author", :authority => "marcrelator", :type => "text")
+          }
+        }
+        xml.abstract
+        xml.originInfo {
+          xml.dateIssued
+          xml.location {
+            xml.physicalLocation
+          }
+        }
+        xml.typeOfRessource
+        xml.genre
+        xml.language {
+          xml.languageTerm
+        }
+      }
+    end.doc
+  end
+
+=begin
   #ABWE added this method.
   def self.xml_template
     Nokogiri::XML.parse '<mods xmlns="http://www.loc.gov/mods/v3" version="3.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3
@@ -104,6 +157,26 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
            <languageTerm code="code" authority="iso369-2b">dan<languageTerm>   <!-- Opgavesprog -->
      </language>   
 </mods>'
+  end
+=end
+
+  def insert_author(name)
+    logger.error(name)
+    sibling = find_by_terms(:name).last
+    if (sibling.nil?)
+      add_child_node(ng_xml.root,:name, name)
+    else
+      add_next_sibling_node(sibling,:name, name)
+    end
+    content_will_change!
+  end
+
+  def remove_authors
+    nodes = find_by_terms(:name)
+    if nodes.size > 0
+      nodes.each { |n| n.remove }
+      content_will_change!
+    end
   end
 
 end # class
