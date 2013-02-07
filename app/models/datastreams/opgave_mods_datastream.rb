@@ -104,12 +104,6 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
           xml.title
           xml.subtitle
         }
-        xml.name {
-          xml.namePart
-          xml.role {
-            xml.roleTerm("author", :authority => "marcrelator", :type => "text")
-          }
-        }
         xml.abstract
         xml.originInfo {
           xml.dateIssued
