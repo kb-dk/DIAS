@@ -84,6 +84,7 @@ class Paper < ActiveFedora::Base
 
   def to_solr(solr_doc={})
     super
+    solr_doc["licens_t"] = self.license_url
     solr_doc["forfatter_t"] = self.forfatter.join(", ")
     return solr_doc
   end
@@ -92,7 +93,6 @@ class Paper < ActiveFedora::Base
   def add_default_license
     self.license_title = 'Navngivelse-IkkeKommerciel-IngenBearbejdelse 3.0 Unported (CC BY-NC-ND 3.0)'
     self.license_url = 'http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da'
-    return true
   end
 
   #add_file and check_file  are modified versions of add_file and check_file from the ADL project

@@ -51,7 +51,11 @@
 
         <dt><%=  t('dias.views.paper.labels.licens')  %></dt>
         <dd>
-          <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da"><img alt="Creative Commons licens" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a><br />Dette værk er licenseret under en <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da">Creative Commons Navngivelse-IkkeKommerciel-IngenBearbejdelse 3.0 Unported Licens</a>.
+          <% if @document["licens_t"] %>
+           <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da"><img alt="Creative Commons licens" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a><br />Dette værk er licenseret under en <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da">Creative Commons Navngivelse-IkkeKommerciel-IngenBearbejdelse 3.0 Unported Licens</a>.
+          <% else %>
+           ingen licens defineret&nbsp;
+          <% end %>
         </dd>
 
         <dt>Download</dt>
@@ -60,6 +64,8 @@
 
         </dd>
       </dl>
+
+
       </div>
 
 
