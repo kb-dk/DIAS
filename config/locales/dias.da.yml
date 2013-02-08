@@ -15,7 +15,6 @@ da:
           pdffile: 'husk at tilføje en pdf fil'
           vilkaarbetingelser: "Du skal acceptere vilkår og betingelser før opgaven kan oprettes"
           succes: "Opgaven blev oprettet"
-
     views:
       forside:
         velkommen: 'Digital Indsamling Af Studenteropgaver. DIAS.'
@@ -87,6 +86,10 @@ da:
           title: 'Titel'
           undertitel: 'Undertitel'
           forfatter: 'forfatter'
+          add:
+            forfatter: 'Tilføj forfatter'
+          remove:
+            forfatter: 'Fjern forfatter'
           afleveringsaar: 'Afleveringsår'
           studium: 'Studie'
           opgavetype: 'Opgavetype'

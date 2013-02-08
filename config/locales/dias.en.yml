@@ -69,6 +69,10 @@ en:
           title: 'Title'
           undertitel: 'Subtitle'
           forfatter: 'Author'
+          add:
+            forfatter: 'Add Author'
+          remove:
+            forfatter: 'Remove Author'
           afleveringsaar: 'Submission year'
           studium: 'Subject'
           opgavetype: 'Type of paper'
