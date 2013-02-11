@@ -60,6 +60,7 @@ class PapersController < ApplicationController
   def create
     @paper = Paper.new(params[:paper])
     @paper.add_default_license
+    @paper.add_user_to_rights_meta_data_stream(current_user)
     @paper.add_file(params[:content])
 
     respond_to do |format|
