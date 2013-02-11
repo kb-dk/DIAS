@@ -1,5 +1,18 @@
 <%= form_for(@paper, :html => { :multipart => true, :class => 'form-horizontal'}) do |f| %>
 
+    <% if @paper.errors.any? %>
+        <div class="alert alert-error" > <!-- id="error_explanation"   <span class="badge badge-important badge-large"> <!%= @paper.errors.count %> </span>-->
+          <h2><%= @paper.errors.count %> <%= t('dias.views.paper.validate.error')  %></h2>
+
+          <ul>
+            <% @paper.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+
     <div class="control-group">
     <%= f.label t('dias.views.paper.labels.title'), :class => 'control-label' %>
       <div class="controls">
@@ -75,11 +88,11 @@
     <div class="control-group">
       <%= f.label  t('dias.views.paper.labels.afleveringsaar'), :class => 'control-label' %>
       <div class="controls">
-        <div class="input-prepend">
-          <span class="add-on"><i class="icon-calendar"></i></span>
+        <!--<div class="input-prepend">
+          <span class="add-on"><i class="icon-calendar"></i></span>-->
 
         <%= f.number_field :afleveringsaar, :class => 'number_field span6 ' %>
-        </div>
+        <!--</div>-->
         <span class="help-block"><%= t('dias.views.paper.help.afleveringsaar')%></span>
       </div>
 
@@ -163,17 +176,6 @@
 
 
 
-    <% if @paper.errors.any? %>
-    <div class="alert alert-error" > <!-- id="error_explanation"   <span class="badge badge-important badge-large"> <!%= @paper.errors.count %> </span>-->
-      <h2><%= @paper.errors.count %> <%= t('dias.views.paper.validate.error')  %></h2>
-
-          <ul>
-            <% @paper.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
 
     <div class="form-actions"
          id="formCreateDiv"
