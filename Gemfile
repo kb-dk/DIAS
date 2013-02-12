@@ -4,6 +4,7 @@
 
   gem 'blacklight', '~> 4.0.1'
   gem 'hydra-head', '~> 5.0.0'
+  #gem 'hydra-access-controls' #TODO ABWE er den her nødvendig?
 
 
 
@@ -34,6 +35,11 @@
   group :development, :test do
     gem 'rspec-rails'
     gem 'jettywrapper'
+    gem 'better_errors'
+    gem 'spork'
+    gem 'debugger'
+    gem 'equivalent-xml'
+    gem 'rb-inotify', '~> 0.8.8', :require => false
   end
 
 

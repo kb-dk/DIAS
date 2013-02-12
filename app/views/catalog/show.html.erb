@@ -49,12 +49,27 @@
           <%= @document["opgavesprog_t"].first.html_safe %>
         </dd>
 
+        <dt><%=  t('dias.views.paper.labels.licens')  %></dt>
+        <dd>
+          <% if @document["licens_t"] %>
+              <%= raw @document["licens_description_t"].first.html_safe  %>
+
+              <!--
+           <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da"><img alt="Creative Commons licens" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a><br />Dette værk er licenseret under en <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da">Creative Commons Navngivelse-IkkeKommerciel-IngenBearbejdelse 3.0 Unported Licens</a>.
+              -->
+          <% else %>
+           ingen licens defineret&nbsp;
+          <% end %>
+        </dd>
+
         <dt>Download</dt>
         <dd>
           <%=  link_to 'PDF: '+ @document["title_t"].first.html_safe, download_path(@document["id"]) %>
 
         </dd>
       </dl>
+
+
       </div>
 
 

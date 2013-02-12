@@ -22,8 +22,12 @@
                     <%= render :partial=>'/user_util_links' %>
                 </li>
                 <li>
-                    <a href=""#">FAQ</a>
+                    <a href="/faq"><%= t('dias.views.faq.overskrift') %></a>
                 </li>
+
+              <li>
+                <a href="/kontakt"><%= t('dias.views.kontakt.overskrift') %></a>
+              </li>
                 <li>
                     <%if I18n.locale.to_s=="en" %>
                         <%= link_to t('dias.changelang'), {:locale=>"da"} %>

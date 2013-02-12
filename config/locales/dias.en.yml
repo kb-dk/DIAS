@@ -4,6 +4,8 @@ en:
     search: "Search"
     changelang: "Dansk"
     cookiepolicy: "Cookie policy"
+    footer: |
+          <p class="credit muted row">The Royal Library, Postbox 2149, DK-1016 København K, (+45) 33 47 47 47, <a href="mailto:kb@kb.dk">kb@kb.dk</a>, EAN: 5798 000795297</p>
     models:
       paper:
         validate:
@@ -40,6 +42,25 @@ en:
           opgavetype: 'Type'
           opgavesprog: 'Language'
           abstrakt: 'Abstract'
+      faq:
+       overskrift: 'FAQ'
+       text: |
+            <div>
+            <p>Question?</p>
+            <p><blockquote>Answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh. Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. Fusce bibendum, velit in venenatis viverra, tellus ligula dignissim felis, quis euismod mauris tellus ut urna.</blockquote><p>
+            </div>
+            <div>
+            <p>Question?</p>
+            <p><blockquote>Answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh. Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. Fusce bibendum, velit in venenatis viverra, tellus ligula dignissim felis, quis euismod mauris tellus ut urna.</blockquote><p>
+            </div>
+      kontakt:
+       overskrift: 'Contact'
+       text: |
+            <div>
+            <p>Please contact us</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh. Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. Fusce bibendum, velit in venenatis viverra, tellus ligula dignissim felis, quis euismod mauris tellus ut urna.</p>
+            <p><a href="mailto:kontaktbiblioteket@kb.dk">Send us an e-mail with your question</a><p>
+            </div>
 
       paper:
         validate:
@@ -48,10 +69,15 @@ en:
           title: 'Title'
           undertitel: 'Subtitle'
           forfatter: 'Author'
+          add:
+            forfatter: 'Add Author'
+          remove:
+            forfatter: 'Remove Author'
           afleveringsaar: 'Submission year'
           studium: 'Subject'
           opgavetype: 'Type of paper'
           opgavesprog: 'Language'
+          licens: 'License'
           abstrakt: 'Abstract'
           vilkaarogbetingelser: 'Terms and Conditions'
           vilkaarogbetingelsertext: "I accept the Royal Library's Terms and Conditions."

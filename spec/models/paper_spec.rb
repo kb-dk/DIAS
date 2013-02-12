@@ -4,7 +4,7 @@ describe Paper do
 
 
   def valid_attributes
-    { title:"Opgavetitel", undertitel:"Undertitel", forfatter:"Fornavn Efternavn", abstrakt:"ABSTRACT mutus nomen dedit cocis", afleveringsaar:"2011", studium:"Biologi", opgavetype:"bacheloropgave", opgavesprog:"Dansk"}
+    { title:"Opgavetitel", undertitel:"Undertitel", forfatter:["Fornavn Efternavn", "Fornavn2 Efternavn2"], abstrakt:"ABSTRACT mutus nomen dedit cocis", afleveringsaar:"2011", studium:"Biologi", opgavetype:"bacheloropgave", opgavesprog:"Dansk"}
   end
 
   context "with uploaded  pdf file" do
@@ -66,6 +66,12 @@ describe Paper do
 
     it "Should have rightsmetadata stream named rightsMetadata" do
       @paper.rightsMetadata.should be_kind_of Hydra::Datastream::RightsMetadata
+    end
+
+    it "Should have rightsmetadata stream with cc license info" do
+      @paper.license_title == valid_attributes[:license_title]
+      @paper.license_description == valid_attributes[:license_description]
+      @paper.license_url == valid_attributes[:license_url]
     end
 
     it "Should have tech metadatastream  stream named 'techMetadata'" do

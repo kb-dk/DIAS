@@ -9,8 +9,9 @@ class Paper < ActiveFedora::Base
     m.field "original_filename", :string
     m.field "mime_type", :string
   end
-  
-  attr_accessor = :title, :undertitel, :forfatter, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog
+
+  attr_accessor = :title, :undertitel, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog
+
 
   validates_presence_of :afleveringsaar,
                         :message => I18n.t('dias.models.paper.validate.afleveringsaar')
@@ -55,9 +56,64 @@ class Paper < ActiveFedora::Base
   delegate :studium, :to=>"descMetadata", :unique=>"true"
 =end
 
-  delegate_to 'descMetadata', [:title, :undertitel, :forfatter, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog ], :unique => true
+  delegate_to 'descMetadata', [:title, :undertitel, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog ], :unique => true
+  #delegate :forfatter, :to=>'descMetadata'
   delegate_to 'techMetadata', [:original_filename, :mime_type ], :unique => true
+  # delegate_to 'rightsMetadata', [:license, :author]
+  delegate :license_title, :to=>'rightsMetadata', :at=>[:license, :title], :unique=>true
+  delegate :license_description, :to=>'rightsMetadata', :at=>[:license, :description], :unique=>true
+  delegate :license_url, :to=>'rightsMetadata', :at=>[:license, :url], :unique=>true
 
+  delegate :read_access_human_text, :to=>'rightsMetadata', :at=>[:read_access, :human_readable] , :unique=>true
+  delegate :discover_access_human_text, :to=>'rightsMetadata', :at=>[:discover_access, :human_readable] , :unique=>true
+  delegate :edit_access_human_text, :to=>'rightsMetadata', :at=>[:edit_access, :human_readable] , :unique=>true
+
+  #delegate :uploader_pid, :to=>'rightsMetadata', :at=>[:edit_access, :machine], :unique=>true
+  #delegate :read_group, :to=>'rightsMetadata', :at=>[:read_access, :group], :unique=>true
+  #delegate :discover_group, :to=>'rightsMetadata', :at=>[:discover_access, :group], :unique=>true
+  #delegate :edit_group, :to=>'rightsMetadata', :at=>[:edit_access, :group], :unique=>true
+  #        <group>public</group>
+
+
+
+  # modify default attribute methods for forfatter
+  def forfatter(*args)
+      descMetadata.name.namePart(*args)
+  end
+
+
+  def forfatter=(val)
+    # TODO: Check if authorslist has changed
+    logger.error("setting forfatter")
+    logger.error(val)
+    descMetadata.remove_authors
+    val.each do |v|
+      logger.error("forfatter "+v)
+      descMetadata.insert_author(v)
+    end
+  end
+
+  def to_solr(solr_doc={})
+    super
+    solr_doc["licens_t"] = self.license_url
+    solr_doc["licens_title_t"] = self.license_title
+    solr_doc["licens_description_t"] = self.license_description
+    solr_doc["forfatter_t"] = self.forfatter.join(", ")
+    return solr_doc
+  end
+
+
+  def add_default_license
+    self.license_title = 'Navngivelse-IkkeKommerciel-IngenBearbejdelse 3.0 Unported (CC BY-NC-ND 3.0)'
+    self.license_url = 'http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da'
+    self.license_description = '<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da"><img alt="Creative Commons licens" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png"/></a>'
+  end
+
+  def add_user_to_rights_meta_data_stream(user)
+    self.edit_access_human_text = user.name + " & Administrators can edit this object"
+    self.rightsMetadata.update_permissions({ "person"=>{user.pid=>"edit"}})
+    self.rightsMetadata.update_permissions({"group"=>{"public"=>"read","admin"=>"edit"}})
+  end
 
 
   #add_file and check_file  are modified versions of add_file and check_file from the ADL project

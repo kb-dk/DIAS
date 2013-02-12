@@ -11,6 +11,22 @@ class PapersController < ApplicationController
     end
   end
 
+
+  # GET /faq
+  def faq
+    respond_to do |format|
+      format.html # faq.html.erb
+    end
+  end
+
+
+  # GET /kontakt
+  def kontakt
+    respond_to do |format|
+      format.html # kontakt.html.erb
+    end
+  end
+
   # GET /papers/1
   # GET /papers/1.json
   def show
@@ -28,7 +44,6 @@ class PapersController < ApplicationController
     @paper_languages = PaperLanguage.all
     @paper_types = PaperType.all
     @paper = Paper.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @paper }
@@ -44,7 +59,10 @@ class PapersController < ApplicationController
   # POST /papers.json
   def create
     @paper = Paper.new(params[:paper])
+    @paper.add_default_license
+    @paper.add_user_to_rights_meta_data_stream(current_user)
     @paper.add_file(params[:content])
+
     respond_to do |format|
       if @paper.save
         format.html { redirect_to catalog_path(@paper), notice: t('dias.models.paper.validate.succes') }

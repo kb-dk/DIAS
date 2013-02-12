@@ -23,4 +23,5 @@
 
 $(function(){
     /* Your javascripts goes here... */
+    /* xxx */
 });

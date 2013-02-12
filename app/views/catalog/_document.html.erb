@@ -1,0 +1,40 @@
+<% # container for a single doc  -%>
+<div class="document <%= render_document_class document %>">
+
+  <%= render :partial => 'document_header', :locals => {:document => document, :document_counter => document_counter} %>
+
+  <% # main container for doc partial view  -%>
+  <% # render_document_partial document, :index  %>
+
+  <dl class="dl-horizontal dl-invert">
+
+    <% if document["undertitel_t"] %>
+        <dt class="blacklight-undertitel_t"><%= t('dias.views.paper.labels.undertitel') %></dt>
+        <dd class="blacklight-undertitel_t"><%= document["undertitel_t"].first.html_safe %></dd>
+    <% end %>
+
+    <dt class="blacklight-forfatter_t"><%= t('dias.views.paper.labels.forfatter') %></dt>
+    <dd class="blacklight-forfatter_t"><%= document["forfatter_t"].first.html_safe rescue nil %></dd>
+
+    <dt class="blacklight-afleveringsaar_t"><%= t('dias.views.paper.labels.afleveringsaar') %></dt>
+    <dd class="blacklight-afleveringsaar_t"><%= document["afleveringsaar_t"].first.html_safe %></dd>
+
+    <dt class="blacklight-opgavetype_t"><%= t('dias.views.paper.labels.opgavetype') %></dt>
+    <dd class="blacklight-opgavetype_t"><%= document["opgavetype_t"].first.html_safe %></dd>
+
+
+    <dt><%= t('dias.views.paper.labels.pdffil') %></dt>
+    <dd><%= link_to document["title_t"].first.html_safe, download_path(document["id"]) %></dd>
+
+
+    <dt><%= t('dias.views.paper.labels.licens') %></dt>
+    <% if document["licens_description_t"] %>
+        <dd>
+          <%= raw document["licens_description_t"].first.html_safe  %>
+          <!--a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da"><img alt="Creative Commons licens" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png"/></a-->
+        </dd>
+    <% else %>
+        <dd>ingen licens defineret&nbsp;</dd>
+    <% end %>
+  </dl>
+</div>

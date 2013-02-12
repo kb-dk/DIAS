@@ -4,7 +4,8 @@ da:
     search: "Søg"
     changelang: "English"
     cookiepolicy: "Cookie & privatlivspolitik"
-
+    footer: |
+          <p class="credit muted row">Det Kongelige Bibliotek, Postbox 2149, DK-1016 København K, (+45) 33 47 47 47, <a href="mailto:kb@kb.dk">kb@kb.dk</a>, EAN: 5798 000795297</p>
 
     models:
       paper:
@@ -14,7 +15,6 @@ da:
           pdffile: 'husk at tilføje en pdf fil'
           vilkaarbetingelser: "Du skal acceptere vilkår og betingelser før opgaven kan oprettes"
           succes: "Opgaven blev oprettet"
-
     views:
       forside:
         velkommen: 'Digital Indsamling Af Studenteropgaver. DIAS.'
@@ -38,6 +38,46 @@ da:
           opgavetype: 'Type'
           opgavesprog: 'Sprog'
           abstrakt: 'Resume'
+      faq:
+       overskrift: 'FAQ'
+       text: |
+            <div>
+            <p>Hvem kan uploade opgaver til DIAS?</p>
+            <p><blockquote>Nuværende og tidligere studerende ved Københavns Universitet kan uploade beståede universitetsopgaver til DIAS. Det er dog ike muligt at uploade specialer til DIAS.</blockquote><p>
+            </div>
+            <div>
+            <p>Hvem må læse opgaverne i DIAS?</p>
+            <p><blockquote>Alle opgaver i DIAS er frit tilgængelige for enhver person med interesse heri. Opgaverne i DIAS må naturligvis læses og citeres, men de ikke gøres tilstand for videre bearbejdelse.</blockquote><p>
+            </div>
+            <div>
+            <p>Kan jeg uploade mit speciale til DIAS?</p>
+            <p><blockquote>Nej. Københavns Universitet har et separat arkiv til godkendte specialer - <a href="http://diskurs.kb.dk">DISKURS</a>. Du kan kontakte studieadministrationen på dit fakultet for at høre om muligheden for at lægge dit speciale i DISKURS.</blockquote><p>
+            </div>
+            <div>
+            <p>Hvordan sletter jeg en opgave, som jeg har uploadet til DIAS?</p>
+            <p><blockquote>Det er ikke muligt selv at slette de opgaver, som du har uploadet til DIAS. Sletning sker ved skriftlig henvendelse til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>.</blockquote><p>
+            </div>
+            <div>
+            <p>Hvorfor kan jeg ikke finde specialer i DIAS?</p>
+            <p><blockquote>Københavns Universitet har et separat arkiv til godkendte specialer - <a href="http://diskurs.kb.dk">DISKURS</a>.</blockquote><p>
+            </div>
+            <div>
+            <p>Jeg har fundet en opgave i DIAS, som indeholder personfølsomme oplysninger ikke indhold, som krænker loven om ophavsret. Hvordan rapporterer jeg dette?</p>
+            <p><blockquote>Skriv venligst en mail til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.</blockquote><p>
+            </div>
+            <div>
+            <p>Jeg har fundet en opgave i DIAS, som umuligt kan være bestået. Hvordan rapporterer jeg dette?</p>
+            <p><blockquote>Skriv venligst en mail til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>  med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.</blockquote><p>
+            </div>
+      kontakt:
+       overskrift: 'Kontakt'
+       text: |
+            <div>
+            <p>Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden. Vi flotter med et hold, der vil rundt og se sig om i byen. Det gør heller ikke mere. Men hvor vi nu overbringer denne størrelse til det den handler om, så kan der fortælles op til 3 gange. Hvis det er træet til dit bord der får dig op, er det snarere varmen over de andre.
+            Selv om hun har sat alt mere frem, og derfor ikke længere kan betragtes som den glade giver, er det en nem sammenstilling, som bærer ved i lang tid. Det går der så nogle timer ud, hvor det er indlysende, at virkeligheden bliver tydelig istandsættelse. Det er opmuntrende og anderledes, at det er dampet af kurset i morgen. Der indgives hvert år enorme strenge af blade af større eller mindre tilsnit. I denne afdeling finder man blandt andet som en om håndtering af samme grund. Politik handler som bekendt ligeså meget om at tale, som at stå frem for tiden
+            </p>
+            <p><a class="icon-mail"href="mailto:kontaktbiblioteket@kb.dk">Send en e-mail med dit spørgsmål</a><p>
+            </div>
 
       paper:
         validate:
@@ -46,10 +86,15 @@ da:
           title: 'Titel'
           undertitel: 'Undertitel'
           forfatter: 'forfatter'
+          add:
+            forfatter: 'Tilføj forfatter'
+          remove:
+            forfatter: 'Fjern forfatter'
           afleveringsaar: 'Afleveringsår'
           studium: 'Studie'
           opgavetype: 'Opgavetype'
           opgavesprog: 'Opgavesprog'
+          licens: 'Licens'
           abstrakt: 'Resume'
           vilkaarogbetingelser: 'Vilkår og betingelser'
           vilkaarogbetingelsertext: 'Jeg accepterer KBs vilkår og betingelser.'
