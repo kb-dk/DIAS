@@ -12,19 +12,29 @@ class Paper < ActiveFedora::Base
 
   attr_accessor = :title, :undertitel, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog
 
+  validates_presence_of :title,
+                        :message =>  I18n.t('dias.models.paper.validate.title')
+
 
   validates_presence_of :afleveringsaar,
                         :message => I18n.t('dias.models.paper.validate.afleveringsaar')
 
-  validates_presence_of :title,
-                        :message =>  I18n.t('dias.models.paper.validate.title')
+
+  validates_presence_of :studium,
+                        :message =>  I18n.t('dias.models.paper.validate.studium')
+
+  validates_presence_of :opgavetype,
+                        :message =>  I18n.t('dias.models.paper.validate.opgavetype')
+
+  validates_presence_of :opgavesprog,
+                        :message =>  I18n.t('dias.models.paper.validate.opgavesprog')
 
 
   validate :validate_file
 
   def validate_file
     if (original_filename.nil?)
-      self.errors.add(:content, I18n.t('dias.models.paper.validate.filepresent'))
+      self.errors.add(:content,  I18n.t('dias.models.paper.validate.file'))
     elsif (mime_type != "application/pdf")
       self.errors.add(:content, I18n.t('dias.models.paper.validate.pdffile'))
     end
