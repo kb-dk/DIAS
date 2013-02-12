@@ -149,13 +149,8 @@
     </div>
 
     <div class="control-group">
-      <%= f.label t('dias.views.paper.labels.vilkaarogbetingelser'), :class => 'control-label' %>
-
 
       <div class="controls">
-        <label class="checkbox">
-          <input type="checkbox" id="termsConditionsCheckBox"><%= t('dias.views.paper.labels.vilkaarogbetingelsertext') %>
-        </label>
         <div class="accordion" id="accordion2">
           <div class="accordion-group">
             <div class="accordion-heading">
@@ -169,8 +164,11 @@
               </div>
             </div>
           </div>
-        </p>
+
       </div>
+        <label class="checkbox">
+          <input type="checkbox" id="termsConditionsCheckBox"><%= t('dias.views.paper.labels.vilkaarogbetingelsertext') %>
+        </label>
         </div>
     </div>
 
