@@ -4,7 +4,7 @@ describe Paper do
 
 
   def valid_attributes
-    { title:"Opgavetitel", undertitel:"Undertitel", forfatter:[{"sn"=>"Gareth Stedman", "gn"=>"Jones"}, {"sn"=>"Anders", "gn"=>"And"}, {"sn"=>"intet fornavn"}, {"gn"=>"intet efternavn"}, {}], abstrakt:"ABSTRACT mutus nomen dedit cocis", afleveringsaar:"2011", studium:"Biologi", opgavetype:"bacheloropgave", opgavesprog:"Dansk"}
+    { title:"Opgavetitel", undertitel:"Undertitel", forfatter:{"0" => {"sn"=>"Gareth Stedman", "gn"=>"Jones"}, "3" => {"sn"=>"Anders", "gn"=>"And"}, "4" => {"sn"=>"intet fornavn"}, "5" => {"gn"=>"intet efternavn"}, "7" => {}}, abstrakt:"ABSTRACT mutus nomen dedit cocis", afleveringsaar:"2011", studium:"Biologi", opgavetype:"bacheloropgave", opgavesprog:"Dansk"}
   end
 
   context "with uploaded  pdf file" do

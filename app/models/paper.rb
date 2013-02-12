@@ -80,9 +80,8 @@ class Paper < ActiveFedora::Base
 
   def forfatter=(val)
     # TODO: Check if authorslist has changed
-    logger.error(val)
     descMetadata.remove_authors
-    val.each do |v|
+    val.each do |index, v|
       unless (v.blank? || v["gn"].blank? || v["sn"].blank?) 
       	descMetadata.insert_author(v["gn"],v["sn"])
       end
