@@ -26,13 +26,14 @@ html body input, html body .btn, html body textarea{
 }
 /* Header
 *****************************************************************************************/
-body .navbar {
+body .navbarDias {
   box-shadow: none;
   padding:0px;
   margin:0px;
   min-width:940px\9; /* Target IE8 and Below */
+  position:relative;
 }
-body .navbar .navbar-inner {
+body .navbarDias .navbar-inner {
   background: #FFF;
   background-image: none;
   background-repeat: none;
@@ -43,7 +44,7 @@ body .navbar .navbar-inner {
 
 }
     /*LOGO*/
-  body .navbar .brand {
+  body .navbarDias .brand {
       margin: 0 0 5px 0;
       overflow: hidden;
       padding: 0px;
@@ -57,22 +58,22 @@ body .navbar .navbar-inner {
       box-shadow: none;
       z-index:50;
     }
-   .navbar .langUk {
+   .navbarDias .langUk {
       background:transparent url(dias/logoUk.png) no-repeat 0 0 !important;
     }
-   .navbar .langDa {
+   .navbarDias .langDa {
       background:transparent url(dias/logoDa.png) no-repeat 0 0 !important;
     }
 
-  .navbar .nav-collapse{
+  .navbarDias .nav-collapse{
     float:right;
   }
 
-body .navbar .nav  {
+body .navbarDias .nav  {
   margin-top:23px;
 }
 
-body .navbar .nav > li > a {
+body .navbarDias .nav > li > a {
   font: 13px/13px times,Arial,Helvetica,sans-serif;
   margin: 6px 0 0 0;
   padding: 0px 8px 0 10px;
@@ -80,19 +81,19 @@ body .navbar .nav > li > a {
   text-shadow: none;
   color: #42403B;
 }
-body .navbar .nav > li > a.cookie {
+body .navbarDias .nav > li > a.cookie {
   background: transparent url(http://www.kb.dk/image_client_static/img/icons/cookie.png) no-repeat scroll 100% 50% ;
   padding-right:21px;
 }
 
 
 
-body .navbar .nav > li > a:hover {
+body .navbarDias .nav > li > a:hover {
   text-decoration: underline;
 }
 
 /* Kunne også tegnes via css ;)*/
-body .navbar .btn-navbar .icon-bar {
+body .navbarDias .btn-navbar .icon-bar {
   display:none;
 }
 
@@ -131,7 +132,7 @@ body .navbar .btn-navbar .icon-bar {
 }
  #facets #facets-collapse div:last-child{
    margin-bottom: 20px;
-   border-bottom:5px solid #D7DDE3;
+   border-bottom:3px solid #D7DDE3;
 }
 
 
@@ -221,6 +222,7 @@ Content
   border-bottom:3px solid #753D54;
   position:relative;
   overflow:hidden;
+  margin-bottom:20px;
 }
 .teaser .imgContent{
   max-height:220px;
@@ -250,7 +252,7 @@ Content
   font:normal normal normal 26px/26px Arial,Helvetica,sans-serif;
 }
 .teaser p{
-  background:red url(dias/bg-repeater.png) repeat top left ;
+  background:#FFF url(dias/bg-repeater.png) repeat top left ;
   padding:10px;
   margin:0;
   position:relative;
@@ -330,6 +332,20 @@ footer .srku{
   display:inline-block;
   margin-left:10px;
 }
+/*Admin*/
+.admin .brand{
+  background:none;
+
+
+  margin-right: 0;
+  overflow: none;
+  padding-left: 0;
+  padding-right: 0;
+  text-indent: 0%;
+  white-space: none;
+  width: autox;
+}
+
 
 /*****************************************************************************************
   RESPONSIVE
@@ -343,10 +359,10 @@ footer .srku{
   html body {
     padding:0px;
   }
-  body .navbar .brand {
+  body .navbarDias .brand {
     margin:5px;
   }
-  body .navbar .nav > li > a  {
+  body .navbarDias .nav > li > a  {
     background: none repeat scroll 0 0 transparent;
     border-top: 1px dotted #D7DDE3;
     display: block;
@@ -360,13 +376,13 @@ footer .srku{
 
 
 
-  body .navbar .nav {
+  body .navbarDias .nav {
     padding:0px;
     margin:0px;
     border-bottom: 1px dotted #D7DDE3;
   }
 
-  body .navbar .btn-navbar {
+  body .navbarDias .btn-navbar {
     box-shadow:none;
     float: none;
     margin: 0;
@@ -381,13 +397,13 @@ footer .srku{
     width: 49px;
     border-radius:0px;
   }
-  body .navbar .nav li a.cookie {
+  body .navbarDias .nav li a.cookie {
     background:none;
   }
-  body .navbar .nav li a.cookie:hover {
+  body .navbarDias .nav li a.cookie:hover {
     background-color:#F2F2F2;
   }
-  body .navbar .nav li a.cookie:after {
+  body .navbarDias .nav li a.cookie:after {
     content:" ";
     width:49px;
     height:49px;
@@ -398,7 +414,7 @@ footer .srku{
     padding:0;
   }
 
-  .navbar .nav-collapse{
+  .navbarDias .nav-collapse{
     float:none;
   }
 
@@ -408,6 +424,23 @@ footer .srku{
     display:block;
      width:100%;
   }
+
+
+/*login*/
+  .login .btn{
+    font-size:18px;
+  }
+
+/*teaser*/
+  .teaser h3{
+    font-size:20px;
+    line-height:20px;
+  }
+  .teaser h2{
+    font-size:35px;
+    line-height:35px;
+  }
+
 }
 @media (max-width: 768px) {
 /*SEARCH*/
@@ -416,11 +449,35 @@ footer .srku{
     display:none;
   }
 
+
+
+
 }
 
 
 @media (max-width: 480px) {
 
+  /*brand*/
+  body .navbarDias .brand {
+    height:31px;
+    width: 216px;
+  }
+  .navbarDias .langUk {
+    background:transparent url(dias/logoUkMini.png) no-repeat 0 0 !important;
+  }
+  .navbarDias .langDa {
+    background:transparent url(dias/logoDaMini.png) no-repeat 0 0 !important;
+  }
+
+/*teaser*/
+  .teaser h3{
+    font-size:12px;
+    line-height:12px;
+  }
+  .teaser h2{
+    font-size:20px;
+    line-height:20px;
+  }
 
 }
 
