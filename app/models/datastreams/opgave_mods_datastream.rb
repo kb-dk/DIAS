@@ -185,10 +185,10 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
 	n.children.each do |c|
 	  type = c.attr("type");
 	  if (c.name == 'namePart' and type == 'family') 
-	    author["gn"] = c.inner_text
+	    author["sn"] = c.inner_text
 	  end
 	  if (c.name == 'namePart' and type == 'given') 
-	    author["sn"] = c.inner_text
+	    author["gn"] = c.inner_text
 	  end
         end
 	retval.push author	
