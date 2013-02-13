@@ -123,3 +123,5 @@ da:
         placeholder:
           titel: 'En Teoretisk Analyse af...'
           abstrakt: 'Opgaven består af en teoretisk gennemgang af feltet...'
+          gn: 'Fornavn'
+          sn: 'Efternavn'
