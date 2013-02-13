@@ -11,6 +11,7 @@ en:
         validate:
           title: 'Please add title'
           afleveringsaar: 'Please add a year'
+          afleveringsaarlength: 'Year must be at least four digits i.e. 1996 or 2013'
           pdffile: 'Remember to upload a pdf file'
           vilkaarbetingelser: "you must accept terms and conditions before the assignment can be created"
           succes: "Paper was successfully created."

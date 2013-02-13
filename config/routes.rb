@@ -19,8 +19,8 @@ HydraHead::Application.routes.draw do
   match '/logout',                  :to => 'users/sessions#destroy',   :as => 'destroy_user_session'
 
 
-  match '/faq',                     :to => 'papers#faq'
-  match '/kontakt',                 :to => 'papers#kontakt'
+  match '/faq',                     :to => 'catalog#faq'
+  match '/kontakt',                 :to => 'catalog#kontakt'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

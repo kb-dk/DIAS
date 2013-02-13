@@ -10,7 +10,7 @@ class Paper < ActiveFedora::Base
     m.field "mime_type", :string
   end
 
-  attr_accessor = :title, :undertitel, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog
+  attr_accessor = :title, :undertitel, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog, :has_attached_file
 
   validates_presence_of :title,
                         :message =>  I18n.t('dias.models.paper.validate.title')
@@ -18,6 +18,10 @@ class Paper < ActiveFedora::Base
 
   validates_presence_of :afleveringsaar,
                         :message => I18n.t('dias.models.paper.validate.afleveringsaar')
+
+  validates_length_of  :afleveringsaar, :minimum => 4,
+                       :message => I18n.t('dias.models.paper.validate.afleveringsaarlength')
+
 
 
   validates_presence_of :studium,
@@ -31,6 +35,9 @@ class Paper < ActiveFedora::Base
 
 
   validate :validate_file
+
+  #validates_presence_of :original_filename,
+  #                      :message =>  I18n.t('dias.models.paper.validate.file')
 
   def validate_file
     if (original_filename.nil?)
@@ -68,7 +75,7 @@ class Paper < ActiveFedora::Base
 
   delegate_to 'descMetadata', [:title, :undertitel, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog ], :unique => true
   #delegate :forfatter, :to=>'descMetadata'
-  delegate_to 'techMetadata', [:original_filename, :mime_type ], :unique => true
+  delegate_to 'techMetadata', [:original_filename, :mime_type, :has_attached_file ], :unique => true
   # delegate_to 'rightsMetadata', [:license, :author]
   delegate :license_title, :to=>'rightsMetadata', :at=>[:license, :title], :unique=>true
   delegate :license_description, :to=>'rightsMetadata', :at=>[:license, :description], :unique=>true
@@ -128,16 +135,23 @@ class Paper < ActiveFedora::Base
 
   #add_file and check_file  are modified versions of add_file and check_file from the ADL project
   def add_file(file)
+    logger.info(" ########### add file")
     if (file.nil?)
-        logger.debug("file is nil")
+        logger.error("file is nil")
         self.original_filename = nil
+        self.has_attached_file = false
+        return false
     elsif (!check_file?(file))
         logger.error("error uploading file")
         self.original_filename = nil
+        self.has_attached_file = false
+
+        return false
     else
       self.add_file_datastream(file, :label => file.original_filename, :mimeType => file.content_type, :dsid => 'content', :controlGroup => 'M')
       self.original_filename = file.original_filename
       self.mime_type = file.content_type
+      self.has_attached_file = true
     end
     return true
   end
@@ -145,6 +159,10 @@ class Paper < ActiveFedora::Base
 
   private
   def check_file?(file)
+    if file.nil?
+      logger.error("no file uploaded.")
+      return false;
+    end
     @@file_methods = [:size, :content_type, :original_filename,]
     @@file_methods.each do |method_name|
       unless file.respond_to?(method_name)
@@ -152,7 +170,7 @@ class Paper < ActiveFedora::Base
         return false
       end
     end
-    logger.error("checkfile is true")
+    logger.info("checkfile is true")
     return true
   end
 end
