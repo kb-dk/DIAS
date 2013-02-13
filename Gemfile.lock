@@ -47,6 +47,7 @@ GEM
     better_errors (0.5.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    binding_of_caller (0.6.8)
     blacklight (4.0.1)
       bootstrap-sass (~> 2.2.0)
       kaminari (~> 0.13)
@@ -269,6 +270,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors
+  binding_of_caller
   blacklight (~> 4.0.1)
   bootstrap-sass
   debugger

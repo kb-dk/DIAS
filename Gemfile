@@ -36,6 +36,7 @@
     gem 'rspec-rails'
     gem 'jettywrapper'
     gem 'better_errors'
+    gem 'binding_of_caller'
     gem 'spork'
     gem 'debugger'
     gem 'equivalent-xml'

@@ -1,35 +1,5 @@
 <div class="span12">
 
-  <% if can? :manage, @alle   %>
-
-      <hr>
-      <div class="hero-unit">
-        <h3>Administrator</h3>
-        <p>Det er muligt at se alle opgaver ved at gå til (kun relevant for administratorer)</p>
-        <ul>
-          <li><%=  link_to 'Se alle opgaver',papers_path %></li>
-        </ul>
-        <p>Det er muligt at oprette og redigere listen af studier, opgavesprog og opgavetyper</p>
-        <ul>
-          <li><%=  link_to 'Liste over studier',institutes_path %></li>
-          <li><%=  link_to 'Liste over sprog',paper_languages_path %></li>
-          <li><%=  link_to 'Liste over opgave typer',paper_types_path %></li>
-        </ul>
-
-
-        <h3>Teknik:</h3>
-        <p>Locale: <%= I18n.locale %></p>
-        <p>&nbsp;</p>
-        <p>
-          <%if I18n.locale.to_s=="en" %>
-              <%= link_to t('dias.changelang'), {:locale => "da"} %>
-          <%else%>
-              <%= link_to t('dias.changelang'), {:locale=>"en"} %>
-          <%end%>
-        </p>
-      </div>
-  <% end  %>
-
 </div>
 
 <div class="row">
@@ -77,3 +47,6 @@
 
   </div>
 </div>
+
+
+
