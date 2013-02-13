@@ -10,3 +10,45 @@
 
     </div>
 </footer>
+
+<% if can? :manage, @alle   %>
+    <div class="navbar navbar-fixed-bottom navbar-inverse admin">
+
+      <div class="navbar-inner">
+
+        <div class="container">
+
+          <a class="brand" href="#"><i class="icon-cog icon-white"></i> Administrator</a>
+          <ul class="nav">
+            <li class="divider-vertical"></li>
+            <li>
+              <%=  link_to 'Se alle opgaver',papers_path %>
+            </li>
+            <li class="divider-vertical"></li>
+            <li>
+              <%=  link_to 'Liste over studier',institutes_path %>
+            </li>
+            <li class="divider-vertical"></li>
+            <li>
+              <%=  link_to 'Liste over sprog',paper_languages_path %>
+            </li>
+            <li class="divider-vertical"></li>
+            <li>
+              <%=  link_to 'Liste over opgave typer',paper_types_path %>
+            </li>
+            <li class="divider-vertical"></li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+<% end  %>
+
+
+
+
+

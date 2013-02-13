@@ -1,79 +1,39 @@
-<div class="span12">
-
-  <% if can? :manage, @alle   %>
-
-      <hr>
-      <div class="hero-unit">
-        <h3>Administrator</h3>
-        <p>Det er muligt at se alle opgaver ved at gå til (kun relevant for administratorer)</p>
-        <ul>
-          <li><%=  link_to 'Se alle opgaver',papers_path %></li>
-        </ul>
-        <p>Det er muligt at oprette og redigere listen af studier, opgavesprog og opgavetyper</p>
-        <ul>
-          <li><%=  link_to 'Liste over studier',institutes_path %></li>
-          <li><%=  link_to 'Liste over sprog',paper_languages_path %></li>
-          <li><%=  link_to 'Liste over opgave typer',paper_types_path %></li>
-        </ul>
-
-
-        <h3>Teknik:</h3>
-        <p>Locale: <%= I18n.locale %></p>
-        <p>&nbsp;</p>
-        <p>
-          <%if I18n.locale.to_s=="en" %>
-              <%= link_to t('dias.changelang'), {:locale => "da"} %>
-          <%else%>
-              <%= link_to t('dias.changelang'), {:locale=>"en"} %>
-          <%end%>
-        </p>
-      </div>
-  <% end  %>
-
-</div>
-
 <div class="row">
 
     <div class="span9 teaser">
         <div class="imgContent">
             <%= image_tag "dias/teaserImg.jpg" , :alt => "Edit Entry" %>
-
-          <div>
-            <%= raw t('dias.views.forside.velkommen') %>
-          </div>
-
+            <div>
+                <%= raw t('dias.views.forside.velkommen') %>
+            </div>
         </div>
-
-      <p>
-        <span>I samarbejde med</span>
-        <a href="http://www.srku.dk">
-            <%= image_tag "dias/srkuLogo.png" , :alt => "Edit Entry" %>
-        </a>
-      </p>
+        <p>
+            <span>I samarbejde med</span>
+            <a href="http://www.srku.dk">
+                <%= image_tag "dias/srkuLogo.png" , :alt => "Edit Entry" %>
+            </a>
+        </p>
     </div>
 
+    <div class="span3">
+        <div class="login">
+            <h3>
+                <%=raw t('dias.views.forside.text') %>
+            </h3>
 
+            <% if can? :edit, @papers   %>
+            <p><%= link_to t('.new', :default => raw(t('dias.views.forside.tilfoejknap'))),
+            new_paper_path,
+            :class => 'btn btn-large btn-success' %></p>
+            <% end %>
 
-
-  <div class="span3">
-    <div class="login">
-      <h3>
-        <%=raw t('dias.views.forside.text') %>
-      </h3>
-
-      <% if can? :edit, @papers   %>
-          <p><%= link_to t('.new', :default => raw(t('dias.views.forside.tilfoejknap'))),
-                         new_paper_path,
-                         :class => 'btn btn-large btn-block btn-success' %></p>
-      <% end %>
-
-      <% if !can? :edit, @papers   %>
-          <p><%= link_to t('.new', :default => raw(t('dias.views.forside.tilfoejogloginknap'))),
-                         new_user_session_path,
-                         :class => 'btn btn-large btn-block btn-success' %>   </p>
-      <% end %>
-
+            <% if !can? :edit, @papers   %>
+            <p><%= link_to t('.new', :default => raw(t('dias.views.forside.tilfoejogloginknap'))),
+            new_user_session_path,
+            :class => 'btn btn-large btn-success' %>   </p>
+            <% end %>
+        </div>
     </div>
 
-  </div>
 </div>
+
