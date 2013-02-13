@@ -76,21 +76,23 @@ class Paper < ActiveFedora::Base
 
 
 
-  # modify default attribute methods for forfatter
-  def forfatter(*args)
-      descMetadata.name.namePart(*args)
+  # modify default setter methods for forfatter
+  def forfatter(*arg)
+    self.get_authors.map{ |a| a["sn"] + ", " +a["gn"] }
   end
-
 
   def forfatter=(val)
     # TODO: Check if authorslist has changed
-    logger.error("setting forfatter")
-    logger.error(val)
     descMetadata.remove_authors
-    val.each do |v|
-      logger.error("forfatter "+v)
-      descMetadata.insert_author(v)
+    val.each do |index, v|
+      unless (v.blank? || v["gn"].blank? || v["sn"].blank?) 
+      	descMetadata.insert_author(v["gn"],v["sn"])
+      end
     end
+  end
+
+  def get_authors
+    descMetadata.get_authors
   end
 
   def to_solr(solr_doc={})
@@ -98,8 +100,8 @@ class Paper < ActiveFedora::Base
     solr_doc["licens_t"] = self.license_url
     solr_doc["licens_title_t"] = self.license_title
     solr_doc["licens_description_t"] = self.license_description
-    solr_doc["forfatter_t"] = self.forfatter.join(", ")
-    return solr_doc
+    solr_doc["forfatter_t"]  = self.get_authors.map{ |a| a["sn"] + ", " +a["gn"] }.join("; ")
+    return solr_doc  
   end
 
 

@@ -44,24 +44,25 @@
 
 
 
-    <% unless @paper.forfatter.nil? or @paper.forfatter.empty?  %>
+    <% unless @paper.get_authors.blank?  %>
         <div class="control-group">
           <%= f.label t('dias.views.paper.labels.forfatter'), :class => 'control-label' %>
           <div class="controls">
               <span class="authors">
-                <% @paper.forfatter.each do |f| %>
+                <% @paper.get_authors.each_with_index do |f, i| %>
                   <span class="author">
-                    <div class="input-prepend">
-                      <span class="add-on"><i class="icon-user"></i></span>
-                      <%= text_field_tag 'paper[forfatter][]', nil, :class => 'text_field span6',  :value => f %>
-                    </div>
-                    <a class="remove-author" href="#"><i class="icon-remove" ></i></a>
-                    <span class="help-block"><%= t('dias.views.paper.help.navn')%></span>
+		     <div class="row">
+                      	<%= text_field_tag "paper[forfatter][#{i}][gn]", f["gn"], :class => 'text_field span3 gn', :placeholder => t('dias.views.paper.placeholder.gn') %>
+		 	<%= text_field_tag "paper[forfatter][#{i}][sn]", f["sn"], :class => 'text_field span3 sn', :placeholder => t('dias.views.paper.placeholder.sn') %>
+                        <a class="remove-author" href="#"><i class="icon-remove" ></i></a>
+                     </div>
                   </span>
                 <% end %>
               </span>
-            <a class="add-author"  href="#"><i class="icon-plus" ></i><%= raw t('dias.views.paper.labels.add.forfatter') %></a>
-          </div>
+	  </div>
+	    <div class="controls">
+              <a class="add-author"  href="#"><i class="icon-plus" ></i><%= raw t('dias.views.paper.labels.add.forfatter') %></a>
+	    </div>
         </div>
     <% else %>
         <div class="control-group">
@@ -69,18 +70,15 @@
           <div class="controls">
           <span class="authors">
             <span class="author">
-                <div class="input-prepend">
-                  <span class="add-on"><i class="icon-user"></i></span>
-                  <% if @paper.forfatter.nil? || @paper.forfatter.blank? %>    <!-- hvis der oprettes en ny opgave er forfatter navnet udfyldt med den indloggede bruger -->
-                      <%= text_field_tag 'paper[forfatter][]', nil, :class => 'text_field span6',  :value => current_user.name %>
-                  <% else %>
-                      <%= text_field_tag 'paper[forfatter][]', nil, :class => 'text_field span6' %>
-                  <% end %>
-                </div>
+		<div class="row">
+                 <%= text_field_tag 'paper[forfatter][0][gn]', nil, :class => 'text_field span3 gn', :placeholder => t('dias.views.paper.placeholder.gn') %>
+		 <%= text_field_tag 'paper[forfatter][0][sn]', nil, :class => 'text_field span3 sn', :placeholder => t('dias.views.paper.placeholder.sn') %>
                  <a class="remove-author" href="#"><i class="icon-remove" ></i></a>
-                 <span class="help-block"><%= t('dias.views.paper.help.navn')%></span>
+	        </div>
             </span>
           </span>
+	  </div>
+          <div class="controls">
             <a class="add-author"  href="#"><i class="icon-plus" ></i><%= raw t('dias.views.paper.labels.add.forfatter') %></a>
           </div>
         </div>

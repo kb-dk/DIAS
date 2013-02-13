@@ -112,3 +112,5 @@ en:
         placeholder:
           abstrakt: 'The paper presents an theoretical analysis of...'
           titel: 'A Theoretical Analysis of...'
+          gn: 'Given Name'
+          sn: 'Family Name'

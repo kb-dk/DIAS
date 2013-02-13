@@ -88,9 +88,10 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
   end # set_terminology
 
 
-  define_template :name do |xml, name|
+  define_template :name do |xml, gn, sn|
     xml.name {
-      xml.namePart(name)
+      xml.namePart(gn, :type=>"given")
+      xml.namePart(sn, :type=>"family")
       xml.role {
         xml.roleTerm("author", :authority => "marcrelator", :type => "text")
       }
@@ -154,13 +155,12 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
   end
 =end
 
-  def insert_author(name)
-    logger.error(name)
+  def insert_author(gn,sn)
     sibling = find_by_terms(:name).last
     if (sibling.nil?)
-      add_child_node(ng_xml.root,:name, name)
+      add_child_node(ng_xml.root,:name, gn,sn)
     else
-      add_next_sibling_node(sibling,:name, name)
+      add_next_sibling_node(sibling,:name, gn,sn)
     end
     content_will_change!
   end
@@ -171,6 +171,29 @@ class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
       nodes.each { |n| n.remove }
       content_will_change!
     end
+  end
+
+  # return a list of all authors on the form [{sn => 'family name', gn => 'given name'},...]
+  # assuming all name-elements contains authors
+  def get_authors
+   retval = []
+   nodes = find_by_terms(:name)
+   nodes.each do |n|
+	gn = ""
+	sn = ""
+	author = {}
+	n.children.each do |c|
+	  type = c.attr("type");
+	  if (c.name == 'namePart' and type == 'family') 
+	    author["sn"] = c.inner_text
+	  end
+	  if (c.name == 'namePart' and type == 'given') 
+	    author["gn"] = c.inner_text
+	  end
+        end
+	retval.push author	
+   end
+   return retval
   end
 
 end # class
