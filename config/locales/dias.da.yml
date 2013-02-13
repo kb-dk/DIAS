@@ -5,8 +5,14 @@ da:
     changelang: "English"
     cookiepolicy: "Cookie & privatlivspolitik"
     footer: |
-          <p class="credit muted row">Det Kongelige Bibliotek, Postbox 2149, DK-1016 København K, (+45) 33 47 47 47, <a href="mailto:kb@kb.dk">kb@kb.dk</a>, EAN: 5798 000795297</p>
-
+          <address>
+            <strong>Det Kongelige Bibliotek</strong> -
+            Postbox 2149 -
+            DK-1016 København K -
+            EAN: 5798 000795297 -
+            <abbr>Tlf:</abbr> (+45) 33 47 47 47 -
+            <a href="mailto://kb@kb.dk">kb@kb.dk</a>
+          </address>
     models:
       paper:
         validate:
@@ -22,17 +28,18 @@ da:
           succes: "Opgaven blev oprettet"
     views:
       forside:
-        velkommen: 'Digital Indsamling Af Studenteropgaver. DIAS.'
+        velkommen: |
+         <h3>arkiv for</h3>
+         <h2>ku-studenteropgaver</h2>
         text: |
-            DIAS er et online repositorie for studenteropgaver skrevet i forbindelse med studie på Københavns Universitet.<br>
-            <ul>
-            <li>Søge efter tidligere studerendes opgaver</li>
-            <li>Downloade og læse opgaver</li>
-            <li>Tilføje dine egne opgaver så de bliver tilgængelige for andre og 'bevaret'</li>
+            Vær en del af noget større <br/> – del din viden
 
-            </ul>
-        tilfoejknap: 'Tilføj Opgave'
-        tilfoejogloginknap: 'Log ind for at tilføje opgave'
+        tilfoejknap: |
+            Upload <i class="icon-upload icon-white"></i>
+        tilfoejogloginknap: |
+                  Log ind <i class="icon-user icon-white"></i>
+
+        loginheader: 'log ind'
         allefelter: 'Alle'
         labels:
           title: 'Titel'
@@ -128,3 +135,5 @@ da:
         placeholder:
           titel: 'En Teoretisk Analyse af...'
           abstrakt: 'Opgaven består af en teoretisk gennemgang af feltet...'
+          gn: 'Fornavn'
+          sn: 'Efternavn'

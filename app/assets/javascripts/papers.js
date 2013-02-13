@@ -5,9 +5,9 @@ var author_counter = 0;
 
 
 function addAuthor() {
-
-    var author = $("span.author:first");
-    $("span.authors").append($("span.author:first").clone().find("input").val("").attr("id","paper_forfatter_"+author_counter).end());
+    $("span.authors").append($("span.author:first").clone()
+			.find("input.gn").val("").attr("id","paper_forfatter_"+author_counter+"_gn").attr("name","paper[forfatter]["+author_counter+"][gn]").end()
+			.find("input.sn").val("").attr("id","paper_forfatter_"+author_counter+"_sn").attr("name","paper[forfatter]["+author_counter+"][sn]").end());
     author_counter = author_counter+1;
    return false;
 }
@@ -17,9 +17,9 @@ function removeAuthor(elem) {
 
     if ($("span.author").length > 1) {
 
-        $(this).parent().remove();
+        $(this).parent().parent().remove();
     } else {
-        $(this).parent().find("input").val("");
+        $(this).parent().parent().find("input").val("");
     }
     return false;
 }

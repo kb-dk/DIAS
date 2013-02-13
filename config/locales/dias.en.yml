@@ -5,7 +5,14 @@ en:
     changelang: "Dansk"
     cookiepolicy: "Cookie policy"
     footer: |
-          <p class="credit muted row">The Royal Library, Postbox 2149, DK-1016 København K, (+45) 33 47 47 47, <a href="mailto:kb@kb.dk">kb@kb.dk</a>, EAN: 5798 000795297</p>
+              <address>
+                <strong>The Royal Library</strong> -
+                Postbox 2149 -
+                DK-1016 København K -
+                EAN: 5798 000795297 -
+                <abbr>Phone:</abbr> (+45) 33 47 47 47 -
+                <a href="mailto://kb@kb.dk">kb@kb.dk</a>
+              </address>
     models:
       paper:
         validate:
@@ -22,17 +29,17 @@ en:
 
     views:
       forside:
-        velkommen: 'Digital Collection Of Student papers. In Danish. DIAS.'
+        velkommen: |
+                <h3>arkiv for</h3>
+                <h2>ku-studenteropgaver</h2>
         text: |
-            DIAS is a online repository for studentpapers from the University of Copenhagen<br>
-            <ul>
-            <li>search for other students assignments</li>
-            <li>Downloade og  read papers</li>
-            <li>Add your own papers making them available and preserved</li>
+            Be a part of something bigger <br/> - share your knowledge
 
-            </ul>
-        tilfoejknap: 'Add you paper'
-        tilfoejogloginknap: 'Log in and add you paper'
+        tilfoejknap: |
+                    Upload <i class="icon-upload icon-white"></i>
+        tilfoejogloginknap: |
+                          Log in <i class="icon-user icon-white"></i>
+        loginheader: 'log in'
         allefelter: 'All'
         labels:
           title: 'Title'
@@ -106,3 +113,5 @@ en:
         placeholder:
           abstrakt: 'The paper presents an theoretical analysis of...'
           titel: 'A Theoretical Analysis of...'
+          gn: 'Given Name'
+          sn: 'Family Name'

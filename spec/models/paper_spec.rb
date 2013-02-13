@@ -4,7 +4,7 @@ describe Paper do
 
 
   def valid_attributes
-    { title:"Opgavetitel", undertitel:"Undertitel", forfatter:["Fornavn Efternavn", "Fornavn2 Efternavn2"], abstrakt:"ABSTRACT mutus nomen dedit cocis", afleveringsaar:"2011", studium:"Biologi", opgavetype:"bacheloropgave", opgavesprog:"Dansk"}
+    { title:"Opgavetitel", undertitel:"Undertitel", forfatter:{"0" => {"sn"=>"Gareth Stedman", "gn"=>"Jones"}, "3" => {"sn"=>"Anders", "gn"=>"And"}, "4" => {"sn"=>"intet fornavn"}, "5" => {"gn"=>"intet efternavn"}, "7" => {}}, abstrakt:"ABSTRACT mutus nomen dedit cocis", afleveringsaar:"2011", studium:"Biologi", opgavetype:"bacheloropgave", opgavesprog:"Dansk"}
   end
 
   context "with uploaded  pdf file" do
@@ -34,7 +34,7 @@ describe Paper do
     it "should have valid attributes" do
       @paper.title.should == valid_attributes[:title]
       @paper.undertitel.should == valid_attributes[:undertitel]
-      @paper.forfatter.should == valid_attributes[:forfatter]
+      @paper.get_authors == [{"sn"=>"Gareth Stedman", "gn"=>"Jones"}, {"sn"=>"Anders", "gn"=>"And"}]
       @paper.abstrakt.should == valid_attributes[:abstrakt]
       @paper.afleveringsaar.should == valid_attributes[:afleveringsaar]
       @paper.studium.should == valid_attributes[:studium]
@@ -85,7 +85,7 @@ describe Paper do
     it "should have valid attributes" do
       @paper.title.should == valid_attributes[:title]
       @paper.undertitel.should == valid_attributes[:undertitel]
-      @paper.forfatter.should == valid_attributes[:forfatter]
+      @paper.get_authors.should == [{"sn"=>"Gareth Stedman", "gn"=>"Jones"}, {"sn"=>"Anders", "gn"=>"And"}]
       @paper.abstrakt.should == valid_attributes[:abstrakt]
       @paper.afleveringsaar.should == valid_attributes[:afleveringsaar]
       @paper.studium.should == valid_attributes[:studium]
@@ -130,7 +130,7 @@ describe Paper do
     it "should have valid attributes" do
       @paper.title.should == valid_attributes[:title]
       @paper.undertitel.should == valid_attributes[:undertitel]
-      @paper.forfatter.should == valid_attributes[:forfatter]
+      @paper.get_authors.should == [{"sn"=>"Gareth Stedman", "gn"=>"Jones"}, {"sn"=>"Anders", "gn"=>"And"}]
       @paper.abstrakt.should == valid_attributes[:abstrakt]
       @paper.afleveringsaar.should == valid_attributes[:afleveringsaar]
       @paper.studium.should == valid_attributes[:studium]
