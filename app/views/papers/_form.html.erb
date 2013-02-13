@@ -103,7 +103,7 @@
       <%= f.label t('dias.views.paper.labels.studium'), :class => 'control-label' %>
       <div class="controls">
 
-          <%= collection_select(:paper, :studium, Institute.all, :title, :title) %>
+          <%= collection_select(:paper, :studium, Institute.all, :title, :title, :prompt => true) %>
 
 
         <span class="help-block"><%= t('dias.views.paper.help.studium')%></span>
@@ -115,7 +115,7 @@
     <div class="control-group">
       <%= f.label t('dias.views.paper.labels.opgavesprog'), :class => 'control-label' %>
       <div class="controls">
-        <%= collection_select(:paper, :opgavesprog, PaperLanguage.all, :title, :title) %>
+        <%= collection_select(:paper, :opgavesprog, PaperLanguage.all, :title, :title, :prompt => true) %>
         <span class="help-block"><%= t('dias.views.paper.help.opgavesprog')%></span>
       </div>
 
@@ -125,7 +125,7 @@
     <div class="control-group">
       <%= f.label t('dias.views.paper.labels.opgavetype'), :class => 'control-label' %>
       <div class="controls">
-        <%= collection_select(:paper, :opgavetype, PaperType.all, :title, :title) %>
+        <%= collection_select(:paper, :opgavetype, PaperType.all, :title, :title, :prompt => true) %>
         <span class="help-block"><%= t('dias.views.paper.help.opgavetype') %></span>
       </div>
     </div>
@@ -133,13 +133,14 @@
     <div class="control-group">
         <%= f.label t('dias.views.paper.labels.pdffil'), :class => 'control-label' %>
         <div class="controls">
-          <% unless @paper.original_filename.nil? %>
+          <% unless @paper.original_filename.nil? || @paper.original_filename.blank? %>
               <div>
-                <%= link_to 'PDF: '+ @paper.title, download_path(@paper) %>   <%=  @paper.original_filename.to_s %><br>
+                <%=  'PDF: ' + @paper.original_filename.to_s %><br>
+
               </div>
           <% else %>
 
-                <%= file_field_tag 'content', :value => 'Upload fil', :accept => 'application/pdf',  :class => 'btn' %>
+                <%= file_field_tag 'content', :id => 'content',  :accept => 'application/pdf',  :class => 'btn' %>
 
 
           <% end %>
@@ -189,4 +190,5 @@
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                   root_path, :class => 'btn' %>
     </div>
+
 <% end %>

@@ -249,6 +249,21 @@ Content
 .teaser h3{
   font:normal normal normal 26px/26px Arial,Helvetica,sans-serif;
 }
+.teaser p{
+  background:red url(dias/bg-repeater.png) repeat top left ;
+  padding:10px;
+  margin:0;
+  position:relative;
+}
+.teaser a:hover{
+  background:none;
+}
+.teaser p span{
+  position:absolute;
+  top:15px;
+  left:65px;
+  font:normal normal normal 12px/12px times,Arial,Helvetica,sans-serif;
+}
 
 /*Login teaser*/
 .login{

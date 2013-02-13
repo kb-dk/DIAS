@@ -12,20 +12,7 @@ class PapersController < ApplicationController
   end
 
 
-  # GET /faq
-  def faq
-    respond_to do |format|
-      format.html # faq.html.erb
-    end
-  end
 
-
-  # GET /kontakt
-  def kontakt
-    respond_to do |format|
-      format.html # kontakt.html.erb
-    end
-  end
 
   # GET /papers/1
   # GET /papers/1.json
@@ -58,10 +45,16 @@ class PapersController < ApplicationController
   # POST /papers
   # POST /papers.json
   def create
+
     @paper = Paper.new(params[:paper])
     @paper.add_default_license
     @paper.add_user_to_rights_meta_data_stream(current_user)
-    @paper.add_file(params[:content])
+    if @paper.original_filename.blank? || @paper.original_filename.nil?
+      @paper.add_file(params[:content])
+    else
+      logger.info(" ########### opgave har allerede faaet uploadet en pdf.")
+    end
+
 
     respond_to do |format|
       if @paper.save

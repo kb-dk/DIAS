@@ -224,5 +224,20 @@ class CatalogController < ApplicationController
   end
 
 
+  # GET /faq
+  def faq
+    respond_to do |format|
+      format.html # faq.html.erb
+    end
+  end
+
+
+  # GET /kontakt
+  def kontakt
+    respond_to do |format|
+      format.html # kontakt.html.erb
+    end
+  end
+
 
 end 
