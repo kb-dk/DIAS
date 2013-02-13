@@ -36,10 +36,12 @@
     gem 'rspec-rails'
     gem 'jettywrapper'
     gem 'better_errors'
+    gem 'binding_of_caller'
     gem 'spork'
     gem 'debugger'
     gem 'equivalent-xml'
     gem 'rb-inotify', '~> 0.8.8', :require => false
+    gem 'factory_girl_rails', '~> 4.1'
   end
 
 

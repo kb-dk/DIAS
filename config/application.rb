@@ -82,7 +82,6 @@ module HydraHead
     ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
       html = %(<div class="field_with_errors">#{html_tag}</div>).html_safe
       # add nokogiri gem to Gemfile
-      logger.debug("eval valid")
 
       form_fields = [
           'textarea',
@@ -98,11 +97,9 @@ module HydraHead
         elsif form_fields.include? e.node_name
           if instance.error_message.kind_of?(Array)
             html = %(<div class="control-group error">#{html_tag}<span class="help-inline">&nbsp;#{instance.error_message.join(',')}</span></div>).html_safe
-            logger.debug("       " +html)
 
           else
             html = %(<div class="control-group error">#{html_tag}<span class="help-inline">&nbsp;#{instance.error_message}</span></div>).html_safe
-            logger.debug("       " +html)
           end
         end
       end
