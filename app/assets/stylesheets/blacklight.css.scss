@@ -9,8 +9,13 @@
 */
 
 
+
 html body{
   padding:10px;
+  font-family: arial,verdana,helvetica,sans-serif;
+}
+[class^="icon-"], [class*=" icon-"] {
+
 }
 html body input, html body .btn, html body textarea{
  /* border-radius: 0px!important;    */
@@ -46,7 +51,7 @@ body .navbar .navbar-inner {
       text-indent: inherit;
       text-shadow: none;
       white-space: nowrap;
-      width: 225px;
+      width: 339px;
       font-size: inherit;
       color: #000;
       box-shadow: none;
@@ -63,7 +68,9 @@ body .navbar .navbar-inner {
     float:right;
   }
 
-
+body .navbar .nav  {
+  margin-top:23px;
+}
 
 body .navbar .nav > li > a {
   font: 13px/13px times,Arial,Helvetica,sans-serif;
@@ -88,6 +95,7 @@ body .navbar .nav > li > a:hover {
 body .navbar .btn-navbar .icon-bar {
   display:none;
 }
+
 /*SEARCH*/
 #searchWrapper{
   background-color:#005837;
@@ -118,26 +126,194 @@ body .navbar .btn-navbar .icon-bar {
 }
 
 /* FACET */
- #facets{
-    background: #2e8b57;
+#facets {
+  margin-top: -20px;
+}
+ #facets #facets-collapse div:last-child{
+   margin-bottom: 20px;
+   border-bottom:5px solid #D7DDE3;
 }
 
+
+#facets .facet_limit h5{
+  padding:0 10px;
+  margin:0;
+  font:normal normal bold 13px/48px Arial,Helvetica,sans-serif;
+  background: #F2F2F2;
+  border-top: 1px dotted #D7DDE3;
+}
+
+#facets .facet_limit h5 i{
+  border:1px solid blue;
+  display:inline-block;
+  width:50px;
+  height:50px;
+  display:none;
+}
+
+#facets ul {
+  padding: 0;
+  margin: 0;
+
+}
+
+#facets li {
+  padding:0;
+  margin:0;
+  font:normal normal normal 13px/48px Arial,Helvetica,sans-serif;
+  position:relative;
+}
+#facets li a, #facets li .selected {
+  padding:0px 0 0 60px ;
+  display:block;
+}
+
+#facets li:hover .count, #facets li .selected .count{
+  background:#005837;
+}
+#facets li a:hover, #facets li .selected {
+  background:none;
+  color:#005837;
+}
+
+#facets li .count {
+  border-radius: 9px 9px 9px 9px;
+  background-color: #999999;
+  color: #FFFFFF;
+  display: inline-block;
+  font:normal normal bold 13px/14px Arial,Helvetica,sans-serif;
+  padding: 2px 9px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  vertical-align: baseline;
+  white-space: nowrap;
+  margin:0;
+  float:inherit;
+  position:absolute;
+  left: 10px;
+  top:15px;
+}
+
+
+/*Landing page*/
+.documentHeader h5{
+
+  font-size:32px;
+}
 
 
 /* PARER VIEW*/
-.blacklight-papers #searchbar .span3 button{
-    display:none;
+.blacklight-papers #searchWrapper form {
+      display:none;
 }
 
+.blacklight-papers #searchWrapper {
+  height:33px;
+}
+
+/*
+Content
+****************************************************************************/
+#main-container{
+  padding-top:20px;
+}
 /* TEASER */
-
-/*srku teaser*/
-.srku{
-  background:#FFF url(dias/srkuBgTeaser.png) repeat 0 0 ;
-  color:#7A3C50;
+.teaser{
+  border-bottom:3px solid #753D54;
+  position:relative;
+  overflow:hidden;
 }
+.teaser .imgContent{
+  max-height:220px;
+  overflow:hidden;
+  position:relative;
+}
+.teaser .imgContent img{
+  width:100%;
+}
+.teaser .imgContent div{
+  width: 100%;
+  padding:10px;
+  background-color:rgba(0,0,0,0.8);
+  color:#FFF;
+  position: absolute;
+  text-transform: uppercase;
+  top:50%;
+}
+.teaser h2, .teaser h3{
+  padding:0;
+  margin:0;
+}
+.teaser h2{
+  font:normal normal bold 42px/42px Arial,Helvetica,sans-serif;
+}
+.teaser h3{
+  font:normal normal normal 26px/26px Arial,Helvetica,sans-serif;
+}
+
+/*Login teaser*/
+.login{
+  background:#005837;
+  color:#FFF;
+  font-family: times,Arial,Helvetica,sans-serif;
+  padding:10px;
+  text-align:center;
+}
+.login h3{
+  padding:0 0 10px 0;
+  margin:0;
+  font-size:25px;
+  line-height:25px;
+  font-weight:normal;
+}
+
+.login .btn{
+  background:#034931;
+  color:#FFF;
+  font-weight:bold;
+  font-size:28px;
+  box-shadow: none;
+  border:none;
+}
+
+
 .srku *{
   color:#7A3C50;
+}
+
+/* Footer
+*****************************************************************************************/
+footer{
+  margin-top: 20px;
+}
+footer *{
+  text-align:center;
+  text-transform:uppercase;
+  font:13px/13px times,Arial,Helvetica,sans-serif!important;
+  color:#999;
+}
+footer p{
+  padding:0;
+  margin:0;
+}
+footer address a, footer address a:hover{
+  color:#999;
+  background:transparent;
+}
+footer .kb, footer .kb:hover{
+  background:#fff url(dias/kbLogoFooter.png) no-repeat top left ;
+  width:185px;
+  height:35px;
+  display:inline-block;
+  border-right:1px solid #999;
+  padding-right:10px;
+
+}
+footer .srku{
+  background:#fff url(dias/srkuLogoFooter.png) no-repeat 0 0  ;
+  width:104px;
+  height:35px;
+  display:inline-block;
+  margin-left:10px;
 }
 
 /*****************************************************************************************
