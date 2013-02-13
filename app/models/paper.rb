@@ -77,6 +77,9 @@ class Paper < ActiveFedora::Base
 
 
   # modify default setter methods for forfatter
+  def forfatter(*arg)
+    self.get_authors.map{ |a| a["sn"] + ", " +a["gn"] }
+  end
 
   def forfatter=(val)
     # TODO: Check if authorslist has changed
@@ -97,8 +100,8 @@ class Paper < ActiveFedora::Base
     solr_doc["licens_t"] = self.license_url
     solr_doc["licens_title_t"] = self.license_title
     solr_doc["licens_description_t"] = self.license_description
-    solr_doc["forfatter_t"] = self.forfatter.join(", ")
-    return solr_doc
+    solr_doc["forfatter_t"]  = self.get_authors.map{ |a| a["sn"] + ", " +a["gn"] }.join("; ")
+    return solr_doc  
   end
 
 
