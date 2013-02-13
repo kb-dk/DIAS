@@ -41,6 +41,7 @@ da:
 
         loginheader: 'log ind'
         allefelter: 'Alle'
+        samarbejdetext: 'I samarbejde med'
         labels:
           title: 'Titel'
           undertitel: 'Undertitel'

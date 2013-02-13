@@ -20,7 +20,8 @@ class CatalogController < ApplicationController
     logger.info("### configure_blacklight i sproget I18n.locale=" + I18n.locale.to_s + " locale=" + :locale.to_s)
     config.default_solr_params = { 
       :qt => 'search',
-      :rows => 10 
+      :search_field => 'all_fields',
+      :rows => 20
     }
 
     # solr field configuration for search results/index views
