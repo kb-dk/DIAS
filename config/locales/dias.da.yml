@@ -17,6 +17,7 @@ da:
       paper:
         validate:
           title: 'Der skal være en titel'
+          author_present: 'Du skal angive mindst en forfatter'
           afleveringsaar: 'Der skal være angivet et årstal i afleveringsår'
           afleveringsaarlength: 'Årstallet skal have minimum fire heltal f.eks. 1996 eller 2013'
           studium: 'Der skal være angivet på hvilke studie opgaven blev afleveret f.eks. fysik'
