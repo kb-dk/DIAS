@@ -8,10 +8,8 @@
     Use html/body to overwrite propertie instead of !important
 */
 
-
-
 html body{
-  padding:10px;
+  padding:0px;
   font-family: arial,verdana,helvetica,sans-serif;
 }
 body a{
@@ -22,12 +20,10 @@ body a:hover{
   color:inherit;
 }
 
-html body input, html body .btn, html body textarea{
- /* border-radius: 0px!important;    */
-}
 
 .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12, {
   /*background:silver;   */
+  border-radius: 5px;
 }
 /* Header
 *****************************************************************************************/
@@ -46,18 +42,17 @@ body .navbarDias .navbar-inner {
   border:none;
   border-radius:none;
   padding:0;
-
 }
     /*LOGO*/
   body .navbarDias .brand {
-      margin: 0 0 5px 0;
+      margin: 10px;
       overflow: hidden;
       padding: 0px;
-      height:49px;
+      height:38px;
       text-indent: inherit;
       text-shadow: none;
       white-space: nowrap;
-      width: 339px;
+      width: 282px;
       font-size: inherit;
       color: #000;
       box-shadow: none;
@@ -67,19 +62,17 @@ body .navbarDias .navbar-inner {
       background:transparent url(dias/logoUk.png) no-repeat 0 0 !important;
     }
    .navbarDias .langDa {
-      background:transparent url(dias/logoDa.png) no-repeat 0 0 !important;
+      background:red url(dias/logoDa.png) no-repeat 0 0 !important;
     }
 
   .navbarDias .nav-collapse{
     float:right;
   }
 
-body .navbarDias .nav  {
-  margin-top:23px;
-}
+
 
 body .navbarDias .nav > li > a {
-  font: 13px/13px times,Arial,Helvetica,sans-serif;
+  font: 11px/38px times,Arial,Helvetica,sans-serif;
   margin: 6px 0 0 0;
   padding: 0px 8px 0 10px;
   text-transform: uppercase;
@@ -113,27 +106,35 @@ body .navbarDias .btn-navbar .icon-bar {
 #searchWrapper form{
   margin:0px!important;
 }
+
+
 #searchWrapper button{
-  background:transparent;
-  border:2px solid transparent;
+  font:normal normal normal 20px/38px times,Arial,Helvetica,sans-serif;
+  padding-top:0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  background: none repeat scroll 0 0 #034931;
+  border: medium none;
   box-shadow: none;
-  border-radius: 0;
 }
-#searchWrapper button span{
- font-family: times,Arial,Helvetica,sans-serif;
-}
-#searchWrapper .btn-large{
-  font-size: 24px!important;
-  padding-top: 5px!important;
-  padding-bottom: 5px!important;
+#searchWrapper button:hover{
+  background:#51A351;
 }
 #searchWrapper input.btn-large{
-  font-size: 20px!important;
+
+  padding:8px;
+  margin:0;
 }
 
+
+
+
+
 /* FACET */
-#facets {
-  margin-top: -20px;
+
+#sidebar{
+  margin-top:-20px;
 }
  #facets #facets-collapse div:last-child{
    margin-bottom: 20px;
@@ -199,10 +200,6 @@ body .navbarDias .btn-navbar .icon-bar {
   top:15px;
 }
 
-
-
-
-
 /* PARER VIEW*/
 .blacklight-papers #searchWrapper form {
       display:none;
@@ -215,9 +212,9 @@ body .navbarDias .btn-navbar .icon-bar {
 /*
 Content
 ****************************************************************************/
-#main-container{
-  padding-top:20px;
-}
+ #main-container{
+   margin-top:20px;
+ }
 /* TEASER */
 .teaser{
   border-bottom:3px solid #753D54;
@@ -273,11 +270,11 @@ Content
   background:#005837;
   color:#FFF;
   font-family: times,Arial,Helvetica,sans-serif;
-  padding:10px;
+  padding:10px 0;
   text-align:center;
 }
 .login h3{
-  padding:0 0 10px 0;
+  padding:10px;
   margin:0;
   font-size:25px;
   line-height:25px;
@@ -303,11 +300,11 @@ Content
   padding: 9px;
 }
 #documents {
-  margin-bottom: 1em;
+  margin-bottom:10px;
   margin-top:0;
   border-bottom:3px solid #D7DDE3 ;
 }
-.well, .constraints-container, #sortAndPerPage {
+.well, .constraints-container, #sortAndPerPage, #previousNextDocument {
   background-color: #F2F2F2;
   border: none;
   border-radius: 0;
@@ -316,28 +313,50 @@ Content
   min-height: 20px;
   padding: 10px;
   border-top: 1px dotted #D7DDE3;
+}
+.catalog_startOverLink, #startOverLink{
+  padding: 4px 12px;
+  font-weight:bold;
+}
+.catalog_startOverLink, .catalog_startOverLink:visited,.appliedFilter, , #startOverLink, , #startOverLink:visited{
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  border:none;
+  border-radius: 4px 4px 4px 4px;
+  background: #005837;
+  color: #FFFFFF;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 
 }
-.documentHeader h5{
-  font:normal normal normal 35px/35px times,Arial,Helvetica,sans-serif;
+.catalog_startOverLink:hover, #startOverLink:hover{
+  background: #5BB75B;
+  color: #FFFFFF;
+  text-decoration: none;
 }
+
+#documents .documentHeader {
+  padding:0;
+}
+
+h5.index_title{
+  padding:5px 0;
+  margin:0;
+}
+
 .document{
   border-top: 1px dotted #D7DDE3;
   border-bottom:none;
+  padding:10px;
+  padding-top:0;
+
 }
 #documents .document:nth-child(even){
-  background:#D7DDE3;
-}
-.appliedFilter {
-  background: #005837;
-  border: none;
-  border-radius: 15px 15px 15px 15px;
-  display: inline-block;
-  margin-bottom: 0.66em;
-  margin-right: 0.33em;
-  padding: 3px 50px 3px 1.5em;
-  position: relative;
-  color:#FFF;
+  background:#F2F2F2;
 }
 .appliedFilter .filterName {
   background: url("dias/separator.png") no-repeat scroll right center transparent;
@@ -345,18 +364,10 @@ Content
 .appliedFilter .btnRemove {
   background: url("dias/remove.png") no-repeat scroll center center transparent;
 }
-.catalog_startOverLink{
- border:1px solid red;
+
+.show-document #document{
+  padding:0 10px;
 }
-
-
-
-/*Landing page*/
-.blacklight-catalog-show #searchWrapper{
-
-}
-
-
 #document h1{
   font:normal normal bold 40px/40px times,Arial,Helvetica,sans-serif;
 }
@@ -369,7 +380,7 @@ footer{
 footer *{
   text-align:center;
   text-transform:uppercase;
-  font:13px/13px times,Arial,Helvetica,sans-serif!important;
+  font:11px/11px times,Arial,Helvetica,sans-serif!important;
   color:#999;
 }
 footer p{
@@ -389,7 +400,7 @@ footer .kb, footer .kb:hover{
   padding-right:10px;
 
 }
-footer .srku{
+footer .srku, footer .srku:hover{
   background:#fff url(dias/srkuLogoFooter.png) no-repeat 0 0  ;
   width:104px;
   height:35px;
@@ -420,26 +431,16 @@ footer .srku{
 
 @media (max-width: 979px) {
 
-  html body {
-    padding:0px;
-  }
-  body .navbarDias .brand {
-    margin:5px;
-  }
   body .navbarDias .nav > li > a  {
     background: none repeat scroll 0 0 transparent;
     border-top: 1px dotted #D7DDE3;
     display: block;
     float: none;
-    font: 11px/48px times,Arial,Helvetica,sans-serif;
+    font: 11px/38px times,Arial,Helvetica,sans-serif;
     margin: 0;
-    padding: 0 0 0 64px;
+    padding: 0 0 0 54px;
     border-radius: 0px;
   }
-
-
-
-
   body .navbarDias .nav {
     padding:0px;
     margin:0px;
@@ -453,12 +454,12 @@ footer .srku{
     padding: 0px;
     text-shadow: none;
     border:none;
-    background: url("dias/toggleMenuIcon.png") no-repeat scroll 50% 50% transparent;
-    height: 49px;
+    background:#FFF url("dias/toggleMenuIcon.png") no-repeat 50% 50% ;
+    height: 58px;
+    width: 58px;
     position: absolute;
-    right: 5px;
-    top: 5px;
-    width: 49px;
+    right: 0px;
+    top: 0px;
     border-radius:0px;
   }
   body .navbarDias .nav li a.cookie {
@@ -469,21 +470,17 @@ footer .srku{
   }
   body .navbarDias .nav li a.cookie:after {
     content:" ";
-    width:49px;
-    height:49px;
+    width:31px;
+    height:31px;
     right:5px;
     position:absolute;
     background: transparent url(http://www.kb.dk/image_client_static/img/icons/cookie.png) no-repeat scroll 50% 50% ;
     margin:0;
     padding:0;
   }
-
   .navbarDias .nav-collapse{
     float:none;
   }
-
-
-
    #searchbar .span3 button{
     display:block;
      width:100%;
@@ -507,12 +504,15 @@ footer .srku{
 
 }
 @media (max-width: 768px) {
+/*CONTENT*/
+  #main-container{
+    padding-left:10px;
+    padding-right: 10px;
+  }
 /*SEARCH*/
-
   #searchWrapper button span{
     display:none;
   }
-
 
 
 
@@ -521,19 +521,30 @@ footer .srku{
 
 @media (max-width: 480px) {
 
-  /*brand*/
+/*Brand*/
   body .navbarDias .brand {
-    height:31px;
-    width: 216px;
+    margin:5px;
   }
-  .navbarDias .langUk {
-    background:transparent url(dias/logoUkMini.png) no-repeat 0 0 !important;
-  }
-  .navbarDias .langDa {
-    background:transparent url(dias/logoDaMini.png) no-repeat 0 0 !important;
+  body .navbarDias .btn-navbar {
+    right:0px;
+    top:0px;
   }
 
-/*teaser*/
+  body .navbarDias .nav > li > a  {
+    padding: 0 0 0 49px;;
+  }
+  body .navbarDias .btn-navbar {
+    height: 48px;
+    width: 48px;
+  }
+
+/*CONTENT*/
+  #main-container{
+    padding-left:5px;
+    padding-right:5px;
+  }
+
+  /*teaser*/
   .teaser h3{
     font-size:12px;
     line-height:12px;
