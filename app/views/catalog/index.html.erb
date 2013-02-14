@@ -5,11 +5,8 @@
 
 
 <div id="content" class="span12">
-    <% #if !(has_search_parameters?) %>
-    <% if request.path=="/" &&  !(has_search_parameters?) %>
-	    <%# if there are no input/search related params, display the "home" partial -%>
-	    <%= render 'home' %>
-    <% elsif  (request.path=="/faq")  %>
+
+    <% if  (request.path=="/faq")  %>
       <div class="hero-unit">
         <h1><%= t('dias.views.faq.overskrift') %></h1>
         <p class="lead"><%=raw t('dias.views.faq.text') %></p>
@@ -44,7 +41,7 @@
 	    <%= render 'results_pagination' %>
 
     <% else %>
-      <div>404</div>
+      <%= render 'home' %>
     <% end %>
 
 
