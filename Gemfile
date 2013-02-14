@@ -51,4 +51,7 @@ gem "devise"
 gem "devise-guests", "~> 0.3"
 gem "bootstrap-sass"
 gem "therubyracer"
+ gem "client_side_validations", :git => 'git://github.com/bcardarella/client_side_validations.git'
+ gem 'thin'
+
 
