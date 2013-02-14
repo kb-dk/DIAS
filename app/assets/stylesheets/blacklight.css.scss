@@ -14,9 +14,14 @@ html body{
   padding:10px;
   font-family: arial,verdana,helvetica,sans-serif;
 }
-[class^="icon-"], [class*=" icon-"] {
-
+body a{
+  color:inherit;
 }
+body a:hover{
+  background:none;
+  color:inherit;
+}
+
 html body input, html body .btn, html body textarea{
  /* border-radius: 0px!important;    */
 }
@@ -195,11 +200,7 @@ body .navbarDias .btn-navbar .icon-bar {
 }
 
 
-/*Landing page*/
-.documentHeader h5{
 
-  font-size:32px;
-}
 
 
 /* PARER VIEW*/
@@ -295,6 +296,69 @@ Content
 
 .srku *{
   color:#7A3C50;
+}
+
+/*Reslut*/
+.constraints-container {
+  padding: 9px;
+}
+#documents {
+  margin-bottom: 1em;
+  margin-top:0;
+  border-bottom:3px solid #D7DDE3 ;
+}
+.well, .constraints-container, #sortAndPerPage {
+  background-color: #F2F2F2;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 0px;
+  min-height: 20px;
+  padding: 10px;
+  border-top: 1px dotted #D7DDE3;
+
+}
+.documentHeader h5{
+  font:normal normal normal 35px/35px times,Arial,Helvetica,sans-serif;
+}
+.document{
+  border-top: 1px dotted #D7DDE3;
+  border-bottom:none;
+}
+#documents .document:nth-child(even){
+  background:#D7DDE3;
+}
+.appliedFilter {
+  background: #005837;
+  border: none;
+  border-radius: 15px 15px 15px 15px;
+  display: inline-block;
+  margin-bottom: 0.66em;
+  margin-right: 0.33em;
+  padding: 3px 50px 3px 1.5em;
+  position: relative;
+  color:#FFF;
+}
+.appliedFilter .filterName {
+  background: url("dias/separator.png") no-repeat scroll right center transparent;
+}
+.appliedFilter .btnRemove {
+  background: url("dias/remove.png") no-repeat scroll center center transparent;
+}
+.catalog_startOverLink{
+ border:1px solid red;
+}
+
+
+
+/*Landing page*/
+.blacklight-catalog-show #searchWrapper{
+
+}
+
+
+#document h1{
+  font:normal normal bold 40px/40px times,Arial,Helvetica,sans-serif;
 }
 
 /* Footer
