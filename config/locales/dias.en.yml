@@ -41,6 +41,7 @@ en:
                           Log in <i class="icon-user icon-white"></i>
         loginheader: 'log in'
         allefelter: 'All'
+        samarbejdetext: 'In collaboration with'
         labels:
           title: 'Title'
           undertitel: 'Subtitle'
