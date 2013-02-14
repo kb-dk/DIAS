@@ -1,4 +1,4 @@
-<%= form_for(@paper, :html => { :multipart => true, :class => 'form-horizontal'}) do |f| %>
+<%= form_for(@paper, :validate => true, :html => { :multipart => true, :class => 'form-horizontal'}) do |f| %>
 
     <% if @paper.errors.any? %>
         <div class="alert alert-error" > <!-- id="error_explanation"   <span class="badge badge-important badge-large"> <!%= @paper.errors.count %> </span>-->

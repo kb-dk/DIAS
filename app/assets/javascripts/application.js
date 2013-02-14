@@ -20,6 +20,7 @@
 
 
 //= require twitter/bootstrap
+//= require rails.validations
 
 $(function(){
     /* Your javascripts goes here... */
