@@ -5,8 +5,9 @@
 
           <%= form_tag search_action_url, :method => :get, :class => "form-search" do %>
               <%= search_as_hidden_fields(:omit_keys => [:q, :search_field, :qt, :page]).html_safe %>
+              <%= hidden_field :search_field, :value => h(params["all_fields"])  %>
 
-               <div class="input-prepend input-append">
+              <div class="input-prepend input-append">
                  <button type="button" class="btn btn-success btn-large" data-toggle="collapse" data-target="#facets-collapse" >
                   <span><%= t('blacklight.search.facets.title') %></span><i class="icon-filter"></i>
                  </button>
