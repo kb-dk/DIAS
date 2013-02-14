@@ -33,12 +33,9 @@ $(document).ready(function(){
             $('#createAssignmentBtn').attr("enabled");
             $('#createAssignmentBtn').removeAttr("disabled");
             $('#formCreateDiv').tooltip('destroy');
-            console.log("enabled");
         } else {
             $('#createAssignmentBtn').attr("disabled", "disabled");
             $('#formCreateDiv').tooltip('show');
-
-            console.log("disabled");
         };
     //$("#createAssignmentBtn").attr("enabled", !this.checked);
     });
