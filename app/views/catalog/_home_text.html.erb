@@ -21,8 +21,8 @@
 
 
 
-  <div class="span3">
-    <div class="login">
+  <div class="span3 login">
+
       <h3>
         <%=raw t('dias.views.forside.text') %>
       </h3>
@@ -36,10 +36,10 @@
       <% if !can? :edit, @papers   %>
           <p><%= link_to t('.new', :default => raw(t('dias.views.forside.tilfoejogloginknap'))),
                          new_user_session_path,
-                         :class => 'btn btn-large btn-block btn-success' %>   </p>
+                         :class => 'btn btn-large btn-success' %>   </p>
       <% end %>
 
     </div>
 
-  </div>
+
 </div>

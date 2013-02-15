@@ -16,11 +16,15 @@
 //
 // Required by Blacklight
 //= require blacklight/blacklight
+
+// require rails validation
+//= require rails.validations
+
 //= require_tree .
 
 
 //= require twitter/bootstrap
-//= require rails.validations
+
 
 $(function(){
     /* Your javascripts goes here... */
