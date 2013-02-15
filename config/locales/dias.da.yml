@@ -1,6 +1,6 @@
 da:
   dias:
-    edit: "Rediger"
+    edit: "Redigér"
     search: "Søg"
     changelang: "English"
     cookiepolicy: "Cookie & privatlivspolitik"
@@ -11,21 +11,22 @@ da:
             DK-1016 København K -
             EAN: 5798 000795297 -
             <abbr>Tlf:</abbr> (+45) 33 47 47 47 -
-            <a href="mailto://kb@kb.dk">kb@kb.dk</a>
+            <a href="mailto:kb@kb.dk">kb@kb.dk</a>
           </address>
     models:
       paper:
         validate:
           title: 'Der skal være en titel'
+          author_present: 'Du skal angive mindst en forfatter'
           afleveringsaar: 'Der skal være angivet et årstal i afleveringsår'
           afleveringsaarlength: 'Årstallet skal have minimum fire heltal f.eks. 1996 eller 2013'
           studium: 'Der skal være angivet på hvilke studie opgaven blev afleveret f.eks. fysik'
           opgavetype: 'Der skal være angivet en opgavetype, f.eks. bachelor opgave'
           opgavesprog: 'Der skal være angivet et sprog'
           file: "Husk at tilføje en pdf-fil"
-          pdffile: 'Man kan kun uploade PDF-filer. Ikke Word dokumenter'
-          vilkaarbetingelser: "Du skal acceptere vilkår og betingelser før opgaven kan oprettes"
-          succes: "Opgaven blev oprettet"
+          pdffile: 'Det er kun muligt at uploade PDF-filer'
+          vilkaarbetingelser: "Acceptér venligst Vilkår og betingelser"
+          succes: "Opgaven blev uploadet"
     views:
       forside:
         velkommen: |
@@ -50,7 +51,7 @@ da:
           studium: 'Studie'
           opgavetype: 'Type'
           opgavesprog: 'Sprog'
-          abstrakt: 'Resume'
+          abstrakt: 'Resumé'
       faq:
        overskrift: 'FAQ'
        text: |
@@ -86,10 +87,8 @@ da:
        overskrift: 'Kontakt'
        text: |
             <div>
-            <p>Man kan fremad se, at de har været udset til at læse, at der skal dannes par af ligheder. Dermed kan der afsluttes uden løse ender, og de kan optimeres fra oven af at formidles stort uden brug fra presse. I en kant af landet går der blandt om, at de vil sætte den over forbehold for tiden. Vi flotter med et hold, der vil rundt og se sig om i byen. Det gør heller ikke mere. Men hvor vi nu overbringer denne størrelse til det den handler om, så kan der fortælles op til 3 gange. Hvis det er træet til dit bord der får dig op, er det snarere varmen over de andre.
-            Selv om hun har sat alt mere frem, og derfor ikke længere kan betragtes som den glade giver, er det en nem sammenstilling, som bærer ved i lang tid. Det går der så nogle timer ud, hvor det er indlysende, at virkeligheden bliver tydelig istandsættelse. Det er opmuntrende og anderledes, at det er dampet af kurset i morgen. Der indgives hvert år enorme strenge af blade af større eller mindre tilsnit. I denne afdeling finder man blandt andet som en om håndtering af samme grund. Politik handler som bekendt ligeså meget om at tale, som at stå frem for tiden
-            </p>
-            <p><a class="icon-mail"href="mailto:kontaktbiblioteket@kb.dk">Send en e-mail med dit spørgsmål</a><p>
+            <p>Alle henvendelser vedrørende DIAS bedes rettet til <a class="icon-mail" href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>. Vi vil hurtigst muligt vende tilbage til dig.<p>
+            <p>Du finder svar på de fleste spørgsmål i vores FAQ.<p>
             </div>
 
       paper:
@@ -125,14 +124,14 @@ da:
           pdffil: 'Opgaven i PDF format'
           opretopgave: 'Opret Opgave'
         help:
-          opgavetype: 'Hvilken type af opgave er der tale om (Bemærk at der ikke kan uploades specialer)'
-          opgavesprog: 'På hvilket sprog er opgaven skrevet.'
-          studium: 'På hvilket fag er opgaven skrevet.'
-          afleveringsaar: 'Det år, hvor opgaven blev afleveret til bedømmelse.'
+          opgavetype: 'Hvilken type af opgave er der tale om (Bemærk venligst, at der ikke kan uploades specialer)'
+          opgavesprog: 'På hvilket sprog er opgaven skrevet'
+          studium: 'På hvilket fag er opgaven skrevet'
+          afleveringsaar: 'Det år, hvor opgaven blev afleveret til bedømmelse'
           navn: 'Dit for- og efternavn'
           undertitel: 'Undertitlen på din opgave (ikke obligatorisk)'
           titel: 'Titlen på din opgave'
-          abstrakt: 'Abstract eller en god beskrivelse af opgavens indhold.'
+          abstrakt: 'Skriv et abstract eller en god beskrivelse af opgavens indhold. Så bliver den lettere for andre at finde.'
         placeholder:
           titel: 'En Teoretisk Analyse af...'
           abstrakt: 'Opgaven består af en teoretisk gennemgang af feltet...'

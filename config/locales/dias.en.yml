@@ -3,7 +3,7 @@ en:
     edit: "Edit"
     search: "Search"
     changelang: "Dansk"
-    cookiepolicy: "Cookie policy"
+    cookiepolicy: "Cookie & privacy policy"
     footer: |
               <address>
                 <strong>The Royal Library</strong> -
@@ -11,21 +11,20 @@ en:
                 DK-1016 København K -
                 EAN: 5798 000795297 -
                 <abbr>Phone:</abbr> (+45) 33 47 47 47 -
-                <a href="mailto://kb@kb.dk">kb@kb.dk</a>
+                <a href="mailto:kb@kb.dk">kb@kb.dk</a>
               </address>
     models:
       paper:
         validate:
-          title: 'Please add title'
-          afleveringsaar: 'Please add a year'
+          title: 'Please insert title'
+          afleveringsaar: 'Please insert submission year'
           afleveringsaarlength: 'Year must be at least four digits i.e. 1996 or 2013'
-          pdffile: 'Remember to upload a pdf file'
+          pdffile: 'Please select a PDF file to upload'
           file: "You must upload a file"
-          vilkaarbetingelser: "You must accept terms and conditions before the assignment can be created"
-          succes: "Your Paper was successfully created."
-          filepresent: "You must upload a file"
-          pdffile: "File must be a PDF file"
-          fileproblem: "A problem occured when uploading the file, try again ..."
+          vilkaarbetingelser: "Please accept The Royal Library's Terms and Conditions before uploading"
+          succes: "The assignment was successfully uploaded."
+          filepresent: "Please upload a PDF file"
+          fileproblem: "A problem occured when uploading the file, please try again ..."
 
 
     views:

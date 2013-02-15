@@ -19,6 +19,10 @@
 =end
 
  ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+   if( html_tag  =~ /^<label id="paper_forfatter_/ )
+      logger.info("FORFATTER ERROR " + html_tag.to_s)
+   end
+
    unless html_tag =~ /^<label/
      %{<div class="field_with_errors"><div class="control-group error">#{html_tag}<label for="#{instance.send(:tag_id)}" class="message help-inline">#{instance.error_message.first}</label></div></div>}.html_safe
    else
