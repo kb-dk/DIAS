@@ -102,7 +102,7 @@ class Paper < ActiveFedora::Base
     # TODO: Check if authorslist has changed
     descMetadata.remove_authors
     val.each do |index, v|
-      unless (v.blank? || v["gn"].blank? || v["sn"].blank?) 
+      unless (v.blank? or (v["gn"].blank? and v["sn"].blank?))
       	descMetadata.insert_author(v["gn"],v["sn"])
       end
     end
