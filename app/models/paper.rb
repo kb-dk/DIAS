@@ -33,6 +33,7 @@ class Paper < ActiveFedora::Base
   validates_presence_of :opgavesprog,
                         :message =>  I18n.t('dias.models.paper.validate.opgavesprog')
 
+  validate :validate_list_of_authors
 
   validate :validate_file
 
@@ -107,6 +108,32 @@ class Paper < ActiveFedora::Base
       end
     end
   end
+
+  def validate_list_of_authors
+    logger.info("############ validerer forfattere")
+
+
+    self.get_authors.each do |v|
+          logger.info(v["gn"]+ "" + v["sn"])
+          if(v["gn"].blank?)
+             self.errors.add(:forfatter, "Fornavn mangler")
+          end
+
+          if(v["sn"].blank?)
+            self.errors.add(:forfatter, "Efternavn mangler")
+          end
+    end
+
+
+    if(self.get_authors.blank?)
+
+      logger.info("############ blank!")
+      self.errors.add(:forfatter,"Ingen forfatter(e) oprettet for opgaven")
+    end
+
+  end
+
+
 
   def get_authors
     descMetadata.get_authors
