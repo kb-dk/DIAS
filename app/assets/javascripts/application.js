@@ -12,13 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.validate
+//= require jquery.validate.additional-methods
 //= require twitter/bootstrap
 //
 // Required by Blacklight
 //= require blacklight/blacklight
 
-// require rails validation
-//= require rails.validations
 
 //= require_tree .
 

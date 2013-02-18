@@ -51,7 +51,7 @@ gem "devise"
 gem "devise-guests", "~> 0.3"
 gem "bootstrap-sass"
 gem "therubyracer"
- gem "client_side_validations", "3.2.0"
- gem 'thin'
+#gem "client_side_validations", "3.2.0"
+gem 'thin'
 
 

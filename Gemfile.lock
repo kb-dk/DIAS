@@ -64,7 +64,6 @@ GEM
     cancan (1.6.8)
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
-    client_side_validations (3.2.0)
     coderay (1.0.8)
     columnize (0.3.6)
     commonjs (0.2.6)
@@ -284,7 +283,6 @@ DEPENDENCIES
   binding_of_caller
   blacklight (~> 4.0.1)
   bootstrap-sass
-  client_side_validations (= 3.2.0)
   debugger
   devise
   devise-guests (~> 0.3)
