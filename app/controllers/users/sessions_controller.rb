@@ -17,7 +17,7 @@ class Users::SessionsController < ApplicationController
     username = auth.extra.user
 
     session[:user] = auth
-    redirect_to session.delete('return_url'), :notice => I18n.t('dias.loggetind') +" " + auth.extra.attributes.first.gn + " " + auth.extra.attributes.first.sn, :only_path => true
+    redirect_to session.delete('return_url'), :notice => I18n.t('dias.loggetind') +" " + auth.extra.attributes.first.gn + " " + auth.extra.attributes.first.sn + " " + I18n.t('dias.loggetindupklartilload'), :only_path => true
   end
 
   def destroy
