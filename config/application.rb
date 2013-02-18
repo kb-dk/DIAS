@@ -79,8 +79,15 @@ module HydraHead
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-=begin
+
+
+  end
+
+
+
+  begin
     ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+      logger.info("beskeder")
       html = %(<div class="field_with_errors">#{html_tag}</div>).html_safe
       # add nokogiri gem to Gemfile
 
@@ -106,8 +113,5 @@ module HydraHead
       end
       html
     end
-=end
-
-  end
-
+    end
 end
