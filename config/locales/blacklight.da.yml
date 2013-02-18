@@ -201,7 +201,7 @@ da:
         selected:
           remove: '[fjern]'
       filters:
-        title: 'You searched for:'
+        title: 'Du søgte efter:'
         label: '%{label}:'
         remove:
           value: 'Remove constraint %{value}'
@@ -209,7 +209,7 @@ da:
       librarian_view:
         title: 'Librarian View'
         leader: 'LEADER %{leader}'
-      start_over: 'Start Over'
+      start_over: 'Søg igen'
       show:
         title: '%{document_title} - %{application_name}'
       rss_feed: 'RSS for resultaterne'
