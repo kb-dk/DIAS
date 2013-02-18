@@ -33,7 +33,7 @@ class Paper < ActiveFedora::Base
   validates_presence_of :opgavesprog,
                         :message =>  I18n.t('dias.models.paper.validate.opgavesprog')
 
-  validate :validate_list_of_authors
+  #validate :validate_list_of_authors
 
   validate :validate_file
 
@@ -103,8 +103,8 @@ class Paper < ActiveFedora::Base
     # TODO: Check if authorslist has changed
     descMetadata.remove_authors
     val.each do |index, v|
-      unless (v.blank? or (v["gn"].blank? and v["sn"].blank?))
-      	descMetadata.insert_author(v["gn"],v["sn"])
+      unless (v.blank? || v["gn"].blank? || v["sn"].blank?)
+        descMetadata.insert_author(v["gn"],v["sn"])
       end
     end
   end
