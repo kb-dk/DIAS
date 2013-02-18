@@ -1,4 +1,14 @@
 
+<script type="text/javascript">
+    var locale = '<%= I18n.locale %>';
+    var KB_validate_afleveringsaar = '<%= I18n.t("dias.models.paper.validate.afleveringsaar") %>';
+    var KB_validate_filevalid = '<%= I18n.t("dias.models.paper.validate.file") %>';
+    var KB_validate_opgavesprog = '<%= I18n.t("dias.models.paper.validate.opgavesprog") %>';
+    var KB_validate_opgavetype = '<%= I18n.t("dias.models.paper.validate.opgavetype") %>';
+
+
+</script>
+
 <%= form_for(@paper, :validate => true, :html => { :multipart => true, :class => 'form-horizontal'}) do |f| %>
 
     <% if @paper.errors.any? %>
