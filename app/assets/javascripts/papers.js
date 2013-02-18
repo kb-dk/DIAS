@@ -46,4 +46,16 @@ $(document).ready(function(){
     $("form").on("click", "a.remove-author", removeAuthor);
     author_counter=$("span.author").length;
 
+
+    $("#paper_new").validate({
+	rules: { 
+		paper_title: {required: true},
+		content: {required: true, accept: "pdf"}
+	},
+        messages: { 
+		content: "Du skal uploade en file" 
+	}
+    });
+
+
 });
