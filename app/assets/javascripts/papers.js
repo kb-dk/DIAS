@@ -24,6 +24,7 @@ function removeAuthor(elem) {
     return false;
 }
 
+var KB_filemissing = 'du skal huske at uploade en fil din idiot';
 
 
 $(document).ready(function(){
@@ -46,15 +47,15 @@ $(document).ready(function(){
     $("form").on("click", "a.remove-author", removeAuthor);
     author_counter=$("span.author").length;
 
-
-    $("#paper_new").validate({
+    $("#new_paper").validate({
 	rules: { 
-		paper_title: {required: true},
-		content: {required: true, accept: "pdf"}
+                'paper[title]' : {required: true},
+		'content': {required: true, accept: "pdf"}
 	},
         messages: { 
-		content: "Du skal uploade en file" 
-	}
+		'content' : "bla bla bla"
+	},
+
     });
 
 
