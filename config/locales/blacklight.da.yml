@@ -209,7 +209,7 @@ da:
       librarian_view:
         title: 'Librarian View'
         leader: 'LEADER %{leader}'
-      start_over: 'Søg igen'
+      start_over: 'Ny søgning'
       show:
         title: '%{document_title} - %{application_name}'
       rss_feed: 'RSS for resultaterne'

@@ -57,20 +57,43 @@ en:
        overskrift: 'FAQ'
        text: |
             <div>
-            <p>Question?</p>
-            <p><blockquote>Answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh. Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. Fusce bibendum, velit in venenatis viverra, tellus ligula dignissim felis, quis euismod mauris tellus ut urna.</blockquote><p>
+            <p>Who can upload student assignments to DIAS?</p>
+            <p>Students at and alumi from the University of Copenhagen can upload passed student assignments to DIAS.<p>
             </div>
             <div>
-            <p>Question?</p>
-            <p><blockquote>Answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh. Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. Fusce bibendum, velit in venenatis viverra, tellus ligula dignissim felis, quis euismod mauris tellus ut urna.</blockquote><p>
+            <p>Who can use the contents of DIAS?</p>
+            <p>All student assignments in DIAS er freely avalilable to anyone with an internet connection. The assignments can be read and cited, but may not be subject to further elaboraton.<p>
+            </div>
+            <!--
+            Er specialer relevante på den engelske side???
+            <div>
+            <p>Kan jeg uploade mit speciale til DIAS?</p>
+            <p>Nej. Københavns Universitet har et separat arkiv til godkendte specialer - <a href="http://diskurs.kb.dk">DISKURS</a>. Du kan kontakte studieadministrationen på dit fakultet for at høre om muligheden for at lægge dit speciale i DISKURS.<p>
+            </div>
+            <div>
+            <p>Hvorfor kan jeg ikke finde specialer i DIAS?</p>
+            <p>Københavns Universitet har et separat arkiv til godkendte specialer - <a href="http://diskurs.kb.dk">DISKURS</a>.<p>
+            </div>
+            
+            -->
+            <div>
+            <p>How can I delete an assignment, that I uploaded to DIAS</p>
+            <p>Assignments uploaded to DIAS can only be deleted by an administrator. Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>.<p>
+            </div>
+            <div>
+            <p>I found an assignment in DIAS that contains confidential information or contents breaking copyright laws. How do I report this?</p>
+            <p>Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> with author and title information..<p>
+            </div>
+            <div>
+            <p>I found an assignment in DIAS, that cannot possibly have been passed. How do I report this?</p>
+            <p>Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> with author and title information.<p>
             </div>
       kontakt:
        overskrift: 'Contact'
        text: |
             <div>
             <p>Please contact us</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh. Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. Fusce bibendum, velit in venenatis viverra, tellus ligula dignissim felis, quis euismod mauris tellus ut urna.</p>
-            <p><a href="mailto:kontaktbiblioteket@kb.dk">Send us an e-mail with your question</a><p>
+            <p>Most questions are answered in our FAQ section. If your question, however, is not, please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">Send us an e-mail with your question</a><p>
             </div>
 
       paper:
