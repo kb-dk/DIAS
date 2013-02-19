@@ -81,20 +81,19 @@ en:
             <p>Assignments uploaded to DIAS can only be deleted by an administrator. Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>.<p>
             </div>
             <div>
-            <p>Jeg har fundet en opgave i DIAS, som indeholder personfølsomme oplysninger ikke indhold, som krænker loven om ophavsret. Hvordan rapporterer jeg dette?</p>
-            <p>Skriv venligst en mail til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.<p>
+            <p>I found an assignment in DIAS that contains confidential information or contents breaking copyright laws. How do I report this?</p>
+            <p>Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> with author and title information..<p>
             </div>
             <div>
-            <p>Jeg har fundet en opgave i DIAS, som umuligt kan være bestået. Hvordan rapporterer jeg dette?</p>
-            <p>Skriv venligst en mail til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>  med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.<p>
+            <p>I found an assignment in DIAS, that cannot possibly have been passed. How do I report this?</p>
+            <p>Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> with author and title information.<p>
             </div>
       kontakt:
        overskrift: 'Contact'
        text: |
             <div>
             <p>Please contact us</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh. Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. Fusce bibendum, velit in venenatis viverra, tellus ligula dignissim felis, quis euismod mauris tellus ut urna.</p>
-            <p><a href="mailto:kontaktbiblioteket@kb.dk">Send us an e-mail with your question</a><p>
+            <p>Most questions are answered in our FAQ section. If your question, however, is not, please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">Send us an e-mail with your question</a><p>
             </div>
 
       paper:
