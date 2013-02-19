@@ -1,21 +1,26 @@
 
-<script type="text/javascript">
 
-    // if KBDIAS doesn't exist, create it.
-    KBDIAS = KBDIAS || {};
-    KBDIAS.some_method = function(){}
-    KBDIAS.some_property = 3;
-    KBDIAS.locale = '<%= I18n.locale %>';
-    KBDIAS.afleveringsaar = '<%= I18n.t("dias.models.paper.validate.afleveringsaar") %>';
-    KBDIAS.filevalid = '<%= I18n.t("dias.models.paper.validate.file") %>';
-    KBDIAS.opgavesprog = '<%= I18n.t("dias.models.paper.validate.opgavesprog") %>';
-    KBDIAS.opgavetype = '<%= I18n.t("dias.models.paper.validate.opgavetype") %>';
-
-
-</script>
 
 <%= form_for(@paper, :validate => true, :html => { :multipart => true, :class => 'form-horizontal'}) do |f| %>
 
+
+    <script type="text/javascript">
+        console.log("form.rb.html")
+        // if KBDIAS doesn't exist, create it.
+        var KBDIAS = KBDIAS || {};
+        KBDIAS.some_method = function(){}
+        KBDIAS.some_property = 3;
+        KBDIAS.locale = '<%= I18n.locale %>';
+        KBDIAS.title = '<%= I18n.t("dias.models.paper.validate.title") %>';
+        KBDIAS.afleveringsaar = '<%= I18n.t("dias.models.paper.validate.afleveringsaar") %>';
+        KBDIAS.afleveringsaarlength = '<%= I18n.t("dias.models.paper.validate.afleveringsaarlength") %>';
+
+        KBDIAS.file = '<%= I18n.t("dias.models.paper.validate.file") %>';
+        KBDIAS.opgavesprog = '<%= I18n.t("dias.models.paper.validate.opgavesprog") %>';
+        KBDIAS.opgavetype = '<%= I18n.t("dias.models.paper.validate.opgavetype") %>';
+        KBDIAS.studium = '<%= I18n.t("dias.models.paper.validate.studium") %>';
+
+    </script>
     <% if @paper.errors.any? %>
         <div class="alert alert-error" > <!-- id="error_explanation"   <span class="badge badge-important badge-large"> <!%= @paper.errors.count %> </span>-->
           <h2><%= @paper.errors.count %> <%= t('dias.views.paper.validate.error')  %></h2>
