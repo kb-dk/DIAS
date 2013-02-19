@@ -64,17 +64,21 @@ en:
             <p>Who can use the contents of DIAS?</p>
             <p>All student assignments in DIAS er freely avalilable to anyone with an internet connection. The assignments can be read and cited, but may not be subject to further elaboraton.<p>
             </div>
+            <!--
+            Er specialer relevante på den engelske side???
             <div>
             <p>Kan jeg uploade mit speciale til DIAS?</p>
             <p>Nej. Københavns Universitet har et separat arkiv til godkendte specialer - <a href="http://diskurs.kb.dk">DISKURS</a>. Du kan kontakte studieadministrationen på dit fakultet for at høre om muligheden for at lægge dit speciale i DISKURS.<p>
             </div>
             <div>
-            <p>Hvordan sletter jeg en opgave, som jeg har uploadet til DIAS?</p>
-            <p>Det er ikke muligt selv at slette de opgaver, som du har uploadet til DIAS. Sletning sker ved skriftlig henvendelse til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>.<p>
-            </div>
-            <div>
             <p>Hvorfor kan jeg ikke finde specialer i DIAS?</p>
             <p>Københavns Universitet har et separat arkiv til godkendte specialer - <a href="http://diskurs.kb.dk">DISKURS</a>.<p>
+            </div>
+            
+            -->
+            <div>
+            <p>How can I delete an assignment, that I uploaded to DIAS</p>
+            <p>Assignments uploaded to DIAS can only be deleted by an administrator. Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>.<p>
             </div>
             <div>
             <p>Jeg har fundet en opgave i DIAS, som indeholder personfølsomme oplysninger ikke indhold, som krænker loven om ophavsret. Hvordan rapporterer jeg dette?</p>
