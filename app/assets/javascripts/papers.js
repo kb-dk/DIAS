@@ -72,6 +72,21 @@ $(document).ready(function(){
                 'paper[studium]': KBDIAS.studium,
                 'paper[opgavesprog]': KBDIAS.opgavesprog,
                 'paper[opgavetype]': KBDIAS.opgavetype
+            },
+            errorClass: "help-inline",
+            errorElement: "span",
+            highlight:function(element, errorClass, validClass) {
+                $(element).parents('.control-group').addClass('error');
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                $(element).parents('.control-group').removeClass('error');
+                $(element).parents('.control-group').addClass('success');
+            },
+            errorPlacement: function (error, element) {
+                if (element.parent().is('.input-append'))
+                    error.appendTo(element.parents(".controls:first"));
+                else
+                    error.insertAfter(element);
             }
         });
 
