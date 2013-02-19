@@ -24,8 +24,6 @@ function removeAuthor(elem) {
     return false;
 }
 
-var KB_filemissing = 'du skal huske at uploade en fil din idiot';
-
 
 $(document).ready(function(){
     $("[rel=tooltip]").tooltip();
