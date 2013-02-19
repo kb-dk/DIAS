@@ -215,9 +215,9 @@ class CatalogController < ApplicationController
     config.add_sort_field 'score desc, afleveringsaar_sort desc, title_sort asc', :label => 'Relevans'
     config.add_sort_field 'afleveringsaar_sort desc, title_sort asc', :label => 'År (nyeste først)'
     config.add_sort_field 'afleveringsaar_sort asc, title_sort asc', :label => 'År (ældste først)'
-    config.add_sort_field 'forfatter_sort asc, title_sort asc', :label => 'Forfatter (stigende)'
-    config.add_sort_field 'forfatter_sort desc, title_sort asc', :label => 'Forfatter (faldende)'
-    config.add_sort_field 'title_sort asc, afleveringsaar_sort desc', :label => 'Titel'
+    #config.add_sort_field 'forfatter_sort asc, title_sort asc', :label => 'Forfatter (stigende)'
+    #config.add_sort_field 'forfatter_sort desc, title_sort asc', :label => 'Forfatter (faldende)'
+    #config.add_sort_field 'title_sort asc, afleveringsaar_sort desc', :label => 'Titel'
 
     # If there are more than this many search results, no spelling ("did you 
     # mean") suggestion is offered.
