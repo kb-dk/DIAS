@@ -47,17 +47,34 @@ $(document).ready(function(){
     $("form").on("click", "a.remove-author", removeAuthor);
     author_counter=$("span.author").length;
 
-    $("#new_paper").validate({
-	debug: true,
-	rules: { 
-                'paper[title]' : {required: true},
-		'content': {required: true, accept: "pdf"}
-	},
-        messages: { 
-		'content' : "bla bla bla"
-	}
 
-    });
+    $("#new_paper").validate(
+
+        {
+            rules: {
+                'paper[title]': {required: true},
+                'paper[afleveringsaar]': {required: true},
+                'paper[studium]': {required: true},
+                'paper[opgavesprog]': {required: true},
+                'paper[opgavetype]': {required: true},
+
+                'content': {required: true, accept: "pdf"}
+            },
+            messages: {
+                'content': KBDIAS.file,
+                'paper[title]':{
+                    required: KBDIAS.title
+                },
+                'paper[afleveringsaar]':{
+                    required: KBDIAS.afleveringsaar,
+                    minlength: KBDIAS.afleveringsaarlength
+                },
+                'paper[studium]': KBDIAS.studium,
+                'paper[opgavesprog]': KBDIAS.opgavesprog,
+                'paper[opgavetype]': KBDIAS.opgavetype
+            }
+        });
+
 
 
 });
