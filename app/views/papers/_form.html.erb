@@ -1,10 +1,15 @@
 
 <script type="text/javascript">
-    var locale = '<%= I18n.locale %>';
-    var KB_validate_afleveringsaar = '<%= I18n.t("dias.models.paper.validate.afleveringsaar") %>';
-    var KB_validate_filevalid = '<%= I18n.t("dias.models.paper.validate.file") %>';
-    var KB_validate_opgavesprog = '<%= I18n.t("dias.models.paper.validate.opgavesprog") %>';
-    var KB_validate_opgavetype = '<%= I18n.t("dias.models.paper.validate.opgavetype") %>';
+
+    // if KBDIAS doesn't exist, create it.
+    KBDIAS = KBDIAS || {};
+    KBDIAS.some_method = function(){}
+    KBDIAS.some_property = 3;
+    KBDIAS.locale = '<%= I18n.locale %>';
+    KBDIAS.afleveringsaar = '<%= I18n.t("dias.models.paper.validate.afleveringsaar") %>';
+    KBDIAS.filevalid = '<%= I18n.t("dias.models.paper.validate.file") %>';
+    KBDIAS.opgavesprog = '<%= I18n.t("dias.models.paper.validate.opgavesprog") %>';
+    KBDIAS.opgavetype = '<%= I18n.t("dias.models.paper.validate.opgavetype") %>';
 
 
 </script>

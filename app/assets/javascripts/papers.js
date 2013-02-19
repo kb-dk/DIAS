@@ -49,12 +49,12 @@ $(document).ready(function(){
 
     $("#new_paper").validate({
 	rules: { 
-                'paper[title]' : {required: true},
+        'paper[title]' : {required: true},
 		'content': {required: true, accept: "pdf"}
 	},
         messages: { 
 		'content' : "bla bla bla"
-	},
+	}
 
     });
 
