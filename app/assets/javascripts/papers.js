@@ -29,6 +29,9 @@ var KB_filemissing = 'du skal huske at uploade en fil din idiot';
 
 $(document).ready(function(){
     $("[rel=tooltip]").tooltip();
+
+
+  /*
     $("#termsConditionsCheckBox").click(function() {
         if ($('#termsConditionsCheckBox').is(':checked')) {
             $('#createAssignmentBtn').attr("enabled");
@@ -38,8 +41,10 @@ $(document).ready(function(){
             $('#createAssignmentBtn').attr("disabled", "disabled");
             $('#formCreateDiv').tooltip('show');
         };
-    //$("#createAssignmentBtn").attr("enabled", !this.checked);
     });
+   */
+
+
  //   $("a.remove-author").click(removeAuthor);
   //  $("a.add-author").click(addAuthor);
 
@@ -57,8 +62,8 @@ $(document).ready(function(){
                 'paper[studium]': {required: true},
                 'paper[opgavesprog]': {required: true},
                 'paper[opgavetype]': {required: true},
-
-                'content': {required: true, accept: "pdf"}
+                'content': {required: true, accept: "pdf"},
+                'termsConditionsCheckBox': {required: true}
             },
             messages: {
                 'content': KBDIAS.file,
@@ -71,7 +76,8 @@ $(document).ready(function(){
                 },
                 'paper[studium]': KBDIAS.studium,
                 'paper[opgavesprog]': KBDIAS.opgavesprog,
-                'paper[opgavetype]': KBDIAS.opgavetype
+                'paper[opgavetype]': KBDIAS.opgavetype,
+                'termsConditionsCheckBox': ""
             },
             errorClass: "help-inline",
             errorElement: "span",
