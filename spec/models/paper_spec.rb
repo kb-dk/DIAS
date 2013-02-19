@@ -34,7 +34,7 @@ describe Paper do
     it "should have valid attributes" do
       @paper.title.should == valid_attributes[:title]
       @paper.undertitel.should == valid_attributes[:undertitel]
-      @paper.get_authors == [{"sn"=>"Gareth Stedman", "gn"=>"Jones"}, {"sn"=>"Anders", "gn"=>"And"},{"sn"=>"intet fornavn"}, {"gn"=>"intet efternavn"}]
+      @paper.get_authors == [{"sn"=>"Gareth Stedman", "gn"=>"Jones"}, {"sn"=>"Anders", "gn"=>"And"},{"gn" => "", "sn"=>"intet fornavn"}, {"sn" => "", "gn"=>"intet efternavn"}]
       @paper.afleveringsaar.should == valid_attributes[:afleveringsaar]
       @paper.studium.should == valid_attributes[:studium]
       @paper.opgavetype.should == valid_attributes[:opgavetype]
@@ -129,7 +129,7 @@ describe Paper do
     it "should have valid attributes" do
       @paper.title.should == valid_attributes[:title]
       @paper.undertitel.should == valid_attributes[:undertitel]
-      @paper.get_authors.should == [{"sn"=>"Gareth Stedman", "gn"=>"Jones"}, {"sn"=>"Anders", "gn"=>"And"}]
+      @paper.get_authors.should == [{"sn"=>"Gareth Stedman", "gn"=>"Jones"}, {"sn"=>"Anders", "gn"=>"And"},{"gn" => "", "sn"=>"intet fornavn"}, {"sn" => "", "gn"=>"intet efternavn"}]
       @paper.abstrakt.should == valid_attributes[:abstrakt]
       @paper.afleveringsaar.should == valid_attributes[:afleveringsaar]
       @paper.studium.should == valid_attributes[:studium]

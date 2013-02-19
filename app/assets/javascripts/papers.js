@@ -48,13 +48,14 @@ $(document).ready(function(){
     author_counter=$("span.author").length;
 
     $("#new_paper").validate({
+	debug: true,
 	rules: { 
                 'paper[title]' : {required: true},
 		'content': {required: true, accept: "pdf"}
 	},
         messages: { 
 		'content' : "bla bla bla"
-	},
+	}
 
     });
 
