@@ -21,6 +21,8 @@ en:
           title: 'Please insert title'
           afleveringsaar: 'Please insert submission year'
           afleveringsaarlength: 'Year must be at least four digits i.e. 1996 or 2013'
+          afleveringsaarefter1479: 'University of Copenhagen was founded 1479...'
+
           pdffile: 'Please select a PDF file to upload'
           file: "You must upload a file"
           vilkaarbetingelser: "Please accept The Royal Library's Terms and Conditions before uploading"
@@ -28,6 +30,9 @@ en:
           filepresent: "Please upload a PDF file"
           fileproblem: "A problem occured when uploading the file, please try again ..."
 
+          studium: 'TODO ENGELSK -> Der skal være angivet på hvilke studie opgaven blev afleveret f.eks. fysik'
+          opgavetype: 'TODO ENGELSK -> Der skal være angivet en opgavetype, f.eks. bachelor opgave'
+          opgavesprog: 'TODO ENGELSK -> Der skal være angivet et sprog'
 
     views:
       forside:

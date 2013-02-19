@@ -22,6 +22,7 @@ da:
           author_present: 'Du skal angive mindst en forfatter'
           afleveringsaar: 'Der skal være angivet et årstal i afleveringsår'
           afleveringsaarlength: 'Årstallet skal have minimum fire heltal f.eks. 1996 eller 2013'
+          afleveringsaarefter1479: 'Københavns Universitet blev grundlagt i år 1479, vælg et årstal efter det'
           studium: 'Der skal være angivet på hvilke studie opgaven blev afleveret f.eks. fysik'
           opgavetype: 'Der skal være angivet en opgavetype, f.eks. bachelor opgave'
           opgavesprog: 'Der skal være angivet et sprog'

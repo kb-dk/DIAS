@@ -58,7 +58,7 @@ $(document).ready(function(){
         {
             rules: {
                 'paper[title]': {required: true},
-                'paper[afleveringsaar]': {required: true},
+                'paper[afleveringsaar]': {required: true, minlength:4, min: 1479},
                 'paper[studium]': {required: true},
                 'paper[opgavesprog]': {required: true},
                 'paper[opgavetype]': {required: true},
@@ -72,7 +72,8 @@ $(document).ready(function(){
                 },
                 'paper[afleveringsaar]':{
                     required: KBDIAS.afleveringsaar,
-                    minlength: KBDIAS.afleveringsaarlength
+                    minlength: KBDIAS.afleveringsaarlength,
+                    min: KBDIAS.afleveringsaarefter1479
                 },
                 'paper[studium]': KBDIAS.studium,
                 'paper[opgavesprog]': KBDIAS.opgavesprog,
