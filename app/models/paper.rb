@@ -22,6 +22,8 @@ class Paper < ActiveFedora::Base
   validates_length_of  :afleveringsaar, :minimum => 4,
                        :message => I18n.t('dias.models.paper.validate.afleveringsaarlength')
 
+  validates_numericality_of :afleveringsaar, :greater_than_or_equal_to => 1479,
+                            :message => I18n.t('dias.models.paper.validate.afleveringsaarefter1479')
 
 
   validates_presence_of :studium,

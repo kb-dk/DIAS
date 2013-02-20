@@ -21,6 +21,8 @@ en:
           title: 'Please insert title'
           afleveringsaar: 'Please insert submission year'
           afleveringsaarlength: 'Year must be at least four digits i.e. 1996 or 2013'
+          afleveringsaarefter1479: 'University of Copenhagen was founded 1479...'
+
           pdffile: 'Please select a PDF file to upload'
           file: "You must upload a file"
           vilkaarbetingelser: "Please accept The Royal Library's Terms and Conditions before uploading"
@@ -28,6 +30,9 @@ en:
           filepresent: "Please upload a PDF file"
           fileproblem: "A problem occured when uploading the file, please try again ..."
 
+          studium: 'TODO ENGELSK -> Der skal være angivet på hvilke studie opgaven blev afleveret f.eks. fysik'
+          opgavetype: 'TODO ENGELSK -> Der skal være angivet en opgavetype, f.eks. bachelor opgave'
+          opgavesprog: 'TODO ENGELSK -> Der skal være angivet et sprog'
 
     views:
       forside:
@@ -56,14 +61,45 @@ en:
       faq:
        overskrift: 'FAQ'
        text: |
-            <div>
-            <p>Who can upload student assignments to DIAS?</p>
-            <p>Students at and alumi from the University of Copenhagen can upload passed student assignments to DIAS.<p>
-            </div>
-            <div>
-            <p>Who can use the contents of DIAS?</p>
-            <p>All student assignments in DIAS er freely avalilable to anyone with an internet connection. The assignments can be read and cited, but may not be subject to further elaboraton.<p>
-            </div>
+            <p class="lead">Who can upload student assignments to DIAS?</p>
+            <p>
+              <blockquote>
+                Students at and alumi from the University of Copenhagen can upload passed student assignments to DIAS.
+              </blockquote>
+            </p>
+            <hr/>
+
+            <p class="lead">Who can use the contents of DIAS?</p>
+            <p>
+              <blockquote>
+                 All student assignments in DIAS er freely avalilable to anyone with an internet connection. The assignments can be read and cited, but may not be subject to further elaboraton.
+              </blockquote>
+            </p>
+            <hr/>
+
+            <p class="lead">How can I delete an assignment, that I uploaded to DIAS</p>
+            <p>
+              <blockquote>
+                Assignments uploaded to DIAS can only be deleted by an administrator. Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>.
+              </blockquote>
+            </p>
+            <hr/>
+
+            <p class="lead">I found an assignment in DIAS that contains confidential information or contents breaking copyright laws. How do I report this?</p>
+            <p>
+              <blockquote>
+                 Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> with author and title information.
+              </blockquote>
+            </p>
+            <hr/>
+
+            <p class="lead">I found an assignment in DIAS, that cannot possibly have been passed. How do I report this?</p>
+            <p>
+              <blockquote>
+                 Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> with author and title information.
+              </blockquote>
+            </p>
+
             <!--
             Er specialer relevante på den engelske side???
             <div>
@@ -74,27 +110,24 @@ en:
             <p>Hvorfor kan jeg ikke finde specialer i DIAS?</p>
             <p>Københavns Universitet har et separat arkiv til godkendte specialer - <a href="http://diskurs.kb.dk">DISKURS</a>.<p>
             </div>
-            
+
             -->
-            <div>
-            <p>How can I delete an assignment, that I uploaded to DIAS</p>
-            <p>Assignments uploaded to DIAS can only be deleted by an administrator. Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>.<p>
-            </div>
-            <div>
-            <p>I found an assignment in DIAS that contains confidential information or contents breaking copyright laws. How do I report this?</p>
-            <p>Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> with author and title information..<p>
-            </div>
-            <div>
-            <p>I found an assignment in DIAS, that cannot possibly have been passed. How do I report this?</p>
-            <p>Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> with author and title information.<p>
-            </div>
+
+
       kontakt:
        overskrift: 'Contact'
        text: |
-            <div>
-            <p>Please contact us</p>
-            <p>Most questions are answered in our FAQ section. If your question, however, is not, please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">Send us an e-mail with your question</a><p>
-            </div>
+            <p class="lead">
+                 Please contact us<br/>
+                 Most questions are answered in our FAQ section. If your question, however, is not, please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">Send us an e-mail with your question</a>
+             </p>
+             <address>
+               <strong>DIAS, Inc.</strong><br/>
+               795 FolsomeAve, Suite 600<br/>
+               København K, 4859<br/>
+               <abbr title="phone">P:</abbr> (+45)12-34-56-78<br/>
+               <a href="mailto:#">kontaktbibliotektet@kb.dk</a>
+             </address>
 
       paper:
         validate:

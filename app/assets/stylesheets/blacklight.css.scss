@@ -201,6 +201,23 @@ body .navbarDias .btn-navbar .icon-bar {
   top:15px;
 }
 
+
+/* Alt nedenfor at med visning af flere facetter at gøre*/
+.more_facets_link{
+  left: 0px;
+  top: 0px;
+  float: left;
+  position: left;
+}
+
+#facets li.more_facets_link{
+  text-align: left;
+    float: left;
+}
+
+.modal{
+margin-top: 0px;
+}
 /* PARER VIEW*/
 .blacklight-papers #searchWrapper form {
       display:none;

@@ -22,6 +22,7 @@ da:
           author_present: 'Du skal angive mindst en forfatter'
           afleveringsaar: 'Der skal være angivet et årstal i afleveringsår'
           afleveringsaarlength: 'Årstallet skal have minimum fire heltal f.eks. 1996 eller 2013'
+          afleveringsaarefter1479: 'Københavns Universitet blev grundlagt i år 1479, vælg et årstal efter det'
           studium: 'Der skal være angivet på hvilke studie opgaven blev afleveret f.eks. fysik'
           opgavetype: 'Der skal være angivet en opgavetype, f.eks. bachelor opgave'
           opgavesprog: 'Der skal være angivet et sprog'
@@ -57,41 +58,82 @@ da:
       faq:
        overskrift: 'FAQ'
        text: |
-            <div>
-            <p>Hvem kan uploade opgaver til DIAS?</p>
-            <p>Nuværende og tidligere studerende ved Københavns Universitet kan uploade beståede universitetsopgaver til DIAS. Det er dog ike muligt at uploade specialer til DIAS.<p>
-            </div>
-            <div>
-            <p>Hvem må læse opgaverne i DIAS?</p>
-            <p>Alle opgaver i DIAS er frit tilgængelige for enhver person med interesse heri. Opgaverne i DIAS må naturligvis læses og citeres, men de ikke gøres tilstand for videre bearbejdelse.<p>
-            </div>
-            <div>
-            <p>Kan jeg uploade mit speciale til DIAS?</p>
-            <p>Nej. Københavns Universitet har et separat arkiv til godkendte specialer - <a href="http://diskurs.kb.dk">DISKURS</a>. Du kan kontakte studieadministrationen på dit fakultet for at høre om muligheden for at lægge dit speciale i DISKURS.<p>
-            </div>
-            <div>
-            <p>Hvordan sletter jeg en opgave, som jeg har uploadet til DIAS?</p>
-            <p>Det er ikke muligt selv at slette de opgaver, som du har uploadet til DIAS. Sletning sker ved skriftlig henvendelse til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>.<p>
-            </div>
-            <div>
-            <p>Hvorfor kan jeg ikke finde specialer i DIAS?</p>
-            <p>Københavns Universitet har et separat arkiv til godkendte specialer - <a href="http://diskurs.kb.dk">DISKURS</a>.<p>
-            </div>
-            <div>
-            <p>Jeg har fundet en opgave i DIAS, som indeholder personfølsomme oplysninger ikke indhold, som krænker loven om ophavsret. Hvordan rapporterer jeg dette?</p>
-            <p>Skriv venligst en mail til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.<p>
-            </div>
-            <div>
-            <p>Jeg har fundet en opgave i DIAS, som umuligt kan være bestået. Hvordan rapporterer jeg dette?</p>
-            <p>Skriv venligst en mail til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>  med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.<p>
-            </div>
+            <p class="lead">Hvem kan uploade opgaver til DIAS?</p>
+            <p><blockquote>
+                Nuværende og tidligere studerende ved Københavns Universitet kan uploade beståede universitetsopgaver til DIAS. Det er dog ike muligt at uploade specialer til DIAS.
+              </blockquote>
+            </p>
+            <hr/>
+
+            <p class="lead">Hvem må læse opgaverne i DIAS?</p>
+            <p>
+              <blockquote>
+                Alle opgaver i DIAS er frit tilgængelige for enhver person med interesse heri. Opgaverne i DIAS må naturligvis læses og citeres, men de ikke gøres tilstand for videre bearbejdelse.
+              </blockquote>
+            </p>
+            <hr/>
+
+            <p class="lead">Kan jeg uploade mit speciale til DIAS?</p>
+            <p>
+              <blockquote>
+                Nej. Københavns Universitet har et separat arkiv til godkendte specialer - <a href="http://diskurs.kb.dk">DISKURS</a>. Du kan kontakte studieadministrationen på dit fakultet for at høre om muligheden for at lægge dit speciale i DISKURS.
+              </blockquote>
+            </p>
+            <hr/>
+
+            <p class="lead">Hvordan sletter jeg en opgave, som jeg har uploadet til DIAS?</p>
+            <p>
+              <blockquote>
+                 Det er ikke muligt selv at slette de opgaver, som du har uploadet til DIAS. Sletning sker ved skriftlig henvendelse til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>.
+              </blockquote>
+            </p>
+            <hr/>
+
+            <p class="lead">Hvorfor kan jeg ikke finde specialer i DIAS?</p>
+            <p>
+              <blockquote>
+                Københavns Universitet har et separat arkiv til godkendte specialer - <a href="http://diskurs.kb.dk">DISKURS</a>.
+              </blockquote>
+            </p>
+            <hr/>
+
+            <p class="lead">Kan jeg uploade mit speciale til DIAS?</p>
+            <p>
+              <blockquote>
+                Nej. Københavns Universitet har et separat arkiv til godkendte specialer - <a href="http://diskurs.kb.dk">DISKURS</a>. Du kan kontakte studieadministrationen på dit fakultet for at høre om muligheden for at lægge dit speciale i DISKURS.
+              </blockquote>
+            </p>
+            <hr/>
+
+            <p class="lead">Jeg har fundet en opgave i DIAS, som indeholder personfølsomme oplysninger ikke indhold, som krænker loven om ophavsret. Hvordan rapporterer jeg dette?</p>
+            <p>
+              <blockquote>
+                Skriv venligst en mail til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.
+              </blockquote>
+            </p>
+            <hr/>
+
+            <p class="lead">Jeg har fundet en opgave i DIAS, som umuligt kan være bestået. Hvordan rapporterer jeg dette?</p>
+            <p>
+              <blockquote>
+                Skriv venligst en mail til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>  med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.
+              </blockquote>
+            </p>
+
+
       kontakt:
        overskrift: 'Kontakt'
        text: |
-            <div>
-            <p>Alle henvendelser vedrørende DIAS bedes rettet til <a class="icon-mail" href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>. Vi vil hurtigst muligt vende tilbage til dig.<p>
-            <p>Du finder svar på de fleste spørgsmål i vores FAQ.<p>
-            </div>
+            <p class="lead">
+                Skriv venligst en mail til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>  med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.
+            </p>
+            <address>
+              <strong>DIAS, Inc.</strong><br/>
+              795 FolsomeAve, Suite 600<br/>
+              København K, 4859<br/>
+              <abbr title="phone">P:</abbr> (+45)12-34-56-78<br/>
+              <a href="mailto:#">kontaktbibliotektet@kb.dk</a>
+            </address>
 
       paper:
         validate:
