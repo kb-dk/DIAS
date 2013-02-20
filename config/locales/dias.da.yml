@@ -162,7 +162,7 @@ da:
                                       <li>Brugere af DIAS kan benytte min opgave under hensyntagen til Create Commons Licence BY-NC-ND – læs mere.</li>
                                       </ul>
 
-          pdffil: 'Du skal uploade en fil med opgaven i PDF-format'
+          pdffil: 'Opgaven i PDF-format'
           opretopgave: 'Opret Opgave'
         help:
           opgavetype: 'Hvilken type af opgave er der tale om (Bemærk venligst, at der ikke kan uploades specialer)'
