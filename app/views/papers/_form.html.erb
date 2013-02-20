@@ -5,11 +5,9 @@
 
 
     <script type="text/javascript">
-        console.log("form.rb.html")
+        //console.log("form.rb.html")
         // if KBDIAS doesn't exist, create it.
         var KBDIAS = KBDIAS || {};
-        KBDIAS.some_method = function(){}
-        KBDIAS.some_property = 3;
         KBDIAS.locale = '<%= I18n.locale %>';
         KBDIAS.title = '<%= I18n.t("dias.models.paper.validate.title") %>';
         KBDIAS.afleveringsaar = '<%= I18n.t("dias.models.paper.validate.afleveringsaar") %>';
@@ -25,7 +23,7 @@
         KBDIAS.vilkaarbetingelser = '<%= I18n.t("dias.models.paper.validate.vilkaarbetingelser") %>';
 
         KBDIAS.gnmissing = '<%= I18n.t("dias.models.paper.validate.fornavn") %>'
-	KBDIAS.snmissing = '<%= I18n.t("dias.models.paper.validate.efternavn") %>'
+	    KBDIAS.snmissing = '<%= I18n.t("dias.models.paper.validate.efternavn") %>'
         KBDIAS.atleasoneauthor = '<%= I18n.t("dias.models.paper.validate.mindstenforfatter") %>'
 
     </script>
@@ -47,7 +45,6 @@
       <div class="controls">
         <%= f.text_field :title, :class => 'text_field span6',  :placeholder => t('dias.views.paper.placeholder.titel')  %>
 
-        <!--span class="help-inline"><%= t('dias.views.paper.help.titel')%></span-->
 
       </div>
     </div>
@@ -95,7 +92,7 @@
           <div class="controls">
           <span class="authors">
             <span class="author">
-		<div class="row">
+		<div class="row span7">
                  <%= text_field_tag 'paper[forfatter][0][gn]', nil, :class => 'text_field span3 gn', :placeholder => t('dias.views.paper.placeholder.gn') %>
 		 <%= text_field_tag 'paper[forfatter][0][sn]', nil, :class => 'text_field span3 sn', :placeholder => t('dias.views.paper.placeholder.sn') %>
                  <a class="remove-author" href="#"><i class="icon-remove" ></i></a>
@@ -103,9 +100,11 @@
             </span>
           </span>
 	  </div>
+          <span class="row">
           <div class="controls">
-            <a class="add-author"  href="#"><i class="icon-plus" ></i><%= raw t('dias.views.paper.labels.add.forfatter') %></a>
+            <a class="add-author btn "  href="#"><i class="icon-plus" ></i><%= raw t('dias.views.paper.labels.add.forfatter') %></a>
           </div>
+          </span>
         </div>
     <% end %>
 
@@ -217,7 +216,6 @@
                    :id => 'createAssignmentBtn',
                    :class => 'btn btn-primary',
                    :title => 'Opret opgave'
-                   #:disabled => "disabled"
            %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                   root_path, :class => 'btn' %>

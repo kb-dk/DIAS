@@ -16,15 +16,24 @@
 
         <div class="nav-collapse collapse">
             <ul class="nav ">
+
+                  <% if can? :edit, @papers   %>
+                  <li><%= link_to t('.new', :default => raw(t('dias.views.forside.tilfoejknap'))),
+                                     new_paper_path %></li>
+                  <% end %>
+
+
+
+
                 <li>
                     <%= render :partial=>'/user_util_links' %>
                 </li>
                 <li>
-                    <a href="/faq"><%= t('dias.views.faq.overskrift') %></a>
+                     <%=  link_to t('dias.views.faq.overskrift'), "faq" %>
                 </li>
 
               <li>
-                <a href="/kontakt"><%= t('dias.views.kontakt.overskrift') %></a>
+                <%=  link_to t('dias.views.kontakt.overskrift'), "kontakt" %>
               </li>
                 <li>
                     <%if I18n.locale.to_s=="en" %>
