@@ -1,5 +1,29 @@
+
+
+
 <%= form_for(@paper, :validate => true, :html => { :multipart => true, :class => 'form-horizontal'}) do |f| %>
 
+
+    <script type="text/javascript">
+        console.log("form.rb.html")
+        // if KBDIAS doesn't exist, create it.
+        var KBDIAS = KBDIAS || {};
+        KBDIAS.some_method = function(){}
+        KBDIAS.some_property = 3;
+        KBDIAS.locale = '<%= I18n.locale %>';
+        KBDIAS.title = '<%= I18n.t("dias.models.paper.validate.title") %>';
+        KBDIAS.afleveringsaar = '<%= I18n.t("dias.models.paper.validate.afleveringsaar") %>';
+        KBDIAS.afleveringsaarlength = '<%= I18n.t("dias.models.paper.validate.afleveringsaarlength") %>';
+        KBDIAS.afleveringsaarefter1479 = '<%= I18n.t("dias.models.paper.validate.afleveringsaarefter1479") %>';
+
+
+        KBDIAS.file = '<%= I18n.t("dias.models.paper.validate.file") %>';
+        KBDIAS.opgavesprog = '<%= I18n.t("dias.models.paper.validate.opgavesprog") %>';
+        KBDIAS.opgavetype = '<%= I18n.t("dias.models.paper.validate.opgavetype") %>';
+        KBDIAS.studium = '<%= I18n.t("dias.models.paper.validate.studium") %>';
+        KBDIAS.vilkaarbetingelser = '<%= I18n.t("dias.models.paper.validate.vilkaarbetingelser") %>';
+
+    </script>
     <% if @paper.errors.any? %>
         <div class="alert alert-error" > <!-- id="error_explanation"   <span class="badge badge-important badge-large"> <!%= @paper.errors.count %> </span>-->
           <h2><%= @paper.errors.count %> <%= t('dias.views.paper.validate.error')  %></h2>
@@ -18,7 +42,7 @@
       <div class="controls">
         <%= f.text_field :title, :class => 'text_field span6',  :placeholder => t('dias.views.paper.placeholder.titel')  %>
 
-        <span class="help-inline"><%= t('dias.views.paper.help.titel')%></span>
+        <!--span class="help-inline"><%= t('dias.views.paper.help.titel')%></span-->
 
       </div>
     </div>
@@ -167,10 +191,17 @@
           </div>
 
       </div>
-        <label class="checkbox">
-          <input type="checkbox" id="termsConditionsCheckBox"><%= t('dias.views.paper.labels.vilkaarogbetingelsertext') %>
+      </div>
+
+        <div class="controls">
+
+          <label class="checkbox ">
+            <input type="checkbox" name="termsConditionsCheckBox"  id="termsConditionsCheckBox">  <%= t('dias.views.paper.labels.vilkaarogbetingelsertext') %>
         </label>
+
+
         </div>
+
     </div>
 
 
@@ -178,14 +209,14 @@
 
     <div class="form-actions"
          id="formCreateDiv"
-         rel="tooltip"
+
          title="<%= t('dias.models.paper.validate.vilkaarbetingelser') %>"
          data-placement="top" >
       <%= f.submit t('dias.views.paper.labels.opretopgave'),
                    :id => 'createAssignmentBtn',
                    :class => 'btn btn-primary',
-                   :title => 'Opret opgave',
-                   :disabled => "disabled"
+                   :title => 'Opret opgave'
+                   #:disabled => "disabled"
            %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                   root_path, :class => 'btn' %>

@@ -80,7 +80,7 @@ body .navbarDias .nav > li > a {
   color: #42403B;
 }
 body .navbarDias .nav > li > a.cookie {
-  background: transparent url(http://www.kb.dk/image_client_static/img/icons/cookie.png) no-repeat scroll 100% 50% ;
+  background: transparent url(dias/cookie.png) no-repeat scroll 100% 50% ;
   padding-right:21px;
 }
 
@@ -135,6 +135,8 @@ body .navbarDias .btn-navbar .icon-bar {
 
 #sidebar{
   margin-top:-20px;
+  cursor:pointer;
+
 }
  #facets #facets-collapse div:last-child{
    margin-bottom: 20px;
@@ -161,7 +163,6 @@ body .navbarDias .btn-navbar .icon-bar {
 #facets ul {
   padding: 0;
   margin: 0;
-
 }
 
 #facets li {
@@ -200,6 +201,23 @@ body .navbarDias .btn-navbar .icon-bar {
   top:15px;
 }
 
+
+/* Alt nedenfor at med visning af flere facetter at gøre*/
+.more_facets_link{
+  left: 0px;
+  top: 0px;
+  float: left;
+  position: left;
+}
+
+#facets li.more_facets_link{
+  text-align: left;
+    float: left;
+}
+
+.modal{
+margin-top: 0px;
+}
 /* PARER VIEW*/
 .blacklight-papers #searchWrapper form {
       display:none;

@@ -22,6 +22,8 @@ class Paper < ActiveFedora::Base
   validates_length_of  :afleveringsaar, :minimum => 4,
                        :message => I18n.t('dias.models.paper.validate.afleveringsaarlength')
 
+  validates_numericality_of :afleveringsaar, :greater_than_or_equal_to => 1479,
+                            :message => I18n.t('dias.models.paper.validate.afleveringsaarefter1479')
 
 
   validates_presence_of :studium,
@@ -33,6 +35,7 @@ class Paper < ActiveFedora::Base
   validates_presence_of :opgavesprog,
                         :message =>  I18n.t('dias.models.paper.validate.opgavesprog')
 
+  #validate :validate_list_of_authors
 
   validate :validate_file
 
@@ -102,11 +105,37 @@ class Paper < ActiveFedora::Base
     # TODO: Check if authorslist has changed
     descMetadata.remove_authors
     val.each do |index, v|
-      unless (v.blank? || v["gn"].blank? || v["sn"].blank?) 
-      	descMetadata.insert_author(v["gn"],v["sn"])
+      unless (v.blank? or (v["gn"].blank? and v["sn"].blank?))
+        descMetadata.insert_author(v["gn"],v["sn"])
       end
     end
   end
+
+  def validate_list_of_authors
+    logger.info("############ validerer forfattere")
+
+
+    self.get_authors.each do |v|
+          logger.info(v["gn"]+ "" + v["sn"])
+          if(v["gn"].blank?)
+             self.errors.add(:forfatter, "Fornavn mangler")
+          end
+
+          if(v["sn"].blank?)
+            self.errors.add(:forfatter, "Efternavn mangler")
+          end
+    end
+
+
+    if(self.get_authors.blank?)
+
+      logger.info("############ blank!")
+      self.errors.add(:forfatter,"Ingen forfatter(e) oprettet for opgaven")
+    end
+
+  end
+
+
 
   def get_authors
     descMetadata.get_authors

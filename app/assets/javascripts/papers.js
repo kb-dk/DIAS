@@ -25,28 +25,76 @@ function removeAuthor(elem) {
 }
 
 
-
 $(document).ready(function(){
     $("[rel=tooltip]").tooltip();
+
+
+  /*
     $("#termsConditionsCheckBox").click(function() {
         if ($('#termsConditionsCheckBox').is(':checked')) {
             $('#createAssignmentBtn').attr("enabled");
             $('#createAssignmentBtn').removeAttr("disabled");
             $('#formCreateDiv').tooltip('destroy');
-            console.log("enabled");
         } else {
             $('#createAssignmentBtn').attr("disabled", "disabled");
             $('#formCreateDiv').tooltip('show');
-
-            console.log("disabled");
         };
-    //$("#createAssignmentBtn").attr("enabled", !this.checked);
     });
+   */
+
+
  //   $("a.remove-author").click(removeAuthor);
   //  $("a.add-author").click(addAuthor);
 
     $("form").on("click", "a.add-author", addAuthor);
     $("form").on("click", "a.remove-author", removeAuthor);
     author_counter=$("span.author").length;
+
+
+    $("#new_paper").validate(
+
+        {
+            rules: {
+                'paper[title]': {required: true},
+                'paper[afleveringsaar]': {required: true, minlength:4, min: 1479},
+                'paper[studium]': {required: true},
+                'paper[opgavesprog]': {required: true},
+                'paper[opgavetype]': {required: true},
+                'content': {required: true, accept: "pdf"},
+                'termsConditionsCheckBox': {required: true}
+            },
+            messages: {
+                'content': KBDIAS.file,
+                'paper[title]':{
+                    required: KBDIAS.title
+                },
+                'paper[afleveringsaar]':{
+                    required: KBDIAS.afleveringsaar,
+                    minlength: KBDIAS.afleveringsaarlength,
+                    min: KBDIAS.afleveringsaarefter1479
+                },
+                'paper[studium]': KBDIAS.studium,
+                'paper[opgavesprog]': KBDIAS.opgavesprog,
+                'paper[opgavetype]': KBDIAS.opgavetype,
+                'termsConditionsCheckBox': ""
+            },
+            errorClass: "help-inline",
+            errorElement: "span",
+            highlight:function(element, errorClass, validClass) {
+                $(element).parents('.control-group').addClass('error');
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                $(element).parents('.control-group').removeClass('error');
+                $(element).parents('.control-group').addClass('success');
+            },
+            errorPlacement: function (error, element) {
+                if (element.parent().is('.input-append'))
+                    error.appendTo(element.parents(".controls:first"));
+                else
+                    error.insertAfter(element);
+            }
+        });
+
+
 
 });

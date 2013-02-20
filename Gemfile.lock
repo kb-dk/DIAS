@@ -1,9 +1,3 @@
-GIT
-  remote: git://github.com/bcardarella/client_side_validations.git
-  revision: a6a515504520e9925ca63524ae9854168163283e
-  specs:
-    client_side_validations (3.2.1)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -289,7 +283,6 @@ DEPENDENCIES
   binding_of_caller
   blacklight (~> 4.0.1)
   bootstrap-sass
-  client_side_validations!
   debugger
   devise
   devise-guests (~> 0.3)

@@ -59,10 +59,10 @@ class CatalogController < ApplicationController
     #config.add_facet_field 'lc_1letter_facet', :label => 'Call Number'
     #config.add_facet_field 'subject_geo_facet', :label => 'Region'
     #config.add_facet_field 'subject_era_facet', :label => 'Era'
-    config.add_facet_field  'studium_facet', :label => I18n.t('dias.views.forside.labels.studium')
-    config.add_facet_field  'afleveringsaar_facet', :label => I18n.t('dias.views.forside.labels.afleveringsaar')
-    config.add_facet_field  'opgavesprog_facet', :label => I18n.t('dias.views.forside.labels.opgavesprog')
-    config.add_facet_field  'genre_facet', :label => I18n.t('dias.views.forside.labels.opgavetype')
+    config.add_facet_field  'studium_facet', :label => I18n.t('dias.views.forside.labels.studium'), :limit => 7
+    config.add_facet_field  'afleveringsaar_facet', :label => I18n.t('dias.views.forside.labels.afleveringsaar'), :limit => 7
+    config.add_facet_field  'opgavesprog_facet', :label => I18n.t('dias.views.forside.labels.opgavesprog'), :limit => 7
+    config.add_facet_field  'genre_facet', :label => I18n.t('dias.views.forside.labels.opgavetype'), :limit => 7
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -215,9 +215,9 @@ class CatalogController < ApplicationController
     config.add_sort_field 'score desc, afleveringsaar_sort desc, title_sort asc', :label => 'Relevans'
     config.add_sort_field 'afleveringsaar_sort desc, title_sort asc', :label => 'År (nyeste først)'
     config.add_sort_field 'afleveringsaar_sort asc, title_sort asc', :label => 'År (ældste først)'
-    config.add_sort_field 'forfatter_sort asc, title_sort asc', :label => 'Forfatter (stigende)'
-    config.add_sort_field 'forfatter_sort desc, title_sort asc', :label => 'Forfatter (faldende)'
-    config.add_sort_field 'title_sort asc, afleveringsaar_sort desc', :label => 'Titel'
+    #config.add_sort_field 'forfatter_sort asc, title_sort asc', :label => 'Forfatter (stigende)'
+    #config.add_sort_field 'forfatter_sort desc, title_sort asc', :label => 'Forfatter (faldende)'
+    #config.add_sort_field 'title_sort asc, afleveringsaar_sort desc', :label => 'Titel'
 
     # If there are more than this many search results, no spelling ("did you 
     # mean") suggestion is offered.
