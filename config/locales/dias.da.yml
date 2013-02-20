@@ -120,12 +120,13 @@ da:
                 Skriv venligst en mail til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>  med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.
             </p>
             <address>
-              <strong>DIAS, Inc.</strong><br/>
-              795 FolsomeAve, Suite 600<br/>
-              København K, 4859<br/>
+              <strong>Det Kongelige Bibliotek</strong><br/>
+              Postbox 2149<br/>
+              1016 København K<br/>
               <abbr title="phone">P:</abbr> (+45)12-34-56-78<br/>
-              <a href="mailto:#">kontaktbibliotektet@kb.dk</a>
+              
             </address>
+                      
 
       paper:
         validate:
