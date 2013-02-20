@@ -52,7 +52,7 @@ function init_author_validations() {
 		$(this).rules("add",{
 			required: { depends: function(element) {
 					return $(element).siblings("input.sn").val() != '';},
-			messages: KBDIAS.gnmissing
+			messages: { required: KBDIAS.gnmissing }
 			  	}
 		});
 	});
@@ -60,13 +60,12 @@ function init_author_validations() {
 		$(this).rules("add",{
 			required: { depends: function(element) {
 					return $(element).siblings("input.gn").val() != '';},
-			messages: KBDIAS.snmissing
+			messages: { required: KBDIAS.snmissing }
 			  	}
 		});
 	});
 
-	$("input.sn:last").rules("add",{atLeastOneAuthor: true,
-					messages: {atLeasOneAuthor: KBDIAS.atleasoneauthor}});
+	$("input.sn:last").rules("add",{atLeastOneAuthor: true});
 }
 
 
@@ -90,8 +89,6 @@ $(document).ready(function(){
    */
 
 
- //   $("a.remove-author").click(removeAuthor);
-  //  $("a.add-author").click(addAuthor);
 
     $("form").on("click", "a.add-author", addAuthor);
     $("form").on("click", "a.remove-author", removeAuthor);
@@ -105,8 +102,14 @@ $(document).ready(function(){
 			result = true;
 		}
 	});
+	$("input.gn").each(function(i){
+		if ($(this).val() != '') {
+			result = true;
+		}
+	});
 	return result;
-    });	
+    },
+    KBDIAS.atleasoneauthor);	
 
     $("#new_paper").validate(
         {
@@ -147,6 +150,8 @@ $(document).ready(function(){
                 //$(element).parents('.control-group').addClass('success');
             },
             errorPlacement: function (error, element) {
+	
+
                 if (element.parent().is('.input-append'))
                     error.appendTo(element.parents(".controls:first"));
                 else
