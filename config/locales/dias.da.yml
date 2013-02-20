@@ -22,6 +22,7 @@ da:
           author_present: 'Du skal angive mindst en forfatter'
           afleveringsaar: 'Der skal være angivet et årstal i afleveringsår'
           afleveringsaarlength: 'Årstallet skal have minimum fire heltal f.eks. 1996 eller 2013'
+          afleveringsaarmax: 'Må ikke være i fremtiden'
           afleveringsaarefter1479: 'Københavns Universitet blev grundlagt i år 1479, vælg et årstal efter det'
           studium: 'Der skal være angivet på hvilke studie opgaven blev afleveret f.eks. fysik'
           opgavetype: 'Der skal være angivet en opgavetype, f.eks. bachelor opgave'
@@ -137,6 +138,7 @@ da:
           abstrakt: 'Skriv et abstract eller en god beskrivelse af opgavens indhold. Så bliver den lettere for andre at finde.'
         placeholder:
           titel: 'En Teoretisk Analyse af...'
+          undertitel: 'Undertitel'
           abstrakt: 'Opgaven består af en teoretisk gennemgang af feltet...'
           gn: 'Fornavn'
           sn: 'Efternavn'
