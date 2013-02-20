@@ -22,7 +22,7 @@ en:
           afleveringsaar: 'Please insert submission year'
           afleveringsaarlength: 'Year must be at least four digits i.e. 1996 or 2013'
           afleveringsaarefter1479: 'University of Copenhagen was founded 1479 - please enter submission year'
-
+          afleveringsaarmax: 'Cannot be in the future'
           pdffile: 'Please select a PDF file to upload'
           file: "You must upload a file"
           vilkaarbetingelser: "Please accept The Royal Library's Terms and Conditions before uploading"
@@ -172,5 +172,6 @@ en:
         placeholder:
           abstrakt: 'The paper presents an theoretical analysis of...'
           titel: 'A Theoretical Analysis of...'
+          undertitel: 'Subtitle'
           gn: 'Given Name'
           sn: 'Family Name'

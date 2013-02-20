@@ -22,6 +22,7 @@ da:
           author_present: 'Du skal angive mindst en forfatter'
           afleveringsaar: 'Der skal være angivet et årstal i afleveringsår'
           afleveringsaarlength: 'Årstallet skal have minimum fire heltal f.eks. 1996 eller 2013'
+          afleveringsaarmax: 'Må ikke være i fremtiden'
           afleveringsaarefter1479: 'Københavns Universitet blev grundlagt i år 1479, vælg et årstal efter det'
           studium: 'Vælg på hvilket studium opgaven blev afleveret. F.eks. fysik'
           opgavetype: 'Vælg en opgavetype, f.eks. bacheloropgave'
@@ -161,7 +162,7 @@ da:
                                       <li>Brugere af DIAS kan benytte min opgave under hensyntagen til Create Commons Licence BY-NC-ND – læs mere.</li>
                                       </ul>
 
-          pdffil: 'Du skal uploade en fil med opgaven i PDF-format'
+          pdffil: 'Opgaven i PDF-format'
           opretopgave: 'Opret Opgave'
         help:
           opgavetype: 'Hvilken type af opgave er der tale om (Bemærk venligst, at der ikke kan uploades specialer)'
@@ -174,6 +175,7 @@ da:
           abstrakt: 'Skriv et abstract eller en god beskrivelse af opgavens indhold. Så bliver den lettere for andre at finde.'
         placeholder:
           titel: 'En Teoretisk Analyse af...'
+          undertitel: 'Undertitel'
           abstrakt: 'Opgaven består af en teoretisk gennemgang af feltet...'
           gn: 'Fornavn'
           sn: 'Efternavn'
