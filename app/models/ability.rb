@@ -10,7 +10,7 @@ class Ability
       can :manage, :all
     else
       if user.depositor?
-        can :edit, :all
+	can :create, Paper
         can :read, :all
       else
         can :read, :all

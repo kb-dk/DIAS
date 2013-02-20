@@ -27,13 +27,13 @@
         <%=raw t('dias.views.forside.text') %>
       </h3>
 
-      <% if can? :edit, @papers   %>
+      <% if can? :create, Paper   %>
           <p><%= link_to t('.new', :default => raw(t('dias.views.forside.tilfoejknap'))),
                          new_paper_path,
                          :class => 'btn btn-large btn-success' %></p>
       <% end %>
 
-      <% if !can? :edit, @papers   %>
+      <% if cannot? :create, Paper   %>
           <p><%= link_to t('.new', :default => raw(t('dias.views.forside.tilfoejogloginknap'))),
                          new_user_session_path,
                          :class => 'btn btn-large btn-success' %>   </p>

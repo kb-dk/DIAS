@@ -1,5 +1,7 @@
 class PapersController < ApplicationController
   
+  #before_filter :authorize! :depositor, :all
+
   # GET /papers
   # GET /papers.json
   def index
@@ -18,7 +20,6 @@ class PapersController < ApplicationController
   # GET /papers/1.json
   def show
     @paper = Paper.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @paper }
@@ -31,6 +32,7 @@ class PapersController < ApplicationController
     @paper_languages = PaperLanguage.all
     @paper_types = PaperType.all
     @paper = Paper.new
+    authorize! :create, @paper
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @paper }
@@ -40,6 +42,7 @@ class PapersController < ApplicationController
   # GET /papers/1/edit
   def edit
     @paper = Paper.find(params[:id])
+    authorize! :edit, @paper
   end
 
   # POST /papers
@@ -47,6 +50,7 @@ class PapersController < ApplicationController
   def create
 
     @paper = Paper.new(params[:paper])
+    authorize! :create, @paper
     @paper.add_default_license
     @paper.add_user_to_rights_meta_data_stream(current_user)
     if @paper.original_filename.blank? || @paper.original_filename.nil?
@@ -71,6 +75,7 @@ class PapersController < ApplicationController
   # PUT /papers/1.json
   def update
     @paper = Paper.find(params[:id])
+    authorize! :update, @paper
     @paper.add_file(params[:content])
     respond_to do |format|
       if @paper.update_attributes(params[:paper])
@@ -87,6 +92,7 @@ class PapersController < ApplicationController
   # DELETE /papers/1.json
   def destroy
     @paper = Paper.find(params[:id])
+    authorize! :destroy, @Paper
     @paper.destroy
 
     respond_to do |format|
