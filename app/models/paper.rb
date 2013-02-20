@@ -145,6 +145,7 @@ class Paper < ActiveFedora::Base
     solr_doc["licens_title_t"] = self.license_title
     solr_doc["licens_description_t"] = self.license_description
     solr_doc["forfatter_t"]  = self.get_authors.map{ |a| a["sn"] + ", " +a["gn"] }.join("; ")
+    solr_doc["forfatter_sort"] = solr_doc["forfatter_t"]
     return solr_doc  
   end
 
