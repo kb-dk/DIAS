@@ -51,19 +51,22 @@ function init_author_validations() {
 	$("input.gn").each(function(i){
 		$(this).rules("add",{
 			required: { depends: function(element) {
-					return $(element).siblings("input.sn").val() != '';}
+					return $(element).siblings("input.sn").val() != '';},
+			messages: KBDIAS.gnmissing
 			  	}
 		});
 	});
 	$("input.sn").each(function(i){
 		$(this).rules("add",{
 			required: { depends: function(element) {
-					return $(element).siblings("input.gn").val() != '';}
+					return $(element).siblings("input.gn").val() != '';},
+			messages: KBDIAS.snmissing
 			  	}
 		});
 	});
 
-	$("input.sn:last").rules("add",{atLeastOneAuthor: true});
+	$("input.sn:last").rules("add",{atLeastOneAuthor: true,
+					messages: {atLeasOneAuthor: KBDIAS.atleasoneauthor}});
 }
 
 
@@ -115,7 +118,6 @@ $(document).ready(function(){
                 'paper[opgavetype]': {required: true},
                 'content': {required: true, accept: "pdf"},
                 'termsConditionsCheckBox': {required: true}
-
             },
             messages: {
                 'content': KBDIAS.file,
