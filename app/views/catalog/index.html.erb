@@ -10,16 +10,16 @@
 	    <%# if there are no input/search related params, display the "home" partial -%>
 	    <%= render 'home' %>
     <% elsif  (request.path=="/faq")  %>
-      <div class="hero-unit">
+      <div class="faq">
         <h1><%= t('dias.views.faq.overskrift') %></h1>
-        <p class="lead"><%=raw t('dias.views.faq.text') %></p>
+        <%=raw t('dias.views.faq.text') %>
 
       </div>
 
   <% elsif  (request.path=="/kontakt")  %>
-      <div class="hero-unit">
+      <div class="contact">
         <h1><%= t('dias.views.kontakt.overskrift') %></h1>
-        <p class="lead"><%=raw t('dias.views.kontakt.text') %></p>
+        <%=raw t('dias.views.kontakt.text') %>
       </div>
   <% elsif  has_search_parameters? %>
       <% logger.info("renderering resultatsiden") %>

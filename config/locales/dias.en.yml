@@ -54,22 +54,34 @@ en:
       faq:
        overskrift: 'FAQ'
        text: |
-            <div>
-            <p>Question?</p>
-            <p><blockquote>Answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh. Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. Fusce bibendum, velit in venenatis viverra, tellus ligula dignissim felis, quis euismod mauris tellus ut urna.</blockquote><p>
-            </div>
-            <div>
-            <p>Question?</p>
-            <p><blockquote>Answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh. Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. Fusce bibendum, velit in venenatis viverra, tellus ligula dignissim felis, quis euismod mauris tellus ut urna.</blockquote><p>
-            </div>
+            <p class="lead">Question?</p>
+            <p>
+              <blockquote>
+                Answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh. Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. Fusce bibendum, velit in venenatis viverra, tellus ligula dignissim felis, quis euismod mauris tellus ut urna.
+              </blockquote>
+            </p>
+            <hr/>
+
+            <p class="lead">Question?</p>
+            <p>
+              <blockquote>
+                Answer: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh. Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. Fusce bibendum, velit in venenatis viverra, tellus ligula dignissim felis, quis euismod mauris tellus ut urna.
+              </blockquote>
+            </p>
+
       kontakt:
        overskrift: 'Contact'
        text: |
-            <div>
-            <p>Please contact us</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis lectus quis sem lacinia nonummy. Proin mollis lorem non dolor. In hac habitasse platea dictumst. Nulla ultrices odio. Donec augue. Phasellus dui. Maecenas facilisis nisl vitae nibh. Proin vel est vitae eros pretium dignissim. Aliquam aliquam sodales orci. Suspendisse potenti. Nunc adipiscing euismod arcu. Quisque facilisis mattis lacus. Fusce bibendum, velit in venenatis viverra, tellus ligula dignissim felis, quis euismod mauris tellus ut urna.</p>
-            <p><a href="mailto:kontaktbiblioteket@kb.dk">Send us an e-mail with your question</a><p>
-            </div>
+            <p class="lead">
+                 UK txt Skriv venligst en mail til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>  med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.
+             </p>
+             <address>
+               <strong>DIAS, Inc.</strong><br/>
+               795 FolsomeAve, Suite 600<br/>
+               København K, 4859<br/>
+               <abbr title="phone">P:</abbr> (+45)12-34-56-78<br/>
+               <a href="mailto:#">kontaktbibliotektet@kb.dk</a>
+             </address>
 
       paper:
         validate:
