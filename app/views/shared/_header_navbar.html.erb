@@ -29,11 +29,11 @@
                     <%= render :partial=>'/user_util_links' %>
                 </li>
                 <li>
-                     <%=  link_to t('dias.views.faq.overskrift'), "faq" %>
+                     <%=  link_to t('dias.views.faq.overskrift'), "faq", :only_path => true %>
                 </li>
 
               <li>
-                <%=  link_to t('dias.views.kontakt.overskrift'), "kontakt" %>
+                <%=  link_to t('dias.views.kontakt.overskrift'), "kontakt", :only_path => true %>
               </li>
                 <li>
                     <%if I18n.locale.to_s=="en" %>
