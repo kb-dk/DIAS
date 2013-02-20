@@ -7,17 +7,17 @@
 <div id="content" class="span12">
 
     <% #if !(has_search_parameters?) %>
-    <% if request.path=="/" &&  !(has_search_parameters?) %>
+    <% if (request.path=="/" || request.path=="/dias/") &&  !(has_search_parameters?) %>
 	    <%# if there are no input/search related params, display the "home" partial -%>
 	    <%= render 'home' %>
-    <% elsif  (request.path=="/faq")  %>
+    <% elsif  (request.path=="/faq" || request.path=="dias/faq")  %>
       <div class="faq">
         <h1><%= t('dias.views.faq.overskrift') %></h1>
         <%=raw t('dias.views.faq.text') %>
 
       </div>
 
-  <% elsif  (request.path=="/kontakt")  %>
+  <% elsif  (request.path=="/kontakt" || request.path=="dias/kontakt")  %>
       <div class="contact">
         <h1><%= t('dias.views.kontakt.overskrift') %></h1>
         <%=raw t('dias.views.kontakt.text') %>
