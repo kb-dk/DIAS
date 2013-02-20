@@ -4,8 +4,8 @@ da:
     search: "Søg"
     changelang: "English"
     loggetind: "Velkommen til "
-    loggetindupklartilload: ", vi glæder os til at du uploader dine opgaver "
-    cookiepolicy: "Cookie & privatlivspolitik"
+    loggetindupklartilload: ", vi glæder os til, at du uploader dine opgaver "
+    cookiepolicy: "Cookie & Privatlivspolitik"
     footer: |
           <address>
             <strong>Det Kongelige Bibliotek</strong> -
@@ -145,7 +145,7 @@ da:
           licens: 'Licens'
           abstrakt: 'Resume'
           vilkaarogbetingelser: 'Vilkår og betingelser'
-          vilkaarogbetingelsertext: 'Jeg accepterer KBs vilkår og betingelser.'
+          vilkaarogbetingelsertext: 'Jeg accepterer Det Kongelige Biblioteks vilkår og betingelser.'
           vilkaarogbetingelserfulltext: |
                                       Ved at uploade en opgave til DIAS accepterer jeg følgende:<br>
                                       <ul style='list-style-type: decimal'>
