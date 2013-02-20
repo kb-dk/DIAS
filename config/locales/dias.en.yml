@@ -121,13 +121,13 @@ en:
                  Please contact us<br/>
                  Most questions are answered in our <a href="faq">FAQ</a> section. If your question, however, is not, please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">Send us an e-mail with your question</a>
              </p>
-             <address>
-               <strong>DIAS, Inc.</strong><br/>
-               795 FolsomeAve, Suite 600<br/>
-               København K, 4859<br/>
-               <abbr title="phone">P:</abbr> (+45)12-34-56-78<br/>
-               <a href="mailto:#">kontaktbibliotektet@kb.dk</a>
-             </address>
+              <address>
+              <strong>Det Kongelige Bibliotek</strong><br/>
+              Postbox 2149<br/>
+              1016 København K<br/>
+              <abbr title="phone">P:</abbr> (+45)12-34-56-78<br/>
+              
+            </address>
 
       paper:
         validate:
@@ -147,11 +147,11 @@ en:
           licens: 'License'
           abstrakt: 'Abstract'
           vilkaarogbetingelser: 'Terms and Conditions'
-          vilkaarogbetingelsertext: "I accept the Royal Library's Terms and Conditions."
+          vilkaarogbetingelsertext: "I accept The Royal Library's Terms and Conditions."
           vilkaarogbetingelserfulltext: |
                                       By uploading an assignment to DIAS, I accept the following:<br>
                                       <ul style='list-style-type: decimal'>
-                                      <li>The assignment has been handed in at the University of Copenhagen</li>
+                                      <li>The assignment has been handed in at the University of Copenhagen.</li>
                                       <li>The assignment has passed.</li>
                                       <li>I am the author or co-author of the assignment.</li>
                                       <li>If the assignment is co-authored, all authors have been entered and have agreed to upload the assignment to DIAS.</li>
@@ -166,7 +166,7 @@ en:
           opgavesprog: 'Paper language.'
           studium: 'På hvilket studie er opgaven skrevet.'
           afleveringsaar: 'The year that the paper was submitted for approval.'
-          navn: 'Dit for- og efternavn'
+          navn: 'Your name'
           undertitel: 'Subtitle (not required).'
           titel: 'The title of your paper.'
         placeholder:
