@@ -23,9 +23,9 @@ da:
           afleveringsaar: 'Der skal være angivet et årstal i afleveringsår'
           afleveringsaarlength: 'Årstallet skal have minimum fire heltal f.eks. 1996 eller 2013'
           afleveringsaarefter1479: 'Københavns Universitet blev grundlagt i år 1479, vælg et årstal efter det'
-          studium: 'Der skal være angivet på hvilke studie opgaven blev afleveret f.eks. fysik'
-          opgavetype: 'Der skal være angivet en opgavetype, f.eks. bachelor opgave'
-          opgavesprog: 'Der skal være angivet et sprog'
+          studium: 'Vælg på hvilket studium opgaven blev afleveret. F.eks. fysik'
+          opgavetype: 'Vælg en opgavetype, f.eks. bacheloropgave'
+          opgavesprog: 'Vælg det sprog, som opgaven er skrevet på'
           file: "Husk at tilføje en pdf-fil"
           pdffile: 'Det er kun muligt at uploade PDF-filer'
           vilkaarbetingelser: "Acceptér venligst Vilkår og betingelser"
@@ -53,7 +53,7 @@ da:
           afleveringsaar: 'År'
           studium: 'Studie'
           opgavetype: 'Type'
-          opgavesprog: 'Sprog'
+          opgavesprog: 'Opgavesprog'
           abstrakt: 'Resumé'
       faq:
        overskrift: 'FAQ'
@@ -68,7 +68,7 @@ da:
             <p class="lead">Hvem må læse opgaverne i DIAS?</p>
             <p>
               <blockquote>
-                Alle opgaver i DIAS er frit tilgængelige for enhver person med interesse heri. Opgaverne i DIAS må naturligvis læses og citeres, men de ikke gøres tilstand for videre bearbejdelse.
+                Alle opgaver i DIAS er frit tilgængelige for enhver person med interesse heri. Opgaverne i DIAS må naturligvis læses og citeres, men de må ikke gøres tilstand for videre bearbejdelse.
               </blockquote>
             </p>
             <hr/>
@@ -97,18 +97,10 @@ da:
             </p>
             <hr/>
 
-            <p class="lead">Kan jeg uploade mit speciale til DIAS?</p>
+            <p class="lead">Jeg har fundet en opgave i DIAS, som indeholder personfølsomme oplysninger eller indhold, som krænker loven om ophavsret. Hvordan rapporterer jeg dette?</p>
             <p>
               <blockquote>
-                Nej. Københavns Universitet har et separat arkiv til godkendte specialer - <a href="http://diskurs.kb.dk">DISKURS</a>. Du kan kontakte studieadministrationen på dit fakultet for at høre om muligheden for at lægge dit speciale i DISKURS.
-              </blockquote>
-            </p>
-            <hr/>
-
-            <p class="lead">Jeg har fundet en opgave i DIAS, som indeholder personfølsomme oplysninger ikke indhold, som krænker loven om ophavsret. Hvordan rapporterer jeg dette?</p>
-            <p>
-              <blockquote>
-                Skriv venligst en mail til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.
+                Skriv venligst en email til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.
               </blockquote>
             </p>
             <hr/>
@@ -116,7 +108,7 @@ da:
             <p class="lead">Jeg har fundet en opgave i DIAS, som umuligt kan være bestået. Hvordan rapporterer jeg dette?</p>
             <p>
               <blockquote>
-                Skriv venligst en mail til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>  med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.
+                Skriv venligst en email til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>  med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.
               </blockquote>
             </p>
 
