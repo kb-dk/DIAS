@@ -56,7 +56,7 @@ $(document).ready(function(){
         {
             rules: {
                 'paper[title]': {required: true},
-                'paper[afleveringsaar]': {required: true, minlength:4, min: 1479},
+                'paper[afleveringsaar]': {required: true, minlength:4, max: new Date().getFullYear(), min: 1479},
                 'paper[studium]': {required: true},
                 'paper[opgavesprog]': {required: true},
                 'paper[opgavetype]': {required: true},
@@ -71,6 +71,7 @@ $(document).ready(function(){
                 'paper[afleveringsaar]':{
                     required: KBDIAS.afleveringsaar,
                     minlength: KBDIAS.afleveringsaarlength,
+                    max: KBDIAS.afleveringsaarmax,
                     min: KBDIAS.afleveringsaarefter1479
                 },
                 'paper[studium]': KBDIAS.studium,
@@ -82,6 +83,8 @@ $(document).ready(function(){
             errorElement: "span",
             highlight:function(element, errorClass, validClass) {
                 $(element).parents('.control-group').addClass('error');
+                $(element).parents('.control-group').removeClass('success');
+
             },
             unhighlight: function(element, errorClass, validClass) {
                 $(element).parents('.control-group').removeClass('error');
