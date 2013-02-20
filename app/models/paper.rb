@@ -44,9 +44,9 @@ class Paper < ActiveFedora::Base
 
   def validate_file
     if (original_filename.nil?)
-      self.errors.add(:content,  I18n.t('dias.models.paper.validate.file'))
+      self.errors.add(I18n.t('dias.views.paper.labels.pdffil'),  I18n.t('dias.models.paper.validate.file'))
     elsif (mime_type != "application/pdf")
-      self.errors.add(:content, I18n.t('dias.models.paper.validate.pdffile'))
+      self.errors.add(I18n.t('dias.views.paper.labels.pdffil'), I18n.t('dias.models.paper.validate.pdffile'))
     end
   end
 

@@ -139,12 +139,12 @@ $(document).ready(function(){
             errorElement: "span",
             highlight:function(element, errorClass, validClass) {
                 $(element).parents('.control-group').addClass('error');
-                $(element).parents('.control-group').removeClass('success');
+                //$(element).parents('.control-group').removeClass('success');
 
             },
             unhighlight: function(element, errorClass, validClass) {
                 $(element).parents('.control-group').removeClass('error');
-                $(element).parents('.control-group').addClass('success');
+                //$(element).parents('.control-group').addClass('success');
             },
             errorPlacement: function (error, element) {
                 if (element.parent().is('.input-append'))
