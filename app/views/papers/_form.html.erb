@@ -24,6 +24,10 @@
         KBDIAS.studium = '<%= I18n.t("dias.models.paper.validate.studium") %>';
         KBDIAS.vilkaarbetingelser = '<%= I18n.t("dias.models.paper.validate.vilkaarbetingelser") %>';
 
+        KBDIAS.gnmissing = '<%= I18n.t("dias.models.paper.validate.fornavn") %>'
+	KBDIAS.snmissing = '<%= I18n.t("dias.models.paper.validate.efternavn") %>'
+        KBDIAS.atleasoneauthor = '<%= I18n.t("dias.models.paper.validate.mindstenforfatter") %>'
+
     </script>
     <% if @paper.errors.any? %>
         <div class="alert alert-error" > <!-- id="error_explanation"   <span class="badge badge-important badge-large"> <!%= @paper.errors.count %> </span>-->

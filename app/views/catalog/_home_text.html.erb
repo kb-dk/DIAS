@@ -30,7 +30,7 @@
       <% if can? :edit, @papers   %>
           <p><%= link_to t('.new', :default => raw(t('dias.views.forside.tilfoejknap'))),
                          new_paper_path,
-                         :class => 'btn btn-large btn-block btn-success' %></p>
+                         :class => 'btn btn-large btn-success' %></p>
       <% end %>
 
       <% if !can? :edit, @papers   %>

@@ -8,21 +8,68 @@ function addAuthor() {
     $("span.authors").append($("span.author:first").clone()
 			.find("input.gn").val("").attr("id","paper_forfatter_"+author_counter+"_gn").attr("name","paper[forfatter]["+author_counter+"][gn]").end()
 			.find("input.sn").val("").attr("id","paper_forfatter_"+author_counter+"_sn").attr("name","paper[forfatter]["+author_counter+"][sn]").end());
+
+
+    // add validation rules to new elements
+
+	$("#paper_forfatter_"+author_counter+"_gn").each(function(i){
+		$(this).rules("add",{
+			required: { depends: function(element) {
+					return $(element).siblings("input.sn").val() != '';}
+			  	}
+		});
+	});
+	$("#paper_forfatter_"+author_counter+"_sn").each(function(i){
+		$(this).rules("add",{
+			required: { depends: function(element) {
+					return $(element).siblings("input.gn").val() != '';}
+			  	}
+		});
+	});
+
+
+
     author_counter = author_counter+1;
    return false;
 }
 
 function removeAuthor(elem) {
-
-
     if ($("span.author").length > 1) {
 
         $(this).parent().parent().remove();
     } else {
         $(this).parent().parent().find("input").val("");
     }
+
     return false;
 }
+
+
+
+function init_author_validations() {
+
+	$("input.gn").each(function(i){
+		$(this).rules("add",{
+			required: { depends: function(element) {
+					return $(element).siblings("input.sn").val() != '';},
+			messages: KBDIAS.gnmissing
+			  	}
+		});
+	});
+	$("input.sn").each(function(i){
+		$(this).rules("add",{
+			required: { depends: function(element) {
+					return $(element).siblings("input.gn").val() != '';},
+			messages: KBDIAS.snmissing
+			  	}
+		});
+	});
+
+	$("input.sn:last").rules("add",{atLeastOneAuthor: true,
+					messages: {atLeasOneAuthor: KBDIAS.atleasoneauthor}});
+}
+
+
 
 
 $(document).ready(function(){
@@ -51,8 +98,17 @@ $(document).ready(function(){
     author_counter=$("span.author").length;
 
 
-    $("#new_paper").validate(
+    jQuery.validator.addMethod("atLeastOneAuthor", function(value, element) {
+	result = false;
+	$("input.sn").each(function(i){
+		if ($(this).val() != '') {
+			result = true;
+		}
+	});
+	return result;
+    });	
 
+    $("#new_paper").validate(
         {
             rules: {
                 'paper[title]': {required: true},
@@ -98,6 +154,6 @@ $(document).ready(function(){
             }
         });
 
-
+  init_author_validations();
 
 });
