@@ -19,7 +19,11 @@ body a:hover{
   background:none;
   color:inherit;
 }
-
+/*PDF icon*/
+a[href*="downloads"], a:hover[href*="downloads"]  {
+  background:transparent url(dias/pdfIcon.png) no-repeat 0 50%;
+  padding:5px 0 5px 20px;
+}
 
 .span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12, {
   /*background:silver;   */
@@ -106,8 +110,6 @@ body .navbarDias .btn-navbar .icon-bar {
 #searchWrapper form{
   margin:0px!important;
 }
-
-
 #searchWrapper button{
   font:normal normal normal 20px/38px times,Arial,Helvetica,sans-serif;
   padding-top:0;
@@ -126,13 +128,29 @@ body .navbarDias .btn-navbar .icon-bar {
   padding:8px;
   margin:0;
 }
+/*Alert box*/
 
+body .alert-info{
+  background-color: #FDFBA4;
+  border-color: #FBEED5;
+  color: #C09853;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
 
-
-
+body.blacklight-catalog-show .alert-info{
+  background-color: #DFF0D8;
+  border-color: #D6E9C6;
+  color: #468847;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
 
 /* FACET */
-
 #sidebar{
   margin-top:-20px;
   cursor:pointer;
