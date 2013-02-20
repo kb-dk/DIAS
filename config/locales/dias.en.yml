@@ -4,8 +4,8 @@ en:
     search: "Search"
     changelang: "Dansk"
     loggetind: "Velcome "
-    loggetindupklartilload: " - we look forward to receiving your papers"
-    cookiepolicy: "Cookie & privacy policy"
+    loggetindupklartilload: " - we look forward to receiving your student assignments"
+    cookiepolicy: "Cookie & Privacy policy"
     footer: |
               <address>
                 <strong>The Royal Library</strong> -
@@ -18,27 +18,27 @@ en:
     models:
       paper:
         validate:
-          title: 'Please insert title'
+          title: 'Please insert a title'
           afleveringsaar: 'Please insert submission year'
           afleveringsaarlength: 'Year must be at least four digits i.e. 1996 or 2013'
-          afleveringsaarefter1479: 'University of Copenhagen was founded 1479...'
+          afleveringsaarefter1479: 'University of Copenhagen was founded 1479 - please enter submission year'
 
           pdffile: 'Please select a PDF file to upload'
           file: "You must upload a file"
           vilkaarbetingelser: "Please accept The Royal Library's Terms and Conditions before uploading"
           succes: "The assignment was successfully uploaded."
           filepresent: "Please upload a PDF file"
-          fileproblem: "A problem occured when uploading the file, please try again ..."
+          fileproblem: "A problem occurred when uploading the file, please try again"
 
-          studium: 'TODO ENGELSK -> Der skal være angivet på hvilke studie opgaven blev afleveret f.eks. fysik'
-          opgavetype: 'TODO ENGELSK -> Der skal være angivet en opgavetype, f.eks. bachelor opgave'
-          opgavesprog: 'TODO ENGELSK -> Der skal være angivet et sprog'
+          studium: 'Choose the subject you were studying when handing in the paper.'
+          opgavetype: 'Choose assignment type'
+          opgavesprog: 'Choose assignment language'
 
     views:
       forside:
         velkommen: |
-                <h3>arkiv for</h3>
-                <h2>ku-studenteropgaver</h2>
+                <h3>archive for</h3>
+                <h2>ku student assignments</h2>
         text: |
             Be a part of something bigger <br/> - share your knowledge
 
@@ -55,7 +55,7 @@ en:
           forfatter: 'Author'
           afleveringsaar: 'year'
           studium: 'Subject'
-          opgavetype: 'Type'
+          opgavetype: 'Assignment type'
           opgavesprog: 'Language'
           abstrakt: 'Abstract'
       faq:
@@ -72,7 +72,7 @@ en:
             <p class="lead">Who can use the contents of DIAS?</p>
             <p>
               <blockquote>
-                 All student assignments in DIAS er freely avalilable to anyone with an internet connection. The assignments can be read and cited, but may not be subject to further elaboraton.
+                 All student assignments in DIAS er freely avalilable to anyone with an internet connection. The assignments can be read and cited, but may not be subjected to further elaboraton.
               </blockquote>
             </p>
             <hr/>
@@ -85,7 +85,7 @@ en:
             </p>
             <hr/>
 
-            <p class="lead">I found an assignment in DIAS that contains confidential information or contents breaking copyright laws. How do I report this?</p>
+            <p class="lead">I found an assignment in DIAS containing confidential information, contents breaking copyright laws, or offensive contents. How do I report this?</p>
             <p>
               <blockquote>
                  Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> with author and title information.
@@ -119,15 +119,15 @@ en:
        text: |
             <p class="lead">
                  Please contact us<br/>
-                 Most questions are answered in our FAQ section. If your question, however, is not, please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">Send us an e-mail with your question</a>
+                 Most questions are answered in our <a href="faq">FAQ</a> section. If your question, however, is not, please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">Send us an e-mail with your question</a>
              </p>
-             <address>
-               <strong>DIAS, Inc.</strong><br/>
-               795 FolsomeAve, Suite 600<br/>
-               København K, 4859<br/>
-               <abbr title="phone">P:</abbr> (+45)12-34-56-78<br/>
-               <a href="mailto:#">kontaktbibliotektet@kb.dk</a>
-             </address>
+              <address>
+              <strong>Det Kongelige Bibliotek</strong><br/>
+              Postbox 2149<br/>
+              1016 København K<br/>
+              <abbr title="phone">P:</abbr> (+45)12-34-56-78<br/>
+              
+            </address>
 
       paper:
         validate:
@@ -147,11 +147,11 @@ en:
           licens: 'License'
           abstrakt: 'Abstract'
           vilkaarogbetingelser: 'Terms and Conditions'
-          vilkaarogbetingelsertext: "I accept the Royal Library's Terms and Conditions."
+          vilkaarogbetingelsertext: "I accept The Royal Library's Terms and Conditions."
           vilkaarogbetingelserfulltext: |
                                       By uploading an assignment to DIAS, I accept the following:<br>
                                       <ul style='list-style-type: decimal'>
-                                      <li>The assignment has been handed in at the University of Copenhagen</li>
+                                      <li>The assignment has been handed in at the University of Copenhagen.</li>
                                       <li>The assignment has passed.</li>
                                       <li>I am the author or co-author of the assignment.</li>
                                       <li>If the assignment is co-authored, all authors have been entered and have agreed to upload the assignment to DIAS.</li>
@@ -166,7 +166,7 @@ en:
           opgavesprog: 'Paper language.'
           studium: 'På hvilket studie er opgaven skrevet.'
           afleveringsaar: 'The year that the paper was submitted for approval.'
-          navn: 'Dit for- og efternavn'
+          navn: 'Your name'
           undertitel: 'Subtitle (not required).'
           titel: 'The title of your paper.'
         placeholder:
