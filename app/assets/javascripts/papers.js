@@ -11,13 +11,15 @@ function addAuthor() {
 
 
     // add validation rules to new elements
-
+/*
 	$("#paper_forfatter_"+author_counter+"_gn").each(function(i){
 		$(this).rules("add",{
 			required: { depends: function(element) {
 					return $(element).siblings("input.sn").val() != '';}
 			  	}
 		});
+		$(this.rules("add",{messages: KBDIAS.gnmissing});
+
 	});
 	$("#paper_forfatter_"+author_counter+"_sn").each(function(i){
 		$(this).rules("add",{
@@ -25,9 +27,10 @@ function addAuthor() {
 					return $(element).siblings("input.gn").val() != '';}
 			  	}
 		});
+		$(this.rules("add",{messages: KBDIAS.snmissing});
 	});
 
-
+*/
 
     author_counter = author_counter+1;
    return false;
@@ -48,6 +51,10 @@ function removeAuthor(elem) {
 
 function init_author_validations() {
 
+
+
+
+/*
 	$("input.gn").each(function(i){
 		$(this).rules("add",{
 			required: { depends: function(element) {
@@ -64,7 +71,7 @@ function init_author_validations() {
 			  	}
 		});
 	});
-
+*/
 	$("input.sn:last").rules("add",{atLeastOneAuthor: true});
 }
 
@@ -95,21 +102,40 @@ $(document).ready(function(){
     author_counter=$("span.author").length;
 
 
-    jQuery.validator.addMethod("atLeastOneAuthor", function(value, element) {
+    $.validator.addMethod("atLeastOneAuthor", function(value, element) {
 	result = false;
 	$("input.sn").each(function(i){
-		if ($(this).val() != '') {
+		var sn = $(this).val();
+		if (!(/^\s*$/).test(sn)) {
 			result = true;
 		}
 	});
 	$("input.gn").each(function(i){
-		if ($(this).val() != '') {
+		var gn = $(this).val();
+		if (!(/^\s*$/).test(gn)) {
 			result = true;
 		}
 	});
 	return result;
     },
     KBDIAS.atleasoneauthor);	
+
+
+    $.validator.addMethod("fornavn", function(value,element) {
+	var sn = $(element).siblings("input.sn").val()
+	if (!(/^\s*$/).test(sn)) 
+          return (!(/^\s*$/).test(value));
+	return true;
+    },
+    KBDIAS.gnmissing);
+
+    $.validator.addMethod("efternavn", function(value,element) {
+	var gn = $(element).siblings("input.gn").val()
+	if (!(/^\s*$/).test(gn)) 
+          return (!(/^\s*$/).test(value));
+	return true;
+    },
+    KBDIAS.snmissing);
 
     $("#new_paper").validate(
         {
@@ -154,11 +180,16 @@ $(document).ready(function(){
 
                 if (element.parent().is('.input-append'))
                     error.appendTo(element.parents(".controls:first"));
-                else
+                else if ($(element).hasClass("gn")) {
+		    var snelem = $(element).siblings("input.sn");
+		    error.insertAfter(snelem);	
+		} else
                     error.insertAfter(element);
             }
         });
-
-  init_author_validations();
+  $.validator.addClassRules("gn",{fornavn: true});
+  $.validator.addClassRules("sn",{efternavn: true});
+  $("input.sn:last").rules("add",{atLeastOneAuthor: true});
+  //init_author_validations();
 
 });
