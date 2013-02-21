@@ -92,8 +92,8 @@
           <span class="authors">
             <span class="author">
 		        <p>
-                    <%= text_field_tag 'paper[forfatter][0][gn]', nil, :class => 'text_field span3 gn', :placeholder => t('dias.views.paper.placeholder.gn') %>
-                    <%= text_field_tag 'paper[forfatter][0][sn]', nil, :class => 'text_field span3 sn', :placeholder => t('dias.views.paper.placeholder.sn') %>
+                    <%= text_field_tag 'paper[forfatter][0][gn]', nil, :class => 'text_field span3 gn', :value => (current_or_guest_user.gn rescue nil?), :placeholder => t('dias.views.paper.placeholder.gn') %>
+                    <%= text_field_tag 'paper[forfatter][0][sn]', nil, :class => 'text_field span3 sn', :value => (current_or_guest_user.sn rescue nil?), :placeholder => t('dias.views.paper.placeholder.sn') %>
                      <a class="remove-author btn" href="#"><i class="icon-remove" ></i></a>
 	            </p>
             </span>
@@ -123,7 +123,7 @@
       <%= f.label t('dias.views.paper.labels.studium'), :class => 'control-label' %>
       <div class="controls">
 
-          <%= collection_select(:paper, :studium, Institute.all, :title, :title, :prompt => true) %>
+          <%= collection_select(:paper, :studium, Institute.all.sort_by(&:title), :title, :title, :prompt => true) %>
 
 
         <span class="help-block"><%= t('dias.views.paper.help.studium')%></span>
@@ -135,7 +135,7 @@
     <div class="control-group">
       <%= f.label t('dias.views.paper.labels.opgavesprog'), :class => 'control-label' %>
       <div class="controls">
-        <%= collection_select(:paper, :opgavesprog, PaperLanguage.all, :title, :title, :prompt => true) %>
+        <%= collection_select(:paper, :opgavesprog, PaperLanguage.all.sort_by(&:title), :title, :title, :prompt => true) %>
         <span class="help-block"><%= t('dias.views.paper.help.opgavesprog')%></span>
       </div>
 
@@ -145,7 +145,7 @@
     <div class="control-group">
       <%= f.label t('dias.views.paper.labels.opgavetype'), :class => 'control-label' %>
       <div class="controls">
-        <%= collection_select(:paper, :opgavetype, PaperType.all, :title, :title, :prompt => true) %>
+        <%= collection_select(:paper, :opgavetype, PaperType.all.sort_by(&:title), :title, :title, :prompt => true) %>
         <span class="help-block"><%= t('dias.views.paper.help.opgavetype') %></span>
       </div>
     </div>
