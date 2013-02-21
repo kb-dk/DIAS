@@ -5,7 +5,7 @@ set :repository,  "https://github.com/Det-Kongelige-Bibliotek/DIAS"
 set :deploy_to, "/home/dias/deploy"
 set :user, "dias"
 set :use_sudo, false
-set :rails_env, "development"
+set :rails_env, "production"
 set :default_shell, "bash -l"
 
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
