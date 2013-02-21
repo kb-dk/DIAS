@@ -10,14 +10,15 @@
     <% if (request.path=="/" || request.path=="/dias/") &&  !(has_search_parameters?) %>
 	    <%# if there are no input/search related params, display the "home" partial -%>
 	    <%= render 'home' %>
-    <% elsif  (request.path=="/faq" || request.path=="dias/faq")  %>
+    <% elsif  request.path.to_s.include?('/faq')  %>
+
       <div class="faq">
         <h1><%= t('dias.views.faq.overskrift') %></h1>
         <%=raw t('dias.views.faq.text') %>
 
       </div>
 
-  <% elsif  (request.path=="/kontakt" || request.path=="dias/kontakt")  %>
+  <% elsif  request.path.to_s.include?('/kontakt')  %>
       <div class="contact">
         <h1><%= t('dias.views.kontakt.overskrift') %></h1>
         <%=raw t('dias.views.kontakt.text') %>
