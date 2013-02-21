@@ -156,7 +156,7 @@ en:
                                       <li>I am the author or co-author of the assignment.</li>
                                       <li>If the assignment is co-authored, all authors have been entered and have agreed to upload the assignment to DIAS.</li>
                                       <li>The assinment contains no content violating copyrights.</li>
-                                      <li>Users of DIAS can use my assignment under the Create Commons Licence BY-NC-ND – read more.</li>
+                                      <li>Users of DIAS can use my assignment under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da"><img alt="Creative Commons licens" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png"/></a>.</li>
 
                                       </ul>
           pdffil: 'The paper in PDF format'
