@@ -4,7 +4,10 @@ class Users::SessionsController < ApplicationController
   skip_before_filter :authenticate_conditionally, :only => [ :create, :new ]
 
   def new
-    session[:return_url] ||= ''
+    if (Rails.environment.production?)
+    	session[:return_url] ||= '/dias'
+    else
+	session[:return_url] ||= ''
     redirect_to omniauth_path(:cas)
   end
 
@@ -22,6 +25,8 @@ class Users::SessionsController < ApplicationController
 
   def destroy
     reset_session
+    if (Rails.environment.production?)
+	redirect_to root_path+'/dias'
     redirect_to root_path
   end
 
