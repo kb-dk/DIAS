@@ -71,12 +71,12 @@
           <div class="controls">
               <span class="authors">
                 <% @paper.get_authors.each_with_index do |f, i| %>
-                  <span class="author">
-		     <div class="row">
+                  <span class="author">		     
+			<p>
                       	<%= text_field_tag "paper[forfatter][#{i}][gn]", f["gn"], :class => 'text_field span3 gn', :placeholder => t('dias.views.paper.placeholder.gn') %>
 		 	<%= text_field_tag "paper[forfatter][#{i}][sn]", f["sn"], :class => 'text_field span3 sn', :placeholder => t('dias.views.paper.placeholder.sn') %>
-                        <a class="remove-author" href="#"><i class="icon-remove" ></i></a>
-                     </div>
+                         <a class="remove-author btn" href="#"><i class="icon-remove" ></i></a>
+				</p>                    
                   </span>
                 <% end %>
               </span>
