@@ -7,7 +7,8 @@ var author_counter = 0;
 function addAuthor() {
     $("span.authors").append($("span.author:first").clone()
 			.find("input.gn").val("").attr("id","paper_forfatter_"+author_counter+"_gn").attr("name","paper[forfatter]["+author_counter+"][gn]").end()
-			.find("input.sn").val("").attr("id","paper_forfatter_"+author_counter+"_sn").attr("name","paper[forfatter]["+author_counter+"][sn]").end());
+			.find("input.sn").val("").attr("id","paper_forfatter_"+author_counter+"_sn").attr("name","paper[forfatter]["+author_counter+"][sn]").end()
+			.find("span.help-inline").remove().end());
 
 
     // add validation rules to new elements
