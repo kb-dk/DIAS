@@ -39,7 +39,6 @@
         </div>
     <% end %>
 
-
     <div class="control-group">
     <%= f.label t('dias.views.paper.labels.title'), :class => 'control-label' %>
       <div class="controls">
@@ -92,19 +91,16 @@
           <div class="controls">
           <span class="authors">
             <span class="author">
-		<div class="row span7">
-                 <%= text_field_tag 'paper[forfatter][0][gn]', nil, :class => 'text_field span3 gn', :placeholder => t('dias.views.paper.placeholder.gn') %>
-		 <%= text_field_tag 'paper[forfatter][0][sn]', nil, :class => 'text_field span3 sn', :placeholder => t('dias.views.paper.placeholder.sn') %>
-                 <a class="remove-author" href="#"><i class="icon-remove" ></i></a>
-	        </div>
+		        <p>
+                    <%= text_field_tag 'paper[forfatter][0][gn]', nil, :class => 'text_field span3 gn', :placeholder => t('dias.views.paper.placeholder.gn') %>
+                    <%= text_field_tag 'paper[forfatter][0][sn]', nil, :class => 'text_field span3 sn', :placeholder => t('dias.views.paper.placeholder.sn') %>
+                     <a class="remove-author btn" href="#"><i class="icon-remove" ></i></a>
+	            </p>
             </span>
           </span>
-	  </div>
-          <span class="row">
-          <div class="controls">
             <a class="add-author btn "  href="#"><i class="icon-plus" ></i><%= raw t('dias.views.paper.labels.add.forfatter') %></a>
-          </div>
-          </span>
+	  </div>
+
         </div>
     <% end %>
 
@@ -156,16 +152,15 @@
 
     <div class="control-group">
         <%= f.label t('dias.views.paper.labels.pdffil'), :class => 'control-label' %>
-        <div class="controls">
+        <div class="controls" style="position: relative;">
           <% unless @paper.original_filename.nil? || @paper.original_filename.blank? %>
               <div>
-                <%=  'PDF: ' + @paper.original_filename.to_s %><br>
+                <%=  'PDF: ' + @paper.original_filename.to_s %><br> ko
 
               </div>
           <% else %>
 
-                <%= file_field_tag 'content', :id => 'content',  :accept => 'application/pdf',  :class => 'btn' %>
-
+                    <%= file_field_tag 'content', :id => 'content',  :accept => 'application/pdf',  :class => '' %>
 
           <% end %>
 

@@ -59,7 +59,7 @@ class CatalogController < ApplicationController
     #config.add_facet_field 'lc_1letter_facet', :label => 'Call Number'
     #config.add_facet_field 'subject_geo_facet', :label => 'Region'
     #config.add_facet_field 'subject_era_facet', :label => 'Era'
-    config.add_facet_field  'studium_facet', :label => I18n.t('dias.views.forside.labels.studium') #, :limit => 7
+    config.add_facet_field  'studium_facet', :label => I18n.t('dias.views.forside.labels.studium') , :limit => 3
     config.add_facet_field  'afleveringsaar_facet', :label => I18n.t('dias.views.forside.labels.afleveringsaar') #, :limit => 7
     config.add_facet_field  'opgavesprog_facet', :label => I18n.t('dias.views.forside.labels.opgavesprog') #, :limit => 7
     config.add_facet_field  'genre_facet', :label => I18n.t('dias.views.forside.labels.opgavetype') #, :limit => 7

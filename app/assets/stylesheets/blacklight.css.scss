@@ -29,6 +29,18 @@ a[href*="downloads"], a:hover[href*="downloads"]  {
   /*background:silver;   */
   border-radius: 5px;
 }
+
+/*Bootstrap class */
+body .btn-success, body .btn-primary{
+  background:#034931;
+  border:1px solid #034931;
+  box-shadow: none;
+}
+body .btn-success:hover, body .btn-primary:hover{
+  background:#51A351;
+  border:1px solid #51A351;
+}
+
 /* Header
 *****************************************************************************************/
 body .navbarDias {
@@ -154,8 +166,8 @@ body.blacklight-catalog-show .alert-info{
 #sidebar{
   margin-top:-20px;
   cursor:pointer;
-
 }
+
  #facets #facets-collapse div:last-child{
    margin-bottom: 20px;
    border-bottom:3px solid #D7DDE3;
@@ -232,9 +244,12 @@ body.blacklight-catalog-show .alert-info{
   text-align: left;
     float: left;
 }
-
 .modal{
 margin-top: 0px;
+}
+/*See more box*/
+#ajax-modal{
+  margin-top:0!important;
 }
 /* PARER VIEW*/
 .blacklight-papers #searchWrapper form {
@@ -318,12 +333,9 @@ Content
 }
 
 .login .btn{
-  background:#034931;
   color:#FFF;
   font-weight:bold;
   font-size:28px;
-  box-shadow: none;
-  border:none;
 }
 
 
@@ -407,7 +419,11 @@ h5.index_title{
 #document h1{
   font:normal normal bold 40px/40px times,Arial,Helvetica,sans-serif;
 }
-
+/*Upload*/
+.form-actions {
+  background-color: #FFF;
+  border-top: 1px solid #E5E5E5;
+}
 /* Footer
 *****************************************************************************************/
 footer{
