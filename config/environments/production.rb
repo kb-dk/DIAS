@@ -67,4 +67,7 @@ HydraHead::Application.configure do
 
   #array of PIDS that should be giving admin privileges
   config.admin_pids = ["krv-pid"]
+  config.action_controller.relative_url_root = "/dias/"
+
+
 end
