@@ -35,7 +35,12 @@ class ApplicationController < ActionController::Base
     if session[:user]
       user = User.new
       user.pid = session[:user].extra.attributes[0]['alephPID']
-      user.name = session[:user].extra.attributes[0]['gn'] + ' ' + session[:user].extra.attributes[0]['sn']
+  #    user.name = session[:user].extra.attributes[0]['gn'] + ' ' + session[:user].extra.attributes[0]['sn']
+
+      user.gn = session[:user].extra.attributes[0]['gn'].to_s
+      user.sn = session[:user].extra.attributes[0]['sn'].to_s
+      user.name = user.gn + ' ' + user.sn
+
       return user
     end
   end
@@ -81,7 +86,6 @@ class ApplicationController < ActionController::Base
     logger.debug "app_controller set_locale params[:locale]=" + params[:locale] + " I18n.default_locale=" +  I18n.default_locale.to_s rescue nil
     I18n.locale =  params[:locale] || I18n.default_locale
   end
-
 
 
   def default_url_options(options={})
