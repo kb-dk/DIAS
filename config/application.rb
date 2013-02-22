@@ -82,7 +82,7 @@ module HydraHead
 
    # if ( request.host.to_s.include?("disdev") || request.host.to_s.include?("kb.dk") )
    #   logger.info("DISDEV eller kb.dk")
-      config.action_controller.relative_url_root = "/dias"
+     # config.action_controller.relative_url_root = "/dias"
   #  end
 
 
