@@ -164,7 +164,7 @@ en:
         help:
           opgavetype: 'Which type of paper are you uploading. (Please note that theses cannot be uploaded to DIAS.)'
           opgavesprog: 'Paper language.'
-          studium: 'På hvilket studie er opgaven skrevet.'
+          studium: 'On which faculty was the paper turned in'
           afleveringsaar: 'The year that the paper was submitted for approval.'
           navn: 'Your name'
           undertitel: 'Subtitle (not required).'
