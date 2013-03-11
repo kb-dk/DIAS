@@ -23,7 +23,7 @@
 
 
     <dt><%= t('dias.views.paper.labels.pdffil') %></dt>
-    <dd><%= link_to document["title_t"].first.html_safe, download_path(document["id"]) %></dd>
+    <dd><%= link_to document["title_t"].first, download_path(document["id"]) %></dd>
 
 
     <dt><%= t('dias.views.paper.labels.licens') %></dt>
