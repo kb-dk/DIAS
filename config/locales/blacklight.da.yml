@@ -220,4 +220,4 @@ da:
     entry_name:
       default: 'entry'
 
-    did_you_mean: 'Mente du?: %{options}?'
+    did_you_mean: 'Mente du: %{options}?'
