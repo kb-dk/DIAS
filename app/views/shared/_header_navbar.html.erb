@@ -17,7 +17,7 @@
         <div class="nav-collapse collapse">
             <ul class="nav ">
 
-                  <% if can? :create, @papers   %>
+                  <% if can? :create, Paper   %>
                   <li><%= link_to t('.new', :default => raw(t('dias.views.forside.tilfoejknap'))),
                                      new_paper_path %></li>
                   <% end %>
