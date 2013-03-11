@@ -23,7 +23,6 @@
   # However, you won't need them in production because they will be precompiled.
   group :assets do
     gem 'sass-rails', '~> 3.2.3'
-    gem 'uglifier'
     gem 'jquery-rails'
     gem 'less'
     gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports
