@@ -72,7 +72,7 @@ en:
             <p class="lead">Who can use the contents of DIAS?</p>
             <p>
               <blockquote>
-                 All student assignments in DIAS er freely avalilable to anyone with an internet connection. The assignments can be read and cited, but may not be subjected to further elaboraton.
+                 All student assignments in DIAS are freely avalilable to anyone with an internet connection. The assignments can be read and cited, but may not be modified.
               </blockquote>
             </p>
             <hr/>
@@ -99,35 +99,15 @@ en:
                  Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> with author and title information.
               </blockquote>
             </p>
-
-            <!--
-            Er specialer relevante på den engelske side???
-            <div>
-            <p>Kan jeg uploade mit speciale til DIAS?</p>
-            <p>Nej. Københavns Universitet har et separat arkiv til godkendte specialer - <a href="http://diskurs.kb.dk">DISKURS</a>. Du kan kontakte studieadministrationen på dit fakultet for at høre om muligheden for at lægge dit speciale i DISKURS.<p>
-            </div>
-            <div>
-            <p>Hvorfor kan jeg ikke finde specialer i DIAS?</p>
-            <p>Københavns Universitet har et separat arkiv til godkendte specialer - <a href="http://diskurs.kb.dk">DISKURS</a>.<p>
-            </div>
-
-            -->
-
-
+           
       kontakt:
        overskrift: 'Contact'
        text: |
             <p class="lead">
                  Please contact us<br/>
-                 Most questions are answered in our <a href="faq">FAQ</a> section. If your question, however, is not, please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">Send us an e-mail with your question</a>
-             </p>
-              <address>
-              <strong>Det Kongelige Bibliotek</strong><br/>
-              Postbox 2149<br/>
-              1016 København K<br/>
-              <abbr title="phone">P:</abbr> (+45)12-34-56-78<br/>
+                 Most questions are answered in our <a href="faq">FAQ</a> section. But feel free to send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>.
+            </p>
               
-            </address>
 
       paper:
         validate:
