@@ -169,8 +169,8 @@ da:
         title: 'Antallet af resultater per side'
         submit: 'Update'
       sort:
-        label: 'Sorter efter %{field}'
-        submit: 'Sorter resultater'
+        label: 'Sortér efter %{field}'
+        submit: 'Sortér resultater'
       form:
         search_field:
           label: 'Search in'
