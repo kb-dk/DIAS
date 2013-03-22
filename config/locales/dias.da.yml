@@ -72,15 +72,20 @@ da:
        text: |
             <p class="lead">Hvem kan uploade opgaver til DIAS?</p>
             <p><blockquote>
-                Nuværende og tidligere studerende ved Københavns Universitet kan uploade beståede universitetsopgaver til DIAS. Det er dog ike muligt at uploade specialer til DIAS.
+                Nuværende og tidligere studerende ved Københavns Universitet kan uploade beståede universitetsopgaver til DIAS. Det er dog ikke muligt at uploade specialer til DIAS.
               </blockquote>
             </p>
             <hr/>
-
+            <p class="lead">Jeg vil uploade en opgave, men bliver bedt om at logge ind?</p>
+            <p><blockquote>
+                Opgaver uploades til DIAS på baggrund af login via Det Kongelige Bibliotek. Dit brugernavn er dit CPR-nummer, mens din pinkode enten er de sidste fire cifre i dit CPR-nummer eller en selvvalgt fire-cifret pinkode.
+              </blockquote>
+            </p>
+            <hr/>
             <p class="lead">Hvem må læse opgaverne i DIAS?</p>
             <p>
               <blockquote>
-                Alle opgaver i DIAS er frit tilgængelige for enhver person med interesse heri. Opgaverne i DIAS må naturligvis læses og citeres, men de må ikke gøres tilstand for videre bearbejdelse.
+                Alle opgaver i DIAS er frit tilgængelige for enhver person med interesse heri. Opgaverne i DIAS må naturligvis læses og citeres, men de må ikke gøres til genstand for videre bearbejdelse.
               </blockquote>
             </p>
             <hr/>
