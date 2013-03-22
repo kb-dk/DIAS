@@ -42,6 +42,15 @@ en:
         text: |
             Be a part of something bigger <br/> - share your knowledge
 
+        forklaring: |
+               <p>Digital Archive for Student Assignments contains assigments passed at the University of Copenhagen.</p>
+
+               <p>The archive offers you inspiration when writing assignments – get ideas for subjects, see examples of assigment structures, or simply read an interesting title.</p>
+
+               <p>We also hope that you would like to share your own assignments by uploading them to the archive.</p>
+
+               <p>Enjoy.</p>
+
         tilfoejknap: |
                     Upload <i class="icon-upload icon-white"></i>
         tilfoejogloginknap: |

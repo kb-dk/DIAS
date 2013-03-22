@@ -42,6 +42,14 @@ da:
         text: |
             Vær en del af noget større <br/> – del din viden
 
+        forklaring: |
+                 <p>Digitalt Arkiv for Studenteropgaver indeholder beståede opgaver fra Københavns Universitet.</p>
+
+                 <p>I arkivet kan du lade dig inspirere af andre studerendes opgaver i forbindelse med opgaveskrivning - du kan få gode ideér til emnevalg, se eksempler på opbygning af opgaver, eller måske kan du bare blive klogere.</p>
+
+                 <p>Vi håber også, at du har lyst til at dele dine egne opgaver ved at uploade dem til arkivet.</p>
+
+                 <p>God fornøjelse.</p>
         tilfoejknap: |
             Upload <i class="icon-upload icon-white"></i>
         tilfoejogloginknap: |
