@@ -7,8 +7,8 @@ class FrontpageTest < Test::Unit::TestCase
   def setup
     caps = Selenium::WebDriver::Remote::Capabilities.internet_explorer
     caps.version = "9"
-    caps.platform = :XP
-    caps[:name] = "Testing DIAS Production XP IE8"
+    caps.platform = :WIN7
+    caps[:name] = "Testing DIAS Production Windows 7 med IE9"
 
     @driver = Selenium::WebDriver.for(
         :remote,
