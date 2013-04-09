@@ -8,7 +8,7 @@ class FrontpageTest < Test::Unit::TestCase
     caps = Selenium::WebDriver::Remote::Capabilities.android
     caps.version = "4"
     caps.platform = :LINUX
-    caps[:name] = "Testing DIAS Frontpage"
+    caps[:name] = "Testing DIAS Frontpage paa Android"
 
     @driver = Selenium::WebDriver.for(
         :remote,
