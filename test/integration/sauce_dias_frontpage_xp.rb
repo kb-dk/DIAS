@@ -31,6 +31,18 @@ class FrontpageTest < Test::Unit::TestCase
     @driver.navigate.to "http://dias.kb.dk/kontakt?locale=da"
     assert @driver.title.include?("DIAS")
   end
+
+  def test_af_soegning
+
+
+      @driver.navigate.to "http://dias.kb.dk"
+      element = @driver.find_element(:name, 'q')
+      element.send_keys "kristoffer"
+      element.submit
+      puts @driver.title
+      assert @driver.title.include?("geresultater")
+      #element = driver.find_element(:data-counter, '1')
+  end
  # def test_dias_search
  #   @driver.navigate.to "http://dias.kb.dk/?utf8=✓&search_field%5B%7B%3Avalue%3D%3E%22%22%7D%5D=&q=kristoffer"
  #   assert @driver.title.include?("gresultater")
