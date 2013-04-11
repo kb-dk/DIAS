@@ -3,7 +3,7 @@
   gem 'rails', '~>3.2.10'
 
   gem 'blacklight', '~> 4.0.1'
-  gem 'hydra-head', '~> 5.0.0'
+  gem 'hydra-head', '~> 6.0'
   #gem 'hydra-access-controls' #TODO ABWE er den her nødvendig?
 
 
@@ -43,7 +43,10 @@
     gem 'equivalent-xml'
     gem 'rb-inotify', '~> 0.8.8', :require => false
     gem 'factory_girl_rails', '~> 4.1'
+    gem 'guard-spork'
+    gem 'selenium-webdriver'
   end
+
 
 
 
