@@ -3,7 +3,7 @@
   gem 'rails', '~>3.2.10'
 
   gem 'blacklight', '~> 4.0.1'
-  gem 'hydra-head', '~> 6.0'
+  gem 'hydra-head', '~> 5.0'
   #gem 'hydra-access-controls' #TODO ABWE er den her nødvendig?
 
 
