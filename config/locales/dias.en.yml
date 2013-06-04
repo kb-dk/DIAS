@@ -115,7 +115,7 @@ en:
        overskrift: 'Contact'
        text: |
             <p class="lead">
-                 Most questions are answered in our <a href="faq">FAQ</a> section. But feel free to send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>.
+                 Most questions are answered in our <a href="faq?locale=en">FAQ</a> section. But feel free to send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>.
             </p>
               
 
