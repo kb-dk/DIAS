@@ -3,8 +3,8 @@ da:
     edit: "Redigér"
     search: "Søg"
     changelang: "English"
-    loggetind: "Velkommen til "
-    loggetindupklartilload: ", vi glæder os til, at du uploader dine opgaver "
+    loggetind: "Velkommen "
+    loggetindupklartilload: " - vi glæder os til, at du uploader dine opgaver "
     cookiepolicy: "Cookie & Privatlivspolitik"
     footer: |
           <address>
