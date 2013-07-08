@@ -169,8 +169,8 @@ da:
         title: 'Antallet af resultater per side'
         submit: 'Update'
       sort:
-        label: 'Sorter efter %{field}'
-        submit: 'Sorter resultater'
+        label: 'Sortér efter %{field}'
+        submit: 'Sortér resultater'
       form:
         search_field:
           label: 'Search in'
@@ -181,7 +181,7 @@ da:
       pagination:
         title: 'Results navigation'
       pagination_info:
-        no_items_found: 'No %{entry_name} found'
+        no_items_found: 'Ingen opgaver fundet'
         single_item_found: '<strong>1</strong> to <strong>1</strong> of <strong>1</strong>'
         pages:
           one: '<strong>%{start_num}</strong> - <strong>%{end_num}</strong> of <strong>%{total_num}</strong>'
@@ -192,7 +192,7 @@ da:
       documents:
         counter: '%{counter}. '
       facets:
-        title: 'Afgræns'
+        title: 'Browse'
         sort:
           count: 'Numerisk sortering'
           index: 'A-Z Sortering'
@@ -220,4 +220,4 @@ da:
     entry_name:
       default: 'entry'
 
-    did_you_mean: 'Did you mean to type: %{options}?'
+    did_you_mean: 'Mente du: %{options}?'

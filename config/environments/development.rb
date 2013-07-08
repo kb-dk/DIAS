@@ -38,5 +38,9 @@ HydraHead::Application.configure do
   # ABWE added log level
   config.log_level = :debug
 
+  config.action_controller.relative_url_root = ""
+
+
+
 
 end

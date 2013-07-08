@@ -66,5 +66,8 @@ HydraHead::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   #array of PIDS that should be giving admin privileges
-  config.admin_pids = ["krv-pid"]
+#  config.admin_pids = ["krv-pid"]
+  config.action_controller.relative_url_root = ""
+
+
 end

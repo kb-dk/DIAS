@@ -34,10 +34,11 @@
 
 
         <dt><%=  t('dias.views.paper.labels.abstrakt')  %></dt>
-        <dd> <blockquote>
-          <%= @document["abstrakt_t"].first.html_safe if @document["abstrakt_t"] %>
+        <dd><blockquote>
+          <%= simple_format( @document["abstrakt_t"].first, ) if @document["abstrakt_t"] %>
         </blockquote>
         </dd>
+
         <dt><%=  t('dias.views.paper.labels.opgavetype')  %></dt>
         <dd>
           <%= @document["genre_t"].first.html_safe %>
@@ -63,7 +64,7 @@
 
         <dt>Download</dt>
         <dd>
-          <%=  link_to 'PDF: '+ @document["title_t"].first.html_safe, download_path(@document["id"]) %>
+          <%=  link_to 'PDF: '+ document_show_html_title, download_path(@document["id"]) %>
 
         </dd>
       </dl>

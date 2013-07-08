@@ -7,7 +7,6 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:order) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -18,7 +17,6 @@
       <tr>
         <td><%= link_to paper_language.id, paper_language_path(paper_language) %></td>
         <td><%= paper_language.title %></td>
-        <td><%= paper_language.order %></td>
         <td><%= paper_language.description %></td>
         <td><%=l paper_language.created_at %></td>
         <td>

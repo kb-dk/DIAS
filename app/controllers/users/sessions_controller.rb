@@ -4,7 +4,7 @@ class Users::SessionsController < ApplicationController
   skip_before_filter :authenticate_conditionally, :only => [ :create, :new ]
 
   def new
-    session[:return_url] ||= ''
+    session[:return_url] = Rails.configuration.action_controller.relative_url_root
     redirect_to omniauth_path(:cas)
   end
 

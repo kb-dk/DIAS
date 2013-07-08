@@ -7,7 +7,6 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:order) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -18,7 +17,6 @@
       <tr>
         <td><%= link_to paper_type.id, paper_type_path(paper_type) %></td>
         <td><%= paper_type.title %></td>
-        <td><%= paper_type.order %></td>
         <td><%= paper_type.description %></td>
         <td><%=l paper_type.created_at %></td>
         <td>

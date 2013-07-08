@@ -4,7 +4,6 @@ describe "institutes/show" do
   before(:each) do
     @institute = assign(:institute, stub_model(Institute,
       :title => "Title",
-      :order => 1,
       :description => "MyText"
     ))
   end

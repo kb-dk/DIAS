@@ -3,8 +3,8 @@ da:
     edit: "Redigér"
     search: "Søg"
     changelang: "English"
-    loggetind: "Velkommen til "
-    loggetindupklartilload: ", vi glæder os til, at du uploader dine opgaver "
+    loggetind: "Velkommen "
+    loggetindupklartilload: " - vi glæder os til, at du uploader dine opgaver "
     cookiepolicy: "Cookie & Privatlivspolitik"
     footer: |
           <address>
@@ -40,8 +40,14 @@ da:
          <h3>arkiv for</h3>
          <h2>ku-studenteropgaver</h2>
         text: |
-            Vær en del af noget større <br/> – del din viden
+            Del din viden <br/> – upload dine opgaver
 
+        forklaring: |
+                 <p>Digitalt Arkiv for Studenteropgaver indeholder beståede opgaver fra Københavns Universitet. Her kan du få gode ideér til emnevalg, se eksempler på opbygning af opgaver eller måske bare blive klogere.</p>
+
+                 <p>Søg efter andre studerendes opgaver via søgefeltet foroven eller log ind for at uploade dine egne opgaver.</p>
+
+                 <p>God fornøjelse.</p>
         tilfoejknap: |
             Upload <i class="icon-upload icon-white"></i>
         tilfoejogloginknap: |
@@ -64,15 +70,20 @@ da:
        text: |
             <p class="lead">Hvem kan uploade opgaver til DIAS?</p>
             <p><blockquote>
-                Nuværende og tidligere studerende ved Københavns Universitet kan uploade beståede universitetsopgaver til DIAS. Det er dog ike muligt at uploade specialer til DIAS.
+                Nuværende og tidligere studerende ved Københavns Universitet kan uploade beståede universitetsopgaver til DIAS. Det er dog ikke muligt at uploade specialer til DIAS.
               </blockquote>
             </p>
             <hr/>
-
+            <p class="lead">Jeg vil uploade en opgave, men bliver bedt om at logge ind?</p>
+            <p><blockquote>
+                Opgaver uploades til DIAS på baggrund af login via Det Kongelige Bibliotek. Dit brugernavn er dit CPR-nummer, mens din pinkode enten er de sidste fire cifre i dit CPR-nummer eller en selvvalgt fire-cifret pinkode.
+              </blockquote>
+            </p>
+            <hr/>
             <p class="lead">Hvem må læse opgaverne i DIAS?</p>
             <p>
               <blockquote>
-                Alle opgaver i DIAS er frit tilgængelige for enhver person med interesse heri. Opgaverne i DIAS må naturligvis læses og citeres, men de må ikke gøres tilstand for videre bearbejdelse.
+                Alle opgaver i DIAS er frit tilgængelige for enhver person med interesse heri. Opgaverne i DIAS må naturligvis læses og citeres, men de må ikke gøres til genstand for videre bearbejdelse.
               </blockquote>
             </p>
             <hr/>
@@ -121,15 +132,9 @@ da:
        overskrift: 'Kontakt'
        text: |
             <p class="lead">
-                Skriv venligst en mail til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>  med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.
+                Skriv venligst en mail til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>.
             </p>
-            <address>
-              <strong>Det Kongelige Bibliotek</strong><br/>
-              Postbox 2149<br/>
-              1016 København K<br/>
-              <abbr title="phone">P:</abbr> (+45)12-34-56-78<br/>
-              
-            </address>
+            
                       
 
       paper:
@@ -138,7 +143,7 @@ da:
         labels:
           title: 'Titel'
           undertitel: 'Undertitel'
-          forfatter: 'forfatter'
+          forfatter: 'Forfatter'
           add:
             forfatter: 'Tilføj forfatter'
           remove:
@@ -159,7 +164,7 @@ da:
                                       <li>Jeg er forfatter eller medforfatter til opgaven.</li>
                                       <li>Hvis opgaven er skrevet af flere forfattere, er alle forfattere indtastet og indforstået med, at opgaven uploades til DIAS.</li>
                                       <li>Opgaven indeholder ikke indhold, som krænker loven om ophavsret.</li>
-                                      <li>Brugere af DIAS kan benytte min opgave under hensyntagen til Create Commons Licence BY-NC-ND – læs mere.</li>
+                                      <li>Brugere af DIAS kan benytte min opgave under hensyntagen til <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da"><img alt="Creative Commons licens" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png"/></a>.</li>
                                       </ul>
 
           pdffil: 'Opgaven i PDF-format'

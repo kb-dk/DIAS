@@ -3,7 +3,7 @@
   gem 'rails', '~>3.2.10'
 
   gem 'blacklight', '~> 4.0.1'
-  gem 'hydra-head', '~> 5.0.0'
+  gem 'hydra-head', '~> 5.0'
   #gem 'hydra-access-controls' #TODO ABWE er den her nødvendig?
 
 
@@ -23,6 +23,7 @@
   # However, you won't need them in production because they will be precompiled.
   group :assets do
     gem 'sass-rails', '~> 3.2.3'
+    gem 'uglifier'
     gem 'jquery-rails'
     gem 'less'
     gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports
@@ -42,7 +43,10 @@
     gem 'equivalent-xml'
     gem 'rb-inotify', '~> 0.8.8', :require => false
     gem 'factory_girl_rails', '~> 4.1'
+    gem 'guard-spork'
+    gem 'selenium-webdriver'
   end
+
 
 
 
