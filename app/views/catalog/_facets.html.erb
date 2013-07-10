@@ -1,8 +1,8 @@
 <% # main container for facets/limits menu -%>
 <% if has_facet_values?  %>
-    <div id="facets" class="facets">
+    <div id="facets" class="facets" >
+      <div id="facets-collapse"  style="display:none">
 
-      <div id="facets-collapse" class="collapse" >
         <%= render_facet_partials %>
       </div>
     </div>
