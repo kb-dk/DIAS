@@ -77,6 +77,8 @@ module HydraHead
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    config.assets.precompile+= ['application.css','application2.css','application3.css']
 
 
 
