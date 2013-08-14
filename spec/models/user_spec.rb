@@ -8,7 +8,7 @@ describe User do
   admin_user.name = "John Doe"
 
   depositor_user = User.new
-  depositor_user.pid = "any_pid";
+  depositor_user.pid = "any_pid"
   depositor_user.name = "Jane Doe"
 
   guest_user = User.new

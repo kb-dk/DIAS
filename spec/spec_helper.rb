@@ -45,6 +45,6 @@ RSpec.configure do |config|
 
   def login_admin
     @admin = FactoryGirl.create(:admin)
-    controller.stub!(:current_user).and_return(@admin)
+    controller.stub(:current_user).and_return(@admin)
   end
 end

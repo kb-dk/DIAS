@@ -13,7 +13,7 @@
 # datastream in the Journal Article hydra content type, defined using 
 # ActiveFedora and OM.
 
-class OpgaveModsDatastream < ActiveFedora::NokogiriDatastream
+class OpgaveModsDatastream < ActiveFedora::OmDatastream
 
   MODS_NS = 'http://www.loc.gov/mods/v3'
   MODS_SCHEMA = 'http://www.loc.gov/standards/mods/v3/mods-3-3.xsd'

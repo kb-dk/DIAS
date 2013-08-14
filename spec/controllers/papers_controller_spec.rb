@@ -158,7 +158,7 @@ describe PapersController do
       end
       it "assigns a newly created paper as @paper" do
         file = fixture_file_upload("/test.pdf","application/pdf")
-        file.stub!(:original_filename).and_return("test.pdf")
+        file.stub(:original_filename).and_return("test.pdf")
         post :create, {:paper => valid_attributes, :content => file}, valid_session
         assigns(:paper).should be_a(Paper)
         assigns(:paper).should be_persisted
@@ -178,7 +178,7 @@ describe PapersController do
         # Trigger the behavior that occurs when invalid params are submitted
         Paper.any_instance.stub(:save).and_return(false)
         file = fixture_file_upload("/test.pdf","application/pdf")
-        file.stub!(:original_filename).and_return("test.pdf")
+        file.stub(:original_filename).and_return("test.pdf")
         post :create, {:paper => {  }, :content => file}, valid_session
         response.should render_template("new")
       end
