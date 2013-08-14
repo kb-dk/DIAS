@@ -80,7 +80,7 @@ class CatalogController < ApplicationController
     config.add_index_field 'forfatter_t', :label => I18n.t('dias.views.forside.labels.forfatter')
     config.add_index_field 'forfatter_vern_t', :label => I18n.t('dias.views.forside.labels.forfatter')
 
-    config.add_index_field 'afleveringsaar_teim', :label => I18n.t('dias.views.forside.labels.afleveringsaar')
+    config.add_index_field 'afleveringsaar_t', :label => I18n.t('dias.views.forside.labels.afleveringsaar')
     config.add_index_field 'afleveringsaar_vern_t', :label => I18n.t('dias.views.forside.labels.afleveringsaar')
 
 
