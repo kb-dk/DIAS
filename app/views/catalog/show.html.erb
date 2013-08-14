@@ -24,29 +24,29 @@
         </dd>
         <dt><%=  t('dias.views.paper.labels.afleveringsaar')  %></dt>
         <dd>
-          <%= @document["afleveringsaar_t"].first.html_safe %>
+          <%= @document["afleveringsaar_ssm"].first.html_safe %>
         </dd>
 
         <dt><%=  t('dias.views.paper.labels.studium')  %></dt>
         <dd>
-          <%= @document["studium_t"].first.html_safe %>
+          <%= @document["studium_ssm"].first.html_safe %>
         </dd>
 
 
         <dt><%=  t('dias.views.paper.labels.abstrakt')  %></dt>
         <dd><blockquote>
-          <%= simple_format( @document["abstrakt_t"].first, ) if @document["abstrakt_t"] %>
+          <%= simple_format( @document["abstrakt_ssm"].first, ) if @document["abstrakt_t"] %>
         </blockquote>
         </dd>
 
         <dt><%=  t('dias.views.paper.labels.opgavetype')  %></dt>
         <dd>
-          <%= @document["genre_t"].first.html_safe %>
+          <%= @document["genre_ssm"].first.html_safe %>
         </dd>
 
         <dt><%=  t('dias.views.paper.labels.opgavesprog')  %></dt>
         <dd>
-          <%= @document["opgavesprog_t"].first.html_safe %>
+          <%= @document["opgavesprog_ssm"].first.html_safe %>
         </dd>
 
         <dt><%=  t('dias.views.paper.labels.licens')  %></dt>
