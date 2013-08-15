@@ -70,9 +70,11 @@
        <str name="facet">true</str>
        <str name="facet.mincount">1</str>
        <str name="facet.limit">10</str>
-       <str name="facet.field">active_fedora_model_ssi</str>
-       <str name="facet.field">subject_sim</str>
-       
+       <str name="facet.field">studium_tesim</str>
+       <str name="facet.field">afleveringsaar_tesim</str>
+       <str name="facet.field">opgavesprog_tesim</str>
+       <str name="facet.field">opgavetype_tesim</str>
+
        <str name="spellcheck">true</str>
        <str name="spellcheck.dictionary">default</str>
        <str name="spellcheck.onlyMorePopular">true</str>
