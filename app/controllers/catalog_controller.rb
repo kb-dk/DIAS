@@ -16,8 +16,9 @@ class CatalogController < ApplicationController
   configure_blacklight do |config|
     logger.info("### configure_blacklight i sproget I18n.locale=" + I18n.locale.to_s + " locale=" + :locale.to_s)
     config.default_solr_params = {
+      :qf => 'title_tesim',
       :qt => 'search',
-      :search_field => 'all_fields',
+      #:search_field => 'all_fields',
       :rows => 20
     }
 
@@ -71,22 +72,22 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field 'title_t', :label => I18n.t('dias.views.forside.labels.title')
+    config.add_index_field 'title_tesim', :label => I18n.t('dias.views.forside.labels.title')
     config.add_index_field 'title_vern_display', :label => I18n.t('dias.views.forside.labels.title')
 
-    config.add_index_field 'undertitel_t', :label => I18n.t('dias.views.forside.labels.undertitel')
-    config.add_index_field 'undertitel_vern_t', :label => I18n.t('dias.views.forside.labels.undertitel')
+    config.add_index_field 'undertitel_tsi', :label => I18n.t('dias.views.forside.labels.undertitel')
+    config.add_index_field 'undertitel_vern_tsi', :label => I18n.t('dias.views.forside.labels.undertitel')
 
-    config.add_index_field 'forfatter_t', :label => I18n.t('dias.views.forside.labels.forfatter')
-    config.add_index_field 'forfatter_vern_t', :label => I18n.t('dias.views.forside.labels.forfatter')
+    config.add_index_field 'forfatter_tsi', :label => I18n.t('dias.views.forside.labels.forfatter')
+    config.add_index_field 'forfatter_vern_tsi', :label => I18n.t('dias.views.forside.labels.forfatter')
 
-    config.add_index_field 'afleveringsaar_t', :label => I18n.t('dias.views.forside.labels.afleveringsaar')
-    config.add_index_field 'afleveringsaar_vern_t', :label => I18n.t('dias.views.forside.labels.afleveringsaar')
+    config.add_index_field 'afleveringsaar_tsi', :label => I18n.t('dias.views.forside.labels.afleveringsaar')
+    config.add_index_field 'afleveringsaar_vern_tsi', :label => I18n.t('dias.views.forside.labels.afleveringsaar')
 
 
 
-    config.add_index_field 'opgavetype_t', :label => I18n.t('dias.views.forside.labels.opgavetype')
-    config.add_index_field 'opgavetype_vern_t', :label => I18n.t('dias.views.forside.labels.opgavetype')
+    config.add_index_field 'opgavetype_tsi', :label => I18n.t('dias.views.forside.labels.opgavetype')
+    config.add_index_field 'opgavetype_vern_tsi', :label => I18n.t('dias.views.forside.labels.opgavetype')
 
 
     #config.add_index_field 'author_vern_display', :label => 'Author:'
@@ -98,7 +99,7 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
-    config.add_show_field 'title_display', :label => I18n.t('dias.views.forside.labels.title')
+    config.add_show_field 'title_tesim', :label => I18n.t('dias.views.forside.labels.title')
     config.add_show_field 'undertitel_display', :label => I18n.t('dias.views.forside.labels.undertitel')
 
     #config.add_show_field 'title_vern_display', :label => 'Title:'
@@ -117,9 +118,6 @@ class CatalogController < ApplicationController
 
 
     config.add_show_field 'abstrakt_display', :label => I18n.t('dias.views.forside.labels.abstrakt')
-
-
-
 
     #config.add_show_field 'author_vern_display', :label => 'Author:'
     #config.add_show_field 'format', :label => 'Format:'
@@ -165,10 +163,10 @@ class CatalogController < ApplicationController
       # syntax, as eg {! qf=$title_qf }. This is neccesary to use
       # Solr parameter de-referencing like $title_qf.
       # See: http://wiki.apache.org/solr/LocalParams
-      field.solr_local_parameters = {
-        :qf => '$title_qf',
-        :pf => '$title_pf'
-      }
+      #field.solr_local_parameters = {
+      #  :qf => '$title_qf',
+      #  :pf => '$title_pf'
+      #}
     end
 
 =begin
@@ -209,9 +207,9 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, afleveringsaar_sort desc, title_sort asc', :label => 'Relevans'
-    config.add_sort_field 'afleveringsaar_sort desc, title_sort asc', :label => 'År (nyeste først)'
-    config.add_sort_field 'afleveringsaar_sort asc, title_sort asc', :label => 'År (ældste først)'
+    config.add_sort_field 'score desc, afleveringsaar_ssort desc, title_ssort asc', :label => 'Relevans'
+    config.add_sort_field 'afleveringsaar_ssort desc, title_ssort asc', :label => 'År (nyeste først)'
+    config.add_sort_field 'afleveringsaar_ssort asc, title_ssort asc', :label => 'År (ældste først)'
     #config.add_sort_field 'forfatter_sort asc, title_sort asc', :label => 'Forfatter (stigende)'
     #config.add_sort_field 'forfatter_sort desc, title_sort asc', :label => 'Forfatter (faldende)'
     #config.add_sort_field 'title_sort asc, afleveringsaar_sort desc', :label => 'Titel'

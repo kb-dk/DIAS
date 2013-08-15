@@ -31,8 +31,8 @@ class OpgaveModsDatastream < ActiveFedora::OmDatastream
 
 
     t.titleInfo do
-      t.title(:index_as => [:searchable, :displayable, :sortable])
-      t.subTitle(:index_as => [:searchable, :displayable, :sortable])
+      t.title(:index_as => [:stored_searchable])
+      t.subTitle(:index_as => [:stored_searchable])
     end
 
 
@@ -44,13 +44,13 @@ class OpgaveModsDatastream < ActiveFedora::OmDatastream
     #</name>
 
     t.name do
-      t.namePart(:index_as => [:searchable, :displayable,])
+      t.namePart(:index_as => [:stored_searchable])
       t.role do
         t.roleTerm
       end
     end
 
-    t.abstract(:index_as => [:searchable, :displayable])
+    t.abstract(:index_as => [:stored_searchable])
 
     #<originInfo>
     #<dataIssued>2011</dateIssued>                             <!-- Afleveringsår -->
@@ -60,18 +60,18 @@ class OpgaveModsDatastream < ActiveFedora::OmDatastream
     # </originInfo>
 
     t.originInfo do
-      t.dataIssued(:index_as => [:searchable, :facetable, :displayable, :sortable])    # :facetable
+      t.dataIssued(:index_as => [:stored_searchable])    # :facetable
       t.location do
-        t.physicalLocation(:index_as => [:searchable, :displayable, :facetable])
+        t.physicalLocation(:index_as => [:stored_searchable])
       end
     end
 
-    t.typeOfResource(:index_as=>[:searchable])
+    t.typeOfResource(:index_as=>[:stored_searchable])
 
-    t.genre(:index_as=>[:searchable, :displayable, :facetable])
+    t.genre(:index_as=>[:stored_searchable])
 
     t.language do
-      t.languageTerm(:index_as =>  [:searchable, :displayable, :facetable])
+      t.languageTerm(:index_as =>  [:stored_searchable])
     end
 
     # these proxy declarations allow you to use more familiar term/field names that hide the details of the XML structure

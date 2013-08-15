@@ -20,39 +20,40 @@
       <dl>
         <dt><%=  t('dias.views.paper.labels.forfatter')  %></dt>
         <dd>
-          <%= @document["forfatter_t"].first.html_safe %>
+          <%#= @document["forfatter_t"].first.html_safe %>
+          <%= @document["forfatter_t"].html_safe %>
         </dd>
         <dt><%=  t('dias.views.paper.labels.afleveringsaar')  %></dt>
         <dd>
-          <%= @document["afleveringsaar_ssm"].first.html_safe %>
+          <%= @document["afleveringsaar_tesim"].first.html_safe %>
         </dd>
 
         <dt><%=  t('dias.views.paper.labels.studium')  %></dt>
         <dd>
-          <%= @document["studium_ssm"].first.html_safe %>
+          <%= @document["studium_tesim"].first.html_safe %>
         </dd>
 
 
         <dt><%=  t('dias.views.paper.labels.abstrakt')  %></dt>
         <dd><blockquote>
-          <%= simple_format( @document["abstrakt_ssm"].first, ) if @document["abstrakt_t"] %>
+          <%= simple_format( @document["abstrakt_tesim"].first, ) if @document["abstrakt_t"] %>
         </blockquote>
         </dd>
 
         <dt><%=  t('dias.views.paper.labels.opgavetype')  %></dt>
         <dd>
-          <%= @document["genre_ssm"].first.html_safe %>
+          <%= @document["genre_tesim"].first.html_safe %>
         </dd>
 
         <dt><%=  t('dias.views.paper.labels.opgavesprog')  %></dt>
         <dd>
-          <%= @document["opgavesprog_ssm"].first.html_safe %>
+          <%= @document["opgavesprog_tesim"].first.html_safe %>
         </dd>
 
         <dt><%=  t('dias.views.paper.labels.licens')  %></dt>
         <dd>
           <% if @document["licens_t"] %>
-              <%= raw @document["licens_description_t"].first.html_safe  %>
+              <%= raw @document["licens_description_t"].html_safe  %>
 
               <!--
            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da"><img alt="Creative Commons licens" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a><br />Dette værk er licenseret under en <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da">Creative Commons Navngivelse-IkkeKommerciel-IngenBearbejdelse 3.0 Unported Licens</a>.
