@@ -71,6 +71,21 @@ class PapersController < ApplicationController
     end
   end
 
+  def reloadsolrindex
+    if authorize
+      stat_counter = 0
+      @papers = Image.all
+      @papers.each do |paper|
+        logger.debug("updating index for image: " + paper.title.to_s )
+        stat_counter += 1
+        image.update_index
+      end
+      logger.info("done reloading solr index")
+      redirect_to  root_url, notice: "#{stat_counter} images was successfully reindexed to solr."
+    end
+  end
+
+
   # PUT /papers/1
   # PUT /papers/1.json
   def update
