@@ -117,8 +117,8 @@ describe PapersController do
         assigns(:paper).should eq(@paper)
       end
 
-
       it "redirects to the paper" do
+        pending("updates cannot be performed from the GUI")
         valid_attributes[:title] = "en anden ny titel"
         valid_attributes[:forfatter] =  ["0" =>{gn:"Nyt Fornavn1, sn:Nyt Efternavn1"},"1" => {gn:"Nyt Fornavn2", sn:"Nyt Efternavn2"},"1" => {gn:"Nyt Fornavn3", sn:"Nyt Efternavn3"}]
         put :update, {:id => @paper.pid, :paper => valid_attributes}, valid_session
