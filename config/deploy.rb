@@ -39,8 +39,8 @@ namespace :deploy do
      run "cd #{current_path}; cp ./solr_conf/conf/schema.xml ~/jetty/solr/test-core/conf"
      run "cd #{current_path}; cp ./solr_conf/conf/solrconfig.xml ~/jetty/solr/development-core/conf"
      run "cd #{current_path}; cp ./solr_conf/conf/solrconfig.xml ~/jetty/solr/test-core/conf"
-     run "cd #{current_path}; cp ./fedora_conf/conf/development/fedora.cfg ~/jetty/fedora/default/server/config"
-     run "cd #{current_path}; cp ./fedora_conf/conf/test/fedora.cfg ~/jetty/fedora/test/server/config"
+     run "cd #{current_path}; cp ./fedora_conf/conf/development/fedora.fcfg ~/jetty/fedora/default/server/config"
+     run "cd #{current_path}; cp ./fedora_conf/conf/test/fedora.fcfg ~/jetty/fedora/test/server/config"
    end
  
    # task to seed db
