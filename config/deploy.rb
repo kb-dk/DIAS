@@ -32,7 +32,8 @@ namespace :deploy do
   # custom task to copy dias.yml to current deploy
    task :config_dias, :roles => :app, :except => { :no_release => true}  do
      run "cp /home/dias/dias.yml #{File.join(current_path,'config')}"
-     run "bundle exec rake jetty:config"
+     run "pwd"
+     run "cd #{current_path}; bundle exec rake jetty:config"
    end;
  
    # task to seed db
