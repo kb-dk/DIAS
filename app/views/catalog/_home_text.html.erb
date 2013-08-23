@@ -40,7 +40,7 @@
       <% if cannot? :create, Paper   %>
           <p><%= link_to t('.new', :default => raw(t('dias.views.forside.tilfoejogloginknap'))),
                          new_user_session_path,
-                         :class => 'btn btn-large btn-success' %>   </p>
+                         :class => 'btn btn-large btn-success', :id => 'big_login_button' %>   </p>
       <% end %>
 
     </div>

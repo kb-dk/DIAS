@@ -53,6 +53,9 @@ gem "bootstrap-sass"
 gem 'thin'
 group :development, :test do
   gem 'rspec-rails'
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
+  gem 'capybara-webkit'
   gem 'jettywrapper'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -63,6 +66,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.1'
   gem 'guard-spork'
   gem 'selenium-webdriver'
+  gem 'rest-client'
 end
 
 
