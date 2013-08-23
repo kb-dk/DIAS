@@ -17,7 +17,12 @@ class Users::SessionsController < ApplicationController
     username = auth.extra.user
 
     session[:user] = auth
-    redirect_to session.delete('return_url'), :notice => I18n.t('dias.loggetind') +" " + auth.extra.gn + " " + auth.extra.sn + "" + I18n.t('dias.loggetindupklartilload'), :only_path => true
+    return_url = session.delete('return_url')
+    #redirect_to return_url, :notice => I18n.t('dias.loggetind') +" " + auth.extra.gn + " " + auth.extra.sn + "" + I18n.t('dias.loggetindupklartilload'), :only_path => true
+    redirect_to root_url, :notice => I18n.t('dias.loggetind') +" " + auth.extra.gn + " " + auth.extra.sn + "" + I18n.t('dias.loggetindupklartilload'), :only_path => true
+
+  rescue Exception => e
+    puts e.to_s + e.backtrace.join("\n")
   end
 
   def destroy
