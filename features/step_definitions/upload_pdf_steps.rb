@@ -1,13 +1,14 @@
 # -*- encoding : utf-8 -*-
+require 'capybara/rspec'
 
 Given /^I am signed in with provider "([^"]*)"$/ do |provider|
   visit new_user_session_path
-  page.has_content? 'Velkommen Test User - vi glæder os til, at du uploader dine opgaver'
+  page.should have_content  'Velkommen Test User - vi glæder os til, at du uploader dine opgaver'
 end
 
 When(/^I navigate to the Upload form$/) do
   visit new_paper_path
-  page.has_content? 'Opret Opgave'
+  page.should have_content 'Opret Opgave'
 end
 
 When(/^I fill out the required fields with valid values$/) do
@@ -30,7 +31,7 @@ When(/^post the form$/) do
 end
 
 Then(/^I should be taken to the show screen for that thesis afterwards$/) do
-  page.has_content? 'Apache Solr for Muppets'
+  page.should have_content 'Apache Solr for Muppets'
 end
 
 Given(/^I have uploaded a thesis with the title 'Apache Solr for Muppets'$/) do
@@ -43,5 +44,5 @@ When(/^I search for the word 'Muppets'$/) do
 end
 
 Then(/^I should be shown one search result with the word 'Muppets' in the title$/) do
-  page.has_content? 'Muppets'
+  page.should have_content 'Muppets'
 end
