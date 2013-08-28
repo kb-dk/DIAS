@@ -9,7 +9,7 @@ APP_ROOT="."
 require 'jettywrapper'
 
 desc 'Start up jetty and run rspec and cucumber tests'
-task :ci => ['jetty:unzip', 'jetty:config', 'jetty:start'] do
+task :ci => ['jetty:unzip', 'jetty:config'] do
   puts 'running continuous integration'
   jetty_params = Jettywrapper.load_config
   error = Jettywrapper.wrap(jetty_params) do
