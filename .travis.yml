@@ -4,4 +4,4 @@ notifications:
 rvm:
   - "1.9.3"
 # uncomment this line if your project needs to run something other than `rake`:
-script: bundle exec rake db:migrate cucumber
+script: bundle exec rake db:migrate jetty:config jetty:start cucumber jetty:stop
