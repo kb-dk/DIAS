@@ -15,7 +15,7 @@ task :ci => ['jetty:unzip', 'jetty:config'] do
   jetty_params = Jettywrapper.load_config
   error = Jettywrapper.wrap(jetty_params) do
     ping_solr #check solr is up before starting the tests
-    #Rake::Task['spec'].invoke
+    Rake::Task['spec'].invoke
     Rake::Task['cucumber'].invoke
   end
   raise "test failures: #{error}" if error
@@ -28,11 +28,11 @@ def ping_solr
   begin
     solr = RSolr.connect :url => 'http://localhost:8983/solr'
     response = solr.get 'select', :params => {:q => '*:*'}
-    puts 'response = ' + response.inspect
+    puts 'Solr is up!'
     return
   rescue Errno::ECONNREFUSED
-    puts 'Solr not up yet, sleeping for 5 seconds... zzz'
-    sleep 5
+    puts 'Solr not up yet, sleeping for 10 seconds... zzz'
+    sleep 10
     ping_solr
   end
 end
