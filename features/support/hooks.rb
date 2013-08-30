@@ -1,5 +1,4 @@
 require 'capybara/rspec'
-require 'rest_client'
 
 Before('@omniauth_test') do
 
