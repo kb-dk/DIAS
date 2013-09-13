@@ -21,7 +21,7 @@
         <dt><%=  t('dias.views.paper.labels.forfatter')  %></dt>
         <dd>
           <%#= @document["forfatter_t"].first.html_safe %>
-          <%= @document["forfatter_t"].html_safe %>
+          <%= @document["forfatter_t"].html_safe rescue nil %>
         </dd>
         <dt><%=  t('dias.views.paper.labels.afleveringsaar')  %></dt>
         <dd>

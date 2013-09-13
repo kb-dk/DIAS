@@ -31,8 +31,8 @@ class OpgaveModsDatastream < ActiveFedora::OmDatastream
 
 
     t.titleInfo do
-      t.title(:index_as => [:stored_searchable])
-      t.subTitle(:index_as => [:stored_searchable])
+      t.title(:type => :string, :index_as=>[:stored_searchable, :displayable, :sortable])
+      t.subTitle(:type => :string, :index_as=>[:stored_searchable, :displayable, :sortable])
     end
 
 
@@ -44,13 +44,13 @@ class OpgaveModsDatastream < ActiveFedora::OmDatastream
     #</name>
 
     t.name do
-      t.namePart(:index_as => [:stored_searchable])
+      t.namePart(:type => :string, :index_as=>[:stored_searchable, :displayable, :sortable], :path=>'forfatter', :label=>'forfatter')
       t.role do
         t.roleTerm
       end
     end
 
-    t.abstract(:index_as => [:stored_searchable])
+    t.abstract(:type => :string, :index_as=>[:stored_searchable, :displayable], :path=>'abstrakt', :label=>'abstrakt')
 
     #<originInfo>
     #<dataIssued>2011</dateIssued>                             <!-- Afleveringsår -->
@@ -60,18 +60,18 @@ class OpgaveModsDatastream < ActiveFedora::OmDatastream
     # </originInfo>
 
     t.originInfo do
-      t.dataIssued(:index_as => [:stored_searchable])    # :facetable
+      t.dataIssued(:type => :string, :index_as=>[:stored_searchable, :displayable, :facetable, :sortable])    # :facetable
       t.location do
-        t.physicalLocation(:index_as => [:stored_searchable])
+        t.physicalLocation(:type => :string, :index_as=>[:stored_searchable, :displayable, :facetable, :sortable])
       end
     end
 
-    t.typeOfResource(:index_as=>[:stored_searchable])
+    t.typeOfResource(:type => :string, :index_as=>[:stored_searchable, :displayable, :facetable])
 
-    t.genre(:index_as=>[:stored_searchable])
+    t.genre(:type => :string, :index_as=>[:stored_searchable, :displayable, :facetable])
 
     t.language do
-      t.languageTerm(:index_as =>  [:stored_searchable])
+      t.languageTerm(:type => :string, :index_as=>[:stored_searchable, :displayable, :facetable])
     end
 
     # these proxy declarations allow you to use more familiar term/field names that hide the details of the XML structure

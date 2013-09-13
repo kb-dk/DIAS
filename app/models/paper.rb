@@ -80,7 +80,7 @@ class Paper < ActiveFedora::Base
   #delegate :forfatter, :to=>'descMetadata'
   delegate_to 'techMetadata', [:original_filename, :mime_type, :has_attached_file ], :unique => true
   # delegate_to 'rightsMetadata', [:license, :author]
-  delegate :license_title, :to=>'rightsMetadata', :at=>[:license, :title], :unique=>true
+  delegate :license_title, :to=>'rightsMetadata', :at=>[:license, :title], :index_as=>[:stored_searchable, :displayable, :sortable], :unique=>true
   delegate :license_description, :to=>'rightsMetadata', :at=>[:license, :description], :unique=>true
   delegate :license_url, :to=>'rightsMetadata', :at=>[:license, :url], :unique=>true
 
@@ -141,6 +141,7 @@ class Paper < ActiveFedora::Base
     descMetadata.get_authors
   end
 
+=begin
   def to_solr(solr_doc={})
     super
     solr_doc["licens_t"] = self.license_url
@@ -150,6 +151,7 @@ class Paper < ActiveFedora::Base
     solr_doc["forfatter_sort"] = solr_doc["forfatter_t"]
     return solr_doc  
   end
+=end
 
 
   def add_default_license
