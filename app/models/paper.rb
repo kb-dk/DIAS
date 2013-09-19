@@ -10,7 +10,7 @@ class Paper < ActiveFedora::Base
     m.field "mime_type", :string
   end
 
-  attr_accessor = :title, :undertitel, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog, :has_attached_file
+  attr_accessor = :title, :undertitel, :abstrakt, :afleveringsaar, :studium, :opgavetype, :opgavesprog, :has_attached_file, :license_url, :license_title, :license_description
 
   validates_presence_of :title,
                         :message =>  I18n.t('dias.models.paper.validate.title')
@@ -141,17 +141,28 @@ class Paper < ActiveFedora::Base
     descMetadata.get_authors
   end
 
-=begin
+begin
   def to_solr(solr_doc={})
     super
-    solr_doc["licens_t"] = self.license_url
-    solr_doc["licens_title_t"] = self.license_title
-    solr_doc["licens_description_t"] = self.license_description
-    solr_doc["forfatter_t"]  = self.get_authors.map{ |a| a["sn"] + ", " +a["gn"] }.join("; ")
-    solr_doc["forfatter_sort"] = solr_doc["forfatter_t"]
+    Solrizer.insert_field(solr_doc, 'description', self.abstrakt, :stored_searchable, :displayable)
+    Solrizer.insert_field(solr_doc, 'forfatter', self.get_authors.map{ |a| a["sn"] + ", " +a["gn"] }.join("; "), :stored_searchable, :stored_sortable,  :displayable)
+    #Solrizer.insert_field(solr_doc, 'forfatter_ssort', self.get_authors.map{ |a| a["sn"] + ", " +a["gn"] }.join("; "), :stored_searchable, :displayable, :sortable)
+    Solrizer.insert_field(solr_doc, 'licens', self.license_url, :stored_searchable, :displayable)
+    Solrizer.insert_field(solr_doc, 'licens_title', self.license_title, :stored_searchable, :displayable)
+    Solrizer.insert_field(solr_doc, 'licens_description', self.license_description, :stored_searchable, :displayable)
+
+
+    #solr_doc["forfatter_t"]  = self.get_authors.map{ |a| a["sn"] + ", " +a["gn"] }.join("; ")
+    #solr_doc["forfatter_sort"] = solr_doc["forfatter_t"]
+
+    #solr_doc["licens_t"] = self.license_url
+    #solr_doc["licens_title_t"] = self.license_title
+    #solr_doc["licens_description_t"] = self.license_description
+    #solr_doc["forfatter_t"]  = self.get_authors.map{ |a| a["sn"] + ", " +a["gn"] }.join("; ")
+    #solr_doc["forfatter_sort"] = solr_doc["forfatter_t"]
     return solr_doc  
   end
-=end
+end
 
 
   def add_default_license

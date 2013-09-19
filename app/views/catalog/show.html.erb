@@ -15,13 +15,13 @@
 
       <% # bookmark/folder functions -%>
       <%= render_document_heading(:h1).html_safe %>
-      <h4><%= @document["undertitel_t"].first.html_safe if @document["undertitel_t"] %></h4>
+      <h4><%= @document["undertitel_tesim"].first.html_safe if @document["undertitel_tesim"] %></h4>
       <div class="document">
       <dl>
         <dt><%=  t('dias.views.paper.labels.forfatter')  %></dt>
         <dd>
           <%#= @document["forfatter_t"].first.html_safe %>
-          <%= @document["forfatter_t"].html_safe rescue nil %>
+          <%= @document["forfatter_tesim"].html_safe rescue nil %>
         </dd>
         <dt><%=  t('dias.views.paper.labels.afleveringsaar')  %></dt>
         <dd>
@@ -36,7 +36,7 @@
 
         <dt><%=  t('dias.views.paper.labels.abstrakt')  %></dt>
         <dd><blockquote>
-          <%= simple_format( @document["abstrakt_tesim"].first, ) if @document["abstrakt_t"] %>
+          <%= simple_format( @document["abstrakt_tesim"].first, ) if @document["abstrakt_tesim"] %>
         </blockquote>
         </dd>
 
@@ -52,8 +52,8 @@
 
         <dt><%=  t('dias.views.paper.labels.licens')  %></dt>
         <dd>
-          <% if @document["licens_t"] %>
-              <%= raw @document["licens_description_t"].html_safe  %>
+          <% if @document["licens_url"] %>
+              <%= raw @document["licens_description"].html_safe  %>
 
               <!--
            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da"><img alt="Creative Commons licens" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-nd/3.0/80x15.png" /></a><br />Dette værk er licenseret under en <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/deed.da">Creative Commons Navngivelse-IkkeKommerciel-IngenBearbejdelse 3.0 Unported Licens</a>.

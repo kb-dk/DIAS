@@ -6,17 +6,18 @@ class CatalogController < ApplicationController
   include Blacklight::Catalog
   include Hydra::Controller::ControllerBehavior
   # These before_filters apply the hydra access controls
-  #before_filter :enforce_show_permissions, :only=>:show
+  before_filter :enforce_show_permissions, :only=>:show
   # This applies appropriate access controls to all solr queries
   #CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
   # This filters out objects that you want to exclude from search results, like FileAssets
-  #CatalogController.solr_search_params_logic += [:exclude_unwanted_models]
+  CatalogController.solr_search_params_logic += [:exclude_unwanted_models]
+
 
 
   configure_blacklight do |config|
     logger.info("### configure_blacklight i sproget I18n.locale=" + I18n.locale.to_s + " locale=" + :locale.to_s)
     config.default_solr_params = {
-      :qf => 'title_tesim undertitel_tesim abstrakt_tesim name_namePart_tesim',
+      :qf => 'title_tesim undertitel_tesim abstrakt_tesim name_namePart_tesim forfatter_tesim',
       :qt => 'search',
       #:search_field => 'all_fields',
       :rows => 20
@@ -24,12 +25,12 @@ class CatalogController < ApplicationController
 
     # solr field configuration for search results/index views
     config.index.show_link = 'title_tesim'
-    config.index.record_display_type = 'has_model_ssim'
+    config.index.record_display_type = 'active_fedora_model_ssi'
 
     # solr field configuration for document/show views
     config.show.html_title = 'title_tesim'
     config.show.heading = 'title_tesim'
-    config.show.display_type = 'has_model_ssim'
+    config.show.display_type = 'active_fedora_model_ssi'
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
@@ -75,19 +76,19 @@ class CatalogController < ApplicationController
     config.add_index_field 'title_tesim', :label => I18n.t('dias.views.forside.labels.title')
     config.add_index_field 'title_vern_display', :label => I18n.t('dias.views.forside.labels.title')
 
-    config.add_index_field 'undertitel_tsi', :label => I18n.t('dias.views.forside.labels.undertitel')
-    config.add_index_field 'undertitel_vern_tsi', :label => I18n.t('dias.views.forside.labels.undertitel')
+    config.add_index_field 'undertitel_tesim', :label => I18n.t('dias.views.forside.labels.undertitel')
+    config.add_index_field 'undertitel_vern_tesim', :label => I18n.t('dias.views.forside.labels.undertitel')
 
-    config.add_index_field 'forfatter_tsi', :label => I18n.t('dias.views.forside.labels.forfatter')
-    config.add_index_field 'forfatter_vern_tsi', :label => I18n.t('dias.views.forside.labels.forfatter')
+    config.add_index_field 'forfatter_tesim', :label => I18n.t('dias.views.forside.labels.forfatter')
+    config.add_index_field 'forfatter_vern_tesim', :label => I18n.t('dias.views.forside.labels.forfatter')
 
-    config.add_index_field 'afleveringsaar_tsi', :label => I18n.t('dias.views.forside.labels.afleveringsaar')
-    config.add_index_field 'afleveringsaar_vern_tsi', :label => I18n.t('dias.views.forside.labels.afleveringsaar')
+    config.add_index_field 'afleveringsaar_tesim', :label => I18n.t('dias.views.forside.labels.afleveringsaar')
+    config.add_index_field 'afleveringsaar_vern_tesim', :label => I18n.t('dias.views.forside.labels.afleveringsaar')
 
 
 
-    config.add_index_field 'opgavetype_tsi', :label => I18n.t('dias.views.forside.labels.opgavetype')
-    config.add_index_field 'opgavetype_vern_tsi', :label => I18n.t('dias.views.forside.labels.opgavetype')
+    config.add_index_field 'opgavetype_tesim', :label => I18n.t('dias.views.forside.labels.opgavetype')
+    config.add_index_field 'opgavetype_vern_tesim', :label => I18n.t('dias.views.forside.labels.opgavetype')
 
 
     #config.add_index_field 'author_vern_display', :label => 'Author:'
@@ -105,19 +106,19 @@ class CatalogController < ApplicationController
     #config.add_show_field 'title_vern_display', :label => 'Title:'
     #config.add_show_field 'subtitle_display', :label => 'Subtitle:'
     #config.add_show_field 'subtitle_vern_display', :label => 'Subtitle:'
-    config.add_show_field 'forfatter_display', :label => I18n.t('dias.views.forside.labels.forfatter')
+    config.add_show_field 'forfatter_tesim', :label => I18n.t('dias.views.forside.labels.forfatter')
 
 
-    config.add_show_field 'afleveringsaar_display', :label => I18n.t('dias.views.forside.labels.afleveringsaar')
+    config.add_show_field 'afleveringsaar_tesim', :label => I18n.t('dias.views.forside.labels.afleveringsaar')
 
 
-    config.add_show_field 'studium_display', :label => I18n.t('dias.views.forside.labels.studium')
+    config.add_show_field 'studium_tesim', :label => I18n.t('dias.views.forside.labels.studium')
 
-    config.add_show_field 'opgavesprog_display', :label => I18n.t('dias.views.forside.labels.opgavesprog')
-    config.add_show_field 'genre_display', :label => I18n.t('dias.views.forside.labels.opgavetype')
+    config.add_show_field 'opgavesprog_tesim', :label => I18n.t('dias.views.forside.labels.opgavesprog')
+    config.add_show_field 'genre_tesim', :label => I18n.t('dias.views.forside.labels.opgavetype')
 
 
-    config.add_show_field 'abstrakt_display', :label => I18n.t('dias.views.forside.labels.abstrakt')
+    config.add_show_field 'abstrakt_tesim', :label => I18n.t('dias.views.forside.labels.abstrakt')
 
     #config.add_show_field 'author_vern_display', :label => 'Author:'
     #config.add_show_field 'format', :label => 'Format:'
@@ -210,9 +211,9 @@ class CatalogController < ApplicationController
     config.add_sort_field 'score desc, afleveringsaar_ssort desc, title_ssort asc', :label => 'Relevans'
     config.add_sort_field 'afleveringsaar_ssort desc, title_ssort asc', :label => 'År (nyeste først)'
     config.add_sort_field 'afleveringsaar_ssort asc, title_ssort asc', :label => 'År (ældste først)'
-    #config.add_sort_field 'forfatter_sort asc, title_sort asc', :label => 'Forfatter (stigende)'
-    #config.add_sort_field 'forfatter_sort desc, title_sort asc', :label => 'Forfatter (faldende)'
-    #config.add_sort_field 'title_sort asc, afleveringsaar_sort desc', :label => 'Titel'
+    config.add_sort_field 'forfatter_ssort asc, title_sort asc', :label => 'Forfatter (stigende)'
+    config.add_sort_field 'forfatter_ssort desc, title_sort asc', :label => 'Forfatter (faldende)'
+    config.add_sort_field 'title_sort asc, afleveringsaar_ssort desc', :label => 'Titel'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
