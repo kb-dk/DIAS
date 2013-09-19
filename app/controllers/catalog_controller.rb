@@ -10,8 +10,10 @@ class CatalogController < ApplicationController
   # This applies appropriate access controls to all solr queries
   #CatalogController.solr_search_params_logic += [:add_access_controls_to_solr_params]
   # This filters out objects that you want to exclude from search results, like FileAssets
+  # :exclude_unwanted_models << 'info:fedora/afmodel:Image'
   CatalogController.solr_search_params_logic += [:exclude_unwanted_models]
-
+  #CatalogController.solr_search_params_logic += [:exclude_unwanted_models]
+  #CatalogController.solr_search_params_logic.delete('active_fedora_model_ssi:Paper')
 
 
   configure_blacklight do |config|
@@ -19,18 +21,20 @@ class CatalogController < ApplicationController
     config.default_solr_params = {
       :qf => 'title_tesim undertitel_tesim abstrakt_tesim name_namePart_tesim forfatter_tesim',
       :qt => 'search',
+      :fq => 'active_fedora_model_ssi:Paper',
+      #-active_fedora_model_ssi:Image
       #:search_field => 'all_fields',
       :rows => 20
     }
 
     # solr field configuration for search results/index views
     config.index.show_link = 'title_tesim'
-    config.index.record_display_type = 'active_fedora_model_ssi'
+    config.index.record_display_type = 'has_model'
 
     # solr field configuration for document/show views
     config.show.html_title = 'title_tesim'
     config.show.heading = 'title_tesim'
-    config.show.display_type = 'active_fedora_model_ssi'
+    config.show.display_type = 'has_model'
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
@@ -208,12 +212,12 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, afleveringsaar_ssort desc, title_ssort asc', :label => 'Relevans'
-    config.add_sort_field 'afleveringsaar_ssort desc, title_ssort asc', :label => 'År (nyeste først)'
-    config.add_sort_field 'afleveringsaar_ssort asc, title_ssort asc', :label => 'År (ældste først)'
-    config.add_sort_field 'forfatter_ssort asc, title_sort asc', :label => 'Forfatter (stigende)'
-    config.add_sort_field 'forfatter_ssort desc, title_sort asc', :label => 'Forfatter (faldende)'
-    config.add_sort_field 'title_sort asc, afleveringsaar_ssort desc', :label => 'Titel'
+    config.add_sort_field 'score desc, afleveringsaar_ssi desc, title_ssi asc', :label => 'Relevans'
+    config.add_sort_field 'afleveringsaar_ssi desc, title_ssi asc', :label => 'År (nyeste først)'
+    config.add_sort_field 'afleveringsaar_ssi asc, title_ssi asc', :label => 'År (ældste først)'
+    config.add_sort_field 'forfatter_ssi asc, title_sort asc', :label => 'Forfatter (stigende)'
+    config.add_sort_field 'forfatter_ssi desc, title_sort asc', :label => 'Forfatter (faldende)'
+    config.add_sort_field 'title_ssi asc, afleveringsaar_ssi desc', :label => 'Titel'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
