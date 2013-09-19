@@ -212,12 +212,12 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, afleveringsaar_ssi desc, title_ssi asc', :label => 'Relevans'
-    config.add_sort_field 'afleveringsaar_ssi desc, title_ssi asc', :label => 'År (nyeste først)'
-    config.add_sort_field 'afleveringsaar_ssi asc, title_ssi asc', :label => 'År (ældste først)'
-    config.add_sort_field 'forfatter_ssi asc, title_sort asc', :label => 'Forfatter (stigende)'
-    config.add_sort_field 'forfatter_ssi desc, title_sort asc', :label => 'Forfatter (faldende)'
-    config.add_sort_field 'title_ssi asc, afleveringsaar_ssi desc', :label => 'Titel'
+    config.add_sort_field 'score desc, afleveringsaar_si desc, title_si asc', :label => 'Relevans'
+    config.add_sort_field 'afleveringsaar_si desc, title_si asc', :label => 'År (nyeste først)'
+    config.add_sort_field 'afleveringsaar_si asc, title_si asc', :label => 'År (ældste først)'
+    #config.add_sort_field 'forfatter_si asc, title_si asc', :label => 'Forfatter (stigende)'
+    #config.add_sort_field 'forfatter_si desc, title_si asc', :label => 'Forfatter (faldende)'
+    #config.add_sort_field 'title_si asc, afleveringsaar_si desc', :label => 'Titel'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
