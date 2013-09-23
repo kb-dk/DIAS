@@ -9,26 +9,11 @@
   <fields>
     <field name="id" type="string" stored="true" indexed="true" multiValued="false" required="true"/>
     <field name="timestamp" type="date" indexed="true" stored="true" default="NOW" multiValued="false"/>
-    <field name="licens_t" type="string" indexed="true" store="true" multivalued="true" />
-    <field name="licens_title_t" type="string" indexed="true" store="true" multivalued="true" />
-    <field name="licens_description_t" type="string" indexed="true" store="true" multivalued="true" />
-    <field name="forfatter_t" type="string" indexed="true" store="true" multivalued="true" />
 
     <field name="lat" type="tdouble" stored="true" indexed="true" multiValued="false"/>
     <field name="lng" type="tdouble" stored="true" indexed="true" multiValued="false"/>
 
-    <field name="forfatter_display" type="string" indexed="true" stored="true" multiValued="true"/>
-    <field name="forfatter_vern_display" type="string" indexed="true" stored="true" multiValued="true"/>
-    <field name="studium_display" type="string" indexed="true" stored="true" multiValued="true"/>
 
-    <field name="studium_facet" type="string" indexed="true" store="true" multiValued="true" />
-    <field name="afleveringsaar_facet" type="string" indexed="true" store="true" multivalued="true" />
-    <field name="opgavesprog_facet" type="string" indexed="true" store="true" multivalued="true" />
-    <field name="genre_facet" type="string" indexed="true" store="true" multivalued="true" />
-
-    <field name="afleveringsaar_sort" type="string" indexed="true" stored="true" multiValued="false"/>
-    <field name="title_sort" type="string" indexed="true" stored="true" multiValued="false"/>
-    <field name="forfatter_sort" type="string" indexed="true" stored="true" multiValued="false"/>
 
     <!-- NOTE:  not all possible Solr field types are represented in the dynamic fields -->
 

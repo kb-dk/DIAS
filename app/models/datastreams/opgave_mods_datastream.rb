@@ -50,7 +50,7 @@ class OpgaveModsDatastream < ActiveFedora::OmDatastream
       end
     end
 
-    t.abstract(:type => :string, :index_as=>[:stored_searchable, :displayable], :path=>'abstrakt', :label=>'abstrakt')
+    t.abstract(:type => :string, :index_as=>[:stored_searchable, :displayable], :path=>'abstract', :label=>'abstract')
 
     #<originInfo>
     #<dataIssued>2011</dateIssued>                             <!-- Afleveringsår -->

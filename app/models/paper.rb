@@ -147,9 +147,11 @@ begin
     Solrizer.insert_field(solr_doc, 'description', self.abstrakt, :stored_searchable, :displayable)
     Solrizer.insert_field(solr_doc, 'forfatter', self.get_authors.map{ |a| a["sn"] + ", " +a["gn"] }.join("; "), :stored_searchable, :stored_sortable,  :displayable)
     #Solrizer.insert_field(solr_doc, 'forfatter_ssort', self.get_authors.map{ |a| a["sn"] + ", " +a["gn"] }.join("; "), :stored_searchable, :displayable, :sortable)
-    Solrizer.insert_field(solr_doc, 'licens', self.license_url, :stored_searchable, :displayable)
-    Solrizer.insert_field(solr_doc, 'licens_title', self.license_title, :stored_searchable, :displayable)
+    Solrizer.insert_field(solr_doc, 'licens', self.license_url, :stored_searchable, :displayable, :facetable)
+    Solrizer.insert_field(solr_doc, 'licens_url', self.license_url, :stored_searchable, :displayable, :facetable)
+    Solrizer.insert_field(solr_doc, 'licens_title', self.license_title, :stored_searchable, :displayable, :facetable)
     Solrizer.insert_field(solr_doc, 'licens_description', self.license_description, :stored_searchable, :displayable)
+    Solrizer.insert_field(solr_doc, 'date_start', self.afleveringsaar, :stored_searchable, :displayable, :stored_sortable)
 
 
     #solr_doc["forfatter_t"]  = self.get_authors.map{ |a| a["sn"] + ", " +a["gn"] }.join("; ")
