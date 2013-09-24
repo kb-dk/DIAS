@@ -22,6 +22,8 @@ HydraHead::Application.routes.draw do
   match '/faq',                     :to => 'catalog#index'
   match '/kontakt',                 :to => 'catalog#index'
 
+  match '/admin/rebuild',           :to => 'papers#reloadsolrindex'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
