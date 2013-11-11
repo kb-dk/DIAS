@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.14'
 gem 'hydra', :require => 'hydra6'
 
+gem 'twitter-bootstrap-rails' , '>= 2.1.6'
+gem 'uglifier'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -25,7 +28,6 @@ group :assets do
   gem 'therubyracer'
   gem 'less'
   gem 'less-rails' #Sprockets (what Rails 3.1 uses for its asset pipeline) supports
-  gem 'twitter-bootstrap-rails'
   gem 'font-awesome-sass-rails', '~>2.0'
 end
 
@@ -51,12 +53,13 @@ gem "devise"
 gem "devise-guests", "~> 0.3"
 gem "bootstrap-sass"
 gem 'thin'
+#gem 'solrizer-fedora'
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
-  gem 'capybara-webkit'
+  #gem 'capybara-webkit'
   gem 'jettywrapper'
   #gem 'better_errors'
   gem 'binding_of_caller'
