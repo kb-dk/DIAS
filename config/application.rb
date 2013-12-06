@@ -70,12 +70,14 @@ module HydraHead
     # Default SASS Configuration, check out https://github.com/rails/sass-rails for details
     config.assets.compress = !Rails.env.development?
 
+    config.assets.initialize_on_precompile = false
+
 
   # Config to be overriden by local settings
     config.stub_authentication = false;
 
     config.cas = {
-      :host => 'www.kb.dk',
+      :host => 'user.kb.dk',
       :login_url => '/cas/login',
       :service_validate_url => '/cas/serviceValidate',
       :ssl => true
