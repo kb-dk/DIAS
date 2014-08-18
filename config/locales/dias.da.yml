@@ -99,7 +99,7 @@ da:
             <p class="lead">Hvordan sletter jeg en opgave, som jeg har uploadet til DIAS?</p>
             <p>
               <blockquote>
-                 Det er ikke muligt selv at slette de opgaver, som du har uploadet til DIAS. Sletning sker ved skriftlig henvendelse til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>.
+                 Det er ikke muligt selv at slette de opgaver, som du har uploadet til DIAS. Sletning sker ved skriftlig henvendelse til <a href="http://kontaktbiblioteket.kb.dk">Kontakt biblioteket</a>.
               </blockquote>
             </p>
             <hr/>
@@ -115,7 +115,7 @@ da:
             <p class="lead">Jeg har fundet en opgave i DIAS, som indeholder personfølsomme oplysninger eller indhold, som krænker loven om ophavsret. Hvordan rapporterer jeg dette?</p>
             <p>
               <blockquote>
-                Skriv venligst en email til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.
+                Skriv venligst til <a href="http://kontaktbiblioteket.kb.dk">Kontakt biblioteket</a> med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.
               </blockquote>
             </p>
             <hr/>
@@ -123,7 +123,7 @@ da:
             <p class="lead">Jeg har fundet en opgave i DIAS, som umuligt kan være bestået. Hvordan rapporterer jeg dette?</p>
             <p>
               <blockquote>
-                Skriv venligst en email til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>  med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.
+                Skriv venligst til <a href="http://kontaktbiblioteket.kb.dk">Kontakt biblioteket</a>  med angivelse af opgavens titel og forfatter(e), hvorefter vi tager stilling til sagen.
               </blockquote>
             </p>
 
@@ -132,7 +132,7 @@ da:
        overskrift: 'Kontakt'
        text: |
             <p class="lead">
-                Skriv venligst en mail til <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>.
+                Skriv venligst til <a href="http://kontaktbiblioteket.kb.dk">Kontakt biblioteket</a>.
             </p>
             
                       

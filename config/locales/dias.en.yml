@@ -89,7 +89,7 @@ en:
             <p class="lead">How can I delete an assignment that I uploaded to DIAS</p>
             <p>
               <blockquote>
-                Assignments uploaded to DIAS can only be deleted by an administrator. Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>.
+                Assignments uploaded to DIAS can only be deleted by an administrator. Please <a href="http://kontaktbiblioteket.kb.dk">Contact the Library</a>.
               </blockquote>
             </p>
             <hr/>
@@ -97,7 +97,7 @@ en:
             <p class="lead">I found an assignment in DIAS containing confidential information, contents breaking copyright laws, or offensive contents. How do I report this?</p>
             <p>
               <blockquote>
-                 Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> with author and title information.
+                 Please use <a href="http://kontaktbiblioteket.kb.dk">Contact the Library</a>.
               </blockquote>
             </p>
             <hr/>
@@ -105,7 +105,7 @@ en:
             <p class="lead">I found an assignment in DIAS that cannot possibly have been passed. How do I report this?</p>
             <p>
               <blockquote>
-                 Please send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a> with author and title information.
+                 Please use <a href="http://kontaktbiblioteket.kb.dk">Contact the Library</a>.
               </blockquote>
             </p>
            
@@ -113,7 +113,7 @@ en:
        overskrift: 'Contact'
        text: |
             <p class="lead">
-                 Most questions are answered in our <a href="faq?locale=en">FAQ</a> section. But feel free to send an email to <a href="mailto:kontaktbiblioteket@kb.dk">kontaktbiblioteket@kb.dk</a>.
+                 Most questions are answered in our <a href="faq?locale=en">FAQ</a> section. But you can also <a href="http://:kontaktbiblioteket.kb.dk">Contact the Library</a>.
             </p>
               
 
