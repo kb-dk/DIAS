@@ -64,9 +64,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-webkit (1.0.0)
-      capybara (~> 2.0, >= 2.0.2)
-      json
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
     coderay (1.0.9)
@@ -193,7 +190,7 @@ GEM
       less (~> 2.4.0)
     libv8 (3.16.14.3)
     listen (0.7.3)
-    logger (1.2.8)
+    logger (1.4.1)
     lumberjack (1.0.4)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -202,11 +199,11 @@ GEM
     mediashelf-loggable (0.4.9)
     method_source (0.8.2)
     mime-types (1.25)
-    mini_portile (0.5.1)
+    mini_portile2 (2.1.0)
     multi_json (1.8.0)
     multi_test (0.0.2)
-    nokogiri (1.6.0)
-      mini_portile (~> 0.5.0)
+    nokogiri (1.6.8.1)
+      mini_portile2 (~> 2.1.0)
     nom-xml (0.5.1)
       activesupport
       i18n
@@ -339,6 +336,8 @@ GEM
       rails (>= 3.1)
       railties (>= 3.1)
     tzinfo (0.3.37)
+    uglifier (4.2.0)
+      execjs (>= 0.3.0, < 3)
     unicode (0.4.4)
     warden (1.2.3)
       rack (>= 1.0)
@@ -353,7 +352,6 @@ PLATFORMS
 DEPENDENCIES
   binding_of_caller
   bootstrap-sass
-  capybara-webkit
   coffee-rails (~> 3.2.1)
   cucumber-rails
   database_cleaner
@@ -381,5 +379,6 @@ DEPENDENCIES
   sqlite3
   therubyracer
   thin
-  twitter-bootstrap-rails
+  twitter-bootstrap-rails (>= 2.1.6)
+  uglifier
   unicode
